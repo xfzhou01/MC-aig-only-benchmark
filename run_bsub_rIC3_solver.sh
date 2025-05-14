@@ -43,7 +43,7 @@ done
 echo "Running with $PARALLEL_JOBS parallel jobs"
 
 # Create a directory to store logs
-LOG_DIR="xf_rIC3_solver_mab_logs_order_reward"
+LOG_DIR="xf_rIC3_solver_dyn_baseline"
 mkdir -p "$LOG_DIR"
 
 # Find all .aig and .aag files recursively
@@ -82,8 +82,8 @@ process_file() {
         # timeout 3600 ~/coding_env/rIC3-MAB/target/release/rIC3 -e ic3 --ic3-enable-ctx-mab "$FILE" 2>&1
 	# FILE=./hwmcc19/single/aig/goel/industry/cal180/cal180.aig
         ABSOLUTE_FILE=$(realpath "$FILE")
-        COMMAND=bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
-        $COMMAND
+        COMMAND="bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1"
+        eval $COMMAND
 
         echo "File: $FILE"
         echo "$COMMAND"
