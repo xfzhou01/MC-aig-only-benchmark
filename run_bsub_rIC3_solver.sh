@@ -76,14 +76,10 @@ process_file() {
     
     # Run rIC3 solver with timeout
     {
-        
-        
         # Run the solver with timeout and capture output
-        # timeout 3600 ~/coding_env/rIC3-MAB/target/release/rIC3 -e ic3 --ic3-enable-ctx-mab "$FILE" 2>&1
-	# FILE=./hwmcc19/single/aig/goel/industry/cal180/cal180.aig
         ABSOLUTE_FILE=$(realpath "$FILE")
         COMMAND="bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1"
-        eval $COMMAND
+        bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
 
         echo "File: $FILE"
         echo "$COMMAND"
