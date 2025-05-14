@@ -66,7 +66,7 @@ process_file() {
     local FILENAME=$(basename "$FILE")
     local LOG_FILE="$LOG_DIR/${FILENAME%.*}_log.txt"
     
-    if grep -q "time:" $LOG_FILE; then
+    if [ -f "$LOG_FILE" ] && grep -q "time:" "$LOG_FILE"; then
         echo "Log file contains 'time:'. Exiting function."
         return 1  
     fi
@@ -76,16 +76,19 @@ process_file() {
     
     # Run rIC3 solver with timeout
     {
-        echo "File: $FILE"
-        echo "Command: ~/coding_env/rIC3-MAB/target/release/rIC3 -e ic3 --ic3-dynamic $FILE"
-        echo "Started at: $(date)"
-        echo "----------------------------------------"
+        
         
         # Run the solver with timeout and capture output
         # timeout 3600 ~/coding_env/rIC3-MAB/target/release/rIC3 -e ic3 --ic3-enable-ctx-mab "$FILE" 2>&1
 	# FILE=./hwmcc19/single/aig/goel/industry/cal180/cal180.aig
         ABSOLUTE_FILE=$(realpath "$FILE")
-        bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+        COMMAND=bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+        $COMMAND
+
+        echo "File: $FILE"
+        echo "$COMMAND"
+        echo "Started at: $(date)"
+        echo "----------------------------------------"
         # Check if the command timed out
         if [ $? -eq 124 ]; then
             echo "----------------------------------------"
@@ -124,6 +127,14 @@ for FILE in $AIGER_FILES; do
     # Process the file in the background
     process_file "$FILE" "$COUNTER" "$TOTAL_FILES" &
     ACTIVE_JOBS=$((ACTIVE_JOBS + 1))
+
+    # Check the number of jobs in the queue
+    while [ "$(bjobs | wc -l)" -gt 100 ]; do
+        echo "Pending jobs exceed threshold: 100"
+        sleep 1
+    done
+
+    # Sleep for a short time to avoid overwhelming the system
     sleep 2
 done
 
