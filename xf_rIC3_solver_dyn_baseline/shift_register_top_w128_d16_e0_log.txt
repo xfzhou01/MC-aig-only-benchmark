@@ -1,0 +1,57 @@
+Job <526677> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1541, 1991]
+1 10 14 279 273 532 526 1290 26 544 521 1036 787 1040 1370 1475 1904 
+SolverStatistic {
+    num_solve: 227566,
+    avg_decide_var: 0.273768,
+    num_simplify_subsume: 2262,
+    num_simplify_self_subsume: 2101,
+}
+Statistic {
+    case: model.aig,
+    time: 26.22s,
+    num_mic: 13643,
+    avg_mic_cube_len: 9.036795,
+    avg_po_cube_len: 14.497140,
+    mic_drop: success: 12241, fail: 109016, success rate: 10.10%,
+    num_down: 121257,
+    num_down_sat: 150797,
+    ctp: success: 0, fail: 14853, success rate: 0.00%,
+    num_get_bad: 548,
+    overall_block_time: 21.186032154s,
+    block_get_bad_time: 996.935732ms,
+    block_get_predecessor_time: 132.414844ms,
+    block_blocked_time: 1.604980529s,
+    block_mic_time: 17.591844086s,
+    block_push_time: 132.938886ms,
+    overall_propagate_time: 4.677851543s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920sat/shift_register_top_w128_d16_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920sat/shift_register_top_w128_d16_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 21:43:16 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 21:43:16 CST 2025
+========================================

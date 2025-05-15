@@ -1,0 +1,58 @@
+Job <529314> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 126]
+33 5 6 7 5 3 3 4 6 5 3 4 6 4 3 2 2 2 2 1 0 0 28 
+SolverStatistic {
+    num_solve: 2575,
+    avg_decide_var: 0.661120,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.03s,
+    num_mic: 246,
+    avg_mic_cube_len: 4.382114,
+    avg_po_cube_len: 20.359387,
+    mic_drop: success: 220, fail: 787, success rate: 21.85%,
+    num_down: 1007,
+    num_down_sat: 1323,
+    ctp: success: 0, fail: 313, success rate: 0.00%,
+    num_get_bad: 27,
+    overall_block_time: 551.266732ms,
+    block_get_bad_time: 107.712927ms,
+    block_get_predecessor_time: 52.786857ms,
+    block_blocked_time: 108.370283ms,
+    block_mic_time: 218.512671ms,
+    block_push_time: 16.634009ms,
+    overall_propagate_time: 288.913914ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtvisgoodbakery1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtvisgoodbakery1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 04:12:47 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 04:12:47 CST 2025
+========================================

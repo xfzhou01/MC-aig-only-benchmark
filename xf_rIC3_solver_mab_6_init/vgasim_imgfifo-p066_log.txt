@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:48:34 CST 2025
+Job <535319> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 8]
+342 3 2 2 2 3 3 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 0 8 
+SolverStatistic {
+    num_solve: 562,
+    avg_decide_var: 0.223465,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.16s,
+    num_mic: 51,
+    avg_mic_cube_len: 5.725490,
+    avg_po_cube_len: 170.017964,
+    mic_drop: success: 8, fail: 284, success rate: 2.74%,
+    num_down: 292,
+    num_down_sat: 292,
+    ctp: success: 0, fail: 132, success rate: 0.00%,
+    num_get_bad: 28,
+    overall_block_time: 30.131223ms,
+    block_get_bad_time: 13.620649ms,
+    block_get_predecessor_time: 2.073421ms,
+    block_blocked_time: 3.225458ms,
+    block_mic_time: 7.884078ms,
+    block_push_time: 43.944µs,
+    overall_propagate_time: 5.033211ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/vgasim_imgfifo-p066.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/vgasim_imgfifo-p066.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 21:48:36 CST 2025
+========================================

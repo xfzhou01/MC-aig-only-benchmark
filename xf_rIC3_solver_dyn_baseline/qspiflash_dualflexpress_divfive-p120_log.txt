@@ -1,0 +1,58 @@
+Job <527887> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 593, 139]
+91 7 6 13 4 3 5 6 3 3 3 2 2 3 2 2 2 3 2 2 2 2 4 2 2 2 2 3 3 2 2 2 3 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 0 144 
+SolverStatistic {
+    num_solve: 15169,
+    avg_decide_var: 0.567889,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.51s,
+    num_mic: 889,
+    avg_mic_cube_len: 4.211474,
+    avg_po_cube_len: 35.339321,
+    mic_drop: success: 420, fail: 3259, success rate: 11.42%,
+    num_down: 3679,
+    num_down_sat: 4980,
+    ctp: success: 0, fail: 5850, success rate: 0.00%,
+    num_get_bad: 164,
+    overall_block_time: 291.65005ms,
+    block_get_bad_time: 19.380289ms,
+    block_get_predecessor_time: 49.627415ms,
+    block_blocked_time: 37.2266ms,
+    block_mic_time: 120.150304ms,
+    block_push_time: 20.06913ms,
+    overall_propagate_time: 110.166621ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/qspiflash_dualflexpress_divfive-p120.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/qspiflash_dualflexpress_divfive-p120.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 23:49:10 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 23:49:10 CST 2025
+========================================

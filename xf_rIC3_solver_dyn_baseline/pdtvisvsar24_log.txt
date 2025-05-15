@@ -1,0 +1,58 @@
+Job <529903> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[]
+67 0 0 
+SolverStatistic {
+    num_solve: 1,
+    avg_decide_var: 2.379310,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.01s,
+    num_mic: 0,
+    avg_mic_cube_len: NaN,
+    avg_po_cube_len: NaN,
+    mic_drop: success: 0, fail: 0, success rate: NaN%,
+    num_down: 0,
+    num_down_sat: 0,
+    ctp: success: 0, fail: 0, success rate: NaN%,
+    num_get_bad: 2,
+    overall_block_time: 70.694µs,
+    block_get_bad_time: 68.903µs,
+    block_get_predecessor_time: 0ns,
+    block_blocked_time: 0ns,
+    block_mic_time: 0ns,
+    block_push_time: 0ns,
+    overall_propagate_time: 877ns,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc08/pdtvisvsar24.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/pdtvisvsar24.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 04:41:36 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 04:41:36 CST 2025
+========================================

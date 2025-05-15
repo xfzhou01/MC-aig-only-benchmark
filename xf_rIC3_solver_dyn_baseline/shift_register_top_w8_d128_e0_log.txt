@@ -1,0 +1,57 @@
+Job <526670> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 36477, 16752]
+1 19 21 44 30 42 44 61 38 42 46 57 82 65 93 170 106 48 54 54 39 105 112 131 125 158 227 280 402 412 490 592 495 286 140 401 486 187 316 355 303 239 237 240 261 242 204 155 166 214 370 789 729 985 735 360 283 384 473 562 569 643 570 570 583 363 382 232 134 101 141 148 129 107 112 142 224 157 257 316 298 194 200 193 295 284 402 339 418 302 284 325 348 248 258 264 276 165 207 152 234 196 303 394 333 224 278 287 288 244 260 246 266 198 222 245 277 309 342 377 480 364 403 455 467 377 475 496 735 405 16486 
+SolverStatistic {
+    num_solve: 7116587,
+    avg_decide_var: 0.271478,
+    num_simplify_subsume: 941984,
+    num_simplify_self_subsume: 1015995,
+}
+Statistic {
+    case: model.aig,
+    time: 1158.33s,
+    num_mic: 171873,
+    avg_mic_cube_len: 14.872534,
+    avg_po_cube_len: 20.877945,
+    mic_drop: success: 430877, fail: 2094100, success rate: 17.06%,
+    num_down: 2524977,
+    num_down_sat: 3763476,
+    ctp: success: 0, fail: 845825, success rate: 0.00%,
+    num_get_bad: 186,
+    overall_block_time: 693.919315953s,
+    block_get_bad_time: 1.186410026s,
+    block_get_predecessor_time: 3.312154641s,
+    block_blocked_time: 47.628841043s,
+    block_mic_time: 551.363438647s,
+    block_push_time: 17.600614024s,
+    overall_propagate_time: 462.089994242s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920sat/shift_register_top_w8_d128_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920sat/shift_register_top_w8_d128_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 22:01:55 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 22:01:55 CST 2025
+========================================

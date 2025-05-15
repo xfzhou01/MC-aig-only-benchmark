@@ -1,0 +1,57 @@
+Job <525284> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 896, 478]
+395 12 15 12 9 18 31 91 68 78 26 14 6 5 5 1 2 2 3 1 2 3 2 2 3 2 2 2 1 0 512 
+SolverStatistic {
+    num_solve: 41994,
+    avg_decide_var: 0.409030,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.29s,
+    num_mic: 2899,
+    avg_mic_cube_len: 7.386685,
+    avg_po_cube_len: 168.221147,
+    mic_drop: success: 1957, fail: 18269, success rate: 9.68%,
+    num_down: 20226,
+    num_down_sat: 20628,
+    ctp: success: 0, fail: 11507, success rate: 0.00%,
+    num_get_bad: 139,
+    overall_block_time: 1.808449358s,
+    block_get_bad_time: 92.15738ms,
+    block_get_predecessor_time: 310.507733ms,
+    block_blocked_time: 166.298648ms,
+    block_mic_time: 1.064552185s,
+    block_push_time: 28.902823ms,
+    overall_propagate_time: 285.783921ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/vgasim-imgfifo/aig/imgfifo-p111.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/vgasim-imgfifo/aig/imgfifo-p111.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 18:29:30 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 18:29:30 CST 2025
+========================================

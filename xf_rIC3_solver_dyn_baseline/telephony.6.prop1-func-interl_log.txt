@@ -1,0 +1,58 @@
+Job <528133> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu08>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 3, 11, 24, 5, 2, 27, 33, 10, 3, 232, 4221]
+185 32 43 77 66 81 205 413 658 1095 1507 2066 2350 
+SolverStatistic {
+    num_solve: 376835,
+    avg_decide_var: 0.838145,
+    num_simplify_subsume: 3783,
+    num_simplify_self_subsume: 1227,
+}
+Statistic {
+    case: model.aig,
+    time: 50.27s,
+    num_mic: 11974,
+    avg_mic_cube_len: 15.643979,
+    avg_po_cube_len: 92.717222,
+    mic_drop: success: 30889, fail: 146641, success rate: 17.40%,
+    num_down: 177530,
+    num_down_sat: 343045,
+    ctp: success: 0, fail: 1062, success rate: 0.00%,
+    num_get_bad: 100,
+    overall_block_time: 49.672909255s,
+    block_get_bad_time: 47.008169ms,
+    block_get_predecessor_time: 2.424808081s,
+    block_blocked_time: 3.312230044s,
+    block_mic_time: 43.452427353s,
+    block_push_time: 184.020442ms,
+    overall_propagate_time: 498.267352ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/fraig/telephony.6.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/telephony.6.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:23:35 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:23:35 CST 2025
+========================================

@@ -1,0 +1,57 @@
+Job <525590> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 2]
+75 1 0 2 
+SolverStatistic {
+    num_solve: 9,
+    avg_decide_var: 0.582194,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.00s,
+    num_mic: 3,
+    avg_mic_cube_len: 1.333333,
+    avg_po_cube_len: 37.250000,
+    mic_drop: success: 0, fail: 4, success rate: 0.00%,
+    num_down: 4,
+    num_down_sat: 1,
+    ctp: success: 0, fail: 3, success rate: 0.00%,
+    num_get_bad: 5,
+    overall_block_time: 555.327µs,
+    block_get_bad_time: 378.315µs,
+    block_get_predecessor_time: 0ns,
+    block_blocked_time: 12.67µs,
+    block_mic_time: 12.395µs,
+    block_push_time: 77ns,
+    overall_propagate_time: 15.475µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/hku/x-epic/a10-p53.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/a10-p53.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 18:39:44 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 18:39:44 CST 2025
+========================================

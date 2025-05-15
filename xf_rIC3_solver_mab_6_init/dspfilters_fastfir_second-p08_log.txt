@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:52:44 CST 2025
+Job <535377> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 11, 26742]
+1091 33 13 16 8 8 15 13 12 13 17 24 35 43 38 25 19 26 231 26 2914 14 3861 3022 3164 4 2170 1573 1365 1123 887 763 606 54 722 9 2 0 1 2 3 1 2 2 2 2 17057 
+SolverStatistic {
+    num_solve: 1448296,
+    avg_decide_var: 0.657466,
+    num_simplify_subsume: 24972,
+    num_simplify_self_subsume: 9108,
+}
+Statistic {
+    case: model.aig,
+    time: 804.93s,
+    num_mic: 51063,
+    avg_mic_cube_len: 8.137497,
+    avg_po_cube_len: 427.513907,
+    mic_drop: success: 60300, fail: 350007, success rate: 14.70%,
+    num_down: 410307,
+    num_down_sat: 525461,
+    ctp: success: 0, fail: 330552, success rate: 0.00%,
+    num_get_bad: 3699,
+    overall_block_time: 526.865319329s,
+    block_get_bad_time: 12.141413487s,
+    block_get_predecessor_time: 74.074388572s,
+    block_blocked_time: 62.839368739s,
+    block_mic_time: 295.046497971s,
+    block_push_time: 28.841275361s,
+    overall_propagate_time: 275.834468964s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p08.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p08.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:06:12 CST 2025
+========================================

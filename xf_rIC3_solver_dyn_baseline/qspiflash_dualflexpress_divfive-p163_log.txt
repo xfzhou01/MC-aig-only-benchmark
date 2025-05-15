@@ -1,0 +1,57 @@
+Job <527991> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 101, 18340]
+109 2 6 6 7 9 18 21 27 23 22 19 26 28 18 16 21 18 11 21 17 20 14 13 11 30 28 21 18 5 5 4 4 5 4 4 15 38 6 19 25 32 13 9 3 2 2 2 2 3 1 1 2 1 1 1 1 1 2 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 3 3 2 1 1 1 1 1 1 1 1 1 2 1 2 1 1 1 4 2 2 1 2 2 3 1 2 5 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1376 
+SolverStatistic {
+    num_solve: 782682,
+    avg_decide_var: 0.601571,
+    num_simplify_subsume: 44484,
+    num_simplify_self_subsume: 6616,
+}
+Statistic {
+    case: model.aig,
+    time: 35.96s,
+    num_mic: 29289,
+    avg_mic_cube_len: 8.901294,
+    avg_po_cube_len: 44.494556,
+    mic_drop: success: 30329, fail: 225649, success rate: 11.85%,
+    num_down: 255978,
+    num_down_sat: 419333,
+    ctp: success: 0, fail: 134064, success rate: 0.00%,
+    num_get_bad: 361,
+    overall_block_time: 28.708527105s,
+    block_get_bad_time: 66.066308ms,
+    block_get_predecessor_time: 1.947713045s,
+    block_blocked_time: 2.229333943s,
+    block_mic_time: 16.950368786s,
+    block_push_time: 3.660284468s,
+    overall_propagate_time: 6.8309001s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/qspiflash_dualflexpress_divfive-p163.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/qspiflash_dualflexpress_divfive-p163.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:03:31 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:03:31 CST 2025
+========================================

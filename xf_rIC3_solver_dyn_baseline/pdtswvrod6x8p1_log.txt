@@ -1,0 +1,58 @@
+Job <529199> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32313]
+74 1 2 6 2 4 7 7 8 19 19 25 31 38 25 38 36 52 69 63 67 74 84 144 147 173 188 161 237 192 170 105 83 78 146 157 116 63 42 9 4 1 1 0 11 4 8 6 3 5 17 7 11 3 23 22 35 24 47 23 24 30 12 33 13 17 11 12 39 81 57 85 48 40 65 55 56 47 52 49 48 64 71 94 135 122 151 134 110 162 230 175 220 255 147 161 151 153 148 177 220 242 334 222 281 297 352 5489 0 
+SolverStatistic {
+    num_solve: 2886750,
+    avg_decide_var: 0.650463,
+    num_simplify_subsume: 494512,
+    num_simplify_self_subsume: 256918,
+}
+Statistic {
+    case: model.aig,
+    time: 254.94s,
+    num_mic: 81449,
+    avg_mic_cube_len: 12.550811,
+    avg_po_cube_len: 35.771990,
+    mic_drop: success: 171692, fail: 823547, success rate: 17.25%,
+    num_down: 995239,
+    num_down_sat: 1837042,
+    ctp: success: 0, fail: 341738, success rate: 0.00%,
+    num_get_bad: 133,
+    overall_block_time: 172.252765881s,
+    block_get_bad_time: 107.249334ms,
+    block_get_predecessor_time: 3.983366303s,
+    block_blocked_time: 17.019164029s,
+    block_mic_time: 133.73807119s,
+    block_push_time: 1.171125356s,
+    overall_propagate_time: 82.242678556s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtswvrod6x8p1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtswvrod6x8p1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 03:55:02 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 03:55:02 CST 2025
+========================================

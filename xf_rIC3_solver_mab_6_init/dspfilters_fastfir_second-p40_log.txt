@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:50:16 CST 2025
+Job <535345> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9386, 13944]
+1091 31 45 76 158 280 403 805 1000 1279 1593 1954 1944 1941 2733 1232 1243 1984 1696 1446 983 853 639 584 425 229 114 3 3 1 0 14245 
+SolverStatistic {
+    num_solve: 1200324,
+    avg_decide_var: 0.660696,
+    num_simplify_subsume: 30839,
+    num_simplify_self_subsume: 15153,
+}
+Statistic {
+    case: model.aig,
+    time: 628.14s,
+    num_mic: 55736,
+    avg_mic_cube_len: 7.205164,
+    avg_po_cube_len: 502.206213,
+    mic_drop: success: 55855, fail: 338638, success rate: 14.16%,
+    num_down: 394493,
+    num_down_sat: 484828,
+    ctp: success: 0, fail: 234609, success rate: 0.00%,
+    num_get_bad: 4622,
+    overall_block_time: 424.035549373s,
+    block_get_bad_time: 13.448449413s,
+    block_get_predecessor_time: 74.860614955s,
+    block_blocked_time: 54.534941687s,
+    block_mic_time: 209.102382057s,
+    block_push_time: 17.176548632s,
+    overall_propagate_time: 202.631027866s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p40.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p40.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:00:46 CST 2025
+========================================

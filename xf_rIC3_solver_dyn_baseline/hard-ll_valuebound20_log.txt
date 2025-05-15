@@ -1,0 +1,57 @@
+Job <525921> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1890]
+2 1 16 21 8 26 92 60 19 24 35 5 0 53 4 4 4 2 2 2 2 3 2 2 2 2 2 3 2 3 3 3 3 2 2 3 2 2 3 3 2 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 2 3 3 2 2 2 1 1 86 1580 0 
+SolverStatistic {
+    num_solve: 104163,
+    avg_decide_var: 1.000036,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 653.98s,
+    num_mic: 2224,
+    avg_mic_cube_len: 7.315198,
+    avg_po_cube_len: 325.999842,
+    mic_drop: success: 3553, fail: 12144, success rate: 22.63%,
+    num_down: 15697,
+    num_down_sat: 23286,
+    ctp: success: 0, fail: 73884, success rate: 0.00%,
+    num_get_bad: 1955,
+    overall_block_time: 250.027625016s,
+    block_get_bad_time: 95.098932123s,
+    block_get_predecessor_time: 22.501478ms,
+    block_blocked_time: 10.903138588s,
+    block_mic_time: 129.903256096s,
+    block_push_time: 4.010288ms,
+    overall_propagate_time: 394.612024349s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/sosylab/nla-digbench-scaling/hard-ll_valuebound20.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/nla-digbench-scaling/hard-ll_valuebound20.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 19:46:32 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 19:46:32 CST 2025
+========================================

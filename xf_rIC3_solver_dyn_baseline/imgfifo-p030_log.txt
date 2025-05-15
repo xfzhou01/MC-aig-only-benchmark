@@ -1,0 +1,57 @@
+Job <525335> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 386, 477]
+394 4 10 10 9 9 9 8 11 15 4 12 9 6 11 6 7 6 4 9 11 9 11 9 3 9 6 7 5 11 5 4 4 4 7 14 6 11 5 9 13 15 7 6 4 3 6 6 7 6 1 3 2 5 4 3 1 3 2 2 1 7 8 6 2 3 1 2 2 3 6 2 8 4 1 3 1 5 2 5 1 2 2 1 2 1 2 1 3 3 2 2 1 3 3 2 6 8 5 1 3 9 8 2 1 2 1 5 1 5 3 2 2 4 2 1 2 2 1 3 1 2 1 3 1 2 1 2 3 5 10 14 11 1 2 1 5 1 5 2 2 2 2 2 2 1 2 1 2 1 2 2 1 2 2 1 4 1 3 1 2 1 2 2 5 1 14 10 2 5 1 3 3 4 4 3 1 6 10 8 7 4 5 3 4 3 5 7 4 4 5 2 1 5 7 6 21 13 2 2 5 1 5 9 4 2 3 2 7 3 1 2 2 4 9 5 25 4 2 1 0 477 
+SolverStatistic {
+    num_solve: 131386,
+    avg_decide_var: 0.434349,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 21.79s,
+    num_mic: 1936,
+    avg_mic_cube_len: 5.836260,
+    avg_po_cube_len: 189.902862,
+    mic_drop: success: 819, fail: 10073, success rate: 7.52%,
+    num_down: 10892,
+    num_down_sat: 13224,
+    ctp: success: 0, fail: 71297, success rate: 0.00%,
+    num_get_bad: 923,
+    overall_block_time: 15.699844454s,
+    block_get_bad_time: 14.030436518s,
+    block_get_predecessor_time: 52.76122ms,
+    block_blocked_time: 109.431587ms,
+    block_mic_time: 765.698254ms,
+    block_push_time: 3.034571ms,
+    overall_propagate_time: 4.377374126s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/vgasim-imgfifo/aig/imgfifo-p030.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/vgasim-imgfifo/aig/imgfifo-p030.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 18:31:32 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 18:31:32 CST 2025
+========================================

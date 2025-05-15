@@ -1,0 +1,57 @@
+Job <528409> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10135]
+1 2 16 97 219 303 518 420 1095 776 1071 1042 1596 1151 1614 1354 3358 3238 4957 
+SolverStatistic {
+    num_solve: 805297,
+    avg_decide_var: 0.547639,
+    num_simplify_subsume: 24646,
+    num_simplify_self_subsume: 29082,
+}
+Statistic {
+    case: model.aig,
+    time: 70.82s,
+    num_mic: 34835,
+    avg_mic_cube_len: 12.294790,
+    avg_po_cube_len: 23.620623,
+    mic_drop: success: 57260, fail: 365599, success rate: 13.54%,
+    num_down: 422859,
+    num_down_sat: 635529,
+    ctp: success: 0, fail: 22600, success rate: 0.00%,
+    num_get_bad: 1985,
+    overall_block_time: 61.280201823s,
+    block_get_bad_time: 543.951058ms,
+    block_get_predecessor_time: 437.631982ms,
+    block_blocked_time: 5.622772432s,
+    block_mic_time: 50.573358807s,
+    block_push_time: 150.72183ms,
+    overall_propagate_time: 9.470689545s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/fraig/circular_pointer_top_w16_d16_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/circular_pointer_top_w16_d16_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 01:11:23 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 01:11:23 CST 2025
+========================================

@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:52:42 CST 2025
+Job <535376> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14639, 20389]
+1091 77 66 141 315 368 547 898 999 1329 1551 1923 2546 2462 3073 2987 3859 3087 2870 2243 1770 1442 1068 1045 726 540 399 230 111 6 5 0 21032 
+SolverStatistic {
+    num_solve: 1812178,
+    avg_decide_var: 0.658208,
+    num_simplify_subsume: 57757,
+    num_simplify_self_subsume: 30529,
+}
+Statistic {
+    case: model.aig,
+    time: 1025.71s,
+    num_mic: 80385,
+    avg_mic_cube_len: 7.516676,
+    avg_po_cube_len: 522.885738,
+    mic_drop: success: 82805, fail: 507077, success rate: 14.04%,
+    num_down: 589882,
+    num_down_sat: 733898,
+    ctp: success: 0, fail: 321589, success rate: 0.00%,
+    num_get_bad: 5926,
+    overall_block_time: 678.051547009s,
+    block_get_bad_time: 16.66165884s,
+    block_get_predecessor_time: 112.604046028s,
+    block_blocked_time: 88.557515693s,
+    block_mic_time: 341.011190774s,
+    block_push_time: 35.962842085s,
+    overall_propagate_time: 346.158665354s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p17.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p17.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:09:49 CST 2025
+========================================

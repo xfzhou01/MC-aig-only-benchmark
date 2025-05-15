@@ -1,0 +1,57 @@
+Started at: Thu May 15 22:00:21 CST 2025
+Job <535433> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 217]
+1 3 3 3 3 2 9 9 9 9 0 217 
+SolverStatistic {
+    num_solve: 2948,
+    avg_decide_var: 0.441391,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.04s,
+    num_mic: 281,
+    avg_mic_cube_len: 4.950178,
+    avg_po_cube_len: 17.339979,
+    mic_drop: success: 2, fail: 1389, success rate: 0.14%,
+    num_down: 1391,
+    num_down_sat: 1347,
+    ctp: success: 0, fail: 560, success rate: 0.00%,
+    num_get_bad: 54,
+    overall_block_time: 30.136655ms,
+    block_get_bad_time: 3.777085ms,
+    block_get_predecessor_time: 5.464928ms,
+    block_blocked_time: 3.952686ms,
+    block_mic_time: 11.76522ms,
+    block_push_time: 1.864207ms,
+    overall_propagate_time: 3.820541ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019B/marlann_compute_cp_pass-p2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019B/marlann_compute_cp_pass-p2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:00:25 CST 2025
+========================================

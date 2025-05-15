@@ -1,0 +1,57 @@
+Job <528135> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2897]
+66 6 4 13 13 16 9 7 11 9 5 4 7 3 26 13 0 3 2 1 1 5 2 4 1 1 2 2 1 1 1 1 1 2 1 2 1 2 1 2 1 7 4 7 5 4 2 1 1 2 1 2 1 1 1 1 1 4 2 6 4 2 2 1 2 3 1 1 2 2 308 0 
+SolverStatistic {
+    num_solve: 86774,
+    avg_decide_var: 0.599878,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.79s,
+    num_mic: 3444,
+    avg_mic_cube_len: 8.291231,
+    avg_po_cube_len: 46.151489,
+    mic_drop: success: 2725, fail: 25430, success rate: 9.68%,
+    num_down: 28155,
+    num_down_sat: 42512,
+    ctp: success: 0, fail: 17051, success rate: 0.00%,
+    num_get_bad: 101,
+    overall_block_time: 2.019868446s,
+    block_get_bad_time: 20.869241ms,
+    block_get_predecessor_time: 258.686813ms,
+    block_blocked_time: 198.057985ms,
+    block_mic_time: 1.188862923s,
+    block_push_time: 99.777252ms,
+    overall_propagate_time: 657.631315ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/qspiflash_qflexpress_divfive-p008.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/qspiflash_qflexpress_divfive-p008.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:23:17 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:23:17 CST 2025
+========================================

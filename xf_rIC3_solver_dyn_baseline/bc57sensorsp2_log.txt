@@ -1,0 +1,58 @@
+Job <526636> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 3, 3, 1, 1, 1, 6, 1, 4, 1, 1, 2, 1, 2, 4, 2, 1, 1, 3, 1, 2, 1, 1, 2, 3, 3, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3391, 1591]
+190 5 10 11 12 14 11 13 14 8 13 16 17 10 12 6 10 8 11 12 9 7 7 5 4 4 10 14 9 8 7 7 11 9 11 8 6 7 10 15 7 6 22 7 7 16 24 35 28 31 56 55 74 60 60 1024 
+SolverStatistic {
+    num_solve: 248869,
+    avg_decide_var: 0.939140,
+    num_simplify_subsume: 37763,
+    num_simplify_self_subsume: 6519,
+}
+Statistic {
+    case: model.aig,
+    time: 18.66s,
+    num_mic: 8406,
+    avg_mic_cube_len: 10.629312,
+    avg_po_cube_len: 161.555449,
+    mic_drop: success: 13622, fail: 73100, success rate: 15.71%,
+    num_down: 86722,
+    num_down_sat: 157482,
+    ctp: success: 0, fail: 33838, success rate: 0.00%,
+    num_get_bad: 1941,
+    overall_block_time: 13.953523967s,
+    block_get_bad_time: 499.129381ms,
+    block_get_predecessor_time: 805.232882ms,
+    block_blocked_time: 913.342581ms,
+    block_mic_time: 9.737685438s,
+    block_push_time: 102.545041ms,
+    overall_propagate_time: 4.519630913s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc-appr/bc57sensorsp2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc-appr/bc57sensorsp2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 21:42:02 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 21:42:02 CST 2025
+========================================

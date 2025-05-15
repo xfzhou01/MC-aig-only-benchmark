@@ -1,0 +1,58 @@
+Started at: Thu May 15 23:19:31 CST 2025
+Job <536289> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 849, 347]
+34 3 5 4 5 4 7 4 3 3 1 1 1 27 18 4 3 2 3 4 3 2 2 1 1 1 4 3 2 3 5 3 2 8 2 1 21 19 25 22 18 11 8 7 5 4 3 3 2 2 2 2 2 7 6 3 9 5 1 4 5 2 5 1 5 1 4 1 1 1 1 1 0 410 
+SolverStatistic {
+    num_solve: 89805,
+    avg_decide_var: 1.006951,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 3.96s,
+    num_mic: 4235,
+    avg_mic_cube_len: 8.534120,
+    avg_po_cube_len: 31.369124,
+    mic_drop: success: 8941, fail: 26757, success rate: 25.05%,
+    num_down: 35698,
+    num_down_sat: 52567,
+    ctp: success: 0, fail: 13956, success rate: 0.00%,
+    num_get_bad: 181,
+    overall_block_time: 2.600573987s,
+    block_get_bad_time: 58.251176ms,
+    block_get_predecessor_time: 55.001565ms,
+    block_blocked_time: 181.486219ms,
+    block_mic_time: 1.774368293s,
+    block_push_time: 81.951577ms,
+    overall_propagate_time: 1.246322615s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc08/cmuperiodic.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/cmuperiodic.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 23:19:38 CST 2025
+========================================

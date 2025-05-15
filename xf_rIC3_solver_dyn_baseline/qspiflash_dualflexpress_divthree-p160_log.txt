@@ -1,0 +1,57 @@
+Job <526020> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8451, 1280]
+108 3 10 9 20 12 20 27 29 28 29 40 42 47 46 45 49 57 64 78 112 150 158 111 86 58 40 27 11 8 14 9 6 10 6 3 3 4 3 2 1 3 1 1 1 1 1 1 2 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 2 1 1 1 1 1 1 1 1 4 4 1 2 7 8 2 1 2 1 1 1 1 1 1 1 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 1 1 1 1 1 1 1 1 1 0 1364 
+SolverStatistic {
+    num_solve: 425446,
+    avg_decide_var: 0.638775,
+    num_simplify_subsume: 24945,
+    num_simplify_self_subsume: 7000,
+}
+Statistic {
+    case: model.aig,
+    time: 18.59s,
+    num_mic: 12959,
+    avg_mic_cube_len: 8.840343,
+    avg_po_cube_len: 42.817409,
+    mic_drop: success: 17361, fail: 93769, success rate: 15.62%,
+    num_down: 111130,
+    num_down_sat: 175002,
+    ctp: success: 0, fail: 105163, success rate: 0.00%,
+    num_get_bad: 273,
+    overall_block_time: 11.846432603s,
+    block_get_bad_time: 47.662112ms,
+    block_get_predecessor_time: 1.124798474s,
+    block_blocked_time: 1.097130334s,
+    block_mic_time: 6.939409485s,
+    block_push_time: 1.351131659s,
+    overall_propagate_time: 6.449985264s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2019/wolf/2019C/qspiflash_dualflexpress_divthree-p160.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/wolf/2019C/qspiflash_dualflexpress_divthree-p160.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 19:44:51 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 19:44:51 CST 2025
+========================================

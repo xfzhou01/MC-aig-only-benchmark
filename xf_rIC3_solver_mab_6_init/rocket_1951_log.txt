@@ -1,0 +1,57 @@
+Started at: Thu May 15 12:38:04 CST 2025
+Job <531633> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3734]
+3220 21 33 105 453 767 1468 3244 6226 6806 7507 1717 1110 569 1486 741 65 36 15 67 10 2 0 253 3223 0 
+SolverStatistic {
+    num_solve: 1832916,
+    avg_decide_var: 0.017980,
+    num_simplify_subsume: 39862,
+    num_simplify_self_subsume: 34826,
+}
+Statistic {
+    case: model.aig,
+    time: 1194.89s,
+    num_mic: 49328,
+    avg_mic_cube_len: 14.730275,
+    avg_po_cube_len: 368.395338,
+    mic_drop: success: 80828, fail: 614252, success rate: 11.63%,
+    num_down: 695080,
+    num_down_sat: 1188759,
+    ctp: success: 0, fail: 51506, success rate: 0.00%,
+    num_get_bad: 71,
+    overall_block_time: 909.827928678s,
+    block_get_bad_time: 6.846836294s,
+    block_get_predecessor_time: 128.587223107s,
+    block_blocked_time: 13.894735412s,
+    block_mic_time: 1348.444799311s,
+    block_push_time: 3.835541953s,
+    overall_propagate_time: 266.289501857s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/hku/branch_coverage/bv/rocket_1951.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/branch_coverage/bv/rocket_1951.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 12:58:03 CST 2025
+========================================

@@ -1,0 +1,57 @@
+Started at: Thu May 15 22:01:34 CST 2025
+Job <535446> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 911, 1708]
+1 4 5 25 28 41 28 59 32 37 39 73 59 41 71 130 166 229 213 89 61 71 123 135 96 85 108 144 158 184 189 176 136 139 1914 
+SolverStatistic {
+    num_solve: 219110,
+    avg_decide_var: 0.363124,
+    num_simplify_subsume: 10485,
+    num_simplify_self_subsume: 8823,
+}
+Statistic {
+    case: model.aig,
+    time: 11.25s,
+    num_mic: 8494,
+    avg_mic_cube_len: 12.193784,
+    avg_po_cube_len: 16.578183,
+    mic_drop: success: 20549, fail: 81038, success rate: 20.23%,
+    num_down: 101587,
+    num_down_sat: 140471,
+    ctp: success: 0, fail: 19624, success rate: 0.00%,
+    num_get_bad: 119,
+    overall_block_time: 8.018902117s,
+    block_get_bad_time: 84.241047ms,
+    block_get_predecessor_time: 84.134035ms,
+    block_blocked_time: 697.203604ms,
+    block_mic_time: 6.597348057s,
+    block_push_time: 127.805177ms,
+    overall_propagate_time: 3.11887848s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w8_d32_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w8_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:01:46 CST 2025
+========================================

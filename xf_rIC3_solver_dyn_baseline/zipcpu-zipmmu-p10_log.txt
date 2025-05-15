@@ -1,0 +1,57 @@
+Job <528073> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2159, 1107]
+77 6 15 21 30 44 43 18 11 44 53 36 52 58 78 88 98 280 183 70 39 32 64 36 29 27 59 74 76 76 120 87 44 18 19 17 17 19 2 0 1618 
+SolverStatistic {
+    num_solve: 372724,
+    avg_decide_var: 0.386089,
+    num_simplify_subsume: 30107,
+    num_simplify_self_subsume: 21751,
+}
+Statistic {
+    case: model.aig,
+    time: 25.96s,
+    num_mic: 10809,
+    avg_mic_cube_len: 16.109908,
+    avg_po_cube_len: 86.203163,
+    mic_drop: success: 21818, fail: 146892, success rate: 12.93%,
+    num_down: 168710,
+    num_down_sat: 261779,
+    ctp: success: 0, fail: 47912, success rate: 0.00%,
+    num_get_bad: 150,
+    overall_block_time: 19.386375702s,
+    block_get_bad_time: 65.182191ms,
+    block_get_predecessor_time: 1.539572833s,
+    block_blocked_time: 1.483976901s,
+    block_mic_time: 16.701083306s,
+    block_push_time: 154.456512ms,
+    overall_propagate_time: 6.409991555s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/zipcpu-zipmmu-p10.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/zipcpu-zipmmu-p10.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:12:28 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:12:28 CST 2025
+========================================

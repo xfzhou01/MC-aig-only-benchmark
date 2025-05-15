@@ -1,0 +1,58 @@
+Job <529433> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 811, 1275]
+50 3 4 15 25 45 121 233 398 129 31 3 1 1 1 1 1 1 0 1276 
+SolverStatistic {
+    num_solve: 84382,
+    avg_decide_var: 0.692772,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.99s,
+    num_mic: 2904,
+    avg_mic_cube_len: 10.848140,
+    avg_po_cube_len: 24.266090,
+    mic_drop: success: 4410, fail: 26610, success rate: 14.22%,
+    num_down: 31020,
+    num_down_sat: 61573,
+    ctp: success: 0, fail: 12274, success rate: 0.00%,
+    num_get_bad: 282,
+    overall_block_time: 2.247855845s,
+    block_get_bad_time: 32.985802ms,
+    block_get_predecessor_time: 120.303267ms,
+    block_blocked_time: 239.882814ms,
+    block_mic_time: 1.702362327s,
+    block_push_time: 54.495768ms,
+    overall_propagate_time: 705.741241ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtswvtms10x8p1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtswvtms10x8p1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 04:19:59 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 04:19:59 CST 2025
+========================================

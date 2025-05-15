@@ -1,0 +1,57 @@
+Started at: Thu May 15 20:21:13 CST 2025
+Job <534942> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 145, 43]
+81 3 13 13 22 54 34 21 2 1 0 43 
+SolverStatistic {
+    num_solve: 2778,
+    avg_decide_var: 0.564885,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.10s,
+    num_mic: 282,
+    avg_mic_cube_len: 4.457447,
+    avg_po_cube_len: 33.584121,
+    mic_drop: success: 203, fail: 1004, success rate: 16.82%,
+    num_down: 1207,
+    num_down_sat: 1527,
+    ctp: success: 0, fail: 291, success rate: 0.00%,
+    num_get_bad: 53,
+    overall_block_time: 69.341247ms,
+    block_get_bad_time: 4.247598ms,
+    block_get_predecessor_time: 11.730683ms,
+    block_blocked_time: 7.793313ms,
+    block_mic_time: 34.504964ms,
+    block_push_time: 463.181µs,
+    overall_propagate_time: 11.145287ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_dualflexpress_divfive-p092.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_dualflexpress_divfive-p092.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 20:21:14 CST 2025
+========================================

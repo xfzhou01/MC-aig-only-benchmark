@@ -1,0 +1,57 @@
+Job <525981> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18153]
+2 1 2 10 34 29 12 20 31 43 35 19 3 8 0 564 518 532 241 85 31 9 7 5 520 329 320 195 107 123 1143 5398 0 
+SolverStatistic {
+    num_solve: 623027,
+    avg_decide_var: 1.000707,
+    num_simplify_subsume: 141018,
+    num_simplify_self_subsume: 29222,
+}
+Statistic {
+    case: model.aig,
+    time: 140.01s,
+    num_mic: 27034,
+    avg_mic_cube_len: 10.456758,
+    avg_po_cube_len: 203.877913,
+    mic_drop: success: 51718, fail: 221045, success rate: 18.96%,
+    num_down: 272763,
+    num_down_sat: 392171,
+    ctp: success: 0, fail: 101569, success rate: 0.00%,
+    num_get_bad: 10953,
+    overall_block_time: 102.339803502s,
+    block_get_bad_time: 6.610653995s,
+    block_get_predecessor_time: 2.820939111s,
+    block_blocked_time: 8.66474027s,
+    block_mic_time: 71.267198866s,
+    block_push_time: 1.31399382s,
+    overall_propagate_time: 37.411609515s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/sosylab/bitvector/byte_add_1-1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/bitvector/byte_add_1-1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 19:44:02 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 19:44:02 CST 2025
+========================================

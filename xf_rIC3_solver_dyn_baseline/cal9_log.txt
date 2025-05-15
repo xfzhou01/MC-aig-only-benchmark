@@ -1,0 +1,57 @@
+Job <527141> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 15, 8, 1, 1, 12, 8, 2, 1, 1, 2, 3, 1, 2, 2, 2, 51, 27, 8, 2, 2, 2, 1, 5, 3, 1112, 1579]
+23 1 3 2 2 1 2 0 7 7 6 14 14 8 21 13 25 30 35 52 48 50 43 45 46 64 64 79 78 83 101 88 80 70 75 86 108 79 70 65 365 
+SolverStatistic {
+    num_solve: 190288,
+    avg_decide_var: 0.879417,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 11.14s,
+    num_mic: 7263,
+    avg_mic_cube_len: 12.844142,
+    avg_po_cube_len: 21.213720,
+    mic_drop: success: 28788, fail: 59709, success rate: 32.53%,
+    num_down: 88497,
+    num_down_sat: 123768,
+    ctp: success: 0, fail: 16980, success rate: 0.00%,
+    num_get_bad: 74,
+    overall_block_time: 7.123002043s,
+    block_get_bad_time: 92.060032ms,
+    block_get_predecessor_time: 185.074825ms,
+    block_blocked_time: 575.485281ms,
+    block_mic_time: 5.688431592s,
+    block_push_time: 55.130423ms,
+    overall_propagate_time: 3.976612939s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/industry/cal9/cal9.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/industry/cal9/cal9.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 22:47:32 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 22:47:32 CST 2025
+========================================

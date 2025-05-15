@@ -1,0 +1,57 @@
+Started at: Thu May 15 12:27:04 CST 2025
+Job <531324> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 314, 425]
+394 9 4 26 6 7 3 4 3 4 3 3 5 3 6 3 5 4 7 3 10 5 10 4 13 4 7 5 6 4 4 5 6 2 7 5 9 7 10 7 11 6 6 5 10 13 4 8 6 5 4 9 7 9 15 20 10 15 5 8 9 7 6 4 9 12 6 6 4 9 9 14 20 16 22 15 18 9 4 7 5 4 6 5 5 5 3 10 9 4 4 4 5 11 13 8 10 7 7 6 6 8 15 16 10 13 16 5 26 23 31 28 34 27 26 12 10 13 4 1 0 425 
+SolverStatistic {
+    num_solve: 95052,
+    avg_decide_var: 0.441912,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 13.31s,
+    num_mic: 1657,
+    avg_mic_cube_len: 7.062764,
+    avg_po_cube_len: 203.439345,
+    mic_drop: success: 1075, fail: 9845, success rate: 9.84%,
+    num_down: 10920,
+    num_down_sat: 15175,
+    ctp: success: 0, fail: 35897, success rate: 0.00%,
+    num_get_bad: 731,
+    overall_block_time: 9.015388666s,
+    block_get_bad_time: 7.425594346s,
+    block_get_predecessor_time: 42.36677ms,
+    block_blocked_time: 100.792044ms,
+    block_mic_time: 917.941714ms,
+    block_push_time: 2.043108ms,
+    overall_propagate_time: 3.508395175s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/vgasim-imgfifo/aig/imgfifo-p032.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/vgasim-imgfifo/aig/imgfifo-p032.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 12:27:18 CST 2025
+========================================

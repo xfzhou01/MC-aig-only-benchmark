@@ -1,0 +1,57 @@
+Started at: Thu May 15 22:00:52 CST 2025
+Job <535438> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 29]
+51 1 2 3 4 3 4 2 0 29 
+SolverStatistic {
+    num_solve: 742,
+    avg_decide_var: 0.316214,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.03s,
+    num_mic: 86,
+    avg_mic_cube_len: 3.651163,
+    avg_po_cube_len: 93.937500,
+    mic_drop: success: 15, fail: 291, success rate: 4.90%,
+    num_down: 306,
+    num_down_sat: 368,
+    ctp: success: 0, fail: 124, success rate: 0.00%,
+    num_get_bad: 22,
+    overall_block_time: 14.450288ms,
+    block_get_bad_time: 1.599398ms,
+    block_get_predecessor_time: 4.541762ms,
+    block_blocked_time: 2.287914ms,
+    block_mic_time: 3.231021ms,
+    block_push_time: 368.323µs,
+    overall_propagate_time: 1.039789ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2018A/zipcpu-busdelay-p18.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2018A/zipcpu-busdelay-p18.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:00:53 CST 2025
+========================================

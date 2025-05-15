@@ -1,0 +1,58 @@
+Job <529958> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 242]
+478 43 200 
+SolverStatistic {
+    num_solve: 2010,
+    avg_decide_var: 1.494634,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.20s,
+    num_mic: 243,
+    avg_mic_cube_len: 4.366255,
+    avg_po_cube_len: 430.704938,
+    mic_drop: success: 176, fail: 823, success rate: 17.62%,
+    num_down: 999,
+    num_down_sat: 1625,
+    ctp: success: 0, fail: 45, success rate: 0.00%,
+    num_get_bad: 211,
+    overall_block_time: 2.115574724s,
+    block_get_bad_time: 303.322495ms,
+    block_get_predecessor_time: 68.299036ms,
+    block_blocked_time: 128.441857ms,
+    block_mic_time: 711.54439ms,
+    block_push_time: 1.692369ms,
+    overall_propagate_time: 7.920732ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc08/139463p6neg.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/139463p6neg.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 04:43:31 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 04:43:31 CST 2025
+========================================

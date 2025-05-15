@@ -1,0 +1,58 @@
+Job <529776> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 2, 1, 2, 2, 9, 51]
+30 9 13 13 14 10 6 41 
+SolverStatistic {
+    num_solve: 1209,
+    avg_decide_var: 0.524089,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.09s,
+    num_mic: 122,
+    avg_mic_cube_len: 4.557377,
+    avg_po_cube_len: 16.699769,
+    mic_drop: success: 121, fail: 409, success rate: 22.83%,
+    num_down: 530,
+    num_down_sat: 644,
+    ctp: success: 0, fail: 82, success rate: 0.00%,
+    num_get_bad: 14,
+    overall_block_time: 59.525625ms,
+    block_get_bad_time: 8.938554ms,
+    block_get_predecessor_time: 8.87167ms,
+    block_blocked_time: 11.112938ms,
+    block_mic_time: 23.580988ms,
+    block_push_time: 3.40896ms,
+    overall_propagate_time: 11.312305ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc08/pdtviscoherence1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/pdtviscoherence1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 04:37:39 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 04:37:39 CST 2025
+========================================

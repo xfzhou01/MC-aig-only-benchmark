@@ -1,0 +1,57 @@
+Job <527158> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 2]
+8 1 0 2 
+SolverStatistic {
+    num_solve: 15,
+    avg_decide_var: 0.880973,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.00s,
+    num_mic: 3,
+    avg_mic_cube_len: 3.000000,
+    avg_po_cube_len: 8.000000,
+    mic_drop: success: 2, fail: 7, success rate: 22.22%,
+    num_down: 9,
+    num_down_sat: 8,
+    ctp: success: 0, fail: 2, success rate: 0.00%,
+    num_get_bad: 5,
+    overall_block_time: 588.541µs,
+    block_get_bad_time: 405.944µs,
+    block_get_predecessor_time: 0ns,
+    block_blocked_time: 31.444µs,
+    block_mic_time: 82.226µs,
+    block_push_time: 88ns,
+    overall_propagate_time: 40.563µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/industry/cal24/cal24.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/industry/cal24/cal24.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 22:48:03 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 22:48:03 CST 2025
+========================================

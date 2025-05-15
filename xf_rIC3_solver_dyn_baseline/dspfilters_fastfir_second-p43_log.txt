@@ -1,0 +1,57 @@
+Job <526060> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9812, 10094]
+1091 27 93 187 270 567 527 906 1043 1339 1267 1302 857 1918 1776 1670 1223 1053 643 630 349 146 21 2 0 10379 
+SolverStatistic {
+    num_solve: 742701,
+    avg_decide_var: 0.658696,
+    num_simplify_subsume: 18856,
+    num_simplify_self_subsume: 9823,
+}
+Statistic {
+    case: model.aig,
+    time: 406.40s,
+    num_mic: 39798,
+    avg_mic_cube_len: 6.882356,
+    avg_po_cube_len: 416.497930,
+    mic_drop: success: 41712, fail: 227205, success rate: 15.51%,
+    num_down: 268917,
+    num_down_sat: 328083,
+    ctp: success: 0, fail: 132795, success rate: 0.00%,
+    num_get_bad: 5475,
+    overall_block_time: 301.533045036s,
+    block_get_bad_time: 13.693619643s,
+    block_get_predecessor_time: 55.555396222s,
+    block_blocked_time: 37.070411491s,
+    block_mic_time: 137.697627774s,
+    block_push_time: 10.386637568s,
+    overall_propagate_time: 103.679259402s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920uns/dspfilters_fastfir_second-p43.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920uns/dspfilters_fastfir_second-p43.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 19:55:05 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 19:55:05 CST 2025
+========================================

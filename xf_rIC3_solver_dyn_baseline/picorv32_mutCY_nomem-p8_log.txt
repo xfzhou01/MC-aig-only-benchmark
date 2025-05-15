@@ -1,0 +1,57 @@
+Job <525999> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu08>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 43887, 7546]
+2049 64 6 71 93 2345 8850 21732 18375 8326 8716 4140 
+SolverStatistic {
+    num_solve: 1158259,
+    avg_decide_var: 0.338576,
+    num_simplify_subsume: 28926,
+    num_simplify_self_subsume: 8884,
+}
+Statistic {
+    case: model.aig,
+    time: 764.76s,
+    num_mic: 97601,
+    avg_mic_cube_len: 6.072684,
+    avg_po_cube_len: 135.941467,
+    mic_drop: success: 122855, fail: 395086, success rate: 23.72%,
+    num_down: 517941,
+    num_down_sat: 596997,
+    ctp: success: 0, fail: 25599, success rate: 0.00%,
+    num_get_bad: 1244,
+    overall_block_time: 641.236719582s,
+    block_get_bad_time: 5.264877498s,
+    block_get_predecessor_time: 115.150927645s,
+    block_blocked_time: 80.447983669s,
+    block_mic_time: 459.767411247s,
+    block_push_time: 4.9991563s,
+    overall_propagate_time: 122.727508157s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2019/wolf/2019A/picorv32_mutCY_nomem-p8.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/wolf/2019A/picorv32_mutCY_nomem-p8.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 19:55:22 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 19:55:22 CST 2025
+========================================

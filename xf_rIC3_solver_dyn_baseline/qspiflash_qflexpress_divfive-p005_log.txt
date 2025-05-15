@@ -1,0 +1,57 @@
+Job <528247> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 62, 8, 3, 2, 2, 3, 5, 3, 3, 1, 1, 2, 3, 3, 4, 123, 2305]
+66 3 8 19 7 17 9 15 4 9 2 1 1 2 2 1 4 2 5 4 5 7 4 11 4 4 6 2 1 1 0 7 2 1 1 1 1 5 4 7 2 11 10 6 3 5 3 2 3 3 1 2 6 4 3 7 4 339 
+SolverStatistic {
+    num_solve: 75533,
+    avg_decide_var: 0.620466,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.51s,
+    num_mic: 3275,
+    avg_mic_cube_len: 8.066260,
+    avg_po_cube_len: 53.882352,
+    mic_drop: success: 3154, fail: 22801, success rate: 12.15%,
+    num_down: 25955,
+    num_down_sat: 39691,
+    ctp: success: 0, fail: 12549, success rate: 0.00%,
+    num_get_bad: 96,
+    overall_block_time: 1.918625442s,
+    block_get_bad_time: 39.093148ms,
+    block_get_predecessor_time: 232.965841ms,
+    block_blocked_time: 186.878871ms,
+    block_mic_time: 1.157564173s,
+    block_push_time: 66.569843ms,
+    overall_propagate_time: 504.757528ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/qspiflash_qflexpress_divfive-p005.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/qspiflash_qflexpress_divfive-p005.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:40:06 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:40:06 CST 2025
+========================================

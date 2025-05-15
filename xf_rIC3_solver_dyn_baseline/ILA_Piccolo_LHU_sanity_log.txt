@@ -1,0 +1,57 @@
+Job <525641> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 593]
+328 4 8 7 12 13 17 9 58 85 132 
+SolverStatistic {
+    num_solve: 3450,
+    avg_decide_var: 0.515618,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 12.44s,
+    num_mic: 421,
+    avg_mic_cube_len: 3.068884,
+    avg_po_cube_len: 2385.942741,
+    mic_drop: success: 212, fail: 1000, success rate: 17.49%,
+    num_down: 1212,
+    num_down_sat: 1219,
+    ctp: success: 0, fail: 436, success rate: 0.00%,
+    num_get_bad: 209,
+    overall_block_time: 10.491735382s,
+    block_get_bad_time: 2.68593655s,
+    block_get_predecessor_time: 2.435701849s,
+    block_blocked_time: 1.154811553s,
+    block_mic_time: 1.405488236s,
+    block_push_time: 39.009746ms,
+    overall_propagate_time: 692.193166ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2024/hku/refinement_checking/bv/ILA_Piccolo_LHU_sanity.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/refinement_checking/bv/ILA_Piccolo_LHU_sanity.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 18:42:26 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 18:42:26 CST 2025
+========================================

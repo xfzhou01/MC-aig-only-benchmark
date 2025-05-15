@@ -1,0 +1,58 @@
+Job <527959> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20473, 27367]
+1092 164 75 141 289 540 636 983 1134 1496 1393 1773 1880 2531 2842 3238 5762 5805 3810 3257 2595 2109 1529 1497 949 755 599 472 348 229 107 0 28293 
+SolverStatistic {
+    num_solve: 2818108,
+    avg_decide_var: 0.669847,
+    num_simplify_subsume: 133718,
+    num_simplify_self_subsume: 62828,
+}
+Statistic {
+    case: model.aig,
+    time: 1892.44s,
+    num_mic: 122283,
+    avg_mic_cube_len: 9.090585,
+    avg_po_cube_len: 591.847131,
+    mic_drop: success: 133865, fail: 950400, success rate: 12.35%,
+    num_down: 1084265,
+    num_down_sat: 1338216,
+    ctp: success: 0, fail: 397451, success rate: 0.00%,
+    num_get_bad: 6768,
+    overall_block_time: 1294.185820361s,
+    block_get_bad_time: 22.264184302s,
+    block_get_predecessor_time: 144.341658718s,
+    block_blocked_time: 168.464270831s,
+    block_mic_time: 733.589362791s,
+    block_push_time: 70.882142693s,
+    overall_propagate_time: 596.547019639s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/dspfilters_fastfir_second-p22.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/dspfilters_fastfir_second-p22.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:31:38 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:31:38 CST 2025
+========================================

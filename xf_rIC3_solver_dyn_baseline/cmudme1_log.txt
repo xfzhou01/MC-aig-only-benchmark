@@ -1,0 +1,58 @@
+Job <529137> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 1, 1, 4, 13928, 2419]
+61 3 3 3 3 3 3 3 8 8 8 11 18 17 14 13 10 9 13 12 7 29 23 21 9 4 3 4 5 1 4 2 3 3 3 3 20 16 13 9 16 8 4 12 10 11 11 16 16 14 9 17 25 29 8 15 10 8 13 16 17 25 11 39 31 6 16 1 16 21 32 13 11 18 16 19 8 1 1 1 1 28 2 11 0 3 11 16 28 45 52 89 2848 
+SolverStatistic {
+    num_solve: 692279,
+    avg_decide_var: 0.484021,
+    num_simplify_subsume: 177655,
+    num_simplify_self_subsume: 29698,
+}
+Statistic {
+    case: model.aig,
+    time: 36.89s,
+    num_mic: 38396,
+    avg_mic_cube_len: 7.484061,
+    avg_po_cube_len: 36.400295,
+    mic_drop: success: 40549, fail: 238605, success rate: 14.53%,
+    num_down: 279154,
+    num_down_sat: 374329,
+    ctp: success: 0, fail: 147955, success rate: 0.00%,
+    num_get_bad: 102,
+    overall_block_time: 23.850884256s,
+    block_get_bad_time: 16.384406ms,
+    block_get_predecessor_time: 1.032283045s,
+    block_blocked_time: 4.304130136s,
+    block_mic_time: 14.267207507s,
+    block_push_time: 350.506693ms,
+    overall_propagate_time: 12.979510199s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/cmudme1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/cmudme1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 03:43:00 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 03:43:00 CST 2025
+========================================

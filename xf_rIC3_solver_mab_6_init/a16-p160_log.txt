@@ -1,0 +1,57 @@
+Started at: Thu May 15 12:34:29 CST 2025
+Job <531570> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu08>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16566]
+194 17 47 146 610 2102 4117 3223 1722 661 231 101 91 134 122 101 2595 2373 1577 657 425 449 447 149 142 19 8 0 10952 0 
+SolverStatistic {
+    num_solve: 2545862,
+    avg_decide_var: 0.351503,
+    num_simplify_subsume: 225963,
+    num_simplify_self_subsume: 355124,
+}
+Statistic {
+    case: model.aig,
+    time: 658.72s,
+    num_mic: 74241,
+    avg_mic_cube_len: 16.310475,
+    avg_po_cube_len: 72.196593,
+    mic_drop: success: 424905, fail: 666994, success rate: 38.91%,
+    num_down: 1091899,
+    num_down_sat: 1735890,
+    ctp: success: 0, fail: 237107, success rate: 0.00%,
+    num_get_bad: 37,
+    overall_block_time: 329.979364884s,
+    block_get_bad_time: 47.362733ms,
+    block_get_predecessor_time: 11.838354296s,
+    block_blocked_time: 30.284188852s,
+    block_mic_time: 306.844760679s,
+    block_push_time: 1.1777795s,
+    overall_propagate_time: 328.446443472s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/hku/x-epic/a16-p160.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/a16-p160.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 12:45:30 CST 2025
+========================================

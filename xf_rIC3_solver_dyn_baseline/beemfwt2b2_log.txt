@@ -1,0 +1,58 @@
+Job <526861> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 153, 655]
+610 3 5 183 348 371 417 431 390 313 155 106 55 34 13 24 0 672 
+SolverStatistic {
+    num_solve: 1040432,
+    avg_decide_var: 1.000003,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 439.93s,
+    num_mic: 3859,
+    avg_mic_cube_len: 114.167401,
+    avg_po_cube_len: 610.000000,
+    mic_drop: success: 58114, fail: 345349, success rate: 14.40%,
+    num_down: 403463,
+    num_down_sat: 1004237,
+    ctp: success: 0, fail: 5070, success rate: 0.00%,
+    num_get_bad: 65,
+    overall_block_time: 421.215478205s,
+    block_get_bad_time: 350.366914ms,
+    block_get_predecessor_time: 695.325071ms,
+    block_blocked_time: 4.329983651s,
+    block_mic_time: 414.424578981s,
+    block_push_time: 91.289247ms,
+    overall_propagate_time: 18.289708123s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc15/beemfwt2b2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/beemfwt2b2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 22:15:04 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 22:15:04 CST 2025
+========================================

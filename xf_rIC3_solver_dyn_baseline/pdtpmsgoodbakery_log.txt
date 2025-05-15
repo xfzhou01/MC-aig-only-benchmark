@@ -1,0 +1,58 @@
+Job <529527> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15305, 2445]
+92 7 10 15 16 26 22 26 33 28 40 55 60 102 125 206 335 511 652 799 998 1015 1065 1084 889 759 513 356 242 54 27 32 14 4 4 2 0 2832 
+SolverStatistic {
+    num_solve: 1731846,
+    avg_decide_var: 0.672295,
+    num_simplify_subsume: 159478,
+    num_simplify_self_subsume: 140731,
+}
+Statistic {
+    case: model.aig,
+    time: 348.79s,
+    num_mic: 48784,
+    avg_mic_cube_len: 18.015517,
+    avg_po_cube_len: 43.852986,
+    mic_drop: success: 274326, fail: 515187, success rate: 34.75%,
+    num_down: 789513,
+    num_down_sat: 1396545,
+    ctp: success: 0, fail: 69796, success rate: 0.00%,
+    num_get_bad: 68,
+    overall_block_time: 256.522087247s,
+    block_get_bad_time: 619.217068ms,
+    block_get_predecessor_time: 5.56586487s,
+    block_blocked_time: 24.185285256s,
+    block_mic_time: 214.371135408s,
+    block_push_time: 634.839757ms,
+    overall_propagate_time: 92.079904544s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtpmsgoodbakery.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtpmsgoodbakery.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 04:34:04 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 04:34:04 CST 2025
+========================================

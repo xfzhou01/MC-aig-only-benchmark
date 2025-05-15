@@ -1,0 +1,57 @@
+Job <527634> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 3]
+6 0 3 
+SolverStatistic {
+    num_solve: 11,
+    avg_decide_var: 1.809848,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.00s,
+    num_mic: 5,
+    avg_mic_cube_len: 1.000000,
+    avg_po_cube_len: 4.200000,
+    mic_drop: success: 0, fail: 5, success rate: 0.00%,
+    num_down: 5,
+    num_down_sat: 0,
+    ctp: success: 0, fail: 0, success rate: NaN%,
+    num_get_bad: 3,
+    overall_block_time: 121.828µs,
+    block_get_bad_time: 61.005µs,
+    block_get_predecessor_time: 10.781µs,
+    block_blocked_time: 7.163µs,
+    block_mic_time: 6.584µs,
+    block_push_time: 1.515µs,
+    overall_propagate_time: 4.375µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/opensource/vcegar_QF_BV_itc99_b13_p07/vcegar_QF_BV_itc99_b13_p07.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/opensource/vcegar_QF_BV_itc99_b13_p07/vcegar_QF_BV_itc99_b13_p07.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 23:32:26 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 23:32:26 CST 2025
+========================================

@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:51:41 CST 2025
+Job <535364> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 29082]
+108 2 9 11 19 16 19 20 46 28 52 35 44 29 31 51 53 41 37 158 192 140 118 118 131 105 82 72 56 34 37 29 22 21 16 11 12 12 6 7 8 4 4 4 4 4 2 2 4 3 1 2 3 2 1 4 5 1 1 1 1 2 1 1 1 1 1 1 4 1 1 1 6 3 1 3 6 3 1 2 3 1 1 2 5 6 3 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1638 
+SolverStatistic {
+    num_solve: 1245127,
+    avg_decide_var: 0.658170,
+    num_simplify_subsume: 268004,
+    num_simplify_self_subsume: 99842,
+}
+Statistic {
+    case: model.aig,
+    time: 70.67s,
+    num_mic: 43604,
+    avg_mic_cube_len: 10.429250,
+    avg_po_cube_len: 43.049805,
+    mic_drop: success: 67690, fail: 374323, success rate: 15.31%,
+    num_down: 442013,
+    num_down_sat: 704428,
+    ctp: success: 0, fail: 154758, success rate: 0.00%,
+    num_get_bad: 250,
+    overall_block_time: 59.041307386s,
+    block_get_bad_time: 47.628416ms,
+    block_get_predecessor_time: 3.098558511s,
+    block_blocked_time: 5.193619322s,
+    block_mic_time: 33.032433929s,
+    block_push_time: 7.692597336s,
+    overall_propagate_time: 11.356992395s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p081.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p081.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 21:52:52 CST 2025
+========================================

@@ -1,0 +1,58 @@
+Started at: Thu May 15 15:21:45 CST 2025
+Job <532651> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3206, 1191]
+35 4 7 9 4 2 2 5 3 4 1 6 3 4 1 6 4 5 4 4 3 4 3 4 3 4 3 4 4 5 1 10 5 3 6 3 2 2 2 4 2 2 1 3 1 5 1 6 4 6 3 4 4 4 2 4 3 4 2 3 6 5 1 11 18 21 15 15 16 11 9 10 9 12 8 5 4 4 3 3 3 3 2 5 3 3 3 2 2 2 2 2 2 2 2 1 1 1 0 1332 
+SolverStatistic {
+    num_solve: 562687,
+    avg_decide_var: 0.781566,
+    num_simplify_subsume: 84583,
+    num_simplify_self_subsume: 48602,
+}
+Statistic {
+    case: model.aig,
+    time: 18.27s,
+    num_mic: 20491,
+    avg_mic_cube_len: 11.416573,
+    avg_po_cube_len: 23.971309,
+    mic_drop: success: 22411, fail: 208917, success rate: 9.69%,
+    num_down: 231328,
+    num_down_sat: 380125,
+    ctp: success: 0, fail: 41007, success rate: 0.00%,
+    num_get_bad: 101,
+    overall_block_time: 16.723515487s,
+    block_get_bad_time: 7.180666ms,
+    block_get_predecessor_time: 134.792032ms,
+    block_blocked_time: 952.211554ms,
+    block_mic_time: 9.495954706s,
+    block_push_time: 3.243871547s,
+    overall_propagate_time: 1.511838965s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc13/single/6s321b1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc13/single/6s321b1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 15:22:04 CST 2025
+========================================

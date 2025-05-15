@@ -1,0 +1,57 @@
+Job <525578> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 6051]
+44 5 6 13 12 16 23 30 24 36 25 41 24 39 42 74 35 60 62 67 50 86 74 128 77 104 102 146 72 111 82 263 115 175 121 178 81 156 115 266 72 106 114 116 78 102 119 128 72 118 69 122 95 252 68 65 24 40 31 42 42 43 31 24 15 9 8 21 14 13 7 5 11 8 8 11 9 4 0 0 1 0 1 1516 
+SolverStatistic {
+    num_solve: 637908,
+    avg_decide_var: 0.852441,
+    num_simplify_subsume: 70650,
+    num_simplify_self_subsume: 66562,
+}
+Statistic {
+    case: model.aig,
+    time: 40.83s,
+    num_mic: 22873,
+    avg_mic_cube_len: 10.081275,
+    avg_po_cube_len: 34.728585,
+    mic_drop: success: 51273, fail: 171125, success rate: 23.05%,
+    num_down: 222398,
+    num_down_sat: 308156,
+    ctp: success: 0, fail: 81100, success rate: 0.00%,
+    num_get_bad: 216,
+    overall_block_time: 20.059768503s,
+    block_get_bad_time: 553.841897ms,
+    block_get_predecessor_time: 237.881935ms,
+    block_blocked_time: 1.909166204s,
+    block_mic_time: 13.958494724s,
+    block_push_time: 440.210529ms,
+    overall_propagate_time: 20.688362942s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/hku/arithmetic_circuits/93.c/93.c.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/arithmetic_circuits/93.c/93.c.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 18:39:59 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 18:39:59 CST 2025
+========================================

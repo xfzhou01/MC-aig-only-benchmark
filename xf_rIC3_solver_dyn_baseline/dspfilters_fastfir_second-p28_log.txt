@@ -1,0 +1,57 @@
+Job <528305> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42768]
+1092 52 46 135 339 400 586 693 803 891 2288 2522 2567 2713 3108 3572 3807 4651 3909 2965 2266 1925 1282 943 764 401 113 71 19 10 6 3 0 14 27997 0 
+SolverStatistic {
+    num_solve: 2836776,
+    avg_decide_var: 0.660674,
+    num_simplify_subsume: 184188,
+    num_simplify_self_subsume: 149442,
+}
+Statistic {
+    case: model.aig,
+    time: 1604.18s,
+    num_mic: 133312,
+    avg_mic_cube_len: 7.203583,
+    avg_po_cube_len: 522.860485,
+    mic_drop: success: 120646, fail: 827147, success rate: 12.73%,
+    num_down: 947793,
+    num_down_sat: 1187495,
+    ctp: success: 0, fail: 568395, success rate: 0.00%,
+    num_get_bad: 6015,
+    overall_block_time: 989.125196771s,
+    block_get_bad_time: 14.375225675s,
+    block_get_predecessor_time: 115.502166933s,
+    block_blocked_time: 129.583182202s,
+    block_mic_time: 547.583538378s,
+    block_push_time: 32.346471917s,
+    overall_propagate_time: 613.509130739s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/dspfilters_fastfir_second-p28.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/dspfilters_fastfir_second-p28.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 01:17:21 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 01:17:21 CST 2025
+========================================

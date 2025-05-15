@@ -1,0 +1,57 @@
+Job <527979> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 2, 477, 6716]
+1 16 32 49 60 76 126 156 169 198 248 246 244 277 316 322 327 339 643 507 539 505 650 626 670 675 1544 2922 
+SolverStatistic {
+    num_solve: 655206,
+    avg_decide_var: 0.510754,
+    num_simplify_subsume: 39218,
+    num_simplify_self_subsume: 53591,
+}
+Statistic {
+    case: model.aig,
+    time: 108.66s,
+    num_mic: 24234,
+    avg_mic_cube_len: 14.807337,
+    avg_po_cube_len: 45.504923,
+    mic_drop: success: 54920, fail: 297529, success rate: 15.58%,
+    num_down: 352449,
+    num_down_sat: 517011,
+    ctp: success: 0, fail: 22671, success rate: 0.00%,
+    num_get_bad: 687,
+    overall_block_time: 91.751474097s,
+    block_get_bad_time: 740.291637ms,
+    block_get_predecessor_time: 918.623552ms,
+    block_blocked_time: 5.55206188s,
+    block_mic_time: 78.654216867s,
+    block_push_time: 477.202442ms,
+    overall_propagate_time: 16.390162984s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc20/aig/arbitrated_top_n5_w8_d32_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig/arbitrated_top_n5_w8_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:02:34 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:02:34 CST 2025
+========================================

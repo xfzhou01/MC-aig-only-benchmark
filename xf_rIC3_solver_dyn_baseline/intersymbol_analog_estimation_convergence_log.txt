@@ -1,0 +1,58 @@
+Job <527903> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 240, 368]
+17 1 7 1 38 27 12 18 20 9 6 3 2 2 2 2 2 2 2 2 1 0 392 
+SolverStatistic {
+    num_solve: 18810,
+    avg_decide_var: 0.624682,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 19.27s,
+    num_mic: 1055,
+    avg_mic_cube_len: 12.662559,
+    avg_po_cube_len: 40.706841,
+    mic_drop: success: 5723, fail: 6312, success rate: 47.55%,
+    num_down: 12035,
+    num_down_sat: 11700,
+    ctp: success: 0, fail: 4316, success rate: 0.00%,
+    num_get_bad: 445,
+    overall_block_time: 15.637082606s,
+    block_get_bad_time: 867.524296ms,
+    block_get_predecessor_time: 97.622668ms,
+    block_blocked_time: 1.092844289s,
+    block_mic_time: 13.483705094s,
+    block_push_time: 476.451851ms,
+    overall_propagate_time: 3.523971239s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/intersymbol_analog_estimation_convergence.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/intersymbol_analog_estimation_convergence.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 23:50:12 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 23:50:12 CST 2025
+========================================

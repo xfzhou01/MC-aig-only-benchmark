@@ -1,0 +1,57 @@
+Job <528136> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 169, 7120]
+108 3 9 9 19 19 23 24 35 25 38 38 49 56 57 55 61 61 55 55 85 108 88 70 41 34 25 11 8 12 9 6 4 5 8 7 6 4 4 4 20 6 10 29 19 9 11 16 15 81 144 150 123 6 3 2 1 1 1 1 1 1 1 1 1 3 1 1 2 2 1 1 2 2 1 2 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 1 1 0 759 
+SolverStatistic {
+    num_solve: 407359,
+    avg_decide_var: 0.597719,
+    num_simplify_subsume: 11039,
+    num_simplify_self_subsume: 5448,
+}
+Statistic {
+    case: model.aig,
+    time: 16.89s,
+    num_mic: 14238,
+    avg_mic_cube_len: 9.436789,
+    avg_po_cube_len: 38.194949,
+    mic_drop: success: 16496, fail: 114677, success rate: 12.58%,
+    num_down: 131173,
+    num_down_sat: 202520,
+    ctp: success: 0, fail: 66691, success rate: 0.00%,
+    num_get_bad: 300,
+    overall_block_time: 11.187896769s,
+    block_get_bad_time: 36.94273ms,
+    block_get_predecessor_time: 688.980904ms,
+    block_blocked_time: 878.427945ms,
+    block_mic_time: 7.984997206s,
+    block_push_time: 384.202514ms,
+    overall_propagate_time: 5.467204913s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/qspiflash_dualflexpress_divthree-p150.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/qspiflash_dualflexpress_divthree-p150.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:23:46 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:23:46 CST 2025
+========================================

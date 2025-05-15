@@ -1,0 +1,58 @@
+Job <527860> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 25, 14]
+305 25 7 2 0 14 
+SolverStatistic {
+    num_solve: 204,
+    avg_decide_var: 0.197357,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.05s,
+    num_mic: 49,
+    avg_mic_cube_len: 1.897959,
+    avg_po_cube_len: 132.042453,
+    mic_drop: success: 2, fail: 91, success rate: 2.15%,
+    num_down: 93,
+    num_down_sat: 45,
+    ctp: success: 0, fail: 32, success rate: 0.00%,
+    num_get_bad: 37,
+    overall_block_time: 20.702799ms,
+    block_get_bad_time: 8.607605ms,
+    block_get_predecessor_time: 1.13647ms,
+    block_blocked_time: 1.325873ms,
+    block_mic_time: 965.036µs,
+    block_push_time: 34.167µs,
+    overall_propagate_time: 1.152845ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/zipcpu-pfcache-p20.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/zipcpu-pfcache-p20.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 23:46:17 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 23:46:17 CST 2025
+========================================

@@ -1,0 +1,57 @@
+Job <527960> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 4, 2, 1, 89, 173, 1363]
+188 5 2 2 6 7 10 10 18 27 45 38 42 42 42 40 44 67 106 136 162 159 157 180 187 369 
+SolverStatistic {
+    num_solve: 80742,
+    avg_decide_var: 0.877031,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 5.94s,
+    num_mic: 3737,
+    avg_mic_cube_len: 11.684239,
+    avg_po_cube_len: 91.627850,
+    mic_drop: success: 8249, fail: 33563, success rate: 19.73%,
+    num_down: 41812,
+    num_down_sat: 67936,
+    ctp: success: 0, fail: 648, success rate: 0.00%,
+    num_get_bad: 43,
+    overall_block_time: 5.71242481s,
+    block_get_bad_time: 12.435993ms,
+    block_get_predecessor_time: 356.070101ms,
+    block_blocked_time: 491.291873ms,
+    block_mic_time: 4.350163904s,
+    block_push_time: 99.821653ms,
+    overall_propagate_time: 124.179745ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc20/aig/brp2.2.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig/brp2.2.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:00:18 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:00:18 CST 2025
+========================================

@@ -1,0 +1,57 @@
+Job <525447> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36309, 6639]
+80 5 5 5 4 7 21 17 24 11 17 23 25 30 52 80 103 250 268 360 287 221 246 276 311 223 261 246 241 210 247 222 315 284 304 342 332 236 502 614 913 876 810 549 446 371 633 883 1254 1336 1174 1003 974 1054 1133 801 840 557 588 559 494 369 380 444 520 281 288 194 209 137 185 196 353 322 170 100 66 70 86 40 22 13 19 26 27 26 13 12 14 83 37 10 5 3 1 0 7289 
+SolverStatistic {
+    num_solve: 5621303,
+    avg_decide_var: 0.702776,
+    num_simplify_subsume: 502541,
+    num_simplify_self_subsume: 213019,
+}
+Statistic {
+    case: model.aig,
+    time: 739.77s,
+    num_mic: 147452,
+    avg_mic_cube_len: 19.087283,
+    avg_po_cube_len: 46.357977,
+    mic_drop: success: 421444, fail: 2101952, success rate: 16.70%,
+    num_down: 2523396,
+    num_down_sat: 3558145,
+    ctp: success: 0, fail: 474508, success rate: 0.00%,
+    num_get_bad: 1585,
+    overall_block_time: 421.962909391s,
+    block_get_bad_time: 2.074787016s,
+    block_get_predecessor_time: 5.436247598s,
+    block_blocked_time: 41.083031558s,
+    block_mic_time: 341.330047648s,
+    block_push_time: 4.33345073s,
+    overall_propagate_time: 317.685062597s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/atxfifo/aig/atxfifo-p46.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/atxfifo/aig/atxfifo-p46.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 18:47:15 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 18:47:15 CST 2025
+========================================

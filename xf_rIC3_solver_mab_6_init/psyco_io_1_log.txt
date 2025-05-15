@@ -1,0 +1,57 @@
+Started at: Thu May 15 13:30:09 CST 2025
+Job <531941> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 2, 36]
+2 1 34 1 0 36 
+SolverStatistic {
+    num_solve: 496,
+    avg_decide_var: 0.998549,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.18s,
+    num_mic: 72,
+    avg_mic_cube_len: 4.013889,
+    avg_po_cube_len: 133.000000,
+    mic_drop: success: 4, fail: 285, success rate: 1.38%,
+    num_down: 289,
+    num_down_sat: 315,
+    ctp: success: 0, fail: 71, success rate: 0.00%,
+    num_get_bad: 43,
+    overall_block_time: 104.527127ms,
+    block_get_bad_time: 17.35603ms,
+    block_get_predecessor_time: 0ns,
+    block_blocked_time: 7.900058ms,
+    block_mic_time: 60.649328ms,
+    block_push_time: 1.898µs,
+    overall_propagate_time: 19.908092ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/sosylab/psyco/psyco_io_1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/psyco/psyco_io_1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 13:30:29 CST 2025
+========================================

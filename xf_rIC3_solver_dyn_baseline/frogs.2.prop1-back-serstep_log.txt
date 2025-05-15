@@ -1,0 +1,58 @@
+Job <528176> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 5, 15, 105]
+142 1 22 47 76 76 76 
+SolverStatistic {
+    num_solve: 12855,
+    avg_decide_var: 1.000590,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 5.55s,
+    num_mic: 322,
+    avg_mic_cube_len: 25.080745,
+    avg_po_cube_len: 141.706250,
+    mic_drop: success: 2229, fail: 5476, success rate: 28.93%,
+    num_down: 7705,
+    num_down_sat: 12023,
+    ctp: success: 0, fail: 6, success rate: 0.00%,
+    num_get_bad: 13,
+    overall_block_time: 5.321873923s,
+    block_get_bad_time: 29.148051ms,
+    block_get_predecessor_time: 46.357984ms,
+    block_blocked_time: 176.796122ms,
+    block_mic_time: 4.918099743s,
+    block_push_time: 12.465859ms,
+    overall_propagate_time: 156.220563ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/fraig/frogs.2.prop1-back-serstep.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/frogs.2.prop1-back-serstep.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:31:57 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:31:57 CST 2025
+========================================

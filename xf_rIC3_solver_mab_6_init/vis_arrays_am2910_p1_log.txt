@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:37:18 CST 2025
+Job <535263> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 1]
+99 1 0 1 
+SolverStatistic {
+    num_solve: 7,
+    avg_decide_var: 0.393086,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.01s,
+    num_mic: 2,
+    avg_mic_cube_len: 1.500000,
+    avg_po_cube_len: 16.000000,
+    mic_drop: success: 0, fail: 3, success rate: 0.00%,
+    num_down: 3,
+    num_down_sat: 2,
+    ctp: success: 0, fail: 1, success rate: 0.00%,
+    num_get_bad: 4,
+    overall_block_time: 694.188µs,
+    block_get_bad_time: 506.458µs,
+    block_get_predecessor_time: 0ns,
+    block_blocked_time: 53.671µs,
+    block_mic_time: 29.597µs,
+    block_push_time: 90ns,
+    overall_propagate_time: 54.544µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/goel/opensource/vis_arrays_am2910_p1/vis_arrays_am2910_p1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/goel/opensource/vis_arrays_am2910_p1/vis_arrays_am2910_p1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 21:37:19 CST 2025
+========================================

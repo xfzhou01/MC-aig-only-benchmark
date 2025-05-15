@@ -1,0 +1,58 @@
+Started at: Thu May 15 13:48:57 CST 2025
+Job <532122> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 8439]
+933 3 2 4 4 8 44 69 66 103 148 348 809 1479 2149 3084 1858 817 484 986 828 712 934 813 468 130 13 5 5 12 53 36 48 89 56 38 22 18 0 5928 
+SolverStatistic {
+    num_solve: 1189994,
+    avg_decide_var: 0.540729,
+    num_simplify_subsume: 43669,
+    num_simplify_self_subsume: 37919,
+}
+Statistic {
+    case: model.aig,
+    time: 489.16s,
+    num_mic: 32235,
+    avg_mic_cube_len: 12.265581,
+    avg_po_cube_len: 372.961661,
+    mic_drop: success: 102053, fail: 266577, success rate: 27.68%,
+    num_down: 368630,
+    num_down_sat: 576011,
+    ctp: success: 0, fail: 137301, success rate: 0.00%,
+    num_get_bad: 176,
+    overall_block_time: 272.454988395s,
+    block_get_bad_time: 454.402131ms,
+    block_get_predecessor_time: 34.394391181s,
+    block_blocked_time: 14.581996143s,
+    block_mic_time: 284.819116183s,
+    block_push_time: 1.336857144s,
+    overall_propagate_time: 215.416951096s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1517/oc8051gma6data.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1517/oc8051gma6data.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 13:57:15 CST 2025
+========================================

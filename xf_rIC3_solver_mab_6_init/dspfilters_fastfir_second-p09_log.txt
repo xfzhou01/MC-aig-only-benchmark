@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:50:28 CST 2025
+Job <535351> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2570, 2704]
+1091 57 87 234 335 369 422 556 512 521 400 200 95 27 14 6 2 0 2757 
+SolverStatistic {
+    num_solve: 152225,
+    avg_decide_var: 0.647224,
+    num_simplify_subsume: 2846,
+    num_simplify_self_subsume: 1222,
+}
+Statistic {
+    case: model.aig,
+    time: 90.08s,
+    num_mic: 8015,
+    avg_mic_cube_len: 7.432314,
+    avg_po_cube_len: 318.930733,
+    mic_drop: success: 14333, fail: 43817, success rate: 24.65%,
+    num_down: 58150,
+    num_down_sat: 69718,
+    ctp: success: 0, fail: 32251, success rate: 0.00%,
+    num_get_bad: 2615,
+    overall_block_time: 69.899631869s,
+    block_get_bad_time: 6.182787643s,
+    block_get_predecessor_time: 10.439771337s,
+    block_blocked_time: 6.551954937s,
+    block_mic_time: 29.706695659s,
+    block_push_time: 896.647005ms,
+    overall_propagate_time: 19.372766954s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p09.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p09.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 21:52:06 CST 2025
+========================================

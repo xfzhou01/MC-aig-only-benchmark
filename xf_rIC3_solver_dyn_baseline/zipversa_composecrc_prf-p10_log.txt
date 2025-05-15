@@ -1,0 +1,58 @@
+Job <527855> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 13636, 44940]
+96 615 664 16999 10192 539 1 22 742 5 0 51939 
+SolverStatistic {
+    num_solve: 2615900,
+    avg_decide_var: 0.430132,
+    num_simplify_subsume: 30053,
+    num_simplify_self_subsume: 30152,
+}
+Statistic {
+    case: model.aig,
+    time: 1939.44s,
+    num_mic: 89824,
+    avg_mic_cube_len: 16.040590,
+    avg_po_cube_len: 82.971861,
+    mic_drop: success: 192453, fail: 1233961, success rate: 13.49%,
+    num_down: 1426414,
+    num_down_sat: 1997572,
+    ctp: success: 0, fail: 282744, success rate: 0.00%,
+    num_get_bad: 58406,
+    overall_block_time: 1341.857729901s,
+    block_get_bad_time: 76.954658036s,
+    block_get_predecessor_time: 26.987997ms,
+    block_blocked_time: 130.305347612s,
+    block_mic_time: 1082.602665991s,
+    block_push_time: 27.197298ms,
+    overall_propagate_time: 597.537298367s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/zipversa_composecrc_prf-p10.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/zipversa_composecrc_prf-p10.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:17:57 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:17:57 CST 2025
+========================================

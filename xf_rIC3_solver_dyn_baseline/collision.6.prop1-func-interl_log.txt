@@ -1,0 +1,58 @@
+Job <528233> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 899, 256]
+229 49 26 30 27 41 77 107 87 101 109 118 92 76 72 28 21 6 3 0 262 
+SolverStatistic {
+    num_solve: 46385,
+    avg_decide_var: 0.666093,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 8.37s,
+    num_mic: 2363,
+    avg_mic_cube_len: 7.435887,
+    avg_po_cube_len: 61.434677,
+    mic_drop: success: 2962, fail: 13561, success rate: 17.93%,
+    num_down: 16523,
+    num_down_sat: 28496,
+    ctp: success: 0, fail: 3164, success rate: 0.00%,
+    num_get_bad: 127,
+    overall_block_time: 5.543644648s,
+    block_get_bad_time: 132.581506ms,
+    block_get_predecessor_time: 346.657399ms,
+    block_blocked_time: 526.808661ms,
+    block_mic_time: 4.182224148s,
+    block_push_time: 45.126478ms,
+    overall_propagate_time: 2.604439906s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/collision.6.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/collision.6.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:38:57 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:38:57 CST 2025
+========================================

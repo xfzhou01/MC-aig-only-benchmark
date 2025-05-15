@@ -1,0 +1,57 @@
+Job <528029> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 79, 218]
+82 4 15 20 32 47 45 63 43 62 41 22 6 1 1 0 988 
+SolverStatistic {
+    num_solve: 117605,
+    avg_decide_var: 0.497227,
+    num_simplify_subsume: 838,
+    num_simplify_self_subsume: 136,
+}
+Statistic {
+    case: model.aig,
+    time: 7.50s,
+    num_mic: 2553,
+    avg_mic_cube_len: 17.329808,
+    avg_po_cube_len: 154.984634,
+    mic_drop: success: 2813, fail: 40803, success rate: 6.45%,
+    num_down: 43616,
+    num_down_sat: 92842,
+    ctp: success: 0, fail: 5604, success rate: 0.00%,
+    num_get_bad: 35,
+    overall_block_time: 7.259863794s,
+    block_get_bad_time: 6.776692ms,
+    block_get_predecessor_time: 1.203220434s,
+    block_blocked_time: 36.958237ms,
+    block_mic_time: 11.451431674s,
+    block_push_time: 92.611973ms,
+    overall_propagate_time: 180.163491ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/zipcpu-zipmmu-p24.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/zipcpu-zipmmu-p24.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:08:36 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:08:36 CST 2025
+========================================

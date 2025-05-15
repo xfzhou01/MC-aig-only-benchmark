@@ -1,0 +1,57 @@
+Job <525649> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 36, 1912]
+3228 43 33 38 73 134 132 189 232 337 728 
+SolverStatistic {
+    num_solve: 43781,
+    avg_decide_var: 0.017173,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 36.86s,
+    num_mic: 3879,
+    avg_mic_cube_len: 5.784481,
+    avg_po_cube_len: 248.029287,
+    mic_drop: success: 3218, fail: 17757, success rate: 15.34%,
+    num_down: 20975,
+    num_down_sat: 25993,
+    ctp: success: 0, fail: 2873, success rate: 0.00%,
+    num_get_bad: 19,
+    overall_block_time: 27.959349989s,
+    block_get_bad_time: 2.805475069s,
+    block_get_predecessor_time: 8.036991333s,
+    block_blocked_time: 6.478573772s,
+    block_mic_time: 11.230290389s,
+    block_push_time: 165.602473ms,
+    overall_propagate_time: 815.726432ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2024/hku/branch_coverage/bv/rocket_2045.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/branch_coverage/bv/rocket_2045.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 18:47:21 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 18:47:21 CST 2025
+========================================

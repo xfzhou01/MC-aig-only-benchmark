@@ -1,0 +1,58 @@
+Job <526064> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36164]
+1091 12 23 32 40 125 116 69 83 45 51 90 220 283 3196 369 3896 3902 4097 440 2820 2370 2357 1890 1699 1460 1052 14 540 0 11 5 6 12 17 13 15 24 22 29 25 39 22960 0 
+SolverStatistic {
+    num_solve: 2173022,
+    avg_decide_var: 0.656455,
+    num_simplify_subsume: 55367,
+    num_simplify_self_subsume: 18106,
+}
+Statistic {
+    case: model.aig,
+    time: 1208.57s,
+    num_mic: 70956,
+    avg_mic_cube_len: 8.570058,
+    avg_po_cube_len: 458.994983,
+    mic_drop: success: 75158, fail: 527495, success rate: 12.47%,
+    num_down: 602653,
+    num_down_sat: 789340,
+    ctp: success: 0, fail: 454688, success rate: 0.00%,
+    num_get_bad: 4401,
+    overall_block_time: 758.814494106s,
+    block_get_bad_time: 13.850310616s,
+    block_get_predecessor_time: 88.307407636s,
+    block_blocked_time: 85.698174076s,
+    block_mic_time: 431.0541458s,
+    block_push_time: 42.647943784s,
+    overall_propagate_time: 447.824205424s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920uns/dspfilters_fastfir_second-p06.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920uns/dspfilters_fastfir_second-p06.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 20:09:20 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 20:09:20 CST 2025
+========================================
+=

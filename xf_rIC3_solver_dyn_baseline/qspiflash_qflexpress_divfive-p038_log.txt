@@ -1,0 +1,58 @@
+Job <527802> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 62, 50]
+71 4 5 5 1 1 1 2 2 2 0 52 
+SolverStatistic {
+    num_solve: 1496,
+    avg_decide_var: 0.582570,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.06s,
+    num_mic: 174,
+    avg_mic_cube_len: 3.689655,
+    avg_po_cube_len: 33.117861,
+    mic_drop: success: 74, fail: 561, success rate: 11.65%,
+    num_down: 635,
+    num_down_sat: 725,
+    ctp: success: 0, fail: 269, success rate: 0.00%,
+    num_get_bad: 57,
+    overall_block_time: 38.5321ms,
+    block_get_bad_time: 4.364059ms,
+    block_get_predecessor_time: 5.351884ms,
+    block_blocked_time: 4.270153ms,
+    block_mic_time: 16.81394ms,
+    block_push_time: 521.974µs,
+    overall_propagate_time: 6.859518ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/qspiflash_qflexpress_divfive-p038.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/qspiflash_qflexpress_divfive-p038.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 23:38:48 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 23:38:48 CST 2025
+========================================

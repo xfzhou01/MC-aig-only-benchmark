@@ -1,0 +1,57 @@
+Job <528121> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10425]
+70 2 2 5 15 35 41 62 51 43 47 51 41 41 35 30 23 20 21 33 20 12 18 24 20 17 11 8 11 18 7 5 5 1 2 0 33 18 26 21 15 17 42 39 48 35 33 37 24 29 10 7 5 1 1 680 0 
+SolverStatistic {
+    num_solve: 462329,
+    avg_decide_var: 0.738264,
+    num_simplify_subsume: 45670,
+    num_simplify_self_subsume: 22512,
+}
+Statistic {
+    case: model.aig,
+    time: 23.96s,
+    num_mic: 14456,
+    avg_mic_cube_len: 15.275872,
+    avg_po_cube_len: 86.436940,
+    mic_drop: success: 19531, fail: 197552, success rate: 9.00%,
+    num_down: 217083,
+    num_down_sat: 297798,
+    ctp: success: 0, fail: 37127, success rate: 0.00%,
+    num_get_bad: 112,
+    overall_block_time: 18.468443143s,
+    block_get_bad_time: 195.01066ms,
+    block_get_predecessor_time: 1.279572735s,
+    block_blocked_time: 1.665832388s,
+    block_mic_time: 12.577236017s,
+    block_push_time: 509.588826ms,
+    overall_propagate_time: 5.3898035s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/qspiflash_dualflexpress_divthree-p004.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/qspiflash_dualflexpress_divthree-p004.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 00:21:27 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 00:21:27 CST 2025
+========================================

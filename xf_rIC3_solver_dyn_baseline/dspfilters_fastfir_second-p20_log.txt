@@ -1,0 +1,57 @@
+Job <528304> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 43, 36429]
+1092 33 13 29 28 33 23 17 19 30 28 22 26 20 12 21 11 9 287 35 4054 4 4908 4457 4817 2 4080 2963 3378 2286 2754 2530 2421 48 1147 0 1 1 1 1 1 1 1 1 1 1 1 1 2 2 25487 
+SolverStatistic {
+    num_solve: 2489300,
+    avg_decide_var: 0.655017,
+    num_simplify_subsume: 35673,
+    num_simplify_self_subsume: 17101,
+}
+Statistic {
+    case: model.aig,
+    time: 1219.09s,
+    num_mic: 83410,
+    avg_mic_cube_len: 8.001115,
+    avg_po_cube_len: 430.049110,
+    mic_drop: success: 58062, fail: 605710, success rate: 8.75%,
+    num_down: 663772,
+    num_down_sat: 859750,
+    ctp: success: 0, fail: 515316, success rate: 0.00%,
+    num_get_bad: 3711,
+    overall_block_time: 749.310991344s,
+    block_get_bad_time: 8.631814461s,
+    block_get_predecessor_time: 76.42940197s,
+    block_blocked_time: 84.269425465s,
+    block_mic_time: 439.45626185s,
+    block_push_time: 49.840754236s,
+    overall_propagate_time: 467.710353197s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/dspfilters_fastfir_second-p20.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/dspfilters_fastfir_second-p20.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 01:10:53 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 01:10:53 CST 2025
+========================================

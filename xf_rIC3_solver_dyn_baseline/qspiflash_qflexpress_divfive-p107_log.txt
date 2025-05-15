@@ -1,0 +1,58 @@
+Job <527875> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 334, 4097]
+87 12 14 11 16 33 34 21 15 12 15 9 15 14 9 8 7 6 21 20 8 6 4 3 10 8 18 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 3 2 2 1 1 1 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 2 2 2 1 2 1 1 0 0 522 
+SolverStatistic {
+    num_solve: 118298,
+    avg_decide_var: 0.629941,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 4.34s,
+    num_mic: 5035,
+    avg_mic_cube_len: 6.630983,
+    avg_po_cube_len: 37.392245,
+    mic_drop: success: 5868, fail: 26279, success rate: 18.25%,
+    num_down: 32147,
+    num_down_sat: 42518,
+    ctp: success: 0, fail: 36013, success rate: 0.00%,
+    num_get_bad: 237,
+    overall_block_time: 2.763282104s,
+    block_get_bad_time: 47.627551ms,
+    block_get_predecessor_time: 351.020241ms,
+    block_blocked_time: 339.96423ms,
+    block_mic_time: 1.337991099s,
+    block_push_time: 277.240014ms,
+    overall_propagate_time: 1.385226705s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/qspiflash_qflexpress_divfive-p107.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/qspiflash_qflexpress_divfive-p107.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 23:48:38 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 23:48:38 CST 2025
+========================================

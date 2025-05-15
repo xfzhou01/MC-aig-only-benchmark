@@ -1,0 +1,58 @@
+Job <529553> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20159]
+30 7 24 47 103 184 337 539 670 791 964 1193 1456 1647 1870 2163 2369 2711 3014 3230 3330 3069 2646 1940 1249 708 387 376 496 678 926 1229 1584 2031 2608 3285 4026 4874 5829 6751 7467 7944 8201 8195 7879 7364 6862 6365 5753 5043 4305 3519 2667 1801 1054 559 279 127 58 26 8 1 0 20159 
+SolverStatistic {
+    num_solve: 7665252,
+    avg_decide_var: 0.840523,
+    num_simplify_subsume: 4814,
+    num_simplify_self_subsume: 2,
+}
+Statistic {
+    case: model.aig,
+    time: 2588.28s,
+    num_mic: 195723,
+    avg_mic_cube_len: 16.067907,
+    avg_po_cube_len: 30.000000,
+    mic_drop: success: 129710, fail: 2987446, success rate: 4.16%,
+    num_down: 3117156,
+    num_down_sat: 6379711,
+    ctp: success: 0, fail: 785778, success rate: 0.00%,
+    num_get_bad: 65,
+    overall_block_time: 1612.685495942s,
+    block_get_bad_time: 188.827239ms,
+    block_get_predecessor_time: 1.084919054s,
+    block_blocked_time: 167.021716344s,
+    block_mic_time: 1397.725444946s,
+    block_push_time: 5.068832716s,
+    overall_propagate_time: 975.420382498s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc08/pdtvistwo1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/pdtvistwo1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Thu May 15 05:13:37 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 05:13:37 CST 2025
+========================================

@@ -1,0 +1,58 @@
+Job <527945> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 867]
+83 10 15 19 17 21 21 20 15 11 13 13 14 9 15 18 16 25 42 30 7 2 1 1 2 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 2 2 1 2 0 137 0 
+SolverStatistic {
+    num_solve: 26597,
+    avg_decide_var: 0.569828,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.81s,
+    num_mic: 1452,
+    avg_mic_cube_len: 5.596419,
+    avg_po_cube_len: 40.614257,
+    mic_drop: success: 1100, fail: 6795, success rate: 13.93%,
+    num_down: 7895,
+    num_down_sat: 11870,
+    ctp: success: 0, fail: 3658, success rate: 0.00%,
+    num_get_bad: 87,
+    overall_block_time: 505.095598ms,
+    block_get_bad_time: 7.607075ms,
+    block_get_predecessor_time: 71.219955ms,
+    block_blocked_time: 57.683466ms,
+    block_mic_time: 297.397346ms,
+    block_push_time: 11.383027ms,
+    overall_propagate_time: 228.443519ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc20/aig-1.8/qspiflash_dualflexpress_divfive-p116.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc20/aig-1.8/qspiflash_dualflexpress_divfive-p116.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+Started at: Wed May 14 23:56:59 CST 2025
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed May 14 23:56:59 CST 2025
+========================================
