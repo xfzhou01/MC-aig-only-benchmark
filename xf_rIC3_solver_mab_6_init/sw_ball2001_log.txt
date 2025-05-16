@@ -1,14 +1,25 @@
-Started at: Thu May 15 16:40:07 CST 2025
-Job <533120> is submitted to default queue <interactive>.
+Started at: Fri May 16 05:35:46 CST 2025
+Job <537642> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu05>>
+<<Starting on bmcpu04>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 [0, 0, 0, 0, 0, 0, 0, 22]
 10 3 2 2 1 0 22 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 10 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 20 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 338,
-    avg_decide_var: 0.690312,
+    num_solve: 340,
+    avg_decide_var: 0.698771,
     num_simplify_subsume: 0,
     num_simplify_self_subsume: 0,
 }
@@ -20,16 +31,16 @@ Statistic {
     avg_po_cube_len: 14.522523,
     mic_drop: success: 33, fail: 122, success rate: 21.29%,
     num_down: 155,
-    num_down_sat: 197,
+    num_down_sat: 196,
     ctp: success: 0, fail: 33, success rate: 0.00%,
     num_get_bad: 10,
-    overall_block_time: 3.081994ms,
-    block_get_bad_time: 219.89µs,
-    block_get_predecessor_time: 479.46µs,
-    block_blocked_time: 448.264µs,
-    block_mic_time: 1.566326ms,
-    block_push_time: 141.863µs,
-    overall_propagate_time: 428.659µs,
+    overall_block_time: 3.188694ms,
+    block_get_bad_time: 231.436µs,
+    block_get_predecessor_time: 502.648µs,
+    block_blocked_time: 443.835µs,
+    block_mic_time: 1.623168ms,
+    block_push_time: 139.785µs,
+    overall_propagate_time: 421.513µs,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/crafted/sw_ball2001/sw_ball2001.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/crafted/sw_ball2001/sw_ball2001.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 16:40:09 CST 2025
+Finished at: Fri May 16 05:35:47 CST 2025
 ========================================

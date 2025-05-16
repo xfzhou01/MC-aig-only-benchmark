@@ -1,35 +1,46 @@
-Started at: Thu May 15 19:05:36 CST 2025
-Job <534404> is submitted to default queue <interactive>.
+Started at: Fri May 16 07:54:09 CST 2025
+Job <538852> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu03>>
+<<Starting on bmcpu07>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20467]
-1091 12 12 21 39 53 113 165 93 66 25 216 53 2175 42 2866 2274 2504 34 1297 1044 749 802 590 490 342 51 415 44 20 14 8 2 0 140 26 10 13754 0 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11927]
+1091 19 23 13 14 20 27 33 27 24 18 27 38 241 269 2877 1051 3555 3496 3668 1356 2590 1971 1557 1303 932 698 491 101 130 41 18 6 2 1 0 29 4 3 17747 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 8584 pulls
+  Arm 1 (Aggressive Heuristic): 384 pulls
+  Arm 2 (Conservative Heuristic): 14 pulls
+  Arm 3 (limit=0, max=0, level=0): 10 pulls
+  Arm 4 (limit=1, max=3, level=1): 1202 pulls
+  Arm 5 (limit=2, max=5, level=1): 7 pulls
+  Arm 6 (limit=8, max=4, level=1): 12301 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 1146305,
-    avg_decide_var: 0.695019,
-    num_simplify_subsume: 26665,
-    num_simplify_self_subsume: 8197,
+    num_solve: 4085401,
+    avg_decide_var: 0.772424,
+    num_simplify_subsume: 27878,
+    num_simplify_self_subsume: 9251,
 }
 Statistic {
     case: model.aig,
-    time: 582.02s,
-    num_mic: 40126,
-    avg_mic_cube_len: 8.585805,
-    avg_po_cube_len: 440.989520,
-    mic_drop: success: 70261, fail: 269788, success rate: 20.66%,
-    num_down: 340049,
-    num_down_sat: 438613,
-    ctp: success: 0, fail: 256048, success rate: 0.00%,
-    num_get_bad: 2907,
-    overall_block_time: 380.299501361s,
-    block_get_bad_time: 9.64456898s,
-    block_get_predecessor_time: 49.260600523s,
-    block_blocked_time: 43.882667681s,
-    block_mic_time: 242.801296788s,
-    block_push_time: 17.261542725s,
-    overall_propagate_time: 199.956590663s,
+    time: 2427.03s,
+    num_mic: 51565,
+    avg_mic_cube_len: 40.730340,
+    avg_po_cube_len: 393.377562,
+    mic_drop: success: 1679684, fail: 338695, success rate: 83.22%,
+    num_down: 2018379,
+    num_down_sat: 2874111,
+    ctp: success: 0, fail: 299655, success rate: 0.00%,
+    num_get_bad: 2476,
+    overall_block_time: 2094.319660643s,
+    block_get_bad_time: 8.601481804s,
+    block_get_predecessor_time: 455.549517956s,
+    block_blocked_time: 24.792814606s,
+    block_mic_time: 3061.544880654s,
+    block_push_time: 24.837944922s,
+    overall_propagate_time: 330.810170757s,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/dspfilters_fastfir_second-p11.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/dspfilters_fastfir_second-p11.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 19:15:20 CST 2025
+Finished at: Fri May 16 08:34:37 CST 2025
 ========================================

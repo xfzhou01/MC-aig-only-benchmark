@@ -1,14 +1,25 @@
-Started at: Thu May 15 12:34:31 CST 2025
-Job <531571> is submitted to default queue <interactive>.
+Started at: Fri May 16 01:33:06 CST 2025
+Job <536680> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu08>>
+<<Starting on bmcpu04>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 [1, 1, 85]
 195 85 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 11 pulls
+  Arm 1 (Aggressive Heuristic): 10 pulls
+  Arm 2 (Conservative Heuristic): 10 pulls
+  Arm 3 (limit=0, max=0, level=0): 10 pulls
+  Arm 4 (limit=1, max=3, level=1): 10 pulls
+  Arm 5 (limit=2, max=5, level=1): 24 pulls
+  Arm 6 (limit=8, max=4, level=1): 10 pulls
+----------------------------
 SolverStatistic {
     num_solve: 222,
-    avg_decide_var: 0.553676,
+    avg_decide_var: 0.537642,
     num_simplify_subsume: 0,
     num_simplify_self_subsume: 0,
 }
@@ -23,13 +34,13 @@ Statistic {
     num_down_sat: 135,
     ctp: success: 0, fail: 0, success rate: NaN%,
     num_get_bad: 87,
-    overall_block_time: 50.043508ms,
-    block_get_bad_time: 19.781291ms,
-    block_get_predecessor_time: 491.177µs,
-    block_blocked_time: 3.796442ms,
-    block_mic_time: 3.086957ms,
-    block_push_time: 2.13µs,
-    overall_propagate_time: 105ns,
+    overall_block_time: 50.960087ms,
+    block_get_bad_time: 19.648657ms,
+    block_get_predecessor_time: 1.94396ms,
+    block_blocked_time: 3.743838ms,
+    block_mic_time: 4.682907ms,
+    block_push_time: 2.141µs,
+    overall_propagate_time: 364ns,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/a16-p146.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/a16-p146.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 12:34:34 CST 2025
+Finished at: Fri May 16 01:33:08 CST 2025
 ========================================

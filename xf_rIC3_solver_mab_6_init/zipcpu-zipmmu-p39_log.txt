@@ -1,9 +1,51 @@
-Started at: Thu May 15 21:57:37 CST 2025
-Job <535418> is submitted to default queue <interactive>.
+Started at: Fri May 16 10:53:29 CST 2025
+Job <539963> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
 <<Starting on bmcpu07>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 93, 425]
+78 7 39 88 23 5 117 1 0 459 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 66 pulls
+  Arm 1 (Aggressive Heuristic): 61 pulls
+  Arm 2 (Conservative Heuristic): 49 pulls
+  Arm 3 (limit=0, max=0, level=0): 141 pulls
+  Arm 4 (limit=1, max=3, level=1): 435 pulls
+  Arm 5 (limit=2, max=5, level=1): 62 pulls
+  Arm 6 (limit=8, max=4, level=1): 49 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 9362,
+    avg_decide_var: 0.162066,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.44s,
+    num_mic: 926,
+    avg_mic_cube_len: 5.521598,
+    avg_po_cube_len: 100.833082,
+    mic_drop: success: 76, fail: 5012, success rate: 1.49%,
+    num_down: 5088,
+    num_down_sat: 4620,
+    ctp: success: 0, fail: 1688, success rate: 0.00%,
+    num_get_bad: 483,
+    overall_block_time: 375.633577ms,
+    block_get_bad_time: 94.099429ms,
+    block_get_predecessor_time: 50.41337ms,
+    block_blocked_time: 16.626325ms,
+    block_mic_time: 153.954939ms,
+    block_push_time: 610.73µs,
+    overall_propagate_time: 23.03721ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
 File: ./hwmcc19/single/aig/wolf/2018D/zipcpu-zipmmu-p39.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -18,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2018D/zipcpu-zipmmu-p39.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2018D/zipcpu-zipmmu-p39.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 22:57:39 CST 2025
+Finished at: Fri May 16 10:53:32 CST 2025
 ========================================

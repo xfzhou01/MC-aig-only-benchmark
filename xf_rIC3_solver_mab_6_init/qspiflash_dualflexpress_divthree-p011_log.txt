@@ -1,35 +1,46 @@
-Started at: Thu May 15 21:55:19 CST 2025
-Job <535395> is submitted to default queue <interactive>.
+Started at: Fri May 16 10:50:32 CST 2025
+Job <539937> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu08>>
+<<Starting on cpu03>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 170, 308]
-70 1 3 7 5 11 14 35 37 30 37 44 32 20 28 35 61 48 38 33 68 46 23 22 24 26 25 19 21 21 27 24 26 27 31 12 9 11 13 11 15 14 15 11 13 14 16 14 16 17 19 11 13 14 16 14 16 21 18 14 16 21 20 18 20 19 15 2 1 0 309 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 106, 196]
+70 2 10 14 14 18 15 19 15 38 32 35 33 45 36 47 24 77 47 56 83 61 48 55 90 67 54 72 57 100 97 89 92 155 63 64 62 89 67 73 67 65 48 59 48 102 86 84 66 62 56 52 39 47 73 58 64 69 79 69 90 197 162 169 216 330 313 312 283 367 296 288 301 311 315 351 300 458 340 351 275 230 177 147 178 101 91 47 31 37 51 68 20 2 1 1 2 0 1161 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4 pulls
+  Arm 1 (Aggressive Heuristic): 1025 pulls
+  Arm 2 (Conservative Heuristic): 17 pulls
+  Arm 3 (limit=0, max=0, level=0): 6 pulls
+  Arm 4 (limit=1, max=3, level=1): 15 pulls
+  Arm 5 (limit=2, max=5, level=1): 1798 pulls
+  Arm 6 (limit=8, max=4, level=1): 2066 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 76145,
-    avg_decide_var: 0.600172,
-    num_simplify_subsume: 0,
-    num_simplify_self_subsume: 0,
+    num_solve: 1032713,
+    avg_decide_var: 0.652582,
+    num_simplify_subsume: 82116,
+    num_simplify_self_subsume: 93667,
 }
 Statistic {
     case: model.aig,
-    time: 2.78s,
-    num_mic: 1906,
-    avg_mic_cube_len: 12.218783,
-    avg_po_cube_len: 34.171710,
-    mic_drop: success: 2697, fail: 20212, success rate: 11.77%,
-    num_down: 22909,
-    num_down_sat: 34546,
-    ctp: success: 0, fail: 12194, success rate: 0.00%,
-    num_get_bad: 424,
-    overall_block_time: 1.446828211s,
-    block_get_bad_time: 262.332552ms,
-    block_get_predecessor_time: 12.671722ms,
-    block_blocked_time: 64.815676ms,
-    block_mic_time: 1.01309923s,
-    block_push_time: 1.416323ms,
-    overall_propagate_time: 1.198623022s,
+    time: 69.42s,
+    num_mic: 19283,
+    avg_mic_cube_len: 12.125499,
+    avg_po_cube_len: 38.523723,
+    mic_drop: success: 36896, fail: 189951, success rate: 16.26%,
+    num_down: 226847,
+    num_down_sat: 367916,
+    ctp: success: 0, fail: 62458, success rate: 0.00%,
+    num_get_bad: 341,
+    overall_block_time: 42.521127563s,
+    block_get_bad_time: 241.217341ms,
+    block_get_predecessor_time: 10.633357892s,
+    block_blocked_time: 187.287468ms,
+    block_mic_time: 54.307152486s,
+    block_push_time: 208.302362ms,
+    overall_propagate_time: 26.712013817s,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p011.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p011.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 21:55:23 CST 2025
+Finished at: Fri May 16 10:51:57 CST 2025
 ========================================

@@ -1,41 +1,9 @@
-Started at: Thu May 15 21:39:52 CST 2025
-Job <535280> is submitted to default queue <interactive>.
+Started at: Fri May 16 10:31:51 CST 2025
+Job <539737> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu03>>
+<<Starting on bmcpu01>>
 Info: the model to be checked: /root/model.aig
-abc preprocess timeout
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 51477]
-2049 67 7 76 91 2346 7875 20274 23332 14233 7681 9087 
-SolverStatistic {
-    num_solve: 1389188,
-    avg_decide_var: 0.353495,
-    num_simplify_subsume: 39736,
-    num_simplify_self_subsume: 7446,
-}
-Statistic {
-    case: model.aig,
-    time: 991.40s,
-    num_mic: 120189,
-    avg_mic_cube_len: 5.848697,
-    avg_po_cube_len: 234.641696,
-    mic_drop: success: 169513, fail: 454456, success rate: 27.17%,
-    num_down: 623969,
-    num_down_sat: 713824,
-    ctp: success: 0, fail: 26916, success rate: 0.00%,
-    num_get_bad: 133,
-    overall_block_time: 867.453331682s,
-    block_get_bad_time: 692.94634ms,
-    block_get_predecessor_time: 168.795594853s,
-    block_blocked_time: 103.876571382s,
-    block_mic_time: 649.310541856s,
-    block_push_time: 6.304602737s,
-    overall_propagate_time: 123.185804275s,
-    xor_gen: success: 0, fail: 0, success rate: NaN%,
-    num_auxiliary_var: 0,
-    test: success: 0, fail: 0, success rate: NaN%,
-}
-result: unsafe
-File: ./hwmcc19/single/aig/wolf/2019A/picorv32_mutAY_nomem-p4.aig
+abc preprocess timeou[1File: ./hwmcc19/single/aig/wolf/2019A/picorv32_mutAY_nomem-p4.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
 bmcpu03
@@ -49,9 +17,54 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019A/picorv32_mutAY_nomem-p4.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019A/picorv32_mutAY_nomem-p4.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 21:56:41 CST 2025
+Finished at: Fri May 16 11:32:17 CST 2025
+========================================
+  num_simplify_self_subsume: 9596,
+}
+Statistic {
+    case: model.aig,
+    time: 2316.93s,
+    num_mic: 204277,
+    avg_mic_cube_len: 6.173142,
+    avg_po_cube_len: 283.665748,
+    mic_drop: success: 353005, fail: 740157, success rate: 32.29%,
+    num_down: 1093162,
+    num_down_sat: 1352295,
+    ctp: success: 0, fail: 24381, success rate: 0.00%,
+    num_get_bad: 115,
+    overall_block_time: 2179.468185185s,
+    block_get_bad_time: 612.987466ms,
+    block_get_predecessor_time: 278.107951851s,
+    block_blocked_time: 135.158317871s,
+    block_mic_time: 2256.806766589s,
+    block_push_time: 14.630143514s,
+    overall_propagate_time: 136.633217711s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920ns/picorv32_mutAY_nomem-p4.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920ns/picorv32_mutAY_nomem-p4.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Fri May 16 10:40:33 CST 2025
 ========================================

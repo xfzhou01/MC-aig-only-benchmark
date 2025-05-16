@@ -1,12 +1,23 @@
-Started at: Thu May 15 23:08:00 CST 2025
-Job <535951> is submitted to default queue <interactive>.
+Started at: Fri May 16 11:58:46 CST 2025
+Job <540621> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu05>>
+<<Starting on bmcpu07>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
 [0, 0, 0, 0, 0, 0, 0, 0, 14, 25]
 29 6 4 4 7 4 1 0 26 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 71 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 617,
     avg_decide_var: 0.460368,
@@ -24,13 +35,13 @@ Statistic {
     num_down_sat: 304,
     ctp: success: 0, fail: 91, success rate: 0.00%,
     num_get_bad: 21,
-    overall_block_time: 20.145297ms,
-    block_get_bad_time: 6.285993ms,
-    block_get_predecessor_time: 2.272067ms,
-    block_blocked_time: 3.436557ms,
-    block_mic_time: 5.991199ms,
-    block_push_time: 507.642µs,
-    overall_propagate_time: 5.848806ms,
+    overall_block_time: 20.431194ms,
+    block_get_bad_time: 6.432541ms,
+    block_get_predecessor_time: 2.222685ms,
+    block_blocked_time: 3.455112ms,
+    block_mic_time: 6.01166ms,
+    block_push_time: 502.466µs,
+    overall_propagate_time: 5.87037ms,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -50,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/viscoherencep3.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/viscoherencep3.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 23:08:02 CST 2025
+Finished at: Fri May 16 11:58:47 CST 2025
 ========================================

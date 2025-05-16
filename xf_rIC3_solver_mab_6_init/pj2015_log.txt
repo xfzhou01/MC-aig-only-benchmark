@@ -1,36 +1,47 @@
-Started at: Thu May 15 15:48:22 CST 2025
-Job <532925> is submitted to default queue <interactive>.
+Started at: Fri May 16 04:40:04 CST 2025
+Job <537475> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu04>>
+<<Starting on bmcpu06>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
-[0, 0, 0, 0, 0, 8, 48]
-1003 4 4 8 0 48 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44, 18]
+1003 2 19 13 2 3 4 2 12 56 37 2 0 97 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 92 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 4 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 1 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 698,
-    avg_decide_var: 0.869011,
+    num_solve: 5496,
+    avg_decide_var: 0.871446,
     num_simplify_subsume: 0,
     num_simplify_self_subsume: 0,
 }
 Statistic {
     case: model.aig,
-    time: 1.58s,
-    num_mic: 64,
-    avg_mic_cube_len: 5.953125,
-    avg_po_cube_len: 315.181818,
-    mic_drop: success: 71, fail: 301, success rate: 19.09%,
-    num_down: 372,
-    num_down_sat: 463,
-    ctp: success: 0, fail: 134, success rate: 0.00%,
-    num_get_bad: 61,
-    overall_block_time: 1.016136296s,
-    block_get_bad_time: 281.401141ms,
-    block_get_predecessor_time: 0ns,
-    block_blocked_time: 47.617702ms,
-    block_mic_time: 456.02497ms,
-    block_push_time: 1.725µs,
-    overall_propagate_time: 137.443753ms,
+    time: 6.86s,
+    num_mic: 322,
+    avg_mic_cube_len: 8.065217,
+    avg_po_cube_len: 316.866953,
+    mic_drop: success: 471, fail: 1982, success rate: 19.20%,
+    num_down: 2453,
+    num_down_sat: 3931,
+    ctp: success: 0, fail: 385, success rate: 0.00%,
+    num_get_bad: 72,
+    overall_block_time: 5.227579025s,
+    block_get_bad_time: 486.839129ms,
+    block_get_predecessor_time: 706.3622ms,
+    block_blocked_time: 57.34339ms,
+    block_mic_time: 6.490607045s,
+    block_push_time: 54.727565ms,
+    overall_propagate_time: 788.850858ms,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -50,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/pj2015.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/pj2015.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 15:49:34 CST 2025
+Finished at: Fri May 16 04:40:12 CST 2025
 ========================================

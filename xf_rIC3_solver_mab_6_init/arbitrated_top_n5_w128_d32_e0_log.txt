@@ -1,9 +1,51 @@
-Started at: Thu May 15 22:06:17 CST 2025
-Job <535464> is submitted to default queue <interactive>.
+Started at: Fri May 16 10:58:26 CST 2025
+Job <540012> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
 <<Starting on cpu02>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 18, 1, 1, 1, 1, 1, 1, 1, 1, 2, 22, 1, 1, 1, 1, 61, 6779]
+1 14 36 35 80 70 124 93 219 135 189 163 314 211 303 232 701 260 402 258 608 399 568 388 1087 584 872 711 1118 953 1139 1260 2227 6104 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 15 pulls
+  Arm 1 (Aggressive Heuristic): 16 pulls
+  Arm 2 (Conservative Heuristic): 8811 pulls
+  Arm 3 (limit=0, max=0, level=0): 41 pulls
+  Arm 4 (limit=1, max=3, level=1): 15 pulls
+  Arm 5 (limit=2, max=5, level=1): 218 pulls
+  Arm 6 (limit=8, max=4, level=1): 9461 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1496894,
+    avg_decide_var: 0.548532,
+    num_simplify_subsume: 19674,
+    num_simplify_self_subsume: 29011,
+}
+Statistic {
+    case: model.aig,
+    time: 3491.36s,
+    num_mic: 33238,
+    avg_mic_cube_len: 11.539714,
+    avg_po_cube_len: 31.783133,
+    mic_drop: success: 73735, fail: 278241, success rate: 20.95%,
+    num_down: 351976,
+    num_down_sat: 556067,
+    ctp: success: 0, fail: 98000, success rate: 0.00%,
+    num_get_bad: 4802,
+    overall_block_time: 3148.651005466s,
+    block_get_bad_time: 59.256635743s,
+    block_get_predecessor_time: 156.964896012s,
+    block_blocked_time: 17.67408122s,
+    block_mic_time: 3427.570409368s,
+    block_push_time: 961.691153ms,
+    overall_propagate_time: 332.847135862s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
 File: ./hwmcc19/single/aig/mann/data-integrity/unsafe/arbitrated_top_n5_w128_d32_e0.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -18,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/arbitrated_top_n5_w128_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/arbitrated_top_n5_w128_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 23:06:18 CST 2025
+Finished at: Fri May 16 11:56:41 CST 2025
 ========================================

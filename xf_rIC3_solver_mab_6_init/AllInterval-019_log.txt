@@ -1,11 +1,22 @@
-Started at: Thu May 15 13:26:36 CST 2025
-Job <531914> is submitted to default queue <interactive>.
+Started at: Fri May 16 02:08:43 CST 2025
+Job <536860> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu08>>
+<<Starting on bmcpu02>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 [1, 1]
 2 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 0 pulls
+  Arm 1 (Aggressive Heuristic): 0 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 2,
     avg_decide_var: 0.500365,
@@ -14,7 +25,7 @@ SolverStatistic {
 }
 Statistic {
     case: model.aig,
-    time: 5.64s,
+    time: 5.90s,
     num_mic: 0,
     avg_mic_cube_len: NaN,
     avg_po_cube_len: 2.500000,
@@ -23,13 +34,13 @@ Statistic {
     num_down_sat: 0,
     ctp: success: 0, fail: 0, success rate: NaN%,
     num_get_bad: 2,
-    overall_block_time: 5.404564016s,
-    block_get_bad_time: 5.35723683s,
-    block_get_predecessor_time: 13.353014ms,
-    block_blocked_time: 20.299381ms,
+    overall_block_time: 5.68700063s,
+    block_get_bad_time: 5.64956009s,
+    block_get_predecessor_time: 8.47799ms,
+    block_blocked_time: 17.543924ms,
     block_mic_time: 0ns,
     block_push_time: 0ns,
-    overall_propagate_time: 157ns,
+    overall_propagate_time: 62ns,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/xcsp/AllInterval-019.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/xcsp/AllInterval-019.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 13:26:53 CST 2025
+Finished at: Fri May 16 02:08:50 CST 2025
 ========================================

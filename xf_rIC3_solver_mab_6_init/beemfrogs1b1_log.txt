@@ -1,41 +1,10 @@
-Started at: Thu May 15 15:10:39 CST 2025
-Job <532609> is submitted to default queue <interactive>.
+Started at: Fri May 16 03:53:45 CST 2025
+Job <537238> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu08>>
+<<Starting on bmcpu02>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
-[1, 1, 1, 2, 3, 2, 1, 3, 1, 1, 340, 2198]
-158 1 16 85 271 481 618 698 795 843 2036 
-SolverStatistic {
-    num_solve: 368128,
-    avg_decide_var: 1.000624,
-    num_simplify_subsume: 2273,
-    num_simplify_self_subsume: 3360,
-}
-Statistic {
-    case: model.aig,
-    time: 247.48s,
-    num_mic: 7760,
-    avg_mic_cube_len: 29.377448,
-    avg_po_cube_len: 157.985333,
-    mic_drop: success: 50404, fail: 157422, success rate: 24.25%,
-    num_down: 207826,
-    num_down_sat: 345175,
-    ctp: success: 0, fail: 2340, success rate: 0.00%,
-    num_get_bad: 14,
-    overall_block_time: 238.232189326s,
-    block_get_bad_time: 46.270573ms,
-    block_get_predecessor_time: 1.139935999s,
-    block_blocked_time: 9.242827326s,
-    block_mic_time: 218.598056467s,
-    block_push_time: 1.748786619s,
-    overall_propagate_time: 9.109328962s,
-    xor_gen: success: 0, fail: 0, success rate: NaN%,
-    num_auxiliary_var: 0,
-    test: success: 0, fail: 0, success rate: NaN%,
-}
-result: unsafe
 File: ./hwmcc13/single/beemfrogs1b1.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -50,9 +19,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc13/single/beemfrogs1b1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc13/single/beemfrogs1b1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 15:14:48 CST 2025
+Finished at: Fri May 16 04:54:12 CST 2025
 ========================================

@@ -1,20 +1,31 @@
-Started at: Thu May 15 13:35:52 CST 2025
-Job <531980> is submitted to default queue <interactive>.
+Started at: Fri May 16 02:33:10 CST 2025
+Job <536909> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu04>>
+<<Starting on bmcpu05>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 [0, 0, 0, 0, 0, 1]
 2 1 1 0 1 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 20,
-    avg_decide_var: 0.950516,
+    num_solve: 21,
+    avg_decide_var: 0.952897,
     num_simplify_subsume: 0,
     num_simplify_self_subsume: 0,
 }
 Statistic {
     case: model.aig,
-    time: 3.38s,
+    time: 3.06s,
     num_mic: 3,
     avg_mic_cube_len: 4.000000,
     avg_po_cube_len: 197.000000,
@@ -23,13 +34,13 @@ Statistic {
     num_down_sat: 13,
     ctp: success: 0, fail: 1, success rate: 0.00%,
     num_get_bad: 5,
-    overall_block_time: 679.364934ms,
-    block_get_bad_time: 100.186771ms,
-    block_get_predecessor_time: 0ns,
-    block_blocked_time: 11.591205ms,
-    block_mic_time: 527.604114ms,
+    overall_block_time: 619.565439ms,
+    block_get_bad_time: 76.836027ms,
+    block_get_predecessor_time: 24.85459ms,
+    block_blocked_time: 10.825843ms,
+    block_mic_time: 498.022049ms,
     block_push_time: 121ns,
-    overall_propagate_time: 935.176072ms,
+    overall_propagate_time: 798.260141ms,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/eca-rers2012/Problem10_label08.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/eca-rers2012/Problem10_label08.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 13:35:57 CST 2025
+Finished at: Fri May 16 02:33:15 CST 2025
 ========================================

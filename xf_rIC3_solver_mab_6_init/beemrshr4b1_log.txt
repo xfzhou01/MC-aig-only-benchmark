@@ -1,10 +1,52 @@
-Started at: Thu May 15 16:39:42 CST 2025
-Job <533108> is submitted to default queue <interactive>.
+Started at: Fri May 16 05:35:02 CST 2025
+Job <537630> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu05>>
+<<Starting on cpu02>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38, 11]
+720 1 2 6 51 456 271 138 107 152 61 43 12 5 4 109 9 8 9 9 6 5 4 3 7 119 7 7 5 3 3 3 98 6 4 4 1 1 1 1 1 1 1 1 1 1 4 2 3 2 0 92 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 398 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 298602,
+    avg_decide_var: 0.998825,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 741.06s,
+    num_mic: 2095,
+    avg_mic_cube_len: 82.876850,
+    avg_po_cube_len: 720.000000,
+    mic_drop: success: 22959, fail: 132501, success rate: 14.77%,
+    num_down: 155460,
+    num_down_sat: 252494,
+    ctp: success: 0, fail: 3573, success rate: 0.00%,
+    num_get_bad: 76,
+    overall_block_time: 629.225692015s,
+    block_get_bad_time: 5.801761234s,
+    block_get_predecessor_time: 46.171549595s,
+    block_blocked_time: 1.76317911s,
+    block_mic_time: 982.848704951s,
+    block_push_time: 2.796449382s,
+    overall_propagate_time: 102.811577169s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
 File: ./hwmcc15/beemrshr4b1.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -19,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/beemrshr4b1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/beemrshr4b1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 17:39:43 CST 2025
+Finished at: Fri May 16 05:47:25 CST 2025
 ========================================

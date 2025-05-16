@@ -1,40 +1,9 @@
-Started at: Thu May 15 12:35:07 CST 2025
-Job <531589> is submitted to default queue <interactive>.
+Started at: Fri May 16 01:33:43 CST 2025
+Job <536699> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu04>>
+<<Starting on bmcpu03>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 6, 5, 1, 11, 1554]
-281 2 6 28 128 246 591 726 1124 746 644 798 2384 
-SolverStatistic {
-    num_solve: 475021,
-    avg_decide_var: 0.262410,
-    num_simplify_subsume: 6229,
-    num_simplify_self_subsume: 3865,
-}
-Statistic {
-    case: model.aig,
-    time: 86.72s,
-    num_mic: 9660,
-    avg_mic_cube_len: 15.673810,
-    avg_po_cube_len: 74.534612,
-    mic_drop: success: 10209, fail: 138727, success rate: 6.85%,
-    num_down: 148936,
-    num_down_sat: 417098,
-    ctp: success: 0, fail: 2312, success rate: 0.00%,
-    num_get_bad: 17,
-    overall_block_time: 86.085828757s,
-    block_get_bad_time: 43.815828ms,
-    block_get_predecessor_time: 6.62141054s,
-    block_blocked_time: 461.355135ms,
-    block_mic_time: 153.116273259s,
-    block_push_time: 547.972962ms,
-    overall_propagate_time: 175.253443ms,
-    xor_gen: success: 0, fail: 0, success rate: NaN%,
-    num_auxiliary_var: 0,
-    test: success: 0, fail: 0, success rate: NaN%,
-}
-result: unsafe
 File: ./hwmcc24/2024/hku/x-epic/xepic_a17-p02.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -49,9 +18,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/xepic_a17-p02.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/xepic_a17-p02.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 12:36:36 CST 2025
+Finished at: Fri May 16 02:33:45 CST 2025
 ========================================

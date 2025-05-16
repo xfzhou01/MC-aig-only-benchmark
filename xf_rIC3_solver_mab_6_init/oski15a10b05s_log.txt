@@ -1,12 +1,23 @@
-Started at: Thu May 15 16:08:16 CST 2025
-Job <533007> is submitted to default queue <interactive>.
+Started at: Fri May 16 04:53:57 CST 2025
+Job <537545> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu06>>
+<<Starting on bmcpu01>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
 [1, 1, 150]
 2909 150 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 22 pulls
+  Arm 1 (Aggressive Heuristic): 22 pulls
+  Arm 2 (Conservative Heuristic): 22 pulls
+  Arm 3 (limit=0, max=0, level=0): 21 pulls
+  Arm 4 (limit=1, max=3, level=1): 21 pulls
+  Arm 5 (limit=2, max=5, level=1): 21 pulls
+  Arm 6 (limit=8, max=4, level=1): 21 pulls
+----------------------------
 SolverStatistic {
     num_solve: 152,
     avg_decide_var: 2.981724,
@@ -15,7 +26,7 @@ SolverStatistic {
 }
 Statistic {
     case: model.aig,
-    time: 1.77s,
+    time: 2.04s,
     num_mic: 150,
     avg_mic_cube_len: 1.000000,
     avg_po_cube_len: 929.226872,
@@ -24,13 +35,13 @@ Statistic {
     num_down_sat: 0,
     ctp: success: 0, fail: 0, success rate: NaN%,
     num_get_bad: 152,
-    overall_block_time: 1.603016254s,
-    block_get_bad_time: 581.801251ms,
-    block_get_predecessor_time: 3.548217ms,
-    block_blocked_time: 53.699324ms,
-    block_mic_time: 4.636974ms,
-    block_push_time: 4.043µs,
-    overall_propagate_time: 143ns,
+    overall_block_time: 1.852957028s,
+    block_get_bad_time: 701.491272ms,
+    block_get_predecessor_time: 3.748743ms,
+    block_blocked_time: 61.69402ms,
+    block_mic_time: 2.173395ms,
+    block_push_time: 4.791µs,
+    overall_propagate_time: 222ns,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -50,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/oski15a10b05s.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/oski15a10b05s.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 16:08:27 CST 2025
+Finished at: Fri May 16 04:54:00 CST 2025
 ========================================

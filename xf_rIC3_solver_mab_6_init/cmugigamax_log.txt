@@ -1,12 +1,23 @@
-Started at: Thu May 15 23:19:29 CST 2025
-Job <536288> is submitted to default queue <interactive>.
+Started at: Fri May 16 12:10:15 CST 2025
+Job <541038> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu06>>
+<<Starting on bmcpu02>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
 [0, 0, 0, 1, 3]
 29 2 0 3 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 3 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 32,
     avg_decide_var: 0.979919,
@@ -24,13 +35,13 @@ Statistic {
     num_down_sat: 19,
     ctp: success: 0, fail: 3, success rate: 0.00%,
     num_get_bad: 7,
-    overall_block_time: 3.969044ms,
-    block_get_bad_time: 2.316509ms,
+    overall_block_time: 4.028584ms,
+    block_get_bad_time: 2.337654ms,
     block_get_predecessor_time: 0ns,
-    block_blocked_time: 105.424µs,
-    block_mic_time: 839.48µs,
-    block_push_time: 133ns,
-    overall_propagate_time: 441.627µs,
+    block_blocked_time: 110.048µs,
+    block_mic_time: 834.014µs,
+    block_push_time: 170ns,
+    overall_propagate_time: 450.69µs,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -50,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/cmugigamax.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/cmugigamax.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 23:19:31 CST 2025
+Finished at: Fri May 16 12:10:17 CST 2025
 ========================================

@@ -1,9 +1,51 @@
-Started at: Thu May 15 20:48:48 CST 2025
-Job <535109> is submitted to default queue <interactive>.
+Started at: Fri May 16 09:42:02 CST 2025
+Job <539569> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu05>>
+<<Starting on bmcpu06>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 122]
+78 10 12 48 61 102 88 64 22 4 0 62 145 197 197 258 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 3 pulls
+  Arm 4 (limit=1, max=3, level=1): 3 pulls
+  Arm 5 (limit=2, max=5, level=1): 30 pulls
+  Arm 6 (limit=8, max=4, level=1): 332 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 37080,
+    avg_decide_var: 0.298917,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.83s,
+    num_mic: 1810,
+    avg_mic_cube_len: 6.208287,
+    avg_po_cube_len: 76.796067,
+    mic_drop: success: 1796, fail: 8973, success rate: 16.68%,
+    num_down: 10769,
+    num_down_sat: 16678,
+    ctp: success: 0, fail: 3487, success rate: 0.00%,
+    num_get_bad: 51,
+    overall_block_time: 1.54426355s,
+    block_get_bad_time: 13.431591ms,
+    block_get_predecessor_time: 503.342303ms,
+    block_blocked_time: 14.123711ms,
+    block_mic_time: 1.953672839s,
+    block_push_time: 5.019921ms,
+    overall_propagate_time: 230.057796ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
 File: ./hwmcc1920ns/zipcpu-zipmmu-p48.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -18,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920ns/zipcpu-zipmmu-p48.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920ns/zipcpu-zipmmu-p48.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 21:48:50 CST 2025
+Finished at: Fri May 16 09:42:04 CST 2025
 ========================================

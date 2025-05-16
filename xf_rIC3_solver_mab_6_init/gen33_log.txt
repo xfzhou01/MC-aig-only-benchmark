@@ -1,14 +1,25 @@
-Started at: Thu May 15 21:31:45 CST 2025
-Job <535204> is submitted to default queue <interactive>.
+Started at: Fri May 16 10:21:12 CST 2025
+Job <539655> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu06>>
+<<Starting on cpu04>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 [0, 0, 0, 0, 0, 4]
 3 1 1 0 4 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 5 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 27,
-    avg_decide_var: 0.822389,
+    num_solve: 30,
+    avg_decide_var: 0.814283,
     num_simplify_subsume: 0,
     num_simplify_self_subsume: 0,
 }
@@ -23,13 +34,13 @@ Statistic {
     num_down_sat: 6,
     ctp: success: 0, fail: 7, success rate: 0.00%,
     num_get_bad: 6,
-    overall_block_time: 491.752µs,
-    block_get_bad_time: 242.316µs,
-    block_get_predecessor_time: 33.935µs,
-    block_blocked_time: 45.997µs,
-    block_mic_time: 42.682µs,
-    block_push_time: 16.67µs,
-    overall_propagate_time: 110.34µs,
+    overall_block_time: 591.11µs,
+    block_get_bad_time: 279.327µs,
+    block_get_predecessor_time: 60.798µs,
+    block_blocked_time: 45.722µs,
+    block_mic_time: 84.297µs,
+    block_push_time: 19.011µs,
+    overall_propagate_time: 110.059µs,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/goel/industry/gen33/gen33.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/goel/industry/gen33/gen33.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 21:31:46 CST 2025
+Finished at: Fri May 16 10:21:17 CST 2025
 ========================================

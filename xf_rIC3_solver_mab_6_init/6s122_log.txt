@@ -1,10 +1,52 @@
-Started at: Thu May 15 15:03:14 CST 2025
-Job <532577> is submitted to default queue <interactive>.
+Started at: Fri May 16 03:49:30 CST 2025
+Job <537230> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu03>>
+<<Starting on bmcpu07>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 2, 2, 2, 2, 1, 1, 3, 1, 1, 1, 5, 6, 70, 22, 6, 1, 1, 1, 1, 165, 54, 2, 1, 1, 2, 1, 3, 8, 1, 1, 1, 1, 4, 2, 1, 5, 1, 1, 3, 1, 1, 1, 132, 1, 2, 5, 5, 1, 1, 1, 1, 1, 3, 2, 1, 1, 1, 3, 2, 1, 1, 1, 1, 4, 2, 1, 1, 4, 2, 1, 1, 4, 2, 1, 1, 4, 2, 1, 1, 4, 3, 4, 1, 1, 2, 4, 1, 1, 1, 1, 4, 2, 2, 4, 1, 1, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 44, 16, 34, 8018, 1640]
+554 13 6 3 11 11 24 33 51 50 48 57 91 89 112 108 112 103 98 99 127 128 145 110 119 139 136 165 181 246 293 327 344 359 468 429 403 400 418 452 427 351 306 290 260 240 506 240 195 172 171 66 86 71 48 45 45 51 46 50 46 37 38 35 27 29 21 25 30 31 39 39 32 39 40 37 38 37 35 44 42 39 34 32 33 36 34 30 30 35 41 39 46 55 57 48 45 44 41 40 43 33 34 41 35 36 31 34 34 31 35 40 40 36 31 42 50 57 196 69 93 126 220 742 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 327 pulls
+  Arm 1 (Aggressive Heuristic): 57 pulls
+  Arm 2 (Conservative Heuristic): 35165 pulls
+  Arm 3 (limit=0, max=0, level=0): 383 pulls
+  Arm 4 (limit=1, max=3, level=1): 149 pulls
+  Arm 5 (limit=2, max=5, level=1): 6010 pulls
+  Arm 6 (limit=8, max=4, level=1): 2973 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1875895,
+    avg_decide_var: 0.211793,
+    num_simplify_subsume: 107933,
+    num_simplify_self_subsume: 80801,
+}
+Statistic {
+    case: model.aig,
+    time: 99.31s,
+    num_mic: 55497,
+    avg_mic_cube_len: 14.473539,
+    avg_po_cube_len: 107.696664,
+    mic_drop: success: 47145, fail: 748552, success rate: 5.92%,
+    num_down: 795697,
+    num_down_sat: 1162378,
+    ctp: success: 0, fail: 63103, success rate: 0.00%,
+    num_get_bad: 152,
+    overall_block_time: 82.712564027s,
+    block_get_bad_time: 164.494886ms,
+    block_get_predecessor_time: 7.208400797s,
+    block_blocked_time: 6.824484419s,
+    block_mic_time: 57.584424452s,
+    block_push_time: 610.735607ms,
+    overall_propagate_time: 15.898219155s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
 File: ./hwmcc13/single/6s122.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -19,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc13/single/6s122.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc13/single/6s122.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 16:05:12 CST 2025
+Finished at: Fri May 16 03:51:16 CST 2025
 ========================================

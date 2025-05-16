@@ -1,11 +1,22 @@
-Started at: Thu May 15 13:28:17 CST 2025
-Job <531923> is submitted to default queue <interactive>.
+Started at: Fri May 16 02:17:54 CST 2025
+Job <536869> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu05>>
+<<Starting on cpu04>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 [1, 1]
 2 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 0 pulls
+  Arm 1 (Aggressive Heuristic): 0 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 2,
     avg_decide_var: 0.500138,
@@ -14,7 +25,7 @@ SolverStatistic {
 }
 Statistic {
     case: model.aig,
-    time: 11.79s,
+    time: 13.10s,
     num_mic: 0,
     avg_mic_cube_len: NaN,
     avg_po_cube_len: 2.500000,
@@ -23,13 +34,13 @@ Statistic {
     num_down_sat: 0,
     ctp: success: 0, fail: 0, success rate: NaN%,
     num_get_bad: 2,
-    overall_block_time: 11.267258226s,
-    block_get_bad_time: 10.62826272s,
-    block_get_predecessor_time: 24.358499ms,
-    block_blocked_time: 588.857979ms,
+    overall_block_time: 12.53934113s,
+    block_get_bad_time: 11.794098781s,
+    block_get_predecessor_time: 26.961144ms,
+    block_blocked_time: 679.767586ms,
     block_mic_time: 0ns,
     block_push_time: 0ns,
-    overall_propagate_time: 52ns,
+    overall_propagate_time: 240ns,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/floats-cdfpl/newton_1_5.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/floats-cdfpl/newton_1_5.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 13:28:31 CST 2025
+Finished at: Fri May 16 02:18:15 CST 2025
 ========================================

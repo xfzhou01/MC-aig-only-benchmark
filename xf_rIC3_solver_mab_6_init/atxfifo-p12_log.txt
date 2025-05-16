@@ -1,40 +1,9 @@
-Started at: Thu May 15 12:28:37 CST 2025
-Job <531372> is submitted to default queue <interactive>.
+Started at: Fri May 16 01:27:13 CST 2025
+Job <536507> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu05>>
+<<Starting on bmcpu02>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70887, 11495]
-85 2 3 6 6 10 18 43 94 86 97 88 55 54 65 150 311 291 247 256 202 206 179 237 295 344 232 175 182 148 175 216 238 273 259 212 254 290 453 420 738 637 906 697 635 406 408 628 1428 1099 1258 812 1050 674 631 609 1046 889 772 687 921 917 901 758 823 873 846 747 685 483 567 498 577 519 396 280 182 100 66 34 20 40 7 6 4 2 0 13309 
-SolverStatistic {
-    num_solve: 9561974,
-    avg_decide_var: 0.688735,
-    num_simplify_subsume: 1175909,
-    num_simplify_self_subsume: 536467,
-}
-Statistic {
-    case: model.aig,
-    time: 1522.61s,
-    num_mic: 275149,
-    avg_mic_cube_len: 19.994523,
-    avg_po_cube_len: 45.640174,
-    mic_drop: success: 740803, fail: 4350999, success rate: 14.55%,
-    num_down: 5091802,
-    num_down_sat: 7061368,
-    ctp: success: 0, fail: 583748, success rate: 0.00%,
-    num_get_bad: 3913,
-    overall_block_time: 1042.93538122s,
-    block_get_bad_time: 1.570247121s,
-    block_get_predecessor_time: 11.03098488s,
-    block_blocked_time: 115.833950872s,
-    block_mic_time: 787.030180015s,
-    block_push_time: 12.621097621s,
-    overall_propagate_time: 479.376188868s,
-    xor_gen: success: 0, fail: 0, success rate: NaN%,
-    num_auxiliary_var: 0,
-    test: success: 0, fail: 0, success rate: NaN%,
-}
-result: safe
 File: ./others/atxfifo/aig/atxfifo-p12.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -49,9 +18,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/atxfifo/aig/atxfifo-p12.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/atxfifo/aig/atxfifo-p12.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 12:54:02 CST 2025
+Finished at: Fri May 16 02:27:14 CST 2025
 ========================================

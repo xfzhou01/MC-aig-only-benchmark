@@ -1,35 +1,46 @@
-Started at: Thu May 15 13:40:10 CST 2025
-Job <532062> is submitted to default queue <interactive>.
+Started at: Fri May 16 02:36:46 CST 2025
+Job <536990> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
 <<Starting on bmcpu04>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 18929, 14117]
-1 4 69 141 78 139 144 209 90 135 180 266 262 375 360 356 113 137 137 136 151 263 358 461 359 522 1050 1074 1134 1133 513 765 485 385 299 356 256 347 328 408 356 335 495 588 553 518 461 1224 786 377 476 526 735 568 598 972 1050 664 689 626 804 1053 894 1065 1139 593 16213 
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 15638, 14075]
+1 8 69 141 77 139 144 208 90 137 181 262 269 262 291 325 351 132 135 137 137 424 666 215 335 204 280 397 460 698 885 661 968 2095 704 130 176 381 335 389 374 322 362 412 519 400 359 1001 288 306 424 555 518 779 513 489 1110 686 712 665 890 627 717 895 1047 1181 16007 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 51758 pulls
+  Arm 1 (Aggressive Heuristic): 32 pulls
+  Arm 2 (Conservative Heuristic): 14250 pulls
+  Arm 3 (limit=0, max=0, level=0): 30501 pulls
+  Arm 4 (limit=1, max=3, level=1): 22 pulls
+  Arm 5 (limit=2, max=5, level=1): 28 pulls
+  Arm 6 (limit=8, max=4, level=1): 23 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 3488170,
-    avg_decide_var: 0.325272,
-    num_simplify_subsume: 384585,
-    num_simplify_self_subsume: 432314,
+    num_solve: 3090398,
+    avg_decide_var: 0.338479,
+    num_simplify_subsume: 464514,
+    num_simplify_self_subsume: 547056,
 }
 Statistic {
     case: model.aig,
-    time: 663.40s,
-    num_mic: 111795,
-    avg_mic_cube_len: 13.140149,
-    avg_po_cube_len: 18.687324,
-    mic_drop: success: 226063, fail: 1218449, success rate: 15.65%,
-    num_down: 1444512,
-    num_down_sat: 2088976,
-    ctp: success: 0, fail: 323055, success rate: 0.00%,
-    num_get_bad: 234,
-    overall_block_time: 492.624062873s,
-    block_get_bad_time: 1.370585636s,
-    block_get_predecessor_time: 2.072192037s,
-    block_blocked_time: 30.642226396s,
-    block_mic_time: 411.84607705s,
-    block_push_time: 8.305287821s,
-    overall_propagate_time: 169.034071109s,
+    time: 583.43s,
+    num_mic: 96628,
+    avg_mic_cube_len: 13.300927,
+    avg_po_cube_len: 18.725900,
+    mic_drop: success: 199301, fail: 1062694, success rate: 15.79%,
+    num_down: 1261995,
+    num_down_sat: 1825295,
+    ctp: success: 0, fail: 289568, success rate: 0.00%,
+    num_get_bad: 213,
+    overall_block_time: 429.64502551s,
+    block_get_bad_time: 1.48592844s,
+    block_get_predecessor_time: 1.908280362s,
+    block_blocked_time: 26.483512427s,
+    block_mic_time: 360.954575238s,
+    block_push_time: 5.815691481s,
+    overall_propagate_time: 152.108841532s,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/mann/data-integrity/unsafe/shift_register_top_w32_d64_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/mann/data-integrity/unsafe/shift_register_top_w32_d64_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 13:51:22 CST 2025
+Finished at: Fri May 16 02:46:31 CST 2025
 ========================================

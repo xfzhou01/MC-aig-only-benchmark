@@ -1,9 +1,51 @@
-Started at: Thu May 15 12:35:34 CST 2025
-Job <531602> is submitted to default queue <interactive>.
+Started at: Fri May 16 01:34:09 CST 2025
+Job <536712> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu05>>
+<<Starting on cpu03>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 72088]
+66 6 14 12 27 74 51 72 56 57 50 65 70 53 56 56 49 67 59 54 46 54 49 48 44 43 38 50 37 40 36 40 34 76 69 51 45 58 47 43 37 38 36 31 21 19 20 16 16 66 60 24 20 26 18 16 17 27 22 18 17 28 21 45 44 126 123 67 83 72 61 39 34 46 40 21 28 35 30 18 18 55 51 28 41 37 25 18 14 43 27 18 20 25 14 10 12 99 87 54 70 71 43 37 35 67 53 41 40 35 28 27 33 68 72 45 45 44 34 37 39 59 57 44 55 92 71 62 64 100 99 131 148 220 340 427 306 325 232 221 205 265 253 189 213 244 216 127 96 97 78 48 42 40 36 30 23 20 17 13 16 8 7 5 10 10 5 4 5 6 2 1 1 3 2 1 1 0 652 32 27 39 26 23 46 54 33 28 33 50 40 31 55 48 37 61 46 42 75 59 44 48 40 37 38 63 45 49 52 94 88 80 83 12281 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 9766 pulls
+  Arm 1 (Aggressive Heuristic): 227929 pulls
+  Arm 2 (Conservative Heuristic): 4095 pulls
+  Arm 3 (limit=0, max=0, level=0): 113 pulls
+  Arm 4 (limit=1, max=3, level=1): 1440 pulls
+  Arm 5 (limit=2, max=5, level=1): 42343 pulls
+  Arm 6 (limit=8, max=4, level=1): 3024 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 9773529,
+    avg_decide_var: 0.537605,
+    num_simplify_subsume: 8925426,
+    num_simplify_self_subsume: 5518140,
+}
+Statistic {
+    case: model.aig,
+    time: 1823.87s,
+    num_mic: 324244,
+    avg_mic_cube_len: 12.023704,
+    avg_po_cube_len: 56.898466,
+    mic_drop: success: 373232, fail: 3458855, success rate: 9.74%,
+    num_down: 3832087,
+    num_down_sat: 3745372,
+    ctp: success: 0, fail: 2344117, success rate: 0.00%,
+    num_get_bad: 301,
+    overall_block_time: 960.189788298s,
+    block_get_bad_time: 337.458083ms,
+    block_get_predecessor_time: 43.151596876s,
+    block_blocked_time: 214.153677102s,
+    block_mic_time: 492.653396163s,
+    block_push_time: 16.424318606s,
+    overall_propagate_time: 862.940810665s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
 File: ./hwmcc24/2024/hku/seq/counter_wrapper_2_4/counter_bit_width_large.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -18,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/seq/counter_wrapper_2_4/counter_bit_width_large.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/seq/counter_wrapper_2_4/counter_bit_width_large.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 13:35:35 CST 2025
+Finished at: Fri May 16 02:04:35 CST 2025
 ========================================

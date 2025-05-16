@@ -1,35 +1,46 @@
-Started at: Thu May 15 12:34:57 CST 2025
-Job <531584> is submitted to default queue <interactive>.
+Started at: Fri May 16 01:33:32 CST 2025
+Job <536693> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu04>>
+<<Starting on bmcpu03>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4140, 11541]
-194 5 5 92 674 3227 4674 1570 915 556 445 324 258 236 251 300 232 153 119 104 52 61 97 94 91 79 53 67 61 51 40 61 45 38 28 10 7 2 6 8 8 7 7 5 5 1 0 11754 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2491, 6263]
+194 22 264 2058 3297 4755 4648 3284 1540 1083 727 530 400 460 233 143 228 243 371 311 216 298 293 340 278 174 180 122 141 234 289 358 312 200 270 206 128 100 108 139 137 213 195 358 228 145 203 199 294 204 101 96 140 105 55 90 135 102 68 124 388 688 947 504 186 113 60 92 117 156 136 120 78 71 47 55 32 61 59 54 35 40 41 36 46 91 141 202 154 137 113 116 91 77 98 123 121 81 40 31 56 106 125 141 137 93 55 26 12 11 25 20 14 8 9 3 11 5 13 15 22 24 13 8 2 8 13 12 19 5 0 25780 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 389 pulls
+  Arm 1 (Aggressive Heuristic): 299 pulls
+  Arm 2 (Conservative Heuristic): 166 pulls
+  Arm 3 (limit=0, max=0, level=0): 84 pulls
+  Arm 4 (limit=1, max=3, level=1): 610 pulls
+  Arm 5 (limit=2, max=5, level=1): 56561 pulls
+  Arm 6 (limit=8, max=4, level=1): 2334 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 1560050,
-    avg_decide_var: 0.381285,
-    num_simplify_subsume: 9506,
-    num_simplify_self_subsume: 913,
+    num_solve: 8949471,
+    avg_decide_var: 0.450307,
+    num_simplify_subsume: 239760,
+    num_simplify_self_subsume: 99517,
 }
 Statistic {
     case: model.aig,
-    time: 169.83s,
-    num_mic: 42031,
-    avg_mic_cube_len: 10.329566,
-    avg_po_cube_len: 104.700197,
-    mic_drop: success: 40239, fail: 380026, success rate: 9.57%,
-    num_down: 420265,
-    num_down_sat: 580001,
-    ctp: success: 0, fail: 445713, success rate: 0.00%,
-    num_get_bad: 6959,
-    overall_block_time: 77.554685032s,
-    block_get_bad_time: 7.710220696s,
-    block_get_predecessor_time: 3.583552893s,
-    block_blocked_time: 7.954473364s,
-    block_mic_time: 49.502263424s,
-    block_push_time: 390.471525ms,
-    overall_propagate_time: 91.857505031s,
+    time: 2303.55s,
+    num_mic: 113185,
+    avg_mic_cube_len: 10.622415,
+    avg_po_cube_len: 102.144077,
+    mic_drop: success: 213473, fail: 897029, success rate: 19.22%,
+    num_down: 1110502,
+    num_down_sat: 1740445,
+    ctp: success: 0, fail: 2338149, success rate: 0.00%,
+    num_get_bad: 3649,
+    overall_block_time: 594.529415248s,
+    block_get_bad_time: 10.607007852s,
+    block_get_predecessor_time: 99.962562617s,
+    block_blocked_time: 15.61867168s,
+    block_mic_time: 690.229555634s,
+    block_push_time: 22.411718129s,
+    overall_propagate_time: 1707.913268157s,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/a16-p018.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/x-epic/a16-p018.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 12:37:49 CST 2025
+Finished at: Fri May 16 02:11:58 CST 2025
 ========================================

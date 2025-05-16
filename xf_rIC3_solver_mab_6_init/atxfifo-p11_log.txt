@@ -1,9 +1,51 @@
-Started at: Thu May 15 12:29:39 CST 2025
-Job <531414> is submitted to default queue <interactive>.
+Started at: Fri May 16 01:28:14 CST 2025
+Job <536537> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu08>>
+<<Starting on bmcpu07>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9246, 2962]
+80 3 4 10 9 10 11 16 30 28 37 30 64 120 132 163 87 41 32 34 30 141 264 263 129 143 115 119 55 100 66 120 41 64 43 75 32 44 36 77 60 103 44 50 46 73 53 77 75 90 80 83 90 485 337 646 211 463 321 408 208 439 238 442 171 268 181 208 128 393 203 484 201 188 149 135 149 175 131 165 124 113 110 115 85 58 50 47 35 50 14 15 19 33 34 32 27 30 19 21 24 28 10 3 2 0 10701 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 28 pulls
+  Arm 1 (Aggressive Heuristic): 1841 pulls
+  Arm 2 (Conservative Heuristic): 3033 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 7 pulls
+  Arm 5 (limit=2, max=5, level=1): 56096 pulls
+  Arm 6 (limit=8, max=4, level=1): 36 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3071101,
+    avg_decide_var: 0.662622,
+    num_simplify_subsume: 732706,
+    num_simplify_self_subsume: 344871,
+}
+Statistic {
+    case: model.aig,
+    time: 385.32s,
+    num_mic: 101212,
+    avg_mic_cube_len: 12.580583,
+    avg_po_cube_len: 45.955640,
+    mic_drop: success: 197438, fail: 953217, success rate: 17.16%,
+    num_down: 1150655,
+    num_down_sat: 1415515,
+    ctp: success: 0, fail: 467586, success rate: 0.00%,
+    num_get_bad: 837,
+    overall_block_time: 217.484907811s,
+    block_get_bad_time: 294.646423ms,
+    block_get_predecessor_time: 16.720295762s,
+    block_blocked_time: 10.639202661s,
+    block_mic_time: 248.317887703s,
+    block_push_time: 6.709345664s,
+    overall_propagate_time: 167.680628392s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
 File: ./others/atxfifo/aig/atxfifo-p11.aig
 bsub -Ip -n 1 -m bmcpu01
 bmcpu02
@@ -18,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/atxfifo/aig/atxfifo-p11.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/atxfifo/aig/atxfifo-p11.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 13:29:39 CST 2025
+Finished at: Fri May 16 01:34:40 CST 2025
 ========================================

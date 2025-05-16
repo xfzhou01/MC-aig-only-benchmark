@@ -1,12 +1,23 @@
-Started at: Thu May 15 20:33:07 CST 2025
-Job <535050> is submitted to default queue <interactive>.
+Started at: Fri May 16 09:23:16 CST 2025
+Job <539505> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu04>>
+<<Starting on bmcpu04>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
 [0, 0, 0, 1, 2]
 637 2 0 2 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 12,
     avg_decide_var: 2.411434,
@@ -24,13 +35,13 @@ Statistic {
     num_down_sat: 2,
     ctp: success: 0, fail: 3, success rate: 0.00%,
     num_get_bad: 6,
-    overall_block_time: 5.779166ms,
-    block_get_bad_time: 5.094745ms,
+    overall_block_time: 5.412834ms,
+    block_get_bad_time: 4.732566ms,
     block_get_predecessor_time: 0ns,
-    block_blocked_time: 77.682µs,
-    block_mic_time: 213.507µs,
-    block_push_time: 149ns,
-    overall_propagate_time: 539.402µs,
+    block_blocked_time: 74.939µs,
+    block_mic_time: 210.663µs,
+    block_push_time: 130ns,
+    overall_propagate_time: 464.132µs,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -50,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc14/single/6s282b01.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc14/single/6s282b01.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 20:33:25 CST 2025
+Finished at: Fri May 16 09:23:18 CST 2025
 ========================================

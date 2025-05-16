@@ -1,12 +1,23 @@
-Started at: Thu May 15 23:11:27 CST 2025
-Job <536052> is submitted to default queue <interactive>.
+Started at: Fri May 16 12:02:13 CST 2025
+Job <540795> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu05>>
+<<Starting on cpu02>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
 [1, 1, 23, 12]
 110 24 12 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 6 pulls
+  Arm 1 (Aggressive Heuristic): 5 pulls
+  Arm 2 (Conservative Heuristic): 5 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 5 pulls
+  Arm 5 (limit=2, max=5, level=1): 5 pulls
+  Arm 6 (limit=8, max=4, level=1): 5 pulls
+----------------------------
 SolverStatistic {
     num_solve: 82,
     avg_decide_var: 2.180856,
@@ -24,13 +35,13 @@ Statistic {
     num_down_sat: 8,
     ctp: success: 0, fail: 11, success rate: 0.00%,
     num_get_bad: 37,
-    overall_block_time: 9.331259ms,
-    block_get_bad_time: 2.167847ms,
-    block_get_predecessor_time: 294.393µs,
-    block_blocked_time: 518.386µs,
-    block_mic_time: 306.687µs,
-    block_push_time: 892ns,
-    overall_propagate_time: 415.285µs,
+    overall_block_time: 9.467401ms,
+    block_get_bad_time: 2.199448ms,
+    block_get_predecessor_time: 352.755µs,
+    block_blocked_time: 567.331µs,
+    block_mic_time: 376.453µs,
+    block_push_time: 1.03µs,
+    overall_propagate_time: 423.768µs,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -50,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/brpptimo.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/brpptimo.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 23:11:28 CST 2025
+Finished at: Fri May 16 12:02:15 CST 2025
 ========================================

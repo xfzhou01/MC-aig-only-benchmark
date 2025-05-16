@@ -1,11 +1,22 @@
-Started at: Thu May 15 12:27:57 CST 2025
-Job <531350> is submitted to default queue <interactive>.
+Started at: Fri May 16 01:26:32 CST 2025
+Job <536487> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu02>>
+<<Starting on bmcpu06>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 []
 394 0 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 0 pulls
+  Arm 1 (Aggressive Heuristic): 0 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 1,
     avg_decide_var: 1.467652,
@@ -23,13 +34,13 @@ Statistic {
     num_down_sat: 0,
     ctp: success: 0, fail: 0, success rate: NaN%,
     num_get_bad: 2,
-    overall_block_time: 878.898µs,
-    block_get_bad_time: 876.749µs,
+    overall_block_time: 803.493µs,
+    block_get_bad_time: 801.815µs,
     block_get_predecessor_time: 0ns,
     block_blocked_time: 0ns,
     block_mic_time: 0ns,
     block_push_time: 0ns,
-    overall_propagate_time: 925ns,
+    overall_propagate_time: 509ns,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/vgasim-imgfifo/aig/imgfifo-p043.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/vgasim-imgfifo/aig/imgfifo-p043.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 12:27:57 CST 2025
+Finished at: Fri May 16 01:26:33 CST 2025
 ========================================

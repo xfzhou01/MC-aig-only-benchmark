@@ -1,35 +1,46 @@
-Started at: Thu May 15 20:17:47 CST 2025
-Job <534853> is submitted to default queue <interactive>.
+Started at: Fri May 16 09:06:18 CST 2025
+Job <539311> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu04>>
+<<Starting on bmcpu02>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3588, 686]
-116 13 18 10 14 8 246 57 137 9 95 8 81 71 4 189 4 70 12 76 10 11 74 17 78 11 74 10 8 8 8 71 8 5 6 4 68 11 13 13 12 10 15 17 20 85 17 20 22 12 13 410 14 15 92 18 13 254 26 20 15 13 579 104 0 747 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1022, 460]
+116 1 13 24 11 105 22 17 14 10 12 94 13 39 16 143 34 119 24 13 13 58 75 161 73 161 166 114 46 168 39 26 151 21 10 7 55 124 37 117 115 39 101 13 4 9 148 14 3 8 83 20 19 90 15 12 10 145 18 15 14 86 9 3 3 7 126 19 30 7 153 7 4 2 1 2 74 1 2 1 2 3 69 2 3 3 5 72 5 3 1 7 72 4 3 1 4 5 75 5 4 2 3 1 173 0 1092 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 255 pulls
+  Arm 1 (Aggressive Heuristic): 268 pulls
+  Arm 2 (Conservative Heuristic): 248 pulls
+  Arm 3 (limit=0, max=0, level=0): 404 pulls
+  Arm 4 (limit=1, max=3, level=1): 374 pulls
+  Arm 5 (limit=2, max=5, level=1): 2921 pulls
+  Arm 6 (limit=8, max=4, level=1): 902 pulls
+----------------------------
 SolverStatistic {
-    num_solve: 365545,
-    avg_decide_var: 0.553701,
-    num_simplify_subsume: 14762,
-    num_simplify_self_subsume: 1364,
+    num_solve: 484464,
+    avg_decide_var: 0.540310,
+    num_simplify_subsume: 9874,
+    num_simplify_self_subsume: 1924,
 }
 Statistic {
     case: model.aig,
-    time: 12.01s,
-    num_mic: 8250,
-    avg_mic_cube_len: 20.295879,
-    avg_po_cube_len: 88.433864,
-    mic_drop: success: 10033, fail: 155787, success rate: 6.05%,
-    num_down: 165820,
-    num_down_sat: 247608,
-    ctp: success: 0, fail: 20182, success rate: 0.00%,
-    num_get_bad: 1043,
-    overall_block_time: 9.818524031s,
-    block_get_bad_time: 155.793469ms,
-    block_get_predecessor_time: 410.894246ms,
-    block_blocked_time: 454.938272ms,
-    block_mic_time: 7.693613106s,
-    block_push_time: 521.001609ms,
-    overall_propagate_time: 2.030116502s,
+    time: 19.77s,
+    num_mic: 7941,
+    avg_mic_cube_len: 12.631658,
+    avg_po_cube_len: 97.303041,
+    mic_drop: success: 6862, fail: 91900, success rate: 6.95%,
+    num_down: 98762,
+    num_down_sat: 146081,
+    ctp: success: 0, fail: 81603, success rate: 0.00%,
+    num_get_bad: 798,
+    overall_block_time: 13.79590329s,
+    block_get_bad_time: 203.159439ms,
+    block_get_predecessor_time: 3.973714112s,
+    block_blocked_time: 176.616024ms,
+    block_mic_time: 14.185089135s,
+    block_push_time: 345.206894ms,
+    overall_propagate_time: 5.699967326s,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_qflexpress_divfive-p075.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_qflexpress_divfive-p075.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 20:18:00 CST 2025
+Finished at: Fri May 16 09:06:40 CST 2025
 ========================================

@@ -1,12 +1,23 @@
-Started at: Thu May 15 23:14:49 CST 2025
-Job <536151> is submitted to default queue <interactive>.
+Started at: Fri May 16 12:05:35 CST 2025
+Job <540896> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on bmcpu02>>
+<<Starting on cpu02>>
 Info: the model to be checked: /root/model.aig
 Warning: property not found, moved 1 outputs to bad properties
 abc preprocess timeout
 []
 61 0 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 0 pulls
+  Arm 1 (Aggressive Heuristic): 0 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 1,
     avg_decide_var: 0.347079,
@@ -24,13 +35,13 @@ Statistic {
     num_down_sat: 0,
     ctp: success: 0, fail: 0, success rate: NaN%,
     num_get_bad: 2,
-    overall_block_time: 179.587µs,
-    block_get_bad_time: 177.981µs,
+    overall_block_time: 200.937µs,
+    block_get_bad_time: 198.738µs,
     block_get_predecessor_time: 0ns,
     block_blocked_time: 0ns,
     block_mic_time: 0ns,
     block_push_time: 0ns,
-    overall_propagate_time: 566ns,
+    overall_propagate_time: 638ns,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -50,9 +61,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/kenflashp10.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/kenflashp10.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 23:14:51 CST 2025
+Finished at: Fri May 16 12:05:38 CST 2025
 ========================================

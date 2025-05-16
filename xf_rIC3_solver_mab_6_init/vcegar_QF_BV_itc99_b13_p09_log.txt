@@ -1,11 +1,22 @@
-Started at: Thu May 15 17:29:02 CST 2025
-Job <533628> is submitted to default queue <interactive>.
+Started at: Fri May 16 06:12:25 CST 2025
+Job <538103> is submitted to default queue <interactive>.
 <<Waiting for dispatch ...>>
-<<Starting on cpu08>>
+<<Starting on bmcpu04>>
 Info: the model to be checked: /root/model.aig
 abc preprocess timeout
 [0, 0, 0, 0, 1]
 6 1 0 1 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
 SolverStatistic {
     num_solve: 6,
     avg_decide_var: 1.887879,
@@ -23,13 +34,13 @@ Statistic {
     num_down_sat: 0,
     ctp: success: 0, fail: 1, success rate: 0.00%,
     num_get_bad: 4,
-    overall_block_time: 91.343µs,
-    block_get_bad_time: 58.992µs,
+    overall_block_time: 104.135µs,
+    block_get_bad_time: 60.689µs,
     block_get_predecessor_time: 0ns,
-    block_blocked_time: 2.176µs,
-    block_mic_time: 5.039µs,
-    block_push_time: 63ns,
-    overall_propagate_time: 8.243µs,
+    block_blocked_time: 2.236µs,
+    block_mic_time: 5.285µs,
+    block_push_time: 90ns,
+    overall_propagate_time: 7.756µs,
     xor_gen: success: 0, fail: 0, success rate: NaN%,
     num_auxiliary_var: 0,
     test: success: 0, fail: 0, success rate: NaN%,
@@ -49,9 +60,9 @@ cpu02
 cpu03
 cpu04
 cpu05
-cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/opensource/vcegar_QF_BV_itc99_b13_p09/vcegar_QF_BV_itc99_b13_p09.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/opensource/vcegar_QF_BV_itc99_b13_p09/vcegar_QF_BV_itc99_b13_p09.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
 ----------------------------------------
 ----------------------------------------
 STATUS: COMPLETED
-Finished at: Thu May 15 17:29:03 CST 2025
+Finished at: Fri May 16 06:12:26 CST 2025
 ========================================
