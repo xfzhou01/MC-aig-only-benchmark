@@ -1,0 +1,72 @@
+Started at: Mon May 19 00:17:23 CST 2025
+Job <544251> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4835, 7041]
+933 3 2 4 4 4 48 67 57 69 102 271 452 752 1238 1743 1897 1127 842 751 421 116 132 47 16 10 7 6 5 0 9369 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 143 pulls
+  Arm 1 (Aggressive Heuristic): 7 pulls
+  Arm 2 (Conservative Heuristic): 25247 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 5 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 718 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 958863,
+    avg_decide_var: 0.576434,
+    num_simplify_subsume: 66855,
+    num_simplify_self_subsume: 33046,
+}
+Statistic {
+    case: model.aig,
+    time: 397.07s,
+    num_mic: 28782,
+    avg_mic_cube_len: 14.192308,
+    avg_po_cube_len: 470.230241,
+    mic_drop: success: 97729, fail: 280338, success rate: 25.85%,
+    num_down: 378067,
+    num_down_sat: 614741,
+    ctp: success: 0, fail: 129396, success rate: 0.00%,
+    num_get_bad: 285,
+    overall_block_time: 281.401153891s,
+    block_get_bad_time: 610.018954ms,
+    block_get_predecessor_time: 27.746364429s,
+    block_blocked_time: 23.681923644s,
+    block_mic_time: 216.859774152s,
+    block_push_time: 1.131213174s,
+    overall_propagate_time: 114.692888722s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1517/oc8051gm0caddr.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1517/oc8051gm0caddr.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 00:24:01 CST 2025
+========================================

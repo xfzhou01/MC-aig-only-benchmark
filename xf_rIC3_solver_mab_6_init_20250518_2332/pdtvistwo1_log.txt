@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:46:54 CST 2025
+Job <548607> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1174]
+30 6 15 35 74 129 166 208 223 162 62 16 2 0 312 783 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 14 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 4192 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 275 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 230036,
+    avg_decide_var: 0.696532,
+    num_simplify_subsume: 1103,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 7.92s,
+    num_mic: 9427,
+    avg_mic_cube_len: 8.540257,
+    avg_po_cube_len: 30.000000,
+    mic_drop: success: 13140, fail: 64437, success rate: 16.94%,
+    num_down: 77577,
+    num_down_sat: 146832,
+    ctp: success: 0, fail: 1271, success rate: 0.00%,
+    num_get_bad: 18,
+    overall_block_time: 7.478173555s,
+    block_get_bad_time: 4.561393ms,
+    block_get_predecessor_time: 1.66032739s,
+    block_blocked_time: 301.145689ms,
+    block_mic_time: 8.637252977s,
+    block_push_time: 34.162854ms,
+    overall_propagate_time: 435.82776ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc08/pdtvistwo1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/pdtvistwo1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:47:04 CST 2025
+========================================

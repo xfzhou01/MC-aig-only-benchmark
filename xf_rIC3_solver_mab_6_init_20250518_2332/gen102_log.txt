@@ -1,0 +1,71 @@
+Started at: Mon May 19 03:19:48 CST 2025
+Job <545277> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 2434]
+8 0 2434 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 343 pulls
+  Arm 1 (Aggressive Heuristic): 316 pulls
+  Arm 2 (Conservative Heuristic): 497 pulls
+  Arm 3 (limit=0, max=0, level=0): 286 pulls
+  Arm 4 (limit=1, max=3, level=1): 286 pulls
+  Arm 5 (limit=2, max=5, level=1): 287 pulls
+  Arm 6 (limit=8, max=4, level=1): 419 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 24882,
+    avg_decide_var: 0.083108,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 4.38s,
+    num_mic: 2434,
+    avg_mic_cube_len: 8.225555,
+    avg_po_cube_len: 14.125719,
+    mic_drop: success: 25, fail: 19988, success rate: 0.12%,
+    num_down: 20013,
+    num_down_sat: 20013,
+    ctp: success: 0, fail: 2434, success rate: 0.00%,
+    num_get_bad: 2436,
+    overall_block_time: 4.183993143s,
+    block_get_bad_time: 1.474413813s,
+    block_get_predecessor_time: 102.950086ms,
+    block_blocked_time: 46.068693ms,
+    block_mic_time: 429.071124ms,
+    block_push_time: 62.572µs,
+    overall_propagate_time: 152.99871ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/industry/gen102/gen102.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/industry/gen102/gen102.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 03:19:55 CST 2025
+========================================

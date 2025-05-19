@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:07:30 CST 2025
+Job <548211> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 34, 22, 11, 1, 106, 19, 1085]
+2369 63 83 70 103 149 216 226 423 269 344 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1695 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 2 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 27683,
+    avg_decide_var: 0.115068,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 3.69s,
+    num_mic: 2468,
+    avg_mic_cube_len: 4.874797,
+    avg_po_cube_len: 243.932677,
+    mic_drop: success: 2199, fail: 8928, success rate: 19.76%,
+    num_down: 11127,
+    num_down_sat: 14339,
+    ctp: success: 0, fail: 1028, success rate: 0.00%,
+    num_get_bad: 22,
+    overall_block_time: 3.310463957s,
+    block_get_bad_time: 71.104426ms,
+    block_get_predecessor_time: 1.281455932s,
+    block_blocked_time: 906.317324ms,
+    block_mic_time: 1.150584667s,
+    block_push_time: 32.384674ms,
+    overall_propagate_time: 59.933284ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc11/single/mentorbm1p12.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/mentorbm1p12.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:07:34 CST 2025
+========================================

@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:46:46 CST 2025
+Job <543854> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3617]
+44 8 12 15 13 15 17 27 10 25 16 35 17 29 22 58 28 36 38 56 29 51 38 68 38 65 56 104 56 89 64 185 83 119 131 195 95 162 134 222 9 4 23 13 8 9 9 35 5 5 7 15 6 7 3 6 6 5 14 13 17 32 6 10 9 8 12 7 13 17 27 6 27 11 32 16 36 26 59 64 24 58 43 59 51 36 40 29 23 30 13 10 5 8 1 1 0 35 978 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 11222 pulls
+  Arm 1 (Aggressive Heuristic): 8 pulls
+  Arm 2 (Conservative Heuristic): 894 pulls
+  Arm 3 (limit=0, max=0, level=0): 9 pulls
+  Arm 4 (limit=1, max=3, level=1): 5 pulls
+  Arm 5 (limit=2, max=5, level=1): 954 pulls
+  Arm 6 (limit=8, max=4, level=1): 107 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 417627,
+    avg_decide_var: 0.941540,
+    num_simplify_subsume: 38353,
+    num_simplify_self_subsume: 35711,
+}
+Statistic {
+    case: model.aig,
+    time: 26.83s,
+    num_mic: 13802,
+    avg_mic_cube_len: 9.927112,
+    avg_po_cube_len: 34.938734,
+    mic_drop: success: 32779, fail: 98133, success rate: 25.04%,
+    num_down: 130912,
+    num_down_sat: 178519,
+    ctp: success: 0, fail: 81849, success rate: 0.00%,
+    num_get_bad: 165,
+    overall_block_time: 11.303120765s,
+    block_get_bad_time: 343.856866ms,
+    block_get_predecessor_time: 248.189631ms,
+    block_blocked_time: 938.007106ms,
+    block_mic_time: 7.987302622s,
+    block_push_time: 172.084723ms,
+    overall_propagate_time: 15.431945151s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/hku/arithmetic_circuits/93.c/93.c.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/arithmetic_circuits/93.c/93.c.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:47:16 CST 2025
+========================================

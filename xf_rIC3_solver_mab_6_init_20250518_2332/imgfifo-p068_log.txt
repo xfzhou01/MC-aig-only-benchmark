@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:39:19 CST 2025
+Job <543612> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 4]
+394 5 5 2 2 5 3 5 9 8 5 8 6 8 6 5 7 4 5 5 6 6 5 3 2 2 3 3 4 1 2 1 2 1 2 1 2 1 2 1 1 1 1 1 1 1 2 1 2 1 2 2 3 2 2 2 2 1 2 2 1 2 2 3 3 1 1 1 1 2 2 2 3 2 4 3 2 1 2 1 1 1 0 45 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 9 pulls
+  Arm 1 (Aggressive Heuristic): 15 pulls
+  Arm 2 (Conservative Heuristic): 7 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 20 pulls
+  Arm 5 (limit=2, max=5, level=1): 28 pulls
+  Arm 6 (limit=8, max=4, level=1): 53 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 10119,
+    avg_decide_var: 0.357567,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.04s,
+    num_mic: 494,
+    avg_mic_cube_len: 5.143725,
+    avg_po_cube_len: 183.755568,
+    mic_drop: success: 178, fail: 2345, success rate: 7.06%,
+    num_down: 2523,
+    num_down_sat: 2768,
+    ctp: success: 0, fail: 3004, success rate: 0.00%,
+    num_get_bad: 101,
+    overall_block_time: 399.342343ms,
+    block_get_bad_time: 42.547178ms,
+    block_get_predecessor_time: 113.95118ms,
+    block_blocked_time: 8.391111ms,
+    block_mic_time: 416.287158ms,
+    block_push_time: 1.68501ms,
+    overall_propagate_time: 163.73378ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/vgasim-imgfifo/aig/imgfifo-p068.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/vgasim-imgfifo/aig/imgfifo-p068.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:39:22 CST 2025
+========================================

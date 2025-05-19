@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:14:25 CST 2025
+Job <547753> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 465]
+231 23 41 74 127 212 312 444 585 746 987 1192 1340 1404 1311 1096 898 638 402 218 137 88 54 22 13 0 467 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 5 pulls
+  Arm 1 (Aggressive Heuristic): 5 pulls
+  Arm 2 (Conservative Heuristic): 5 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 7 pulls
+  Arm 5 (limit=2, max=5, level=1): 5 pulls
+  Arm 6 (limit=8, max=4, level=1): 969 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 492027,
+    avg_decide_var: 0.818318,
+    num_simplify_subsume: 6940,
+    num_simplify_self_subsume: 1005,
+}
+Statistic {
+    case: model.aig,
+    time: 101.24s,
+    num_mic: 21483,
+    avg_mic_cube_len: 9.273425,
+    avg_po_cube_len: 95.398754,
+    mic_drop: success: 54618, fail: 121565, success rate: 31.00%,
+    num_down: 176183,
+    num_down_sat: 291710,
+    ctp: success: 0, fail: 7654, success rate: 0.00%,
+    num_get_bad: 203,
+    overall_block_time: 77.875711173s,
+    block_get_bad_time: 139.664765ms,
+    block_get_predecessor_time: 11.527984146s,
+    block_blocked_time: 255.529994ms,
+    block_mic_time: 119.333422985s,
+    block_push_time: 138.697615ms,
+    overall_propagate_time: 23.0815942s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/beem/lamport_nonatomic.5.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/beem/lamport_nonatomic.5.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:16:08 CST 2025
+========================================

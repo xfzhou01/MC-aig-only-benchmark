@@ -1,0 +1,71 @@
+Started at: Mon May 19 04:42:44 CST 2025
+Job <546226> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8749, 5133]
+1 3 37 75 47 76 77 108 53 75 77 110 143 141 139 352 84 71 78 109 132 105 140 338 72 206 449 726 319 328 440 711 451 381 918 682 742 661 1062 1253 1183 917 542 264 190 278 242 252 743 213 231 550 496 309 369 346 620 241 359 490 777 582 700 880 2417 1709 5791 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 23605 pulls
+  Arm 1 (Aggressive Heuristic): 11 pulls
+  Arm 2 (Conservative Heuristic): 17 pulls
+  Arm 3 (limit=0, max=0, level=0): 500 pulls
+  Arm 4 (limit=1, max=3, level=1): 22001 pulls
+  Arm 5 (limit=2, max=5, level=1): 14230 pulls
+  Arm 6 (limit=8, max=4, level=1): 11 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2502275,
+    avg_decide_var: 0.324173,
+    num_simplify_subsume: 139371,
+    num_simplify_self_subsume: 169014,
+}
+Statistic {
+    case: model.aig,
+    time: 328.08s,
+    num_mic: 67247,
+    avg_mic_cube_len: 13.164870,
+    avg_po_cube_len: 18.735929,
+    mic_drop: success: 142196, fail: 720748, success rate: 16.48%,
+    num_down: 862944,
+    num_down_sat: 1251710,
+    ctp: success: 0, fail: 146403, success rate: 0.00%,
+    num_get_bad: 185,
+    overall_block_time: 245.164599018s,
+    block_get_bad_time: 518.4387ms,
+    block_get_predecessor_time: 13.783815003s,
+    block_blocked_time: 9.083900758s,
+    block_mic_time: 245.968035163s,
+    block_push_time: 1.386670508s,
+    overall_propagate_time: 81.982854396s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/fraig/shift_register_top_w16_d64_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/shift_register_top_w16_d64_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 04:48:13 CST 2025
+========================================

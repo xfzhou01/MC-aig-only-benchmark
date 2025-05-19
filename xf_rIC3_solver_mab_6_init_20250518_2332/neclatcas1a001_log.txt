@@ -1,0 +1,72 @@
+Started at: Mon May 19 02:11:17 CST 2025
+Job <544761> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 999, 78]
+307 2 2 2 2 2 2 3 2 1 2 4 4 1 3 4 3 2 2 1 1 5 3 4 2 3 2 2 9 2 5 5 4 8 3 4 6 5 4 6 4 7 9 3 3 3 2 1 2 1 3 2 1 2 5 2 2 4 4 6 8 9 6 4 7 5 5 1 1 1 0 78 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 33 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 1045 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 22814,
+    avg_decide_var: inf,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.84s,
+    num_mic: 1083,
+    avg_mic_cube_len: 6.767313,
+    avg_po_cube_len: 36.587630,
+    mic_drop: success: 2092, fail: 4562, success rate: 31.44%,
+    num_down: 6654,
+    num_down_sat: 9323,
+    ctp: success: 0, fail: 5386, success rate: 0.00%,
+    num_get_bad: 81,
+    overall_block_time: 1.646581686s,
+    block_get_bad_time: 64.30367ms,
+    block_get_predecessor_time: 157.751406ms,
+    block_blocked_time: 172.056803ms,
+    block_mic_time: 996.798595ms,
+    block_push_time: 24.917655ms,
+    overall_propagate_time: 907.704458ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc-appr/neclatcas1a001.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc-appr/neclatcas1a001.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 02:11:23 CST 2025
+========================================

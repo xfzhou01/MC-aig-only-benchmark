@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:56:54 CST 2025
+Job <548917> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 524]
+70 15 19 14 19 11 16 7 18 12 13 5 10 12 17 5 10 4 8 2 7 8 13 9 6 14 17 20 10 8 13 13 7 6 13 11 10 1 2 2 2 5 30 24 8 5 0 379 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13 pulls
+  Arm 1 (Aggressive Heuristic): 14 pulls
+  Arm 2 (Conservative Heuristic): 982 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 40 pulls
+  Arm 5 (limit=2, max=5, level=1): 16 pulls
+  Arm 6 (limit=8, max=4, level=1): 9 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 27891,
+    avg_decide_var: 0.684869,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.10s,
+    num_mic: 1083,
+    avg_mic_cube_len: 3.889197,
+    avg_po_cube_len: 22.152339,
+    mic_drop: success: 986, fail: 3138, success rate: 23.91%,
+    num_down: 4124,
+    num_down_sat: 4190,
+    ctp: success: 0, fail: 11480, success rate: 0.00%,
+    num_get_bad: 521,
+    overall_block_time: 462.77674ms,
+    block_get_bad_time: 192.821097ms,
+    block_get_predecessor_time: 10.817358ms,
+    block_blocked_time: 32.890611ms,
+    block_mic_time: 161.528096ms,
+    block_push_time: 2.589286ms,
+    overall_propagate_time: 590.701601ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc08/eijkS510.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/eijkS510.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:56:56 CST 2025
+========================================

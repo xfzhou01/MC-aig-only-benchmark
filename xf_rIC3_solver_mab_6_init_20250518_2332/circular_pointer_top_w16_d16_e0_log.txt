@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:58:18 CST 2025
+Job <548131> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5768]
+1 11 57 107 262 211 431 574 1204 598 916 855 1609 1679 2119 2029 3533 3491 5821 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 23 pulls
+  Arm 1 (Aggressive Heuristic): 10 pulls
+  Arm 2 (Conservative Heuristic): 14 pulls
+  Arm 3 (limit=0, max=0, level=0): 23 pulls
+  Arm 4 (limit=1, max=3, level=1): 10 pulls
+  Arm 5 (limit=2, max=5, level=1): 14 pulls
+  Arm 6 (limit=8, max=4, level=1): 26992 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2119582,
+    avg_decide_var: 0.566201,
+    num_simplify_subsume: 3195,
+    num_simplify_self_subsume: 10765,
+}
+Statistic {
+    case: model.aig,
+    time: 207.65s,
+    num_mic: 36988,
+    avg_mic_cube_len: 11.764951,
+    avg_po_cube_len: 20.696961,
+    mic_drop: success: 74560, fail: 348697, success rate: 17.62%,
+    num_down: 423257,
+    num_down_sat: 620290,
+    ctp: success: 0, fail: 14616, success rate: 0.00%,
+    num_get_bad: 1821,
+    overall_block_time: 198.629796366s,
+    block_get_bad_time: 603.112698ms,
+    block_get_predecessor_time: 26.700811231s,
+    block_blocked_time: 4.476830798s,
+    block_mic_time: 202.49178407s,
+    block_push_time: 359.92458ms,
+    overall_propagate_time: 8.948787281s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/mann/data-integrity/unsafe/circular_pointer_top_w16_d16_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/circular_pointer_top_w16_d16_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:01:48 CST 2025
+========================================

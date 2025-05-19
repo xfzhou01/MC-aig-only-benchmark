@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:07:02 CST 2025
+Job <548203> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 951]
+328 30 110 269 323 400 531 376 389 331 316 396 306 213 127 64 37 32 16 15 0 1244 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 90 pulls
+  Arm 1 (Aggressive Heuristic): 13 pulls
+  Arm 2 (Conservative Heuristic): 30 pulls
+  Arm 3 (limit=0, max=0, level=0): 13 pulls
+  Arm 4 (limit=1, max=3, level=1): 22 pulls
+  Arm 5 (limit=2, max=5, level=1): 24 pulls
+  Arm 6 (limit=8, max=4, level=1): 1807 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 174124,
+    avg_decide_var: 0.487355,
+    num_simplify_subsume: 2546,
+    num_simplify_self_subsume: 1018,
+}
+Statistic {
+    case: model.aig,
+    time: 18.16s,
+    num_mic: 7457,
+    avg_mic_cube_len: 5.938447,
+    avg_po_cube_len: 45.118516,
+    mic_drop: success: 13859, fail: 28083, success rate: 33.04%,
+    num_down: 41942,
+    num_down_sat: 54705,
+    ctp: success: 0, fail: 20493, success rate: 0.00%,
+    num_get_bad: 739,
+    overall_block_time: 9.450726001s,
+    block_get_bad_time: 364.651075ms,
+    block_get_predecessor_time: 1.691752815s,
+    block_blocked_time: 141.518783ms,
+    block_mic_time: 11.881562867s,
+    block_push_time: 46.275686ms,
+    overall_propagate_time: 8.622984684s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtpmsns2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtpmsns2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:07:21 CST 2025
+========================================

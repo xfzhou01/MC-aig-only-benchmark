@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:12:22 CST 2025
+Job <548277> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 565, 214]
+92 1 1 1 2 1 2 1 1 1 1 1 1 1 1 1 2 2 2 2 2 3 2 1 3 3 7 4 3 7 6 6 6 8 8 4 5 8 9 8 6 4 9 5 7 9 8 2 7 9 10 4 3 9 18 12 5 7 6 7 16 12 5 2 3 2 2 1 1 1 3 1 1 1 0 0 1 0 1 0 2 1 139 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 95 pulls
+  Arm 1 (Aggressive Heuristic): 27 pulls
+  Arm 2 (Conservative Heuristic): 38 pulls
+  Arm 3 (limit=0, max=0, level=0): 767 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 905 pulls
+  Arm 6 (limit=8, max=4, level=1): 96 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 41538,
+    avg_decide_var: 0.439537,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.55s,
+    num_mic: 2484,
+    avg_mic_cube_len: 5.495974,
+    avg_po_cube_len: 47.672931,
+    mic_drop: success: 3015, fail: 10110, success rate: 22.97%,
+    num_down: 13125,
+    num_down_sat: 17450,
+    ctp: success: 0, fail: 6609, success rate: 0.00%,
+    num_get_bad: 86,
+    overall_block_time: 1.071336586s,
+    block_get_bad_time: 4.715515ms,
+    block_get_predecessor_time: 263.724558ms,
+    block_blocked_time: 97.80515ms,
+    block_mic_time: 893.506876ms,
+    block_push_time: 14.181058ms,
+    overall_propagate_time: 262.382606ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtswvqis10x6p1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtswvqis10x6p1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:12:25 CST 2025
+========================================

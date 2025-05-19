@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:57:14 CST 2025
+Job <543969> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2724]
+3444 2 1 2 1 22 4 52 60 84 80 73 92 121 153 347 309 343 137 372 318 374 362 359 320 342 447 330 276 255 206 136 283 253 36 25 16 0 1868 4280 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 110 pulls
+  Arm 1 (Aggressive Heuristic): 587 pulls
+  Arm 2 (Conservative Heuristic): 154 pulls
+  Arm 3 (limit=0, max=0, level=0): 1054 pulls
+  Arm 4 (limit=1, max=3, level=1): 95 pulls
+  Arm 5 (limit=2, max=5, level=1): 240 pulls
+  Arm 6 (limit=8, max=4, level=1): 6973 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 955088,
+    avg_decide_var: 0.133324,
+    num_simplify_subsume: 157521,
+    num_simplify_self_subsume: 68374,
+}
+Statistic {
+    case: model.aig,
+    time: 342.06s,
+    num_mic: 52715,
+    avg_mic_cube_len: 9.608897,
+    avg_po_cube_len: 399.788824,
+    mic_drop: success: 74086, fail: 420353, success rate: 14.98%,
+    num_down: 494439,
+    num_down_sat: 492480,
+    ctp: success: 0, fail: 113058, success rate: 0.00%,
+    num_get_bad: 469,
+    overall_block_time: 268.03482909s,
+    block_get_bad_time: 3.257641193s,
+    block_get_predecessor_time: 51.690209973s,
+    block_blocked_time: 4.402990695s,
+    block_mic_time: 352.780473213s,
+    block_push_time: 1.055267376s,
+    overall_propagate_time: 70.080190161s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/yosyshq/appnote_123/cv32e40x/yosyshq_appnote_123_cv32e40x-p649.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/yosyshq/appnote_123/cv32e40x/yosyshq_appnote_123_cv32e40x-p649.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 00:03:11 CST 2025
+========================================

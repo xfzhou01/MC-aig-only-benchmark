@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:21:48 CST 2025
+Job <548376> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 121, 82]
+100 14 38 45 46 42 24 11 2 2 4 1 0 84 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4 pulls
+  Arm 1 (Aggressive Heuristic): 7 pulls
+  Arm 2 (Conservative Heuristic): 442 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 7491,
+    avg_decide_var: 0.418312,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.46s,
+    num_mic: 456,
+    avg_mic_cube_len: 7.725877,
+    avg_po_cube_len: 21.741690,
+    mic_drop: success: 693, fail: 2674, success rate: 20.58%,
+    num_down: 3367,
+    num_down_sat: 4506,
+    ctp: success: 0, fail: 654, success rate: 0.00%,
+    num_get_bad: 22,
+    overall_block_time: 295.019542ms,
+    block_get_bad_time: 24.915419ms,
+    block_get_predecessor_time: 20.824088ms,
+    block_blocked_time: 47.111744ms,
+    block_mic_time: 181.538305ms,
+    block_push_time: 5.886343ms,
+    overall_propagate_time: 111.851614ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtvisns3p02.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtvisns3p02.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:21:50 CST 2025
+========================================

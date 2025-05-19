@@ -1,0 +1,71 @@
+Started at: Mon May 19 07:00:44 CST 2025
+Job <547286> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1541, 295]
+95 3 12 14 7 7 31 34 26 5 8 1 1 1 3 3 11 5 1 1 5 11 4 4 2 4 2 2 5 5 3 5 2 1 1 1 2 6 1 3 1 7 7 3 14 10 7 8 2 2 3 3 7 7 2 3 7 8 4 4 2 2 3 5 2 4 1 2 5 6 1 4 1 1 5 12 2 4 1 6 15 14 11 5 5 8 3 8 1 1 6 12 5 4 5 14 8 6 3 7 5 9 3 4 3 4 1 1 1 1 1 1 1 2 0 556 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 11 pulls
+  Arm 1 (Aggressive Heuristic): 7 pulls
+  Arm 2 (Conservative Heuristic): 6 pulls
+  Arm 3 (limit=0, max=0, level=0): 4 pulls
+  Arm 4 (limit=1, max=3, level=1): 1200 pulls
+  Arm 5 (limit=2, max=5, level=1): 189 pulls
+  Arm 6 (limit=8, max=4, level=1): 99 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 120169,
+    avg_decide_var: 0.643799,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 4.54s,
+    num_mic: 2489,
+    avg_mic_cube_len: 12.607071,
+    avg_po_cube_len: 75.650221,
+    mic_drop: success: 4925, fail: 25190, success rate: 16.35%,
+    num_down: 30115,
+    num_down_sat: 43477,
+    ctp: success: 0, fail: 22723, success rate: 0.00%,
+    num_get_bad: 189,
+    overall_block_time: 3.431343282s,
+    block_get_bad_time: 29.397903ms,
+    block_get_predecessor_time: 937.723019ms,
+    block_blocked_time: 146.773484ms,
+    block_mic_time: 3.144096562s,
+    block_push_time: 334.884712ms,
+    overall_propagate_time: 922.582728ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_qflexpress_divfive-p067.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_qflexpress_divfive-p067.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 07:00:49 CST 2025
+========================================

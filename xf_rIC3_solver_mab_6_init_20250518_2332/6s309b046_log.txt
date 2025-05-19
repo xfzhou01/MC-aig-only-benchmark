@@ -1,0 +1,72 @@
+Started at: Mon May 19 01:38:25 CST 2025
+Job <544594> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 3, 2, 3, 1, 3, 1, 2, 6, 6, 1713, 1042]
+9262 2 2 5 9 44 19 14 28 32 73 114 179 209 246 375 528 544 652 689 969 902 987 895 634 465 321 331 226 122 83 71 690 5499 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 21 pulls
+  Arm 1 (Aggressive Heuristic): 28 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 9 pulls
+  Arm 4 (limit=1, max=3, level=1): 27 pulls
+  Arm 5 (limit=2, max=5, level=1): 222 pulls
+  Arm 6 (limit=8, max=4, level=1): 4594 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 607042,
+    avg_decide_var: 0.042239,
+    num_simplify_subsume: 58369,
+    num_simplify_self_subsume: 21141,
+}
+Statistic {
+    case: model.aig,
+    time: 110.57s,
+    num_mic: 28595,
+    avg_mic_cube_len: 6.267459,
+    avg_po_cube_len: 242.389664,
+    mic_drop: success: 31658, fail: 141497, success rate: 18.28%,
+    num_down: 173155,
+    num_down_sat: 226568,
+    ctp: success: 0, fail: 80387, success rate: 0.00%,
+    num_get_bad: 38,
+    overall_block_time: 93.566300893s,
+    block_get_bad_time: 263.959694ms,
+    block_get_predecessor_time: 22.78496394s,
+    block_blocked_time: 3.337825003s,
+    block_mic_time: 103.14746669s,
+    block_push_time: 1.909488532s,
+    overall_propagate_time: 14.366088273s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc13/single/6s309b046.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc13/single/6s309b046.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 01:40:33 CST 2025
+========================================

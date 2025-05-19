@@ -1,0 +1,72 @@
+Started at: Mon May 19 01:10:20 CST 2025
+Job <544453> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 3, 7, 13, 9, 9, 1, 1, 1, 1, 1, 1, 1, 12, 5, 1, 2, 3, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1737, 2987]
+538 26 33 23 35 51 87 117 165 249 272 319 434 500 560 549 491 466 513 533 527 510 508 471 445 400 402 385 373 321 297 244 206 155 131 88 77 61 49 41 43 54 50 63 1672 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 15888 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1207878,
+    avg_decide_var: 0.599229,
+    num_simplify_subsume: 21939,
+    num_simplify_self_subsume: 3516,
+}
+Statistic {
+    case: model.aig,
+    time: 350.00s,
+    num_mic: 39312,
+    avg_mic_cube_len: 10.220365,
+    avg_po_cube_len: 201.552268,
+    mic_drop: success: 128341, fail: 261176, success rate: 32.95%,
+    num_down: 389517,
+    num_down_sat: 664087,
+    ctp: success: 0, fail: 33798, success rate: 0.00%,
+    num_get_bad: 45,
+    overall_block_time: 280.402401846s,
+    block_get_bad_time: 70.821635ms,
+    block_get_predecessor_time: 62.527274176s,
+    block_blocked_time: 6.848213456s,
+    block_mic_time: 334.071012223s,
+    block_push_time: 713.71854ms,
+    overall_propagate_time: 68.30894522s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc13/single/beemskbn1f1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc13/single/beemskbn1f1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 01:16:12 CST 2025
+========================================

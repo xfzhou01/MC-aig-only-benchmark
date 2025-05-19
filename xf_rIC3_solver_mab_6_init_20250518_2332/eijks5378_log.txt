@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:43:38 CST 2025
+Job <548571> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 963, 1380]
+441 175 232 205 81 42 99 49 84 45 32 29 50 17 32 20 30 19 19 28 43 7 8 9 11 6 5 2 2 0 1594 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 92 pulls
+  Arm 1 (Aggressive Heuristic): 55 pulls
+  Arm 2 (Conservative Heuristic): 18 pulls
+  Arm 3 (limit=0, max=0, level=0): 63 pulls
+  Arm 4 (limit=1, max=3, level=1): 21 pulls
+  Arm 5 (limit=2, max=5, level=1): 2924 pulls
+  Arm 6 (limit=8, max=4, level=1): 41 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 82102,
+    avg_decide_var: 0.687042,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 9.92s,
+    num_mic: 3458,
+    avg_mic_cube_len: 3.967033,
+    avg_po_cube_len: 114.052942,
+    mic_drop: success: 1508, fail: 11881, success rate: 11.26%,
+    num_down: 13389,
+    num_down_sat: 11866,
+    ctp: success: 0, fail: 37977, success rate: 0.00%,
+    num_get_bad: 1833,
+    overall_block_time: 7.324742268s,
+    block_get_bad_time: 5.127916621s,
+    block_get_predecessor_time: 172.188956ms,
+    block_blocked_time: 196.508514ms,
+    block_mic_time: 977.108496ms,
+    block_push_time: 18.680692ms,
+    overall_propagate_time: 2.471579866s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/eijks5378.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/eijks5378.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:43:50 CST 2025
+========================================

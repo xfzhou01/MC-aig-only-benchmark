@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:46:00 CST 2025
+Job <548070> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 175, 1868]
+1 5 173 267 269 266 138 524 146 266 269 1169 399 397 260 515 389 138 1824 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 64 pulls
+  Arm 1 (Aggressive Heuristic): 144 pulls
+  Arm 2 (Conservative Heuristic): 9158 pulls
+  Arm 3 (limit=0, max=0, level=0): 51 pulls
+  Arm 4 (limit=1, max=3, level=1): 51 pulls
+  Arm 5 (limit=2, max=5, level=1): 112 pulls
+  Arm 6 (limit=8, max=4, level=1): 50 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 161874,
+    avg_decide_var: 0.298084,
+    num_simplify_subsume: 750,
+    num_simplify_self_subsume: 1693,
+}
+Statistic {
+    case: model.aig,
+    time: 11.32s,
+    num_mic: 9676,
+    avg_mic_cube_len: 9.180860,
+    avg_po_cube_len: 14.093039,
+    mic_drop: success: 11702, fail: 75602, success rate: 13.40%,
+    num_down: 87304,
+    num_down_sat: 109852,
+    ctp: success: 0, fail: 10009, success rate: 0.00%,
+    num_get_bad: 295,
+    overall_block_time: 9.292344002s,
+    block_get_bad_time: 275.347598ms,
+    block_get_predecessor_time: 90.463282ms,
+    block_blocked_time: 793.995366ms,
+    block_mic_time: 7.832356208s,
+    block_push_time: 23.081984ms,
+    overall_propagate_time: 1.844310144s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w64_d16_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w64_d16_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:46:13 CST 2025
+========================================

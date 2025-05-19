@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:44:44 CST 2025
+Job <543784> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 360, 864]
+698 44 2 1 1 1 1 1 1 25 48 48 102 97 119 118 1 23 0 901 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13 pulls
+  Arm 1 (Aggressive Heuristic): 28 pulls
+  Arm 2 (Conservative Heuristic): 12 pulls
+  Arm 3 (limit=0, max=0, level=0): 2288 pulls
+  Arm 4 (limit=1, max=3, level=1): 14 pulls
+  Arm 5 (limit=2, max=5, level=1): 335 pulls
+  Arm 6 (limit=8, max=4, level=1): 18 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 32811,
+    avg_decide_var: 0.709854,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 12.05s,
+    num_mic: 2755,
+    avg_mic_cube_len: 4.015971,
+    avg_po_cube_len: 79.850913,
+    mic_drop: success: 1427, fail: 9619, success rate: 12.92%,
+    num_down: 11046,
+    num_down_sat: 14007,
+    ctp: success: 0, fail: 3516, success rate: 0.00%,
+    num_get_bad: 126,
+    overall_block_time: 10.429757556s,
+    block_get_bad_time: 232.773557ms,
+    block_get_predecessor_time: 2.350456468s,
+    block_blocked_time: 1.101600002s,
+    block_mic_time: 6.201308966s,
+    block_push_time: 892.656487ms,
+    overall_propagate_time: 1.051439146s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/fastfir/aig/fastfir-p002.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/fastfir/aig/fastfir-p002.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:44:58 CST 2025
+========================================

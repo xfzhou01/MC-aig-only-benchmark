@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:48:02 CST 2025
+Job <543891> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 615]
+10 19 34 32 253 337 398 106 132 123 85 70 70 104 67 54 60 55 181 214 78 95 17 27 26 36 29 33 18 65 81 42 52 15 15 10 14 18 58 75 50 34 11 6 4 3 3 3 0 13 7 5 26 123 2430 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 2428 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 388366,
+    avg_decide_var: 0.568157,
+    num_simplify_subsume: 17450,
+    num_simplify_self_subsume: 12657,
+}
+Statistic {
+    case: model.aig,
+    time: 37.35s,
+    num_mic: 9371,
+    avg_mic_cube_len: 10.462064,
+    avg_po_cube_len: 21.834765,
+    mic_drop: success: 29686, fail: 64717, success rate: 31.45%,
+    num_down: 94403,
+    num_down_sat: 93919,
+    ctp: success: 0, fail: 114101, success rate: 0.00%,
+    num_get_bad: 99,
+    overall_block_time: 10.295653411s,
+    block_get_bad_time: 55.367389ms,
+    block_get_predecessor_time: 997.287596ms,
+    block_blocked_time: 215.609775ms,
+    block_mic_time: 13.627424365s,
+    block_push_time: 862.807711ms,
+    overall_propagate_time: 26.995833869s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/hku/seq/gcd_1_4/gcd.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/seq/gcd_1_4/gcd.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:48:42 CST 2025
+========================================

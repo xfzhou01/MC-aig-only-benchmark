@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:39:54 CST 2025
+Job <543630> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 4, 1]
+396 8 0 1 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 34,
+    avg_decide_var: 0.512114,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.03s,
+    num_mic: 9,
+    avg_mic_cube_len: 1.333333,
+    avg_po_cube_len: 167.952381,
+    mic_drop: success: 0, fail: 12, success rate: 0.00%,
+    num_down: 12,
+    num_down_sat: 6,
+    ctp: success: 0, fail: 1, success rate: 0.00%,
+    num_get_bad: 8,
+    overall_block_time: 6.071407ms,
+    block_get_bad_time: 2.479627ms,
+    block_get_predecessor_time: 523.435µs,
+    block_blocked_time: 86.082µs,
+    block_mic_time: 1.068445ms,
+    block_push_time: 191ns,
+    overall_propagate_time: 568.413µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/vgasim-imgfifo/aig/imgfifo-p117.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/vgasim-imgfifo/aig/imgfifo-p117.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:39:56 CST 2025
+========================================

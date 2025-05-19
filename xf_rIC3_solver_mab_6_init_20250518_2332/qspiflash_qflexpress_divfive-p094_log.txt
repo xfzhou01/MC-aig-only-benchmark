@@ -1,0 +1,71 @@
+Started at: Mon May 19 07:00:28 CST 2025
+Job <547284> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 111, 37]
+74 3 14 11 7 11 34 15 27 15 17 15 38 11 14 7 7 7 50 53 48 19 7 11 5 8 10 12 30 22 11 8 4 8 5 5 1 1 1 1 1 0 175 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 21 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 24 pulls
+  Arm 6 (limit=8, max=4, level=1): 210 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 31341,
+    avg_decide_var: 0.572811,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.99s,
+    num_mic: 1526,
+    avg_mic_cube_len: 5.005242,
+    avg_po_cube_len: 32.942278,
+    mic_drop: success: 1664, fail: 5629, success rate: 22.82%,
+    num_down: 7293,
+    num_down_sat: 9941,
+    ctp: success: 0, fail: 5729, success rate: 0.00%,
+    num_get_bad: 70,
+    overall_block_time: 617.080967ms,
+    block_get_bad_time: 4.4503ms,
+    block_get_predecessor_time: 156.614657ms,
+    block_blocked_time: 8.616588ms,
+    block_mic_time: 805.187405ms,
+    block_push_time: 11.574819ms,
+    overall_propagate_time: 304.703197ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_qflexpress_divfive-p094.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_qflexpress_divfive-p094.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 07:00:31 CST 2025
+========================================

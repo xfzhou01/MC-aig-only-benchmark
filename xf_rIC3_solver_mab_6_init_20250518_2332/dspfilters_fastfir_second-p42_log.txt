@@ -1,0 +1,71 @@
+Started at: Mon May 19 05:27:25 CST 2025
+Job <546612> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9157]
+1091 19 22 104 33 58 57 66 35 19 26 36 30 253 106 1547 187 1467 1189 983 41 401 414 396 505 330 236 199 59 97 7 4 3 1 0 63 7137 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 54 pulls
+  Arm 1 (Aggressive Heuristic): 170 pulls
+  Arm 2 (Conservative Heuristic): 9 pulls
+  Arm 3 (limit=0, max=0, level=0): 7509 pulls
+  Arm 4 (limit=1, max=3, level=1): 184 pulls
+  Arm 5 (limit=2, max=5, level=1): 7172 pulls
+  Arm 6 (limit=8, max=4, level=1): 782 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 962601,
+    avg_decide_var: 0.736940,
+    num_simplify_subsume: 8765,
+    num_simplify_self_subsume: 2485,
+}
+Statistic {
+    case: model.aig,
+    time: 495.39s,
+    num_mic: 21801,
+    avg_mic_cube_len: 20.368699,
+    avg_po_cube_len: 421.342040,
+    mic_drop: success: 284712, fail: 131581, success rate: 68.39%,
+    num_down: 416293,
+    num_down_sat: 542625,
+    ctp: success: 0, fail: 141830, success rate: 0.00%,
+    num_get_bad: 2068,
+    overall_block_time: 400.782256596s,
+    block_get_bad_time: 6.513876423s,
+    block_get_predecessor_time: 89.941795484s,
+    block_blocked_time: 16.84220122s,
+    block_mic_time: 466.174044526s,
+    block_push_time: 6.020033824s,
+    overall_propagate_time: 92.879181168s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/dspfilters_fastfir_second-p42.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/dspfilters_fastfir_second-p42.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 05:35:43 CST 2025
+========================================

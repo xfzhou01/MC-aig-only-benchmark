@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:36:12 CST 2025
+Job <547979> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9199, 20994]
+1091 33 45 68 92 138 178 253 369 639 783 998 1295 1531 1986 2206 2006 1784 3445 2844 2504 2513 1996 1621 1151 1314 1068 880 646 527 329 246 220 105 72 27 42 33 28 9 6 5 3 1 1 0 23018 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 23034 pulls
+  Arm 1 (Aggressive Heuristic): 21069 pulls
+  Arm 2 (Conservative Heuristic): 137 pulls
+  Arm 3 (limit=0, max=0, level=0): 13 pulls
+  Arm 4 (limit=1, max=3, level=1): 21 pulls
+  Arm 5 (limit=2, max=5, level=1): 24201 pulls
+  Arm 6 (limit=8, max=4, level=1): 2801 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2846684,
+    avg_decide_var: 0.680372,
+    num_simplify_subsume: 48861,
+    num_simplify_self_subsume: 29164,
+}
+Statistic {
+    case: model.aig,
+    time: 1675.90s,
+    num_mic: 80650,
+    avg_mic_cube_len: 12.690304,
+    avg_po_cube_len: 489.902801,
+    mic_drop: success: 430404, fail: 533669, success rate: 44.64%,
+    num_down: 964073,
+    num_down_sat: 1216663,
+    ctp: success: 0, fail: 630258, success rate: 0.00%,
+    num_get_bad: 5235,
+    overall_block_time: 1233.922868048s,
+    block_get_bad_time: 16.828804713s,
+    block_get_predecessor_time: 348.160838916s,
+    block_blocked_time: 63.880525075s,
+    block_mic_time: 1142.850963442s,
+    block_push_time: 37.728212791s,
+    overall_propagate_time: 439.968564865s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p17.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p17.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:04:10 CST 2025
+========================================

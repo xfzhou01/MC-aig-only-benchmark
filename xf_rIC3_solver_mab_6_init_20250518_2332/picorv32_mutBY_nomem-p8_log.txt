@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:25:25 CST 2025
+Job <547867> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 40322, 8238]
+2049 66 8 77 112 2376 9659 22065 18477 9879 8373 4289 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 53713 pulls
+  Arm 1 (Aggressive Heuristic): 1469 pulls
+  Arm 2 (Conservative Heuristic): 14953 pulls
+  Arm 3 (limit=0, max=0, level=0): 6 pulls
+  Arm 4 (limit=1, max=3, level=1): 10664 pulls
+  Arm 5 (limit=2, max=5, level=1): 4 pulls
+  Arm 6 (limit=8, max=4, level=1): 180 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1207132,
+    avg_decide_var: 0.336415,
+    num_simplify_subsume: 31604,
+    num_simplify_self_subsume: 7913,
+}
+Statistic {
+    case: model.aig,
+    time: 770.51s,
+    num_mic: 101812,
+    avg_mic_cube_len: 5.938681,
+    avg_po_cube_len: 164.896108,
+    mic_drop: success: 135493, fail: 400790, success rate: 25.27%,
+    num_down: 536283,
+    num_down_sat: 627711,
+    ctp: success: 0, fail: 24504, success rate: 0.00%,
+    num_get_bad: 1315,
+    overall_block_time: 647.03248865s,
+    block_get_bad_time: 3.947920025s,
+    block_get_predecessor_time: 109.735165914s,
+    block_blocked_time: 74.350235169s,
+    block_mic_time: 498.725645586s,
+    block_push_time: 5.430542031s,
+    overall_propagate_time: 122.716558093s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/wolf/2019A/picorv32_mutBY_nomem-p8.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019A/picorv32_mutBY_nomem-p8.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:38:18 CST 2025
+========================================

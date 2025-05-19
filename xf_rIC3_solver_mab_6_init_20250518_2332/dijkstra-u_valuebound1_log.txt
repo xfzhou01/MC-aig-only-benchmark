@@ -1,0 +1,71 @@
+Started at: Mon May 19 00:09:27 CST 2025
+Job <544099> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 470]
+2 1 2 4 4 0 4 1 1 1 1 1 1 1 1 1 1 5 2 2 2 2 2 2 2 2 2 2 2 2 2 6 544 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 5 pulls
+  Arm 1 (Aggressive Heuristic): 525 pulls
+  Arm 2 (Conservative Heuristic): 8 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 5 pulls
+  Arm 5 (limit=2, max=5, level=1): 5 pulls
+  Arm 6 (limit=8, max=4, level=1): 14 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 22071,
+    avg_decide_var: 0.999977,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 464.43s,
+    num_mic: 919,
+    avg_mic_cube_len: 5.216540,
+    avg_po_cube_len: 165.920589,
+    mic_drop: success: 940, fail: 3687, success rate: 20.32%,
+    num_down: 4627,
+    num_down_sat: 6318,
+    ctp: success: 0, fail: 11949, success rate: 0.00%,
+    num_get_bad: 356,
+    overall_block_time: 286.51403778s,
+    block_get_bad_time: 53.317981169s,
+    block_get_predecessor_time: 43.607384547s,
+    block_blocked_time: 9.957030841s,
+    block_mic_time: 251.296882529s,
+    block_push_time: 7.094266107s,
+    overall_propagate_time: 163.249009958s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/sosylab/nla-digbench-scaling/dijkstra-u_valuebound1.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/nla-digbench-scaling/dijkstra-u_valuebound1.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 00:17:13 CST 2025
+========================================

@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:24:08 CST 2025
+Job <548430> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 38388, 4411]
+3107 5 8 11 9 10 4 6 7 7 3 7 10 7 5 8 12 35 36 45 75 103 116 159 230 310 368 439 328 293 291 282 288 468 595 1020 1198 1220 1031 703 488 466 558 352 232 77 97 42 19 19 15 11 1 0 7903 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 157 pulls
+  Arm 1 (Aggressive Heuristic): 14992 pulls
+  Arm 2 (Conservative Heuristic): 496 pulls
+  Arm 3 (limit=0, max=0, level=0): 8140 pulls
+  Arm 4 (limit=1, max=3, level=1): 102 pulls
+  Arm 5 (limit=2, max=5, level=1): 89978 pulls
+  Arm 6 (limit=8, max=4, level=1): 21 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3650766,
+    avg_decide_var: 0.089942,
+    num_simplify_subsume: 1070153,
+    num_simplify_self_subsume: 255975,
+}
+Statistic {
+    case: model.aig,
+    time: 698.56s,
+    num_mic: 170363,
+    avg_mic_cube_len: 10.392632,
+    avg_po_cube_len: 189.206887,
+    mic_drop: success: 276539, fail: 1452260, success rate: 16.00%,
+    num_down: 1728799,
+    num_down_sat: 2047512,
+    ctp: success: 0, fail: 386372, success rate: 0.00%,
+    num_get_bad: 73,
+    overall_block_time: 551.560610238s,
+    block_get_bad_time: 135.599986ms,
+    block_get_predecessor_time: 52.707522184s,
+    block_blocked_time: 41.373166052s,
+    block_mic_time: 441.779468636s,
+    block_push_time: 12.359616784s,
+    overall_propagate_time: 145.201627807s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/6s51.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/6s51.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:35:49 CST 2025
+========================================

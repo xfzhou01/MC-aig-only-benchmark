@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:23:24 CST 2025
+Job <548413> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 147, 1895]
+165 8 10 12 15 19 23 23 23 31 33 44 67 81 114 178 224 194 190 192 203 185 153 167 189 147 143 120 149 135 163 186 192 207 236 249 226 305 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 81 pulls
+  Arm 1 (Aggressive Heuristic): 15 pulls
+  Arm 2 (Conservative Heuristic): 16 pulls
+  Arm 3 (limit=0, max=0, level=0): 124 pulls
+  Arm 4 (limit=1, max=3, level=1): 20 pulls
+  Arm 5 (limit=2, max=5, level=1): 295 pulls
+  Arm 6 (limit=8, max=4, level=1): 3668 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 239841,
+    avg_decide_var: 0.362612,
+    num_simplify_subsume: 5213,
+    num_simplify_self_subsume: 688,
+}
+Statistic {
+    case: model.aig,
+    time: 7.92s,
+    num_mic: 17273,
+    avg_mic_cube_len: 5.048226,
+    avg_po_cube_len: 72.556475,
+    mic_drop: success: 10772, fail: 73994, success rate: 12.71%,
+    num_down: 84766,
+    num_down_sat: 106435,
+    ctp: success: 0, fail: 8149, success rate: 0.00%,
+    num_get_bad: 46,
+    overall_block_time: 7.245573418s,
+    block_get_bad_time: 3.569963ms,
+    block_get_predecessor_time: 1.866317459s,
+    block_blocked_time: 234.164341ms,
+    block_mic_time: 8.447199117s,
+    block_push_time: 11.515101ms,
+    overall_propagate_time: 624.309886ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc11/single/irstdme5.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/irstdme5.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:23:33 CST 2025
+========================================

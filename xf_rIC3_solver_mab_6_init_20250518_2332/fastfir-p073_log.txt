@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:46:06 CST 2025
+Job <543834> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 482, 880]
+616 16 12 1 1 1 1 1 1 13 37 36 73 45 91 62 1 23 0 965 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 29 pulls
+  Arm 1 (Aggressive Heuristic): 25 pulls
+  Arm 2 (Conservative Heuristic): 67 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 15 pulls
+  Arm 5 (limit=2, max=5, level=1): 2346 pulls
+  Arm 6 (limit=8, max=4, level=1): 701 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 57207,
+    avg_decide_var: 0.737766,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 31.52s,
+    num_mic: 3344,
+    avg_mic_cube_len: 4.019139,
+    avg_po_cube_len: 87.861649,
+    mic_drop: success: 2598, fail: 10776, success rate: 19.43%,
+    num_down: 13374,
+    num_down_sat: 16694,
+    ctp: success: 0, fail: 5410, success rate: 0.00%,
+    num_get_bad: 135,
+    overall_block_time: 29.68124297s,
+    block_get_bad_time: 265.994376ms,
+    block_get_predecessor_time: 13.699996325s,
+    block_blocked_time: 1.08825052s,
+    block_mic_time: 25.665987844s,
+    block_push_time: 676.504607ms,
+    overall_propagate_time: 1.264532422s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/fastfir/aig/fastfir-p073.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/fastfir/aig/fastfir-p073.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:46:38 CST 2025
+========================================

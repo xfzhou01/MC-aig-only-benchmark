@@ -1,0 +1,71 @@
+Started at: Mon May 19 04:12:38 CST 2025
+Job <545785> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 16]
+64 16 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3 pulls
+  Arm 1 (Aggressive Heuristic): 3 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 2 pulls
+  Arm 6 (limit=8, max=4, level=1): 2 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 18,
+    avg_decide_var: 0.714016,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.00s,
+    num_mic: 16,
+    avg_mic_cube_len: 1.000000,
+    avg_po_cube_len: 31.769231,
+    mic_drop: success: 0, fail: 16, success rate: 0.00%,
+    num_down: 16,
+    num_down_sat: 0,
+    ctp: success: 0, fail: 0, success rate: NaN%,
+    num_get_bad: 18,
+    overall_block_time: 2.312081ms,
+    block_get_bad_time: 738.146µs,
+    block_get_predecessor_time: 40.575µs,
+    block_blocked_time: 540.806µs,
+    block_mic_time: 25.069µs,
+    block_push_time: 386ns,
+    overall_propagate_time: 133ns,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./avr/opensource/vis_QF_BV_rotate32/vis_QF_BV_rotate32.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/opensource/vis_QF_BV_rotate32/vis_QF_BV_rotate32.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 04:12:40 CST 2025
+========================================

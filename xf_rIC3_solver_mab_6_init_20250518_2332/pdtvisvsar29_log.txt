@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:06:26 CST 2025
+Job <548189> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4010, 4620]
+66 1 2 5 18 38 46 34 77 257 149 298 523 709 879 166 834 940 1322 821 35 0 4932 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3 pulls
+  Arm 1 (Aggressive Heuristic): 3 pulls
+  Arm 2 (Conservative Heuristic): 23 pulls
+  Arm 3 (limit=0, max=0, level=0): 3 pulls
+  Arm 4 (limit=1, max=3, level=1): 3 pulls
+  Arm 5 (limit=2, max=5, level=1): 2397 pulls
+  Arm 6 (limit=8, max=4, level=1): 7309 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 675077,
+    avg_decide_var: 0.557956,
+    num_simplify_subsume: 1831,
+    num_simplify_self_subsume: 2452,
+}
+Statistic {
+    case: model.aig,
+    time: 43.09s,
+    num_mic: 15105,
+    avg_mic_cube_len: 7.983979,
+    avg_po_cube_len: 32.612887,
+    mic_drop: success: 14575, fail: 101083, success rate: 12.60%,
+    num_down: 115658,
+    num_down_sat: 201195,
+    ctp: success: 0, fail: 19659, success rate: 0.00%,
+    num_get_bad: 4130,
+    overall_block_time: 40.386336514s,
+    block_get_bad_time: 3.949515969s,
+    block_get_predecessor_time: 7.968771359s,
+    block_blocked_time: 930.28432ms,
+    block_mic_time: 36.335282867s,
+    block_push_time: 337.412204ms,
+    overall_propagate_time: 2.662494942s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtvisvsar29.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtvisvsar29.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:07:10 CST 2025
+========================================

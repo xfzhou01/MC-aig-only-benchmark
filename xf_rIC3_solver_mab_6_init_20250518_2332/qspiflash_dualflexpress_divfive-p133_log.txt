@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:38:55 CST 2025
+Job <547998> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 45]
+78 3 16 20 13 11 40 24 28 31 30 27 44 40 31 24 31 29 40 19 20 10 10 59 110 108 26 25 13 5 10 13 25 11 3 1 1 0 127 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 13 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 12 pulls
+  Arm 5 (limit=2, max=5, level=1): 16 pulls
+  Arm 6 (limit=8, max=4, level=1): 269 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 45591,
+    avg_decide_var: 0.570208,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.67s,
+    num_mic: 2339,
+    avg_mic_cube_len: 5.277897,
+    avg_po_cube_len: 37.042012,
+    mic_drop: success: 2465, fail: 9329, success rate: 20.90%,
+    num_down: 11794,
+    num_down_sat: 17060,
+    ctp: success: 0, fail: 6762, success rate: 0.00%,
+    num_get_bad: 61,
+    overall_block_time: 1.233057371s,
+    block_get_bad_time: 8.115396ms,
+    block_get_predecessor_time: 334.127103ms,
+    block_blocked_time: 19.94333ms,
+    block_mic_time: 1.560190882s,
+    block_push_time: 27.993325ms,
+    overall_propagate_time: 369.64943ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divfive-p133.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divfive-p133.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:38:59 CST 2025
+========================================

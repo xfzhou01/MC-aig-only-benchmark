@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:40:36 CST 2025
+Job <548537> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1853, 833]
+160 25 7 19 9 10 3 8 7 8 24 15 7 9 21 23 22 31 19 30 28 36 30 20 33 25 15 19 16 37 16 14 36 54 46 26 33 24 36 29 49 35 28 18 19 26 20 16 42 26 35 22 19 26 31 48 58 55 58 55 50 40 32 917 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 9 pulls
+  Arm 1 (Aggressive Heuristic): 9 pulls
+  Arm 2 (Conservative Heuristic): 4118 pulls
+  Arm 3 (limit=0, max=0, level=0): 8 pulls
+  Arm 4 (limit=1, max=3, level=1): 8 pulls
+  Arm 5 (limit=2, max=5, level=1): 8 pulls
+  Arm 6 (limit=8, max=4, level=1): 8 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 160219,
+    avg_decide_var: 0.790359,
+    num_simplify_subsume: 12646,
+    num_simplify_self_subsume: 5828,
+}
+Statistic {
+    case: model.aig,
+    time: 10.67s,
+    num_mic: 4168,
+    avg_mic_cube_len: 9.234645,
+    avg_po_cube_len: 139.997912,
+    mic_drop: success: 8689, fail: 26714, success rate: 24.54%,
+    num_down: 35403,
+    num_down_sat: 63518,
+    ctp: success: 0, fail: 37358, success rate: 0.00%,
+    num_get_bad: 1640,
+    overall_block_time: 5.63744857s,
+    block_get_bad_time: 361.410816ms,
+    block_get_predecessor_time: 316.459761ms,
+    block_blocked_time: 392.249161ms,
+    block_mic_time: 3.440598164s,
+    block_push_time: 41.99534ms,
+    overall_propagate_time: 4.856020544s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc11/single/prodcellp4neg.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/prodcellp4neg.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:40:48 CST 2025
+========================================

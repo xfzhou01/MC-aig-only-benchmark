@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:43:30 CST 2025
+Job <543748> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 21868]
+657 12 9 13 20 18 29 20 19 38 31 59 100 111 111 269 913 3309 795 3864 3026 3522 610 3393 2532 2668 2388 2048 1597 1159 2470 284 28 67 0 32 11 9 17 15 17 13 14512 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 36314 pulls
+  Arm 1 (Aggressive Heuristic): 24057 pulls
+  Arm 2 (Conservative Heuristic): 1020 pulls
+  Arm 3 (limit=0, max=0, level=0): 293 pulls
+  Arm 4 (limit=1, max=3, level=1): 6083 pulls
+  Arm 5 (limit=2, max=5, level=1): 600 pulls
+  Arm 6 (limit=8, max=4, level=1): 871 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1821481,
+    avg_decide_var: 0.760096,
+    num_simplify_subsume: 39452,
+    num_simplify_self_subsume: 17668,
+}
+Statistic {
+    case: model.aig,
+    time: 828.73s,
+    num_mic: 71854,
+    avg_mic_cube_len: 6.960030,
+    avg_po_cube_len: 153.322501,
+    mic_drop: success: 48587, fail: 448719, success rate: 9.77%,
+    num_down: 497306,
+    num_down_sat: 606129,
+    ctp: success: 0, fail: 251878, success rate: 0.00%,
+    num_get_bad: 2230,
+    overall_block_time: 530.58370052s,
+    block_get_bad_time: 6.608974622s,
+    block_get_predecessor_time: 108.602890212s,
+    block_blocked_time: 34.623139573s,
+    block_mic_time: 413.165155643s,
+    block_push_time: 12.587519087s,
+    overall_propagate_time: 296.553193174s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/fastfir/aig/fastfir-p020.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/fastfir/aig/fastfir-p020.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:57:20 CST 2025
+========================================

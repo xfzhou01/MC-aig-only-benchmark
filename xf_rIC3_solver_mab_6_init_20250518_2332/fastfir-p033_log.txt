@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:44:25 CST 2025
+Job <543775> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 145, 300]
+288 47 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 23 0 320 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 16 pulls
+  Arm 1 (Aggressive Heuristic): 558 pulls
+  Arm 2 (Conservative Heuristic): 15 pulls
+  Arm 3 (limit=0, max=0, level=0): 15 pulls
+  Arm 4 (limit=1, max=3, level=1): 15 pulls
+  Arm 5 (limit=2, max=5, level=1): 15 pulls
+  Arm 6 (limit=8, max=4, level=1): 19 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 7531,
+    avg_decide_var: 0.885752,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 3.37s,
+    num_mic: 686,
+    avg_mic_cube_len: 2.467930,
+    avg_po_cube_len: 68.503967,
+    mic_drop: success: 185, fail: 1495, success rate: 11.01%,
+    num_down: 1680,
+    num_down_sat: 1789,
+    ctp: success: 0, fail: 3287, success rate: 0.00%,
+    num_get_bad: 263,
+    overall_block_time: 2.521220052s,
+    block_get_bad_time: 311.701836ms,
+    block_get_predecessor_time: 709.149765ms,
+    block_blocked_time: 164.743131ms,
+    block_mic_time: 1.373879923s,
+    block_push_time: 14.512033ms,
+    overall_propagate_time: 342.618011ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/fastfir/aig/fastfir-p033.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/fastfir/aig/fastfir-p033.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:44:30 CST 2025
+========================================

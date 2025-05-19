@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:09:11 CST 2025
+Job <548233> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 1, 1, 2, 1, 1, 1, 1, 1, 3, 4, 1, 3, 10, 10, 6, 4, 1, 1, 8, 3, 4, 1, 1, 1, 1, 1, 1, 1, 26, 25, 14, 1, 2, 1, 1, 2, 1, 1, 15, 5, 25, 5, 84, 8, 3, 4, 5, 2, 2, 6, 2, 12, 4, 2, 2, 2, 3, 8, 5, 4, 1, 1, 2, 2, 2, 4, 1, 2, 7, 17, 5, 2, 8, 578, 2]
+10 2 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 2 1 2 1 1 1 2 1 1 1 1 1 2 3 1 2 3 4 3 3 1 1 1 2 2 1 1 1 1 1 1 1 2 1 1 1 2 1 1 2 1 1 2 1 1 1 3 2 1 1 1 1 1 3 2 2 2 2 2 1 1 2 1 1 1 1 2 2 1 2 1 1 2 2 1 1 3 2 2 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 9 pulls
+  Arm 1 (Aggressive Heuristic): 189 pulls
+  Arm 2 (Conservative Heuristic): 151 pulls
+  Arm 3 (limit=0, max=0, level=0): 4 pulls
+  Arm 4 (limit=1, max=3, level=1): 484 pulls
+  Arm 5 (limit=2, max=5, level=1): 24 pulls
+  Arm 6 (limit=8, max=4, level=1): 39 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 12604,
+    avg_decide_var: 0.930137,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.08s,
+    num_mic: 1174,
+    avg_mic_cube_len: 3.840716,
+    avg_po_cube_len: 9.869088,
+    mic_drop: success: 383, fail: 3945, success rate: 8.85%,
+    num_down: 4328,
+    num_down_sat: 6377,
+    ctp: success: 0, fail: 188, success rate: 0.00%,
+    num_get_bad: 99,
+    overall_block_time: 67.059137ms,
+    block_get_bad_time: 1.151826ms,
+    block_get_predecessor_time: 13.565076ms,
+    block_blocked_time: 5.731163ms,
+    block_mic_time: 50.604994ms,
+    block_push_time: 315.404µs,
+    overall_propagate_time: 2.139704ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc11/single/bob9234spec4neg.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/bob9234spec4neg.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:09:12 CST 2025
+========================================

@@ -1,0 +1,71 @@
+Started at: Mon May 19 04:50:48 CST 2025
+Job <546278> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1437, 3711]
+1091 20 45 85 109 251 296 421 586 452 224 224 233 234 174 109 788 641 505 347 163 20 19 10 6 0 3832 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 7 pulls
+  Arm 1 (Aggressive Heuristic): 33 pulls
+  Arm 2 (Conservative Heuristic): 4392 pulls
+  Arm 3 (limit=0, max=0, level=0): 522 pulls
+  Arm 4 (limit=1, max=3, level=1): 10 pulls
+  Arm 5 (limit=2, max=5, level=1): 20 pulls
+  Arm 6 (limit=8, max=4, level=1): 5337 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 293403,
+    avg_decide_var: 0.774197,
+    num_simplify_subsume: 540,
+    num_simplify_self_subsume: 429,
+}
+Statistic {
+    case: model.aig,
+    time: 198.92s,
+    num_mic: 11575,
+    avg_mic_cube_len: 6.858747,
+    avg_po_cube_len: 450.959780,
+    mic_drop: success: 15569, fail: 60016, success rate: 20.60%,
+    num_down: 75585,
+    num_down_sat: 89898,
+    ctp: success: 0, fail: 58554, success rate: 0.00%,
+    num_get_bad: 1881,
+    overall_block_time: 171.028220541s,
+    block_get_bad_time: 4.211326113s,
+    block_get_predecessor_time: 82.47622571s,
+    block_blocked_time: 6.228140163s,
+    block_mic_time: 143.054338213s,
+    block_push_time: 1.307823433s,
+    overall_propagate_time: 26.913822626s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/dspfilters_fastfir_second-p10.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/dspfilters_fastfir_second-p10.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 04:54:09 CST 2025
+========================================

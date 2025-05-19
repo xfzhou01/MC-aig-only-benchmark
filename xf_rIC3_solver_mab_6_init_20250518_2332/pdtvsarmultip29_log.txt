@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:15:18 CST 2025
+Job <548306> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4457, 4949]
+66 1 2 4 18 23 39 33 102 408 194 363 558 838 979 214 853 860 1468 944 72 2 0 5286 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 6 pulls
+  Arm 1 (Aggressive Heuristic): 1853 pulls
+  Arm 2 (Conservative Heuristic): 1079 pulls
+  Arm 3 (limit=0, max=0, level=0): 16 pulls
+  Arm 4 (limit=1, max=3, level=1): 166 pulls
+  Arm 5 (limit=2, max=5, level=1): 14 pulls
+  Arm 6 (limit=8, max=4, level=1): 8149 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 802154,
+    avg_decide_var: 0.534361,
+    num_simplify_subsume: 4764,
+    num_simplify_self_subsume: 4290,
+}
+Statistic {
+    case: model.aig,
+    time: 59.03s,
+    num_mic: 17482,
+    avg_mic_cube_len: 8.189509,
+    avg_po_cube_len: 32.549053,
+    mic_drop: success: 16886, fail: 120201, success rate: 12.32%,
+    num_down: 137087,
+    num_down_sat: 241873,
+    ctp: success: 0, fail: 27569, success rate: 0.00%,
+    num_get_bad: 4660,
+    overall_block_time: 55.359292722s,
+    block_get_bad_time: 5.184920732s,
+    block_get_predecessor_time: 11.342917679s,
+    block_blocked_time: 1.137032722s,
+    block_mic_time: 50.600118988s,
+    block_push_time: 369.155817ms,
+    overall_propagate_time: 3.613927584s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtvsarmultip29.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtvsarmultip29.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:16:34 CST 2025
+========================================

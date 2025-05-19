@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:40:15 CST 2025
+Job <548009> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 7, 20, 32]
+304 4 4 2 4 1 4 4 1 2 6 5 2 3 1 2 1 2 6 2 0 1 1 120 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 5 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 5 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 5 pulls
+  Arm 5 (limit=2, max=5, level=1): 2 pulls
+  Arm 6 (limit=8, max=4, level=1): 120 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 10402,
+    avg_decide_var: 0.145738,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.43s,
+    num_mic: 795,
+    avg_mic_cube_len: 4.969811,
+    avg_po_cube_len: 85.042693,
+    mic_drop: success: 607, fail: 3263, success rate: 15.68%,
+    num_down: 3870,
+    num_down_sat: 3765,
+    ctp: success: 0, fail: 1543, success rate: 0.00%,
+    num_get_bad: 45,
+    overall_block_time: 286.090348ms,
+    block_get_bad_time: 12.44886ms,
+    block_get_predecessor_time: 89.590748ms,
+    block_blocked_time: 5.125225ms,
+    block_mic_time: 313.22231ms,
+    block_push_time: 5.338347ms,
+    overall_propagate_time: 46.934595ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2018D/zipcpu-pfcache-p05.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2018D/zipcpu-pfcache-p05.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:40:16 CST 2025
+========================================

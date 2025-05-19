@@ -1,0 +1,71 @@
+Started at: Mon May 19 07:04:23 CST 2025
+Job <547375> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 47, 27]
+80 3 13 20 26 38 30 36 36 35 38 37 31 25 41 37 32 6 1 0 88 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 4 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 2 pulls
+  Arm 6 (limit=8, max=4, level=1): 111 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 15686,
+    avg_decide_var: 0.556425,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.49s,
+    num_mic: 1077,
+    avg_mic_cube_len: 4.548747,
+    avg_po_cube_len: 38.647568,
+    mic_drop: success: 970, fail: 3763, success rate: 20.49%,
+    num_down: 4733,
+    num_down_sat: 6506,
+    ctp: success: 0, fail: 1661, success rate: 0.00%,
+    num_get_bad: 35,
+    overall_block_time: 347.976709ms,
+    block_get_bad_time: 2.05338ms,
+    block_get_predecessor_time: 86.690017ms,
+    block_blocked_time: 3.550199ms,
+    block_mic_time: 476.048377ms,
+    block_push_time: 2.473266ms,
+    overall_propagate_time: 109.043504ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_dualflexpress_divthree-p075.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_dualflexpress_divthree-p075.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 07:04:24 CST 2025
+========================================

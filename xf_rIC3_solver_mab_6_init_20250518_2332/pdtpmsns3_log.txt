@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:44:17 CST 2025
+Job <548583> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7703]
+464 77 221 627 1361 2315 3476 3410 2749 1968 1519 1215 778 305 113 32 37 26 55 45 61 17 26 9 0 2880 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 9 pulls
+  Arm 1 (Aggressive Heuristic): 15 pulls
+  Arm 2 (Conservative Heuristic): 15 pulls
+  Arm 3 (limit=0, max=0, level=0): 41 pulls
+  Arm 4 (limit=1, max=3, level=1): 15561 pulls
+  Arm 5 (limit=2, max=5, level=1): 22 pulls
+  Arm 6 (limit=8, max=4, level=1): 15 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 821746,
+    avg_decide_var: 0.446600,
+    num_simplify_subsume: 10598,
+    num_simplify_self_subsume: 4758,
+}
+Statistic {
+    case: model.aig,
+    time: 119.71s,
+    num_mic: 28684,
+    avg_mic_cube_len: 8.243097,
+    avg_po_cube_len: 68.097967,
+    mic_drop: success: 52497, fail: 169159, success rate: 23.68%,
+    num_down: 221656,
+    num_down_sat: 338849,
+    ctp: success: 0, fail: 48701, success rate: 0.00%,
+    num_get_bad: 3588,
+    overall_block_time: 61.953714294s,
+    block_get_bad_time: 2.452316925s,
+    block_get_predecessor_time: 6.202224057s,
+    block_blocked_time: 2.789488975s,
+    block_mic_time: 66.647352603s,
+    block_push_time: 159.602474ms,
+    overall_propagate_time: 57.605919211s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtpmsns3.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtpmsns3.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:46:19 CST 2025
+========================================

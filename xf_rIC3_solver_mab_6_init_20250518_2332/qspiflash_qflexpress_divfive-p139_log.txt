@@ -1,0 +1,71 @@
+Started at: Mon May 19 07:05:18 CST 2025
+Job <547401> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 485]
+74 3 14 12 9 15 35 25 25 7 6 16 40 13 17 12 10 22 45 50 81 53 50 52 65 39 27 21 11 21 18 12 8 8 7 36 45 42 33 16 3 2 2 2 2 1 0 12 5 2 3 4 372 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 83 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 479 pulls
+  Arm 6 (limit=8, max=4, level=1): 362 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 77852,
+    avg_decide_var: 0.621850,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.85s,
+    num_mic: 3134,
+    avg_mic_cube_len: 5.767071,
+    avg_po_cube_len: 36.291988,
+    mic_drop: success: 3995, fail: 13207, success rate: 23.22%,
+    num_down: 17202,
+    num_down_sat: 24395,
+    ctp: success: 0, fail: 13226, success rate: 0.00%,
+    num_get_bad: 94,
+    overall_block_time: 1.839741101s,
+    block_get_bad_time: 12.848504ms,
+    block_get_predecessor_time: 483.507948ms,
+    block_blocked_time: 40.264831ms,
+    block_mic_time: 2.25399104s,
+    block_push_time: 34.1279ms,
+    overall_propagate_time: 915.262092ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_qflexpress_divfive-p139.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_qflexpress_divfive-p139.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 07:05:22 CST 2025
+========================================

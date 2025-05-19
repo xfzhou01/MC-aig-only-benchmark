@@ -1,0 +1,71 @@
+Started at: Sun May 18 23:46:32 CST 2025
+Job <543847> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2415]
+329 29 23 36 42 48 35 16 8 12 28 31 49 50 62 67 164 162 841 60 581 550 189 8 329 378 212 70 6 5 5 250 0 1 1 2061 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 226 pulls
+  Arm 1 (Aggressive Heuristic): 66 pulls
+  Arm 2 (Conservative Heuristic): 989 pulls
+  Arm 3 (limit=0, max=0, level=0): 836 pulls
+  Arm 4 (limit=1, max=3, level=1): 330 pulls
+  Arm 5 (limit=2, max=5, level=1): 327 pulls
+  Arm 6 (limit=8, max=4, level=1): 4535 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 241512,
+    avg_decide_var: 0.888194,
+    num_simplify_subsume: 466,
+    num_simplify_self_subsume: 224,
+}
+Statistic {
+    case: model.aig,
+    time: 137.04s,
+    num_mic: 9010,
+    avg_mic_cube_len: 7.062930,
+    avg_po_cube_len: 119.704922,
+    mic_drop: success: 11617, fail: 51356, success rate: 18.45%,
+    num_down: 62973,
+    num_down_sat: 74803,
+    ctp: success: 0, fail: 29674, success rate: 0.00%,
+    num_get_bad: 781,
+    overall_block_time: 115.701832244s,
+    block_get_bad_time: 1.877223835s,
+    block_get_predecessor_time: 48.327846837s,
+    block_blocked_time: 2.542988707s,
+    block_mic_time: 108.971815422s,
+    block_push_time: 511.841719ms,
+    overall_propagate_time: 20.232654206s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/fastfir/aig/fastfir-p026.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/fastfir/aig/fastfir-p026.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sun May 18 23:48:51 CST 2025
+========================================

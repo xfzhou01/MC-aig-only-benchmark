@@ -1,0 +1,71 @@
+Started at: Mon May 19 03:19:01 CST 2025
+Job <545247> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 2697]
+8 0 2697 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 337 pulls
+  Arm 1 (Aggressive Heuristic): 438 pulls
+  Arm 2 (Conservative Heuristic): 281 pulls
+  Arm 3 (limit=0, max=0, level=0): 374 pulls
+  Arm 4 (limit=1, max=3, level=1): 375 pulls
+  Arm 5 (limit=2, max=5, level=1): 511 pulls
+  Arm 6 (limit=8, max=4, level=1): 381 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 27885,
+    avg_decide_var: 0.081670,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 4.66s,
+    num_mic: 2697,
+    avg_mic_cube_len: 8.345198,
+    avg_po_cube_len: 13.311086,
+    mic_drop: success: 42, fail: 22448, success rate: 0.19%,
+    num_down: 22490,
+    num_down_sat: 22490,
+    ctp: success: 0, fail: 2697, success rate: 0.00%,
+    num_get_bad: 2699,
+    overall_block_time: 4.470807291s,
+    block_get_bad_time: 1.513230606s,
+    block_get_predecessor_time: 153.864481ms,
+    block_blocked_time: 52.062748ms,
+    block_mic_time: 552.158446ms,
+    block_push_time: 66.734µs,
+    overall_propagate_time: 165.097091ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/industry/gen77/gen77.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/industry/gen77/gen77.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 03:19:08 CST 2025
+========================================

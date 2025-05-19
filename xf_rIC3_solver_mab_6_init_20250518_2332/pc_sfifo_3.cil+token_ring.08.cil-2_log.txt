@@ -1,0 +1,71 @@
+Started at: Mon May 19 00:08:48 CST 2025
+Job <544080> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 495]
+2 2 67 170 861 1870 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 78 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 6 pulls
+  Arm 4 (limit=1, max=3, level=1): 14 pulls
+  Arm 5 (limit=2, max=5, level=1): 365 pulls
+  Arm 6 (limit=8, max=4, level=1): 19 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 40263,
+    avg_decide_var: 1.000019,
+    num_simplify_subsume: 302,
+    num_simplify_self_subsume: 1323,
+}
+Statistic {
+    case: model.aig,
+    time: 183.18s,
+    num_mic: 3452,
+    avg_mic_cube_len: 7.473638,
+    avg_po_cube_len: 2168.588358,
+    mic_drop: success: 11705, fail: 12566, success rate: 48.23%,
+    num_down: 24271,
+    num_down_sat: 29961,
+    ctp: success: 0, fail: 1366, success rate: 0.00%,
+    num_get_bad: 399,
+    overall_block_time: 176.008000886s,
+    block_get_bad_time: 3.30083008s,
+    block_get_predecessor_time: 25.95931911s,
+    block_blocked_time: 1.843657731s,
+    block_mic_time: 245.483343999s,
+    block_push_time: 4.507366512s,
+    overall_propagate_time: 6.481884564s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2024/sosylab/combinations/pc_sfifo_3.cil+token_ring.08.cil-2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/combinations/pc_sfifo_3.cil+token_ring.08.cil-2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 00:11:53 CST 2025
+========================================

@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:34:56 CST 2025
+Job <547955> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 113, 37]
+80 2 5 10 16 20 32 29 42 39 4 2 0 57 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 4 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 72 pulls
+  Arm 4 (limit=1, max=3, level=1): 131 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4143,
+    avg_decide_var: 0.549105,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.15s,
+    num_mic: 356,
+    avg_mic_cube_len: 4.280899,
+    avg_po_cube_len: 33.389755,
+    mic_drop: success: 293, fail: 1162, success rate: 20.14%,
+    num_down: 1455,
+    num_down_sat: 1905,
+    ctp: success: 0, fail: 425, success rate: 0.00%,
+    num_get_bad: 45,
+    overall_block_time: 102.563306ms,
+    block_get_bad_time: 3.923222ms,
+    block_get_predecessor_time: 27.055203ms,
+    block_blocked_time: 5.898535ms,
+    block_mic_time: 93.79539ms,
+    block_push_time: 1.6955ms,
+    overall_propagate_time: 19.250896ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p089.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p089.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:34:57 CST 2025
+========================================

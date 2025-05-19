@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:12:29 CST 2025
+Job <547748> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 186, 132]
+185 7 8 6 9 31 61 65 98 107 135 176 209 294 262 321 323 246 246 222 275 237 193 125 118 83 76 49 31 46 34 20 13 5 7 0 970 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 1114 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 281441,
+    avg_decide_var: 0.577538,
+    num_simplify_subsume: 4175,
+    num_simplify_self_subsume: 2646,
+}
+Statistic {
+    case: model.aig,
+    time: 47.31s,
+    num_mic: 8464,
+    avg_mic_cube_len: 13.474835,
+    avg_po_cube_len: 90.662697,
+    mic_drop: success: 47566, fail: 52293, success rate: 47.63%,
+    num_down: 99859,
+    num_down_sat: 158887,
+    ctp: success: 0, fail: 22554, success rate: 0.00%,
+    num_get_bad: 115,
+    overall_block_time: 32.185537671s,
+    block_get_bad_time: 92.178856ms,
+    block_get_predecessor_time: 4.627292659s,
+    block_blocked_time: 247.756734ms,
+    block_mic_time: 49.016627496s,
+    block_push_time: 352.027772ms,
+    overall_propagate_time: 14.648959046s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/beem/synapse.7.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/beem/synapse.7.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:13:25 CST 2025
+========================================

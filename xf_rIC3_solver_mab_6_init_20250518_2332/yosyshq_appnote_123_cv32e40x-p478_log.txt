@@ -1,0 +1,71 @@
+Started at: Mon May 19 00:02:07 CST 2025
+Job <543985> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5733]
+3290 1 1 1 2 26 8 57 68 101 92 117 94 154 184 218 212 239 175 355 145 230 193 209 127 66 17 7 1 0 293 1306 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 10519 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 4022 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 2 pulls
+  Arm 6 (limit=8, max=4, level=1): 2 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 466829,
+    avg_decide_var: 0.200213,
+    num_simplify_subsume: 26912,
+    num_simplify_self_subsume: 3219,
+}
+Statistic {
+    case: model.aig,
+    time: 215.14s,
+    num_mic: 20767,
+    avg_mic_cube_len: 15.292676,
+    avg_po_cube_len: 341.447586,
+    mic_drop: success: 27077, fail: 283643, success rate: 8.71%,
+    num_down: 310720,
+    num_down_sat: 333344,
+    ctp: success: 0, fail: 22318, success rate: 0.00%,
+    num_get_bad: 79,
+    overall_block_time: 195.079306308s,
+    block_get_bad_time: 769.275631ms,
+    block_get_predecessor_time: 22.810122954s,
+    block_blocked_time: 9.099905541s,
+    block_mic_time: 184.127487773s,
+    block_push_time: 379.083206ms,
+    overall_propagate_time: 16.787176926s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/yosyshq/appnote_123/cv32e40x/yosyshq_appnote_123_cv32e40x-p478.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/yosyshq/appnote_123/cv32e40x/yosyshq_appnote_123_cv32e40x-p478.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 00:05:44 CST 2025
+========================================

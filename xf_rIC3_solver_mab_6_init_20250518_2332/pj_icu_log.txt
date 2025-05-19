@@ -1,0 +1,71 @@
+Started at: Mon May 19 04:14:18 CST 2025
+Job <545834> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 4, 17]
+41 2 2 1 0 17 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 20 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 143,
+    avg_decide_var: 0.171080,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.02s,
+    num_mic: 22,
+    avg_mic_cube_len: 3.227273,
+    avg_po_cube_len: 8.589041,
+    mic_drop: success: 28, fail: 42, success rate: 40.00%,
+    num_down: 70,
+    num_down_sat: 74,
+    ctp: success: 0, fail: 35, success rate: 0.00%,
+    num_get_bad: 26,
+    overall_block_time: 6.859202ms,
+    block_get_bad_time: 3.180481ms,
+    block_get_predecessor_time: 0ns,
+    block_blocked_time: 188.149µs,
+    block_mic_time: 848.233µs,
+    block_push_time: 672ns,
+    overall_propagate_time: 763.812µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/opensource/pj_icu/pj_icu.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/opensource/pj_icu/pj_icu.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 04:14:19 CST 2025
+========================================

@@ -1,0 +1,71 @@
+Started at: Mon May 19 07:05:10 CST 2025
+Job <547397> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 92, 115]
+47 3 2 13 27 39 56 73 57 84 67 52 38 44 34 20 9 7 4 1 1 0 338 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3 pulls
+  Arm 1 (Aggressive Heuristic): 3 pulls
+  Arm 2 (Conservative Heuristic): 9 pulls
+  Arm 3 (limit=0, max=0, level=0): 148 pulls
+  Arm 4 (limit=1, max=3, level=1): 4 pulls
+  Arm 5 (limit=2, max=5, level=1): 3 pulls
+  Arm 6 (limit=8, max=4, level=1): 432 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 35303,
+    avg_decide_var: 0.410793,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.27s,
+    num_mic: 1236,
+    avg_mic_cube_len: 6.678803,
+    avg_po_cube_len: 56.750524,
+    mic_drop: success: 1340, fail: 6616, success rate: 16.84%,
+    num_down: 7956,
+    num_down_sat: 11089,
+    ctp: success: 0, fail: 3900, success rate: 0.00%,
+    num_get_bad: 84,
+    overall_block_time: 1.119920103s,
+    block_get_bad_time: 7.12077ms,
+    block_get_predecessor_time: 528.134102ms,
+    block_blocked_time: 16.595997ms,
+    block_mic_time: 1.167765679s,
+    block_push_time: 4.102647ms,
+    overall_propagate_time: 130.068293ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/zipcpu-busdelay-p00.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/zipcpu-busdelay-p00.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 07:05:12 CST 2025
+========================================

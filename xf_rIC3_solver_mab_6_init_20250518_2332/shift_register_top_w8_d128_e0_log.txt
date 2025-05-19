@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:50:52 CST 2025
+Job <548085> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 28805, 14421]
+1 18 30 46 31 43 46 73 36 45 27 66 79 73 72 169 29 44 58 64 62 84 105 121 86 85 101 145 373 377 385 353 328 293 241 165 198 130 119 136 202 74 207 142 215 146 168 144 611 927 550 383 542 505 543 423 392 360 483 660 1115 1150 600 322 890 276 237 231 192 127 116 110 125 103 134 94 115 106 147 194 144 134 135 150 170 318 330 343 256 231 348 395 374 352 331 368 358 219 195 190 282 212 354 305 303 399 324 342 318 252 232 363 298 226 208 234 325 332 330 333 314 244 352 344 411 371 412 376 797 402 18134 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 80086 pulls
+  Arm 1 (Aggressive Heuristic): 5 pulls
+  Arm 2 (Conservative Heuristic): 40532 pulls
+  Arm 3 (limit=0, max=0, level=0): 4 pulls
+  Arm 4 (limit=1, max=3, level=1): 28057 pulls
+  Arm 5 (limit=2, max=5, level=1): 6 pulls
+  Arm 6 (limit=8, max=4, level=1): 4 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 6780885,
+    avg_decide_var: 0.296601,
+    num_simplify_subsume: 959626,
+    num_simplify_self_subsume: 982106,
+}
+Statistic {
+    case: model.aig,
+    time: 1128.24s,
+    num_mic: 154062,
+    avg_mic_cube_len: 15.178779,
+    avg_po_cube_len: 20.780149,
+    mic_drop: success: 392684, fail: 1913575, success rate: 17.03%,
+    num_down: 2306259,
+    num_down_sat: 3425139,
+    ctp: success: 0, fail: 750165, success rate: 0.00%,
+    num_get_bad: 223,
+    overall_block_time: 703.665502559s,
+    block_get_bad_time: 1.099142506s,
+    block_get_predecessor_time: 14.337448019s,
+    block_blocked_time: 42.298354818s,
+    block_mic_time: 599.784331256s,
+    block_push_time: 15.690856156s,
+    overall_propagate_time: 422.797890482s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w8_d128_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w8_d128_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:10:06 CST 2025
+========================================

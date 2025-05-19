@@ -1,0 +1,71 @@
+Started at: Mon May 19 00:12:31 CST 2025
+Job <544199> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 7, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 5, 5, 1, 1, 1, 16, 6580]
+1 8 20 36 44 64 71 77 151 122 187 160 330 231 273 500 480 422 407 586 673 701 903 1108 959 925 1052 1164 1154 1114 1209 2366 4028 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 6 pulls
+  Arm 1 (Aggressive Heuristic): 27068 pulls
+  Arm 2 (Conservative Heuristic): 6 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 6 pulls
+  Arm 5 (limit=2, max=5, level=1): 7 pulls
+  Arm 6 (limit=8, max=4, level=1): 6 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1282841,
+    avg_decide_var: 0.604714,
+    num_simplify_subsume: 44343,
+    num_simplify_self_subsume: 67712,
+}
+Statistic {
+    case: model.aig,
+    time: 261.38s,
+    num_mic: 36808,
+    avg_mic_cube_len: 13.326695,
+    avg_po_cube_len: 31.227021,
+    mic_drop: success: 86491, fail: 386906, success rate: 18.27%,
+    num_down: 473397,
+    num_down_sat: 774942,
+    ctp: success: 0, fail: 41473, success rate: 0.00%,
+    num_get_bad: 1501,
+    overall_block_time: 221.890725466s,
+    block_get_bad_time: 2.084741995s,
+    block_get_predecessor_time: 12.342283952s,
+    block_blocked_time: 7.116618327s,
+    block_mic_time: 235.815245826s,
+    block_push_time: 510.259006ms,
+    overall_propagate_time: 38.555029247s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2019/mann/data-integrity/unsafe/arbitrated_top_n2_w32_d32_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/mann/data-integrity/unsafe/arbitrated_top_n2_w32_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 00:16:55 CST 2025
+========================================

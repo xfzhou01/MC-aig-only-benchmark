@@ -1,0 +1,72 @@
+Started at: Mon May 19 09:12:42 CST 2025
+Job <548281> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20296, 1791]
+197 17 47 83 109 168 351 559 721 777 1125 1262 2386 2695 2781 3563 1503 699 423 212 89 101 55 41 19 14 3 0 3386 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 8 pulls
+  Arm 1 (Aggressive Heuristic): 5 pulls
+  Arm 2 (Conservative Heuristic): 50891 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 18199 pulls
+  Arm 5 (limit=2, max=5, level=1): 166 pulls
+  Arm 6 (limit=8, max=4, level=1): 36 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2959397,
+    avg_decide_var: 0.608585,
+    num_simplify_subsume: 266507,
+    num_simplify_self_subsume: 130333,
+}
+Statistic {
+    case: model.aig,
+    time: 712.68s,
+    num_mic: 104001,
+    avg_mic_cube_len: 16.123460,
+    avg_po_cube_len: 49.498495,
+    mic_drop: success: 388929, fail: 1180513, success rate: 24.78%,
+    num_down: 1569442,
+    num_down_sat: 2234822,
+    ctp: success: 0, fail: 89416, success rate: 0.00%,
+    num_get_bad: 165,
+    overall_block_time: 557.918835874s,
+    block_get_bad_time: 301.770555ms,
+    block_get_predecessor_time: 31.004196186s,
+    block_blocked_time: 37.213953161s,
+    block_mic_time: 619.432474674s,
+    block_push_time: 2.006436721s,
+    overall_propagate_time: 154.627895148s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtpmseisenberg.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtpmseisenberg.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 09:24:36 CST 2025
+========================================

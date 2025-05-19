@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:36:00 CST 2025
+Job <547976> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6180, 8079]
+1091 44 64 129 374 486 640 983 1254 1360 1775 1712 1720 1665 1228 1064 1312 441 125 70 20 11 3 1 0 8393 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 23020 pulls
+  Arm 1 (Aggressive Heuristic): 8237 pulls
+  Arm 2 (Conservative Heuristic): 12 pulls
+  Arm 3 (limit=0, max=0, level=0): 21 pulls
+  Arm 4 (limit=1, max=3, level=1): 12 pulls
+  Arm 5 (limit=2, max=5, level=1): 12 pulls
+  Arm 6 (limit=8, max=4, level=1): 12 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 768589,
+    avg_decide_var: 0.663860,
+    num_simplify_subsume: 14952,
+    num_simplify_self_subsume: 7625,
+}
+Statistic {
+    case: model.aig,
+    time: 427.68s,
+    num_mic: 32733,
+    avg_mic_cube_len: 8.124828,
+    avg_po_cube_len: 448.814961,
+    mic_drop: success: 69234, fail: 188705, success rate: 26.84%,
+    num_down: 257939,
+    num_down_sat: 320646,
+    ctp: success: 0, fail: 121779, success rate: 0.00%,
+    num_get_bad: 3900,
+    overall_block_time: 308.986205745s,
+    block_get_bad_time: 9.619001302s,
+    block_get_predecessor_time: 74.189853577s,
+    block_blocked_time: 28.476621848s,
+    block_mic_time: 205.770518032s,
+    block_push_time: 6.203252819s,
+    overall_propagate_time: 117.612777987s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p45.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p45.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:43:10 CST 2025
+========================================

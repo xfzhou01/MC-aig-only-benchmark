@@ -1,0 +1,71 @@
+Started at: Mon May 19 07:02:59 CST 2025
+Job <547326> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5672]
+108 2 9 7 19 18 23 26 34 19 25 25 39 27 31 31 38 33 35 34 56 59 54 107 85 59 91 87 73 65 61 66 46 38 44 43 22 28 27 31 26 20 15 14 9 14 9 13 15 8 10 11 16 10 8 7 7 4 4 5 6 5 6 5 3 3 3 2 4 2 2 5 2 2 3 11 4 3 3 34 8 11 12 16 3 4 4 16 5 4 3 5 3 3 3 8 2 2 4 3 3 2 2 3 2 2 2 3 3 3 6 4 4 9 5 2 3 4 12 5 9 8 7 6 5 5 14 6 4 3 6 4 3 3 2 3 45 69 104 99 39 22 22 13 6 1 1 0 131 15 11 10 19 17 22 23 38 22 20 14 21 29 31 14 18 37 45 1987 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 798 pulls
+  Arm 1 (Aggressive Heuristic): 178 pulls
+  Arm 2 (Conservative Heuristic): 8 pulls
+  Arm 3 (limit=0, max=0, level=0): 106 pulls
+  Arm 4 (limit=1, max=3, level=1): 2718 pulls
+  Arm 5 (limit=2, max=5, level=1): 3240 pulls
+  Arm 6 (limit=8, max=4, level=1): 1774 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 731646,
+    avg_decide_var: 0.629424,
+    num_simplify_subsume: 17673,
+    num_simplify_self_subsume: 9802,
+}
+Statistic {
+    case: model.aig,
+    time: 35.04s,
+    num_mic: 17881,
+    avg_mic_cube_len: 6.249203,
+    avg_po_cube_len: 39.874301,
+    mic_drop: success: 23809, fail: 81133, success rate: 22.69%,
+    num_down: 104942,
+    num_down_sat: 160650,
+    ctp: success: 0, fail: 181430, success rate: 0.00%,
+    num_get_bad: 285,
+    overall_block_time: 18.417539581s,
+    block_get_bad_time: 32.281828ms,
+    block_get_predecessor_time: 4.232605134s,
+    block_blocked_time: 582.816735ms,
+    block_mic_time: 19.948499667s,
+    block_push_time: 801.157513ms,
+    overall_propagate_time: 16.297162674s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_dualflexpress_divthree-p153.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_dualflexpress_divthree-p153.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 07:03:35 CST 2025
+========================================

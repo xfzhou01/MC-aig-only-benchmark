@@ -1,0 +1,71 @@
+Started at: Mon May 19 08:32:45 CST 2025
+Job <547935> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 819, 111]
+81 2 9 11 12 25 35 29 21 27 22 31 21 15 20 23 28 36 30 28 21 34 34 25 28 30 29 37 97 163 217 201 215 251 247 182 112 64 41 38 24 8 4 0 321 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 618 pulls
+  Arm 2 (Conservative Heuristic): 3 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 8 pulls
+  Arm 5 (limit=2, max=5, level=1): 502 pulls
+  Arm 6 (limit=8, max=4, level=1): 444 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 144122,
+    avg_decide_var: 0.631588,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 6.44s,
+    num_mic: 7118,
+    avg_mic_cube_len: 6.817364,
+    avg_po_cube_len: 40.252235,
+    mic_drop: success: 9482, fail: 37005, success rate: 20.40%,
+    num_down: 46487,
+    num_down_sat: 73074,
+    ctp: success: 0, fail: 11926, success rate: 0.00%,
+    num_get_bad: 81,
+    overall_block_time: 5.200776828s,
+    block_get_bad_time: 10.308656ms,
+    block_get_predecessor_time: 1.093094411s,
+    block_blocked_time: 78.092262ms,
+    block_mic_time: 7.099636155s,
+    block_push_time: 31.034831ms,
+    overall_propagate_time: 1.155123758s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divfive-p057.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divfive-p057.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-enable-ctx-mab /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 08:32:54 CST 2025
+========================================
