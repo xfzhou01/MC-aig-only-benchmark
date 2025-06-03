@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:28:54 CST 2025
+Job <558359> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 2, 3, 7, 2, 22, 6, 10, 84, 271, 989]
+185 35 57 105 114 148 151 188 226 299 274 363 
+SolverStatistic {
+    num_solve: 64180,
+    avg_decide_var: 0.839567,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 8.54s,
+    num_mic: 2812,
+    avg_mic_cube_len: 11.501422,
+    avg_po_cube_len: 92.006766,
+    mic_drop: success: 6506, fail: 24061, success rate: 21.28%,
+    num_down: 30567,
+    num_down_sat: 54487,
+    ctp: success: 0, fail: 725, success rate: 0.00%,
+    num_get_bad: 110,
+    overall_block_time: 8.001465834s,
+    block_get_bad_time: 44.927427ms,
+    block_get_predecessor_time: 460.299594ms,
+    block_blocked_time: 647.578968ms,
+    block_mic_time: 6.342517047s,
+    block_push_time: 32.588863ms,
+    overall_propagate_time: 449.411459ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/beem/telephony.6.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/beem/telephony.6.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:29:04 CST 2025
+========================================

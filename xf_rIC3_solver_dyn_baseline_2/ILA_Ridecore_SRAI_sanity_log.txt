@@ -1,0 +1,57 @@
+Started at: Thu May 15 12:36:39 CST 2025
+Job <531625> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 6, 3604]
+6831 130 56 152 892 2088 2132 999 
+SolverStatistic {
+    num_solve: 121499,
+    avg_decide_var: 0.287926,
+    num_simplify_subsume: 542,
+    num_simplify_self_subsume: 478,
+}
+Statistic {
+    case: model.aig,
+    time: 773.38s,
+    num_mic: 7236,
+    avg_mic_cube_len: 11.302515,
+    avg_po_cube_len: 2431.120345,
+    mic_drop: success: 13812, fail: 60953, success rate: 18.47%,
+    num_down: 74765,
+    num_down_sat: 93832,
+    ctp: success: 0, fail: 2026, success rate: 0.00%,
+    num_get_bad: 1119,
+    overall_block_time: 742.607263518s,
+    block_get_bad_time: 48.221806104s,
+    block_get_predecessor_time: 80.966128492s,
+    block_blocked_time: 116.699183388s,
+    block_mic_time: 502.698432491s,
+    block_push_time: 484.480672ms,
+    overall_propagate_time: 25.487987675s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2024/hku/refinement_checking/bv/ILA_Ridecore_SRAI_sanity.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/refinement_checking/bv/ILA_Ridecore_SRAI_sanity.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 12:49:37 CST 2025
+========================================

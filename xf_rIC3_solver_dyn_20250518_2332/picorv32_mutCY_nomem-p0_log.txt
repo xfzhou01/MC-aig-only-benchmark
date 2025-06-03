@@ -1,0 +1,60 @@
+Started at: Tue May 20 02:54:59 CST 2025
+Job <558270> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 2, 35559, 9426]
+2049 41 6 71 96 2305 7682 18402 18635 10498 9763 3976 
+SolverStatistic {
+    num_solve: 1210914,
+    avg_decide_var: 0.340654,
+    num_simplify_subsume: 39831,
+    num_simplify_self_subsume: 9892,
+}
+Statistic {
+    case: model.aig,
+    time: 793.92s,
+    num_mic: 103476,
+    avg_mic_cube_len: 6.121748,
+    avg_po_cube_len: 252.445456,
+    mic_drop: success: 150115, fail: 403667, success rate: 27.11%,
+    num_down: 553782,
+    num_down_sat: 637942,
+    ctp: success: 0, fail: 26047, success rate: 0.00%,
+    num_get_bad: 90,
+    overall_block_time: 679.228163601s,
+    block_get_bad_time: 433.196551ms,
+    block_get_predecessor_time: 128.845866334s,
+    block_blocked_time: 86.720131379s,
+    block_mic_time: 497.869287359s,
+    block_push_time: 4.820148682s,
+    overall_propagate_time: 113.932622774s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920ns/picorv32_mutCY_nomem-p0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920ns/picorv32_mutCY_nomem-p0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:08:15 CST 2025
+========================================

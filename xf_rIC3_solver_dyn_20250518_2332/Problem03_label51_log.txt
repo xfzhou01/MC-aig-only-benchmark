@@ -1,0 +1,60 @@
+Started at: Mon May 19 19:31:34 CST 2025
+Job <555370> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 11, 710]
+2 1 6 10 11 11 7 1 0 1 2 4 671 
+SolverStatistic {
+    num_solve: 26293,
+    avg_decide_var: 1.000161,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 19.55s,
+    num_mic: 919,
+    avg_mic_cube_len: 17.350381,
+    avg_po_cube_len: 951.904010,
+    mic_drop: success: 5519, fail: 4431, success rate: 55.47%,
+    num_down: 9950,
+    num_down_sat: 19084,
+    ctp: success: 0, fail: 4991, success rate: 0.00%,
+    num_get_bad: 488,
+    overall_block_time: 16.516537619s,
+    block_get_bad_time: 700.216699ms,
+    block_get_predecessor_time: 863.455792ms,
+    block_blocked_time: 1.008463799s,
+    block_mic_time: 15.838514457s,
+    block_push_time: 308.854027ms,
+    overall_propagate_time: 2.479097576s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/sosylab/eca-rers2012/Problem03_label51.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/eca-rers2012/Problem03_label51.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 19:31:55 CST 2025
+========================================

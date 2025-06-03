@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:30:06 CST 2025
+Job <558370> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 44948]
+100 46 792 5622 4192 8095 396 2 0 34502 0 
+SolverStatistic {
+    num_solve: 2893765,
+    avg_decide_var: 0.627062,
+    num_simplify_subsume: 39993,
+    num_simplify_self_subsume: 21971,
+}
+Statistic {
+    case: model.aig,
+    time: 910.83s,
+    num_mic: 94944,
+    avg_mic_cube_len: 15.286000,
+    avg_po_cube_len: 29.477787,
+    mic_drop: success: 426267, fail: 893740, success rate: 32.29%,
+    num_down: 1320007,
+    num_down_sat: 2497802,
+    ctp: success: 0, fail: 111919, success rate: 0.00%,
+    num_get_bad: 31151,
+    overall_block_time: 651.216443941s,
+    block_get_bad_time: 11.23986349s,
+    block_get_predecessor_time: 1.864776278s,
+    block_blocked_time: 69.427684658s,
+    block_mic_time: 525.306382409s,
+    block_push_time: 7.571652293s,
+    overall_propagate_time: 259.586425826s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/goel/crafted/toy_lock_4/toy_lock_4.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/goel/crafted/toy_lock_4/toy_lock_4.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:45:18 CST 2025
+========================================

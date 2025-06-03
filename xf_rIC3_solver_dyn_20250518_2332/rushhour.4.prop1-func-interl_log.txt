@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:08:11 CST 2025
+Job <558303> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17077, 160]
+719 115 142 66 30 12 4 6 13 19 26 41 33 47 56 84 48 21 11 18 22 27 86 229 681 1102 202 67 2 1 1 1 1 1 1 2 8 14 12 10 5 5 2 1 0 165 
+SolverStatistic {
+    num_solve: 4871231,
+    avg_decide_var: 0.836869,
+    num_simplify_subsume: 25320,
+    num_simplify_self_subsume: 6991,
+}
+Statistic {
+    case: model.aig,
+    time: 3524.78s,
+    num_mic: 43326,
+    avg_mic_cube_len: 64.098717,
+    avg_po_cube_len: 483.335111,
+    mic_drop: success: 296489, fail: 2305038, success rate: 11.40%,
+    num_down: 2601527,
+    num_down_sat: 4679673,
+    ctp: success: 0, fail: 8962, success rate: 0.00%,
+    num_get_bad: 46,
+    overall_block_time: 3412.273334143s,
+    block_get_bad_time: 99.778165ms,
+    block_get_predecessor_time: 40.074907619s,
+    block_blocked_time: 114.650683132s,
+    block_mic_time: 3198.215994991s,
+    block_push_time: 225.145636ms,
+    overall_propagate_time: 107.473731113s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920ns/rushhour.4.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920ns/rushhour.4.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 04:06:57 CST 2025
+========================================

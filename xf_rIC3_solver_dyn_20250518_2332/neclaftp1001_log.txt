@@ -1,0 +1,61 @@
+Started at: Tue May 20 04:35:41 CST 2025
+Job <558854> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 2]
+7849 5 14 19 11 11 4 3 0 2 
+SolverStatistic {
+    num_solve: 1115,
+    avg_decide_var: 0.705619,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 7.80s,
+    num_mic: 79,
+    avg_mic_cube_len: 9.291139,
+    avg_po_cube_len: 48.440443,
+    mic_drop: success: 221, fail: 435, success rate: 33.69%,
+    num_down: 656,
+    num_down_sat: 807,
+    ctp: success: 0, fail: 29, success rate: 0.00%,
+    num_get_bad: 11,
+    overall_block_time: 5.95923187s,
+    block_get_bad_time: 666.280963ms,
+    block_get_predecessor_time: 71.082622ms,
+    block_blocked_time: 345.381008ms,
+    block_mic_time: 4.405865709s,
+    block_push_time: 155.383159ms,
+    overall_propagate_time: 640.284755ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/neclaftp1001.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/neclaftp1001.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 04:35:50 CST 2025
+========================================

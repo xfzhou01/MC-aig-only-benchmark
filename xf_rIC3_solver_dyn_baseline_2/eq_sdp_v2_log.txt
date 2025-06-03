@@ -1,0 +1,57 @@
+Started at: Thu May 15 16:40:40 CST 2025
+Job <533133> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 3, 12]
+9 3 1 0 12 
+SolverStatistic {
+    num_solve: 101,
+    avg_decide_var: 1.168853,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.00s,
+    num_mic: 16,
+    avg_mic_cube_len: 3.000000,
+    avg_po_cube_len: 5.800000,
+    mic_drop: success: 0, fail: 48, success rate: 0.00%,
+    num_down: 48,
+    num_down_sat: 37,
+    ctp: success: 0, fail: 24, success rate: 0.00%,
+    num_get_bad: 11,
+    overall_block_time: 753.959µs,
+    block_get_bad_time: 206.286µs,
+    block_get_predecessor_time: 32.323µs,
+    block_blocked_time: 45.104µs,
+    block_mic_time: 352.512µs,
+    block_push_time: 19.517µs,
+    overall_propagate_time: 114.574µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/crafted/eq_sdp_v2/eq_sdp_v2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/crafted/eq_sdp_v2/eq_sdp_v2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 16:40:42 CST 2025
+========================================

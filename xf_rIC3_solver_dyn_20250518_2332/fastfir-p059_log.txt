@@ -1,0 +1,60 @@
+Started at: Mon May 19 18:29:03 CST 2025
+Job <555108> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 83, 47]
+803 59 77 9 6 0 47 
+SolverStatistic {
+    num_solve: 853,
+    avg_decide_var: 0.636516,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.08s,
+    num_mic: 198,
+    avg_mic_cube_len: 2.469697,
+    avg_po_cube_len: 77.477876,
+    mic_drop: success: 74, fail: 415, success rate: 15.13%,
+    num_down: 489,
+    num_down_sat: 292,
+    ctp: success: 0, fail: 211, success rate: 0.00%,
+    num_get_bad: 136,
+    overall_block_time: 817.690007ms,
+    block_get_bad_time: 256.773233ms,
+    block_get_predecessor_time: 0ns,
+    block_blocked_time: 34.030202ms,
+    block_mic_time: 57.583469ms,
+    block_push_time: 6.989µs,
+    overall_propagate_time: 42.365732ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/fastfir/aig/fastfir-p059.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/fastfir/aig/fastfir-p059.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 18:29:07 CST 2025
+========================================

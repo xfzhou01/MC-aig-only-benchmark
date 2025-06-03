@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:29:46 CST 2025
+Job <558366> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 795, 307]
+229 35 82 92 79 110 102 126 141 126 98 74 37 17 4 1 0 315 
+SolverStatistic {
+    num_solve: 42580,
+    avg_decide_var: 0.653042,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 26.62s,
+    num_mic: 2085,
+    avg_mic_cube_len: 7.940528,
+    avg_po_cube_len: 63.372643,
+    mic_drop: success: 2841, fail: 12822, success rate: 18.14%,
+    num_down: 15663,
+    num_down_sat: 28139,
+    ctp: success: 0, fail: 2937, success rate: 0.00%,
+    num_get_bad: 96,
+    overall_block_time: 17.616914035s,
+    block_get_bad_time: 359.283091ms,
+    block_get_predecessor_time: 1.024159073s,
+    block_blocked_time: 1.781034051s,
+    block_mic_time: 13.14689172s,
+    block_push_time: 234.04439ms,
+    overall_propagate_time: 8.356219183s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/beem/collision.6.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/beem/collision.6.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:30:13 CST 2025
+========================================

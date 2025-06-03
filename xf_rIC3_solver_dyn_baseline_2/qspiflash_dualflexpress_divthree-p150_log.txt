@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:49:09 CST 2025
+Job <535326> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6938, 1363]
+108 2 10 15 19 14 21 23 32 37 36 32 32 39 46 45 52 47 76 58 54 45 55 37 34 21 39 33 20 20 18 19 12 5 4 5 4 4 3 8 3 3 5 6 4 5 3 4 5 3 3 3 4 3 5 3 17 4 2 22 5 4 3 3 4 2 2 2 3 2 2 3 26 50 148 25 14 4 3 2 1 1 1 2 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1482 
+SolverStatistic {
+    num_solve: 396968,
+    avg_decide_var: 0.650201,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 16.92s,
+    num_mic: 12768,
+    avg_mic_cube_len: 7.534148,
+    avg_po_cube_len: 46.587002,
+    mic_drop: success: 16790, fail: 75486, success rate: 18.20%,
+    num_down: 92276,
+    num_down_sat: 150644,
+    ctp: success: 0, fail: 123280, success rate: 0.00%,
+    num_get_bad: 274,
+    overall_block_time: 10.141088526s,
+    block_get_bad_time: 51.679663ms,
+    block_get_predecessor_time: 1.192729447s,
+    block_blocked_time: 894.796994ms,
+    block_mic_time: 6.356542473s,
+    block_push_time: 549.211915ms,
+    overall_propagate_time: 6.499726518s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p150.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p150.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 21:49:28 CST 2025
+========================================

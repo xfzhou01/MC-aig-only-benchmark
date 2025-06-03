@@ -1,0 +1,60 @@
+Started at: Tue May 20 02:19:38 CST 2025
+Job <558044> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 1, 12357]
+439 18 1 1 0 12357 
+SolverStatistic {
+    num_solve: 255383,
+    avg_decide_var: 0.124593,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 12.04s,
+    num_mic: 12385,
+    avg_mic_cube_len: 13.906984,
+    avg_po_cube_len: 22.841191,
+    mic_drop: success: 12310, fail: 159928, success rate: 7.15%,
+    num_down: 172238,
+    num_down_sat: 209971,
+    ctp: success: 0, fail: 12361, success rate: 0.00%,
+    num_get_bad: 4125,
+    overall_block_time: 10.685546837s,
+    block_get_bad_time: 984.0414ms,
+    block_get_predecessor_time: 410.078969ms,
+    block_blocked_time: 2.041755695s,
+    block_mic_time: 4.809355661s,
+    block_push_time: 1.170320734s,
+    overall_propagate_time: 1.318753241s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/rast-p00.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/rast-p00.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 02:19:51 CST 2025
+========================================

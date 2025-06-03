@@ -1,0 +1,57 @@
+Started at: Thu May 15 20:20:56 CST 2025
+Job <534934> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 97, 195]
+89 3 13 9 8 9 3 4 3 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 200 
+SolverStatistic {
+    num_solve: 8415,
+    avg_decide_var: 0.609531,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.30s,
+    num_mic: 355,
+    avg_mic_cube_len: 4.453521,
+    avg_po_cube_len: 44.917231,
+    mic_drop: success: 159, fail: 1391, success rate: 10.26%,
+    num_down: 1550,
+    num_down_sat: 1744,
+    ctp: success: 0, fail: 5182, success rate: 0.00%,
+    num_get_bad: 177,
+    overall_block_time: 139.195938ms,
+    block_get_bad_time: 20.542487ms,
+    block_get_predecessor_time: 26.020554ms,
+    block_blocked_time: 10.521519ms,
+    block_mic_time: 64.060578ms,
+    block_push_time: 3.21202ms,
+    overall_propagate_time: 86.458868ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_dualflexpress_divthree-p111.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_dualflexpress_divthree-p111.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 20:20:59 CST 2025
+========================================

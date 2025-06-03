@@ -1,0 +1,57 @@
+Started at: Thu May 15 12:23:27 CST 2025
+Job <531206> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12915, 56082]
+212 25 267 614 2215 5503 8552 4062 1287 140 245 2589 8820 23278 13974 745 720 51 7 3 0 76971 
+SolverStatistic {
+    num_solve: 7821295,
+    avg_decide_var: 0.393272,
+    num_simplify_subsume: 383508,
+    num_simplify_self_subsume: 380192,
+}
+Statistic {
+    case: model.aig,
+    time: 3326.47s,
+    num_mic: 268158,
+    avg_mic_cube_len: 14.097965,
+    avg_po_cube_len: 68.132425,
+    mic_drop: success: 714812, fail: 2893238, success rate: 19.81%,
+    num_down: 3608050,
+    num_down_sat: 5708118,
+    ctp: success: 0, fail: 827645, success rate: 0.00%,
+    num_get_bad: 53218,
+    overall_block_time: 2224.46186434s,
+    block_get_bad_time: 46.507911861s,
+    block_get_predecessor_time: 8.427215062s,
+    block_blocked_time: 185.81439124s,
+    block_mic_time: 1764.963147538s,
+    block_push_time: 1.784549285s,
+    overall_propagate_time: 1101.764021785s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./x-epic-2024/aig/a12.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/x-epic-2024/aig/a12.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 13:18:56 CST 2025
+========================================

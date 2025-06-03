@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:46:00 CST 2025
+Job <558487> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 92, 3500]
+83 2 11 15 19 15 20 15 30 11 23 28 25 23 25 34 36 49 48 56 130 77 71 90 70 50 49 69 52 33 36 26 14 17 8 6 4 3 5 10 9 12 6 1 3 1 0 1 1 676 
+SolverStatistic {
+    num_solve: 128380,
+    avg_decide_var: 0.577361,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 4.58s,
+    num_mic: 7709,
+    avg_mic_cube_len: 6.183941,
+    avg_po_cube_len: 42.435576,
+    mic_drop: success: 7510, fail: 38926, success rate: 16.17%,
+    num_down: 46436,
+    num_down_sat: 64900,
+    ctp: success: 0, fail: 18561, success rate: 0.00%,
+    num_get_bad: 245,
+    overall_block_time: 3.258894323s,
+    block_get_bad_time: 37.483659ms,
+    block_get_predecessor_time: 354.637642ms,
+    block_blocked_time: 335.410391ms,
+    block_mic_time: 2.040935967s,
+    block_push_time: 118.677489ms,
+    overall_propagate_time: 1.221063875s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p107.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_dualflexpress_divthree-p107.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:46:06 CST 2025
+========================================

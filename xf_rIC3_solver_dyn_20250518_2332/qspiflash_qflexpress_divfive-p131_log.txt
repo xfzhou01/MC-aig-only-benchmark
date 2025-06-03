@@ -1,0 +1,60 @@
+Started at: Mon May 19 19:35:37 CST 2025
+Job <555424> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2538]
+86 3 12 21 23 34 38 25 12 7 17 17 15 10 16 6 3 3 2 2 1 1 2 1 1 1 2 2 1 1 1 1 2 2 2 1 1 1 2 3 1 2 1 1 2 3 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 2 1 1 1 1 1 0 366 0 
+SolverStatistic {
+    num_solve: 62425,
+    avg_decide_var: 0.569435,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.13s,
+    num_mic: 2504,
+    avg_mic_cube_len: 5.322284,
+    avg_po_cube_len: 36.577357,
+    mic_drop: success: 2228, fail: 10674, success rate: 17.27%,
+    num_down: 12902,
+    num_down_sat: 17405,
+    ctp: success: 0, fail: 21918, success rate: 0.00%,
+    num_get_bad: 178,
+    overall_block_time: 1.308781914s,
+    block_get_bad_time: 28.916239ms,
+    block_get_predecessor_time: 197.292389ms,
+    block_blocked_time: 172.360891ms,
+    block_mic_time: 462.025678ms,
+    block_push_time: 247.784815ms,
+    overall_propagate_time: 610.718827ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2019/wolf/2019C/qspiflash_qflexpress_divfive-p131.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/wolf/2019C/qspiflash_qflexpress_divfive-p131.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 19:35:41 CST 2025
+========================================

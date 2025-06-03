@@ -1,0 +1,61 @@
+Started at: Tue May 20 02:11:01 CST 2025
+Job <557923> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 11, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 182]
+228 2 4 13 19 19 12 10 8 10 11 9 11 13 19 16 24 26 17 19 35 40 61 56 57 44 148 
+SolverStatistic {
+    num_solve: 60980,
+    avg_decide_var: 1.000834,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 7.36s,
+    num_mic: 821,
+    avg_mic_cube_len: 34.126675,
+    avg_po_cube_len: 227.854859,
+    mic_drop: success: 1807, fail: 25133, success rate: 6.71%,
+    num_down: 26940,
+    num_down_sat: 56354,
+    ctp: success: 0, fail: 756, success rate: 0.00%,
+    num_get_bad: 30,
+    overall_block_time: 6.767404908s,
+    block_get_bad_time: 30.845603ms,
+    block_get_predecessor_time: 51.029986ms,
+    block_blocked_time: 188.030176ms,
+    block_mic_time: 6.326732887s,
+    block_push_time: 18.211984ms,
+    overall_propagate_time: 431.351436ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/aig-1.8/brp2.3.prop1-back-serstep.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig-1.8/brp2.3.prop1-back-serstep.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 02:11:09 CST 2025
+========================================

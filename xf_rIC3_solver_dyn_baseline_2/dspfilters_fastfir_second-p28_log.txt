@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:52:23 CST 2025
+Job <535374> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18851, 27674]
+1092 42 48 100 280 309 470 636 1106 980 1525 1455 1928 2053 2694 2785 5662 6432 6281 5015 3909 3185 2642 2399 1979 1320 822 621 593 356 230 113 17 7 4 3 1 0 28545 
+SolverStatistic {
+    num_solve: 3027365,
+    avg_decide_var: 0.626617,
+    num_simplify_subsume: 110224,
+    num_simplify_self_subsume: 72319,
+}
+Statistic {
+    case: model.aig,
+    time: 1675.29s,
+    num_mic: 123670,
+    avg_mic_cube_len: 7.670308,
+    avg_po_cube_len: 491.277770,
+    mic_drop: success: 118824, fail: 816081, success rate: 12.71%,
+    num_down: 934905,
+    num_down_sat: 1174362,
+    ctp: success: 0, fail: 550928, success rate: 0.00%,
+    num_get_bad: 5626,
+    overall_block_time: 1000.838005393s,
+    block_get_bad_time: 14.310750044s,
+    block_get_predecessor_time: 135.565888544s,
+    block_blocked_time: 127.383227344s,
+    block_mic_time: 535.120230788s,
+    block_push_time: 47.612198925s,
+    overall_propagate_time: 672.716184331s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p28.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p28.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:20:19 CST 2025
+========================================

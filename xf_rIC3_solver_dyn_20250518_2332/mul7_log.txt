@@ -1,0 +1,60 @@
+Started at: Tue May 20 02:21:22 CST 2025
+Job <558095> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 409]
+1037 409 
+SolverStatistic {
+    num_solve: 411,
+    avg_decide_var: 471.274510,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 203.38s,
+    num_mic: 409,
+    avg_mic_cube_len: 1.000000,
+    avg_po_cube_len: 604.363119,
+    mic_drop: success: 0, fail: 409, success rate: 0.00%,
+    num_down: 409,
+    num_down_sat: 0,
+    ctp: success: 0, fail: 0, success rate: NaN%,
+    num_get_bad: 411,
+    overall_block_time: 201.598585166s,
+    block_get_bad_time: 168.917436803s,
+    block_get_predecessor_time: 95.518246ms,
+    block_blocked_time: 3.762272607s,
+    block_mic_time: 452.275978ms,
+    block_push_time: 11.86µs,
+    overall_propagate_time: 305ns,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/aig/mul7.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/mul7.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 02:24:49 CST 2025
+========================================

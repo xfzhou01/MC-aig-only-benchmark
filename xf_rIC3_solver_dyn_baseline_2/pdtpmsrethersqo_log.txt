@@ -1,0 +1,58 @@
+Started at: Thu May 15 22:28:17 CST 2025
+Job <535617> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5023]
+86 5 6 14 9 12 9 24 11 15 15 28 32 25 39 44 55 64 97 172 167 154 177 159 119 126 142 170 144 179 119 90 53 55 27 12 7 3 5 1 2 4 13 3 5 2 0 25 9 4 3 25 20 1096 0 
+SolverStatistic {
+    num_solve: 384180,
+    avg_decide_var: 0.571237,
+    num_simplify_subsume: 38779,
+    num_simplify_self_subsume: 18815,
+}
+Statistic {
+    case: model.aig,
+    time: 18.98s,
+    num_mic: 14111,
+    avg_mic_cube_len: 9.878960,
+    avg_po_cube_len: 39.981670,
+    mic_drop: success: 26404, fail: 107276, success rate: 19.75%,
+    num_down: 133680,
+    num_down_sat: 213046,
+    ctp: success: 0, fail: 46695, success rate: 0.00%,
+    num_get_bad: 169,
+    overall_block_time: 11.194492443s,
+    block_get_bad_time: 108.794153ms,
+    block_get_predecessor_time: 430.077876ms,
+    block_blocked_time: 961.779607ms,
+    block_mic_time: 8.713742981s,
+    block_push_time: 94.33366ms,
+    overall_propagate_time: 7.726274711s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtpmsrethersqo.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtpmsrethersqo.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:28:37 CST 2025
+========================================

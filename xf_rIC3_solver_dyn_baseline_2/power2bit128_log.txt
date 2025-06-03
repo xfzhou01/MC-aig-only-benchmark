@@ -1,0 +1,58 @@
+Started at: Thu May 15 16:06:39 CST 2025
+Job <532995> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86, 10]
+15 1 1 1 1 1 1 1 1 1 2 2 3 2 2 1 1 1 1 1 1 1 1 1 0 10 
+SolverStatistic {
+    num_solve: 1517,
+    avg_decide_var: 0.752761,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.02s,
+    num_mic: 127,
+    avg_mic_cube_len: 4.858268,
+    avg_po_cube_len: 14.315436,
+    mic_drop: success: 59, fail: 537, success rate: 9.90%,
+    num_down: 596,
+    num_down_sat: 962,
+    ctp: success: 0, fail: 131, success rate: 0.00%,
+    num_get_bad: 29,
+    overall_block_time: 9.617737ms,
+    block_get_bad_time: 506.431µs,
+    block_get_predecessor_time: 718.107µs,
+    block_blocked_time: 1.014647ms,
+    block_mic_time: 5.836727ms,
+    block_push_time: 44.489µs,
+    overall_propagate_time: 1.607121ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc15/power2bit128.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc15/power2bit128.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 16:06:41 CST 2025
+========================================

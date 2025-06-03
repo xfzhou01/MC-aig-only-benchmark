@@ -1,0 +1,58 @@
+Started at: Thu May 15 15:36:18 CST 2025
+Job <532785> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5995]
+349 1 5 5 6 6 5 4 4 4 4 9 5 5 4 4 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 9 40 26 47 80 173 342 495 676 588 482 322 206 53 28 28 21 18 35 36 25 43 17 13 2 0 37 70 4850 0 
+SolverStatistic {
+    num_solve: 516586,
+    avg_decide_var: 0.957786,
+    num_simplify_subsume: 101051,
+    num_simplify_self_subsume: 46236,
+}
+Statistic {
+    case: model.aig,
+    time: 142.19s,
+    num_mic: 15978,
+    avg_mic_cube_len: 10.265240,
+    avg_po_cube_len: 220.947297,
+    mic_drop: success: 26665, fail: 130083, success rate: 17.01%,
+    num_down: 156748,
+    num_down_sat: 271286,
+    ctp: success: 0, fail: 118694, success rate: 0.00%,
+    num_get_bad: 1313,
+    overall_block_time: 90.803920911s,
+    block_get_bad_time: 1.054069213s,
+    block_get_predecessor_time: 8.520454177s,
+    block_blocked_time: 4.979430829s,
+    block_mic_time: 92.904808568s,
+    block_push_time: 4.81297185s,
+    overall_propagate_time: 50.612361167s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc-appr/intel026.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc-appr/intel026.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 15:38:42 CST 2025
+========================================

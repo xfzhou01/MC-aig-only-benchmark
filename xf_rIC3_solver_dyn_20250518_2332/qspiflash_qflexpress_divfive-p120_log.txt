@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:54:41 CST 2025
+Job <558568> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6741]
+86 3 8 9 7 9 29 17 7 2 2 2 18 12 15 9 6 14 29 28 15 27 13 13 8 10 14 7 7 4 9 19 5 3 2 2 2 3 2 2 2 3 3 4 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 686 0 
+SolverStatistic {
+    num_solve: 164495,
+    avg_decide_var: 0.636118,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 6.49s,
+    num_mic: 7566,
+    avg_mic_cube_len: 7.097542,
+    avg_po_cube_len: 49.051715,
+    mic_drop: success: 10088, fail: 41531, success rate: 19.54%,
+    num_down: 51619,
+    num_down_sat: 77173,
+    ctp: success: 0, fail: 31044, success rate: 0.00%,
+    num_get_bad: 158,
+    overall_block_time: 5.007276571s,
+    block_get_bad_time: 23.973131ms,
+    block_get_predecessor_time: 648.111209ms,
+    block_blocked_time: 610.945721ms,
+    block_mic_time: 2.474517136s,
+    block_push_time: 482.577522ms,
+    overall_propagate_time: 1.306576112s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_qflexpress_divfive-p120.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_qflexpress_divfive-p120.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:54:49 CST 2025
+========================================

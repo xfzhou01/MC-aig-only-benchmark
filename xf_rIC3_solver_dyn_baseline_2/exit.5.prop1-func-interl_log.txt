@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:29:24 CST 2025
+Job <535188> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 934, 868]
+230 11 9 32 43 67 54 67 77 65 35 31 20 7 9 3 2 3 3 2 3 2 0 929 
+SolverStatistic {
+    num_solve: 75708,
+    avg_decide_var: 0.800367,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 7.44s,
+    num_mic: 3746,
+    avg_mic_cube_len: 8.919648,
+    avg_po_cube_len: 68.156060,
+    mic_drop: success: 5415, fail: 27191, success rate: 16.61%,
+    num_down: 32606,
+    num_down_sat: 47728,
+    ctp: success: 0, fail: 12557, success rate: 0.00%,
+    num_get_bad: 42,
+    overall_block_time: 5.587330489s,
+    block_get_bad_time: 17.942198ms,
+    block_get_predecessor_time: 368.218636ms,
+    block_blocked_time: 597.452374ms,
+    block_mic_time: 3.540278599s,
+    block_push_time: 664.679564ms,
+    overall_propagate_time: 1.753870077s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/beem/exit.5.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/beem/exit.5.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 21:30:01 CST 2025
+========================================

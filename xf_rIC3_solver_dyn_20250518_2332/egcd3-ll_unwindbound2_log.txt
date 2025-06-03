@@ -1,0 +1,60 @@
+Started at: Mon May 19 19:29:55 CST 2025
+Job <555350> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 2228]
+2 1 1 237 1348 
+SolverStatistic {
+    num_solve: 15058,
+    avg_decide_var: 0.999954,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 938.28s,
+    num_mic: 2083,
+    avg_mic_cube_len: 4.930389,
+    avg_po_cube_len: 720.097541,
+    mic_drop: success: 959, fail: 9057, success rate: 9.57%,
+    num_down: 10016,
+    num_down_sat: 11318,
+    ctp: success: 0, fail: 284, success rate: 0.00%,
+    num_get_bad: 1709,
+    overall_block_time: 905.54449799s,
+    block_get_bad_time: 60.265334825s,
+    block_get_predecessor_time: 18.35091559s,
+    block_blocked_time: 32.597024259s,
+    block_mic_time: 744.707268019s,
+    block_push_time: 4.780471403s,
+    overall_propagate_time: 30.936006873s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2024/sosylab/nla-digbench-scaling/egcd3-ll_unwindbound2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/sosylab/nla-digbench-scaling/egcd3-ll_unwindbound2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 19:45:35 CST 2025
+========================================

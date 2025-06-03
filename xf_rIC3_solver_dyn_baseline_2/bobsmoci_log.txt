@@ -1,0 +1,58 @@
+Started at: Thu May 15 23:00:20 CST 2025
+Job <535862> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6663]
+541 250 29 62 67 87 40 103 132 17 0 11 4 3 3 1 1 1 1 1 4 32 11 15 16 8 7 15 15 15 27 21 19 28 18 7 15 19 17 23 26 23 25 24 41 2483 0 
+SolverStatistic {
+    num_solve: 411059,
+    avg_decide_var: 0.584725,
+    num_simplify_subsume: 79008,
+    num_simplify_self_subsume: 25836,
+}
+Statistic {
+    case: model.aig,
+    time: 46.28s,
+    num_mic: 16353,
+    avg_mic_cube_len: 8.127744,
+    avg_po_cube_len: 76.465874,
+    mic_drop: success: 19345, fail: 109594, success rate: 15.00%,
+    num_down: 128939,
+    num_down_sat: 196049,
+    ctp: success: 0, fail: 94693, success rate: 0.00%,
+    num_get_bad: 751,
+    overall_block_time: 30.702782826s,
+    block_get_bad_time: 2.321060613s,
+    block_get_predecessor_time: 1.143076321s,
+    block_blocked_time: 2.480167627s,
+    block_mic_time: 21.28740232s,
+    block_push_time: 107.042126ms,
+    overall_propagate_time: 15.26349408s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/bobsmoci.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/bobsmoci.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 23:01:33 CST 2025
+========================================

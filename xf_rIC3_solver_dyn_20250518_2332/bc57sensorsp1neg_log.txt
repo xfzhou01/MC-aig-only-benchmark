@@ -1,0 +1,61 @@
+Started at: Tue May 20 04:28:47 CST 2025
+Job <558805> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 2, 1, 2, 2, 1, 2, 1, 2, 5, 2, 1, 5, 6, 1, 2, 1, 5, 1, 1, 1, 1, 11, 32, 7, 1, 1, 1, 1, 4, 2081, 1570]
+190 7 6 7 8 10 10 16 11 21 22 25 35 35 25 29 33 38 43 33 43 53 35 34 27 35 43 45 47 79 81 91 113 130 139 127 125 131 111 91 90 110 99 1005 
+SolverStatistic {
+    num_solve: 177310,
+    avg_decide_var: 0.987759,
+    num_simplify_subsume: 10029,
+    num_simplify_self_subsume: 3185,
+}
+Statistic {
+    case: model.aig,
+    time: 12.60s,
+    num_mic: 6584,
+    avg_mic_cube_len: 10.117406,
+    avg_po_cube_len: 159.934458,
+    mic_drop: success: 10384, fail: 53915, success rate: 16.15%,
+    num_down: 64299,
+    num_down_sat: 115488,
+    ctp: success: 0, fail: 17461, success rate: 0.00%,
+    num_get_bad: 1046,
+    overall_block_time: 9.711796093s,
+    block_get_bad_time: 219.125087ms,
+    block_get_predecessor_time: 723.085645ms,
+    block_blocked_time: 655.175801ms,
+    block_mic_time: 6.733571554s,
+    block_push_time: 94.17676ms,
+    overall_propagate_time: 2.74698838s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc11/single/bc57sensorsp1neg.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/bc57sensorsp1neg.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 04:29:01 CST 2025
+========================================

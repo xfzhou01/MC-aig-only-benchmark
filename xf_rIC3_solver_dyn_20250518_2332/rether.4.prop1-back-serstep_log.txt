@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:28:29 CST 2025
+Job <558355> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 72, 36]
+340 1 5 8 17 34 66 84 64 31 
+SolverStatistic {
+    num_solve: 22401,
+    avg_decide_var: 1.001523,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 6.16s,
+    num_mic: 354,
+    avg_mic_cube_len: 30.748588,
+    avg_po_cube_len: 339.346191,
+    mic_drop: success: 1955, fail: 8443, success rate: 18.80%,
+    num_down: 10398,
+    num_down_sat: 21145,
+    ctp: success: 0, fail: 33, success rate: 0.00%,
+    num_get_bad: 11,
+    overall_block_time: 5.804262663s,
+    block_get_bad_time: 17.49625ms,
+    block_get_predecessor_time: 58.173352ms,
+    block_blocked_time: 192.141508ms,
+    block_mic_time: 5.421098806s,
+    block_push_time: 2.037275ms,
+    overall_propagate_time: 227.130497ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/beem/rether.4.prop1-back-serstep.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/beem/rether.4.prop1-back-serstep.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:28:36 CST 2025
+========================================

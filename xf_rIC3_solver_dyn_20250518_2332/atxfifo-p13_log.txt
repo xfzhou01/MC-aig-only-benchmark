@@ -1,0 +1,60 @@
+Started at: Mon May 19 18:25:27 CST 2025
+Job <554992> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 93, 167]
+80 1 1 2 5 12 20 25 22 11 4 6 1 6 2 6 1 4 5 1 4 1 3 2 3 1 6 1 6 1 6 1 7 5 3 6 1 4 2 3 2 1 3 2 2 2 5 9 1 0 167 
+SolverStatistic {
+    num_solve: 13962,
+    avg_decide_var: 0.627433,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.62s,
+    num_mic: 475,
+    avg_mic_cube_len: 6.248421,
+    avg_po_cube_len: 42.735025,
+    mic_drop: success: 287, fail: 2524, success rate: 10.21%,
+    num_down: 2811,
+    num_down_sat: 3470,
+    ctp: success: 0, fail: 5800, success rate: 0.00%,
+    num_get_bad: 174,
+    overall_block_time: 448.712685ms,
+    block_get_bad_time: 345.135484ms,
+    block_get_predecessor_time: 8.861686ms,
+    block_blocked_time: 9.893602ms,
+    block_mic_time: 60.09088ms,
+    block_push_time: 2.356945ms,
+    overall_propagate_time: 117.715988ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/atxfifo/aig/atxfifo-p13.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/atxfifo/aig/atxfifo-p13.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 18:25:30 CST 2025
+========================================

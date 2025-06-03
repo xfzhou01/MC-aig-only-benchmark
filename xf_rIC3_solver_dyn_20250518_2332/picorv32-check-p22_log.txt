@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:57:48 CST 2025
+Job <558609> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 66]
+2 1 1 3 4 6 9 5 1 0 3 52 
+SolverStatistic {
+    num_solve: 1509,
+    avg_decide_var: 0.041122,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.28s,
+    num_mic: 155,
+    avg_mic_cube_len: 4.451613,
+    avg_po_cube_len: 15.207039,
+    mic_drop: success: 68, fail: 603, success rate: 10.13%,
+    num_down: 671,
+    num_down_sat: 790,
+    ctp: success: 0, fail: 270, success rate: 0.00%,
+    num_get_bad: 16,
+    overall_block_time: 48.923731ms,
+    block_get_bad_time: 10.363746ms,
+    block_get_predecessor_time: 6.379305ms,
+    block_blocked_time: 6.862424ms,
+    block_mic_time: 21.112515ms,
+    block_push_time: 992.685µs,
+    overall_propagate_time: 12.068003ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2018D/picorv32-check-p22.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2018D/picorv32-check-p22.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:57:51 CST 2025
+========================================

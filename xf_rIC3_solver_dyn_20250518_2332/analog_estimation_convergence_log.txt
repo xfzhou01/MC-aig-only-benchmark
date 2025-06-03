@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:59:37 CST 2025
+Job <558630> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 114, 145]
+16 1 3 1 4 11 3 3 4 4 3 4 5 4 5 3 4 4 4 3 1 0 146 
+SolverStatistic {
+    num_solve: 4290,
+    avg_decide_var: 0.732938,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.67s,
+    num_mic: 364,
+    avg_mic_cube_len: 6.159341,
+    avg_po_cube_len: 23.197228,
+    mic_drop: success: 560, fail: 1568, success rate: 26.32%,
+    num_down: 2128,
+    num_down_sat: 1838,
+    ctp: success: 0, fail: 1683, success rate: 0.00%,
+    num_get_bad: 182,
+    overall_block_time: 584.535772ms,
+    block_get_bad_time: 102.161352ms,
+    block_get_predecessor_time: 17.077811ms,
+    block_blocked_time: 56.596596ms,
+    block_mic_time: 336.430488ms,
+    block_push_time: 16.277761ms,
+    overall_propagate_time: 34.95158ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/mann/safe/analog_estimation_convergence.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/safe/analog_estimation_convergence.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:59:39 CST 2025
+========================================

@@ -1,0 +1,60 @@
+Started at: Tue May 20 00:00:08 CST 2025
+Job <557076> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 203, 257]
+343 4 9 8 10 12 39 84 20 1 0 257 
+SolverStatistic {
+    num_solve: 5101,
+    avg_decide_var: 0.260531,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.39s,
+    num_mic: 623,
+    avg_mic_cube_len: 3.728732,
+    avg_po_cube_len: 156.034410,
+    mic_drop: success: 265, fail: 1988, success rate: 11.76%,
+    num_down: 2253,
+    num_down_sat: 2121,
+    ctp: success: 0, fail: 1098, success rate: 0.00%,
+    num_get_bad: 182,
+    overall_block_time: 299.72199ms,
+    block_get_bad_time: 47.293163ms,
+    block_get_predecessor_time: 75.61481ms,
+    block_blocked_time: 38.041116ms,
+    block_mic_time: 54.659671ms,
+    block_push_time: 3.6411ms,
+    overall_propagate_time: 21.885136ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/fraig/vgasim_imgfifo-p089.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/vgasim_imgfifo-p089.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 00:00:09 CST 2025
+========================================

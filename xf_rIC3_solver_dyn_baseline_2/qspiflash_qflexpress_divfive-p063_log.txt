@@ -1,0 +1,57 @@
+Started at: Thu May 15 20:20:52 CST 2025
+Job <534932> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5563]
+86 1 7 7 13 16 32 24 24 15 18 15 19 23 29 17 13 16 25 32 39 23 12 2 2 2 3 2 2 2 2 2 3 3 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 2 1 0 642 0 
+SolverStatistic {
+    num_solve: 139666,
+    avg_decide_var: 0.593385,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 4.96s,
+    num_mic: 6444,
+    avg_mic_cube_len: 6.328678,
+    avg_po_cube_len: 45.167830,
+    mic_drop: success: 6587, fail: 32727, success rate: 16.75%,
+    num_down: 39314,
+    num_down_sat: 57919,
+    ctp: success: 0, fail: 24046, success rate: 0.00%,
+    num_get_bad: 159,
+    overall_block_time: 3.580387303s,
+    block_get_bad_time: 18.568624ms,
+    block_get_predecessor_time: 512.839699ms,
+    block_blocked_time: 445.475439ms,
+    block_mic_time: 1.733115256s,
+    block_push_time: 449.855528ms,
+    overall_propagate_time: 1.215210944s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_qflexpress_divfive-p063.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_qflexpress_divfive-p063.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 20:20:59 CST 2025
+========================================

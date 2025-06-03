@@ -1,0 +1,60 @@
+Started at: Mon May 19 18:28:08 CST 2025
+Job <555081> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2413]
+698 70 72 82 82 175 212 431 292 134 99 94 54 21 5 0 6 394 0 
+SolverStatistic {
+    num_solve: 84034,
+    avg_decide_var: 0.692091,
+    num_simplify_subsume: 1050,
+    num_simplify_self_subsume: 42,
+}
+Statistic {
+    case: model.aig,
+    time: 31.58s,
+    num_mic: 4761,
+    avg_mic_cube_len: 8.375761,
+    avg_po_cube_len: 158.863432,
+    mic_drop: success: 8897, fail: 30281, success rate: 22.71%,
+    num_down: 39178,
+    num_down_sat: 50560,
+    ctp: success: 0, fail: 3973, success rate: 0.00%,
+    num_get_bad: 398,
+    overall_block_time: 24.787849056s,
+    block_get_bad_time: 1.441748142s,
+    block_get_predecessor_time: 3.356677777s,
+    block_blocked_time: 2.403410747s,
+    block_mic_time: 15.121716765s,
+    block_push_time: 214.948129ms,
+    overall_propagate_time: 6.06489913s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./others/fastfir/aig/fastfir-p054.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/others/fastfir/aig/fastfir-p054.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 18:28:43 CST 2025
+========================================

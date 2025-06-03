@@ -1,0 +1,58 @@
+Started at: Thu May 15 22:31:44 CST 2025
+Job <535642> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5194, 5502]
+66 1 2 5 17 28 37 28 389 308 382 780 1507 639 230 380 32 5 0 5586 
+SolverStatistic {
+    num_solve: 306728,
+    avg_decide_var: 0.526100,
+    num_simplify_subsume: 3390,
+    num_simplify_self_subsume: 4035,
+}
+Statistic {
+    case: model.aig,
+    time: 26.35s,
+    num_mic: 11657,
+    avg_mic_cube_len: 9.360899,
+    avg_po_cube_len: 32.469390,
+    mic_drop: success: 16860, fail: 89719, success rate: 15.82%,
+    num_down: 106579,
+    num_down_sat: 214375,
+    ctp: success: 0, fail: 34326, success rate: 0.00%,
+    num_get_bad: 4829,
+    overall_block_time: 21.026657179s,
+    block_get_bad_time: 7.237855678s,
+    block_get_predecessor_time: 433.738122ms,
+    block_blocked_time: 1.394672414s,
+    block_mic_time: 10.319416024s,
+    block_push_time: 229.295181ms,
+    overall_propagate_time: 5.277663696s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc11/single/pdtvsarmultip29.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/pdtvsarmultip29.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:32:15 CST 2025
+========================================

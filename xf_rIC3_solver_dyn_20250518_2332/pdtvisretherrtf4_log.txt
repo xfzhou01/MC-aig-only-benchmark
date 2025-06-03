@@ -1,0 +1,61 @@
+Started at: Tue May 20 05:13:41 CST 2025
+Job <559289> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 6, 111, 71, 670]
+41 1 1 1 1 1 1 3 3 3 7 11 17 18 35 21 20 34 29 33 33 43 55 66 75 50 251 
+SolverStatistic {
+    num_solve: 26091,
+    avg_decide_var: 0.629062,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.81s,
+    num_mic: 2052,
+    avg_mic_cube_len: 5.921540,
+    avg_po_cube_len: 23.879318,
+    mic_drop: success: 3008, fail: 8398, success rate: 26.37%,
+    num_down: 11406,
+    num_down_sat: 15969,
+    ctp: success: 0, fail: 2569, success rate: 0.00%,
+    num_get_bad: 34,
+    overall_block_time: 654.810863ms,
+    block_get_bad_time: 2.855708ms,
+    block_get_predecessor_time: 59.757612ms,
+    block_blocked_time: 104.314138ms,
+    block_mic_time: 410.175451ms,
+    block_push_time: 10.346307ms,
+    overall_propagate_time: 129.001926ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc08/pdtvisretherrtf4.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc08/pdtvisretherrtf4.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 05:13:44 CST 2025
+========================================

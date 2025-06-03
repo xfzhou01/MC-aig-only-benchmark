@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:36:05 CST 2025
+Job <558446> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 149, 153]
+24 5 7 3 13 14 12 12 7 8 18 17 23 11 6 9 7 20 13 7 3 3 2 9 2 1 1 1 1 0 173 
+SolverStatistic {
+    num_solve: 15477,
+    avg_decide_var: 0.272400,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.53s,
+    num_mic: 811,
+    avg_mic_cube_len: 6.884094,
+    avg_po_cube_len: 13.071222,
+    mic_drop: success: 1160, fail: 4283, success rate: 21.31%,
+    num_down: 5443,
+    num_down_sat: 8470,
+    ctp: success: 0, fail: 2860, success rate: 0.00%,
+    num_get_bad: 52,
+    overall_block_time: 300.123461ms,
+    block_get_bad_time: 21.786316ms,
+    block_get_predecessor_time: 13.858176ms,
+    block_blocked_time: 34.77493ms,
+    block_mic_time: 205.667721ms,
+    block_push_time: 5.057873ms,
+    overall_propagate_time: 191.638116ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/goel/opensource/Heap/Heap.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/goel/opensource/Heap/Heap.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:36:07 CST 2025
+========================================

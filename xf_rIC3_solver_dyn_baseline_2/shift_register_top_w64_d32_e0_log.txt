@@ -1,0 +1,57 @@
+Started at: Thu May 15 22:15:14 CST 2025
+Job <535495> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2559, 3147]
+1 4 5 141 19 269 137 524 149 398 275 529 554 530 784 1084 63 481 392 684 305 446 886 1308 2111 550 658 555 455 799 1326 1356 3056 
+SolverStatistic {
+    num_solve: 656375,
+    avg_decide_var: 0.295089,
+    num_simplify_subsume: 11299,
+    num_simplify_self_subsume: 13770,
+}
+Statistic {
+    case: model.aig,
+    time: 77.46s,
+    num_mic: 26991,
+    avg_mic_cube_len: 10.293987,
+    avg_po_cube_len: 15.700751,
+    mic_drop: success: 35735, fail: 236266, success rate: 13.14%,
+    num_down: 272001,
+    num_down_sat: 362995,
+    ctp: success: 0, fail: 49401, success rate: 0.00%,
+    num_get_bad: 309,
+    overall_block_time: 52.784890945s,
+    block_get_bad_time: 902.014227ms,
+    block_get_predecessor_time: 325.005463ms,
+    block_blocked_time: 3.662009593s,
+    block_mic_time: 45.65035268s,
+    block_push_time: 330.466638ms,
+    overall_propagate_time: 23.96861876s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w64_d32_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/shift_register_top_w64_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:16:33 CST 2025
+========================================

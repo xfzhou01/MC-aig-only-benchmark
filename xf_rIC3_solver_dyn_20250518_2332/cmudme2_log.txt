@@ -1,0 +1,61 @@
+Started at: Mon May 19 21:32:28 CST 2025
+Job <555930> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16212]
+63 3 5 7 7 5 4 3 4 6 10 13 11 19 10 7 6 7 8 32 9 18 27 8 7 17 13 7 4 1 4 2 4 2 3 3 6 4 23 39 24 14 13 10 10 16 23 19 17 14 28 22 17 20 12 8 5 8 9 11 15 16 20 12 43 31 4 4 3 8 1 10 10 15 13 9 24 17 11 7 1 1 2 0 53 42 89 2400 0 
+SolverStatistic {
+    num_solve: 800083,
+    avg_decide_var: 0.496832,
+    num_simplify_subsume: 186055,
+    num_simplify_self_subsume: 36019,
+}
+Statistic {
+    case: model.aig,
+    time: 37.75s,
+    num_mic: 41486,
+    avg_mic_cube_len: 8.739044,
+    avg_po_cube_len: 33.531361,
+    mic_drop: success: 70266, fail: 278908, success rate: 20.12%,
+    num_down: 349174,
+    num_down_sat: 523188,
+    ctp: success: 0, fail: 111162, success rate: 0.00%,
+    num_get_bad: 103,
+    overall_block_time: 27.422829314s,
+    block_get_bad_time: 24.263011ms,
+    block_get_predecessor_time: 1.036401545s,
+    block_blocked_time: 4.307787295s,
+    block_mic_time: 18.965737334s,
+    block_push_time: 132.39335ms,
+    overall_propagate_time: 10.260488183s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc-appr/cmudme2.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc-appr/cmudme2.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 21:33:08 CST 2025
+========================================

@@ -1,0 +1,57 @@
+Started at: Thu May 15 17:29:12 CST 2025
+Job <533633> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 5]
+20 4 6 3 2 4 5 4 5 6 4 6 3 3 1 0 5 
+SolverStatistic {
+    num_solve: 739,
+    avg_decide_var: inf,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.01s,
+    num_mic: 83,
+    avg_mic_cube_len: 3.734940,
+    avg_po_cube_len: 11.871972,
+    mic_drop: success: 30, fail: 275, success rate: 9.84%,
+    num_down: 305,
+    num_down_sat: 301,
+    ctp: success: 0, fail: 94, success rate: 0.00%,
+    num_get_bad: 18,
+    overall_block_time: 2.694536ms,
+    block_get_bad_time: 204.728µs,
+    block_get_predecessor_time: 172.467µs,
+    block_blocked_time: 322.441µs,
+    block_mic_time: 1.467165ms,
+    block_push_time: 44.993µs,
+    overall_propagate_time: 878.927µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/opensource/synabs/synabs.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/opensource/synabs/synabs.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 17:29:14 CST 2025
+========================================

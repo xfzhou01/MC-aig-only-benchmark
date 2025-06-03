@@ -1,0 +1,58 @@
+Started at: Thu May 15 20:08:39 CST 2025
+Job <534789> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8, 17, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 166, 68, 1, 1, 1, 1, 1, 15534]
+2 10 21 26 43 71 96 106 137 236 220 256 318 363 427 440 496 868 737 739 744 945 946 954 1052 1354 1281 1264 1365 2599 1996 2231 5781 
+SolverStatistic {
+    num_solve: 1745532,
+    avg_decide_var: 0.505553,
+    num_simplify_subsume: 123690,
+    num_simplify_self_subsume: 144932,
+}
+Statistic {
+    case: model.aig,
+    time: 404.51s,
+    num_mic: 56966,
+    avg_mic_cube_len: 16.839343,
+    avg_po_cube_len: 45.928750,
+    mic_drop: success: 142464, fail: 797140, success rate: 15.16%,
+    num_down: 939604,
+    num_down_sat: 1423182,
+    ctp: success: 0, fail: 52907, success rate: 0.00%,
+    num_get_bad: 977,
+    overall_block_time: 348.715048232s,
+    block_get_bad_time: 1.159856429s,
+    block_get_predecessor_time: 2.187831737s,
+    block_blocked_time: 20.473119919s,
+    block_mic_time: 300.522830401s,
+    block_push_time: 1.719981713s,
+    overall_propagate_time: 54.990344381s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/aig-1.8/arbitrated_top_n4_w16_d32_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig-1.8/arbitrated_top_n4_w16_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 20:15:28 CST 2025
+========================================

@@ -1,0 +1,60 @@
+Started at: Mon May 19 19:32:44 CST 2025
+Job <555397> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 2, 54, 810]
+72 12 27 69 143 308 535 493 
+SolverStatistic {
+    num_solve: 36671,
+    avg_decide_var: 0.380303,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.91s,
+    num_mic: 2190,
+    avg_mic_cube_len: 9.750685,
+    avg_po_cube_len: 44.121125,
+    mic_drop: success: 5227, fail: 15267, success rate: 25.51%,
+    num_down: 20494,
+    num_down_sat: 30665,
+    ctp: success: 0, fail: 276, success rate: 0.00%,
+    num_get_bad: 20,
+    overall_block_time: 1.80107291s,
+    block_get_bad_time: 8.848336ms,
+    block_get_predecessor_time: 165.33352ms,
+    block_blocked_time: 281.740065ms,
+    block_mic_time: 1.28559088s,
+    block_push_time: 7.821278ms,
+    overall_propagate_time: 73.694071ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2019/beem/anderson.3.prop1-func-interl.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/beem/anderson.3.prop1-func-interl.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 19:32:48 CST 2025
+========================================

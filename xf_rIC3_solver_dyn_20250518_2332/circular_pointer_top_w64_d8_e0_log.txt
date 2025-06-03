@@ -1,0 +1,61 @@
+Started at: Tue May 20 01:31:29 CST 2025
+Job <557691> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 8173]
+2 3 134 315 849 524 1199 1258 2943 2524 5055 
+SolverStatistic {
+    num_solve: 348933,
+    avg_decide_var: 0.544232,
+    num_simplify_subsume: 2718,
+    num_simplify_self_subsume: 2848,
+}
+Statistic {
+    case: model.aig,
+    time: 44.52s,
+    num_mic: 19386,
+    avg_mic_cube_len: 10.846745,
+    avg_po_cube_len: 18.785432,
+    mic_drop: success: 12719, fail: 196634, success rate: 6.08%,
+    num_down: 209353,
+    num_down_sat: 284679,
+    ctp: success: 0, fail: 6651, success rate: 0.00%,
+    num_get_bad: 4203,
+    overall_block_time: 41.520046327s,
+    block_get_bad_time: 2.052849947s,
+    block_get_predecessor_time: 263.324887ms,
+    block_blocked_time: 2.871282018s,
+    block_mic_time: 32.921754716s,
+    block_push_time: 37.355111ms,
+    overall_propagate_time: 2.929708706s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/aig-1.8/circular_pointer_top_w64_d8_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig-1.8/circular_pointer_top_w64_d8_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 01:32:16 CST 2025
+========================================

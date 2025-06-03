@@ -1,0 +1,61 @@
+Started at: Tue May 20 04:50:58 CST 2025
+Job <558987> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 376, 2342]
+124 7 6 6 7 8 8 11 16 28 42 67 51 49 52 80 69 57 94 59 21 32 49 47 106 104 134 227 584 
+SolverStatistic {
+    num_solve: 67498,
+    avg_decide_var: 0.405261,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 1.69s,
+    num_mic: 6038,
+    avg_mic_cube_len: 5.578172,
+    avg_po_cube_len: 53.635772,
+    mic_drop: success: 4195, fail: 28735, success rate: 12.74%,
+    num_down: 32930,
+    num_down_sat: 39504,
+    ctp: success: 0, fail: 5426, success rate: 0.00%,
+    num_get_bad: 38,
+    overall_block_time: 1.414424936s,
+    block_get_bad_time: 2.865788ms,
+    block_get_predecessor_time: 209.591446ms,
+    block_blocked_time: 259.141193ms,
+    block_mic_time: 749.35807ms,
+    block_push_time: 9.209955ms,
+    overall_propagate_time: 243.372741ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc11/single/irstdme4.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc11/single/irstdme4.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 04:51:01 CST 2025
+========================================

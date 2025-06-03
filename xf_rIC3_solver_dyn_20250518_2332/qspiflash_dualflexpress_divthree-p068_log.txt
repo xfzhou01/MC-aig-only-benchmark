@@ -1,0 +1,60 @@
+Started at: Tue May 20 02:17:22 CST 2025
+Job <557985> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 742, 6074]
+108 2 9 13 25 27 23 29 41 31 35 28 36 36 39 49 65 88 31 13 12 8 6 11 10 11 9 6 6 5 4 11 4 4 5 6 20 28 10 1 1 2 1 1 1 2 1 2 1 2 1 1 1 1 1 1 1 1 1 4 9 12 1 1 1 1 1 2 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 1 0 0 0 0 1 1 1 1018 
+SolverStatistic {
+    num_solve: 250181,
+    avg_decide_var: 0.580241,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 9.31s,
+    num_mic: 8840,
+    avg_mic_cube_len: 6.386086,
+    avg_po_cube_len: 36.057764,
+    mic_drop: success: 11051, fail: 43005, success rate: 20.44%,
+    num_down: 54056,
+    num_down_sat: 78906,
+    ctp: success: 0, fail: 75606, success rate: 0.00%,
+    num_get_bad: 246,
+    overall_block_time: 5.298383952s,
+    block_get_bad_time: 52.702939ms,
+    block_get_predecessor_time: 647.449593ms,
+    block_blocked_time: 582.176678ms,
+    block_mic_time: 2.582390913s,
+    block_push_time: 681.374639ms,
+    overall_propagate_time: 3.758656084s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_dualflexpress_divthree-p068.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_dualflexpress_divthree-p068.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 02:17:34 CST 2025
+========================================

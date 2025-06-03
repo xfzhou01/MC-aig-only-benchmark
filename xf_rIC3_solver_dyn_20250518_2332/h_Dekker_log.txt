@@ -1,0 +1,60 @@
+Started at: Mon May 19 23:24:29 CST 2025
+Job <556729> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 4, 4]
+8 2 2 3 0 4 
+SolverStatistic {
+    num_solve: 71,
+    avg_decide_var: 0.685043,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.01s,
+    num_mic: 13,
+    avg_mic_cube_len: 2.769231,
+    avg_po_cube_len: 8.022727,
+    mic_drop: success: 10, fail: 26, success rate: 27.78%,
+    num_down: 36,
+    num_down_sat: 27,
+    ctp: success: 0, fail: 8, success rate: 0.00%,
+    num_get_bad: 9,
+    overall_block_time: 2.677909ms,
+    block_get_bad_time: 965.722µs,
+    block_get_predecessor_time: 190.531µs,
+    block_blocked_time: 402.68µs,
+    block_mic_time: 605.623µs,
+    block_push_time: 34.52µs,
+    overall_propagate_time: 813.359µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./avr/opensource/h_Dekker/h_Dekker.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/avr/opensource/h_Dekker/h_Dekker.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 23:24:32 CST 2025
+========================================

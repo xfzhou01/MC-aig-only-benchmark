@@ -1,0 +1,57 @@
+Started at: Thu May 15 20:19:37 CST 2025
+Job <534895> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7636, 948]
+108 2 10 14 20 13 21 23 17 19 16 18 24 29 27 45 42 58 38 35 19 29 25 20 21 22 20 18 20 20 31 24 18 13 12 17 5 5 14 21 9 5 4 10 3 3 2 12 17 14 8 4 3 48 129 225 81 25 10 7 7 4 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1039 
+SolverStatistic {
+    num_solve: 402938,
+    avg_decide_var: 0.588169,
+    num_simplify_subsume: 2231,
+    num_simplify_self_subsume: 675,
+}
+Statistic {
+    case: model.aig,
+    time: 16.71s,
+    num_mic: 16675,
+    avg_mic_cube_len: 7.052474,
+    avg_po_cube_len: 39.055669,
+    mic_drop: success: 23698, fail: 87836, success rate: 21.25%,
+    num_down: 111534,
+    num_down_sat: 169413,
+    ctp: success: 0, fail: 73517, success rate: 0.00%,
+    num_get_bad: 219,
+    overall_block_time: 9.973366679s,
+    block_get_bad_time: 30.135613ms,
+    block_get_predecessor_time: 990.850835ms,
+    block_blocked_time: 975.451108ms,
+    block_mic_time: 6.726562747s,
+    block_push_time: 272.877711ms,
+    overall_propagate_time: 6.517935126s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1920/aig/qspiflash_dualflexpress_divthree-p153.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/aig/qspiflash_dualflexpress_divthree-p153.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 20:19:54 CST 2025
+========================================

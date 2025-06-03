@@ -1,0 +1,58 @@
+Started at: Thu May 15 14:24:06 CST 2025
+Job <532311> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10290, 7090]
+933 3 2 4 62 8 58 83 146 225 681 1271 2784 4909 6856 5247 2755 1911 768 315 120 50 59 151 327 185 101 174 213 102 15 2 0 12154 
+SolverStatistic {
+    num_solve: 2226356,
+    avg_decide_var: 0.567394,
+    num_simplify_subsume: 113043,
+    num_simplify_self_subsume: 76591,
+}
+Statistic {
+    case: model.aig,
+    time: 1167.86s,
+    num_mic: 59510,
+    avg_mic_cube_len: 15.121778,
+    avg_po_cube_len: 467.554280,
+    mic_drop: success: 234129, fail: 588342, success rate: 28.47%,
+    num_down: 822471,
+    num_down_sat: 1343907,
+    ctp: success: 0, fail: 217181, success rate: 0.00%,
+    num_get_bad: 2133,
+    overall_block_time: 690.983059276s,
+    block_get_bad_time: 3.328583555s,
+    block_get_predecessor_time: 59.732294407s,
+    block_blocked_time: 33.889676936s,
+    block_mic_time: 747.999392756s,
+    block_push_time: 2.801109921s,
+    overall_propagate_time: 475.873532318s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc1517/oc8051gm1edata.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1517/oc8051gm1edata.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 14:43:39 CST 2025
+========================================

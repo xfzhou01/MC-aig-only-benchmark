@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:56:58 CST 2025
+Job <535412> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 28, 33]
+304 5 15 9 4 4 1 0 33 
+SolverStatistic {
+    num_solve: 670,
+    avg_decide_var: 0.136764,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 0.06s,
+    num_mic: 94,
+    avg_mic_cube_len: 3.053191,
+    avg_po_cube_len: 89.108179,
+    mic_drop: success: 38, fail: 246, success rate: 13.38%,
+    num_down: 284,
+    num_down_sat: 219,
+    ctp: success: 0, fail: 132, success rate: 0.00%,
+    num_get_bad: 33,
+    overall_block_time: 24.168664ms,
+    block_get_bad_time: 6.742865ms,
+    block_get_predecessor_time: 4.799684ms,
+    block_blocked_time: 2.755535ms,
+    block_mic_time: 3.031174ms,
+    block_push_time: 228.727µs,
+    overall_propagate_time: 2.844375ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2018D/zipcpu-pfcache-p15.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2018D/zipcpu-pfcache-p15.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 21:57:03 CST 2025
+========================================

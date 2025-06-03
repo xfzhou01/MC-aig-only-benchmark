@@ -1,0 +1,61 @@
+Started at: Mon May 19 21:32:46 CST 2025
+Job <555936> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /root/model.aig
+Warning: property not found, moved 1 outputs to bad properties
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8450, 325]
+158 11 5 25 24 22 17 19 11 19 16 13 19 12 16 15 11 10 12 9 16 8 9 9 10 6 7 9 5 9 4 6 9 10 6 8 5 5 5 6 5 5 5 8 5 6 5 11 6 7 4 6 5 8 44 24 9 11 8 8 7 4 6 5 5 6 5 5 8 4 4 4 6 6 4 4 5 7 8 12 10 12 11 10 9 10 8 8 11 11 11 10 11 8 8 8 9 7 9 8 7 8 7 4 5 3 4 4 4 4 4 5 5 5 81 33 23 8 10 1 0 332 
+SolverStatistic {
+    num_solve: 166336,
+    avg_decide_var: 0.501731,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 7.75s,
+    num_mic: 9834,
+    avg_mic_cube_len: 4.835367,
+    avg_po_cube_len: 49.888316,
+    mic_drop: success: 3142, fail: 43709, success rate: 6.71%,
+    num_down: 46851,
+    num_down_sat: 73159,
+    ctp: success: 0, fail: 38285, success rate: 0.00%,
+    num_get_bad: 736,
+    overall_block_time: 6.060801087s,
+    block_get_bad_time: 907.428778ms,
+    block_get_predecessor_time: 1.017728313s,
+    block_blocked_time: 894.720461ms,
+    block_mic_time: 2.289990945s,
+    block_push_time: 91.170765ms,
+    overall_propagate_time: 1.42197005s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc-appr/eijkbs1512.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc-appr/eijkbs1512.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 21:32:54 CST 2025
+========================================

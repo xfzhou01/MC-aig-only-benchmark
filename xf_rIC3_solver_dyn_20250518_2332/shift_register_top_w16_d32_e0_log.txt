@@ -1,0 +1,60 @@
+Started at: Tue May 20 00:49:50 CST 2025
+Job <557448> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1275, 2441]
+1 3 37 74 49 74 76 105 136 76 74 107 133 133 234 254 19 75 38 80 173 439 715 573 189 165 118 157 162 153 220 567 357 447 2713 
+SolverStatistic {
+    num_solve: 362666,
+    avg_decide_var: 0.348253,
+    num_simplify_subsume: 18445,
+    num_simplify_self_subsume: 14551,
+}
+Statistic {
+    case: model.aig,
+    time: 24.14s,
+    num_mic: 14658,
+    avg_mic_cube_len: 11.901146,
+    avg_po_cube_len: 16.595286,
+    mic_drop: success: 30267, fail: 140068, success rate: 17.77%,
+    num_down: 170335,
+    num_down_sat: 237013,
+    ctp: success: 0, fail: 23018, success rate: 0.00%,
+    num_get_bad: 166,
+    overall_block_time: 18.527762436s,
+    block_get_bad_time: 215.613374ms,
+    block_get_predecessor_time: 141.172395ms,
+    block_blocked_time: 1.391768172s,
+    block_mic_time: 15.800867897s,
+    block_push_time: 212.17414ms,
+    overall_propagate_time: 5.349294298s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920/fraig/shift_register_top_w16_d32_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920/fraig/shift_register_top_w16_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 00:50:15 CST 2025
+========================================

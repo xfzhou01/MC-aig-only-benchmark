@@ -1,0 +1,60 @@
+Started at: Mon May 19 18:29:38 CST 2025
+Job <555125> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8855, 639]
+57 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 2 6 10 13 21 27 25 17 19 14 12 12 9 16 9 12 7 6 5 5 5 4 4 4 4 4 4 6 4 4 4 4 4 4 4 4 4 4 4 4 4 9 5 5 5 5 5 36 8 8 7 15 5 5 5 4 4 5 4 5 4 9 5 5 6 41 27 16 7 22 9 10 22 17 12 14 20 12 13 7 15 7 8 7 11 6 6 7 8 4 3 4 3 3 3 41 22 8 7 3 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 27 3 2 2 2 11 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 17 6 4 3 5 3 31 13 19 16 8 6 3 4 9 4 18 12 5 3 1 4 1 1 1 7 2 2 3 0 641 
+SolverStatistic {
+    num_solve: 272401,
+    avg_decide_var: 0.831655,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 6.55s,
+    num_mic: 8625,
+    avg_mic_cube_len: 7.665391,
+    avg_po_cube_len: 40.482612,
+    mic_drop: success: 4726, fail: 60260, success rate: 7.27%,
+    num_down: 64986,
+    num_down_sat: 103877,
+    ctp: success: 0, fail: 49243, success rate: 0.00%,
+    num_get_bad: 1119,
+    overall_block_time: 3.867413317s,
+    block_get_bad_time: 685.989181ms,
+    block_get_predecessor_time: 201.904267ms,
+    block_blocked_time: 259.18005ms,
+    block_mic_time: 1.491155196s,
+    block_push_time: 48.399116ms,
+    overall_propagate_time: 2.490508366s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/hku/arithmetic_circuits/fib_37/fib_37.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/hku/arithmetic_circuits/fib_37/fib_37.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon May 19 18:29:47 CST 2025
+========================================

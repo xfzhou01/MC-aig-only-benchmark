@@ -1,0 +1,57 @@
+Started at: Thu May 15 13:23:35 CST 2025
+Job <531853> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 846]
+3288 4 2 2 2 42 7 22 26 53 73 66 61 34 21 13 4 1 0 62 58 66 450 0 
+SolverStatistic {
+    num_solve: 32726,
+    avg_decide_var: 0.111487,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 11.35s,
+    num_mic: 2188,
+    avg_mic_cube_len: 8.320841,
+    avg_po_cube_len: 342.388128,
+    mic_drop: success: 2431, fail: 15224, success rate: 13.77%,
+    num_down: 17655,
+    num_down_sat: 17384,
+    ctp: success: 0, fail: 4242, success rate: 0.00%,
+    num_get_bad: 88,
+    overall_block_time: 7.574670112s,
+    block_get_bad_time: 743.145483ms,
+    block_get_predecessor_time: 1.274022156s,
+    block_blocked_time: 874.459745ms,
+    block_mic_time: 4.941760157s,
+    block_push_time: 25.683518ms,
+    overall_propagate_time: 1.813199285s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc24/2024/yosyshq/appnote_123/cv32e40x/yosyshq_appnote_123_cv32e40x-p574.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2024/yosyshq/appnote_123/cv32e40x/yosyshq_appnote_123_cv32e40x-p574.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 13:23:49 CST 2025
+========================================

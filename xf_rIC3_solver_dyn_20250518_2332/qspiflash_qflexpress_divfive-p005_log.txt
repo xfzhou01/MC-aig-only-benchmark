@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:50:16 CST 2025
+Job <558541> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 13, 1, 1, 1, 2, 3, 2, 4, 43, 15, 1, 2, 2, 5, 1, 2, 9, 7, 7, 744, 1444]
+66 3 9 14 18 14 16 9 13 13 9 10 3 9 33 8 8 5 4 2 3 5 3 3 0 1 0 0 7 7 5 2 1 4 2 1 1 2 4 3 2 4 3 2 3 4 4 6 2 4 5 3 2 6 358 
+SolverStatistic {
+    num_solve: 70454,
+    avg_decide_var: 0.616126,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: model.aig,
+    time: 2.39s,
+    num_mic: 3188,
+    avg_mic_cube_len: 7.862296,
+    avg_po_cube_len: 52.601493,
+    mic_drop: success: 3771, fail: 20722, success rate: 15.40%,
+    num_down: 24493,
+    num_down_sat: 36469,
+    ctp: success: 0, fail: 13849, success rate: 0.00%,
+    num_get_bad: 108,
+    overall_block_time: 1.749071756s,
+    block_get_bad_time: 28.199637ms,
+    block_get_predecessor_time: 207.6144ms,
+    block_blocked_time: 181.201991ms,
+    block_mic_time: 1.063158793s,
+    block_push_time: 49.026239ms,
+    overall_propagate_time: 554.753812ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/qspiflash_qflexpress_divfive-p005.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/qspiflash_qflexpress_divfive-p005.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:50:20 CST 2025
+========================================

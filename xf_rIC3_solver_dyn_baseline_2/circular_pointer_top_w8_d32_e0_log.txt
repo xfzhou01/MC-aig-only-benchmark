@@ -1,0 +1,57 @@
+Started at: Thu May 15 22:01:57 CST 2025
+Job <535451> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 1, 1, 24400, 20212]
+1 3 25 52 133 99 225 224 374 274 367 437 660 561 730 659 1518 760 1208 1112 2031 1828 2463 2226 3024 4826 4139 5325 6032 8101 8369 9979 15000 
+SolverStatistic {
+    num_solve: 5944714,
+    avg_decide_var: 0.556626,
+    num_simplify_subsume: 378386,
+    num_simplify_self_subsume: 707017,
+}
+Statistic {
+    case: model.aig,
+    time: 1877.83s,
+    num_mic: 167469,
+    avg_mic_cube_len: 18.430515,
+    avg_po_cube_len: 30.308473,
+    mic_drop: success: 574877, fail: 2409923, success rate: 19.26%,
+    num_down: 2984800,
+    num_down_sat: 4906522,
+    ctp: success: 0, fail: 204658, success rate: 0.00%,
+    num_get_bad: 1906,
+    overall_block_time: 1437.353415309s,
+    block_get_bad_time: 936.635441ms,
+    block_get_predecessor_time: 3.724720588s,
+    block_blocked_time: 180.925954828s,
+    block_mic_time: 1132.168413845s,
+    block_push_time: 8.321726833s,
+    overall_propagate_time: 440.334181942s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/mann/data-integrity/unsafe/circular_pointer_top_w8_d32_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/data-integrity/unsafe/circular_pointer_top_w8_d32_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:33:17 CST 2025
+========================================

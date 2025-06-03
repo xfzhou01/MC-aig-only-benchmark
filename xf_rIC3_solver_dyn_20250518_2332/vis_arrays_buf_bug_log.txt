@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:35:34 CST 2025
+Job <558442> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 33, 2883]
+22 3 4 7 10 13 20 35 43 72 122 212 329 651 1270 2307 
+SolverStatistic {
+    num_solve: 180428,
+    avg_decide_var: 0.905977,
+    num_simplify_subsume: 2911,
+    num_simplify_self_subsume: 2697,
+}
+Statistic {
+    case: model.aig,
+    time: 10.66s,
+    num_mic: 9973,
+    avg_mic_cube_len: 9.645142,
+    avg_po_cube_len: 16.236661,
+    mic_drop: success: 23257, fail: 68286, success rate: 25.41%,
+    num_down: 91543,
+    num_down_sat: 155526,
+    ctp: success: 0, fail: 1207, success rate: 0.00%,
+    num_get_bad: 34,
+    overall_block_time: 10.229987011s,
+    block_get_bad_time: 4.651434ms,
+    block_get_predecessor_time: 117.603693ms,
+    block_blocked_time: 1.429575789s,
+    block_mic_time: 8.195051613s,
+    block_push_time: 81.539885ms,
+    overall_propagate_time: 424.115068ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/goel/opensource/vis_arrays_buf_bug/vis_arrays_buf_bug.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/goel/opensource/vis_arrays_buf_bug/vis_arrays_buf_bug.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 03:35:47 CST 2025
+========================================

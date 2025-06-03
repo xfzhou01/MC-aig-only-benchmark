@@ -1,0 +1,57 @@
+Started at: Thu May 15 21:52:25 CST 2025
+Job <535375> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 43555]
+1092 39 16 17 11 15 22 24 18 24 36 27 56 22 174 204 3536 403 4708 4397 5128 249 4140 3050 3910 2771 2928 2812 2517 27 926 12 9 9 8 5 5 6 5 4 4 3 2 1 0 15 25922 0 
+SolverStatistic {
+    num_solve: 2823280,
+    avg_decide_var: 0.619469,
+    num_simplify_subsume: 67972,
+    num_simplify_self_subsume: 26587,
+}
+Statistic {
+    case: model.aig,
+    time: 1530.86s,
+    num_mic: 91387,
+    avg_mic_cube_len: 8.762001,
+    avg_po_cube_len: 468.507828,
+    mic_drop: success: 77493, fail: 715453, success rate: 9.77%,
+    num_down: 792946,
+    num_down_sat: 1042654,
+    ctp: success: 0, fail: 510336, success rate: 0.00%,
+    num_get_bad: 5096,
+    overall_block_time: 970.475558636s,
+    block_get_bad_time: 12.725585002s,
+    block_get_predecessor_time: 110.984239192s,
+    block_blocked_time: 114.710748873s,
+    block_mic_time: 546.430403214s,
+    block_push_time: 57.864674933s,
+    overall_propagate_time: 558.306388398s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: ./hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p20.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/wolf/2019C/dspfilters_fastfir_second-p20.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 22:18:06 CST 2025
+========================================

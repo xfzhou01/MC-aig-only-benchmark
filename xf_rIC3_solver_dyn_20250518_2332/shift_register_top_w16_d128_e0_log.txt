@@ -1,0 +1,60 @@
+Started at: Tue May 20 03:21:54 CST 2025
+Job <558328> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 55366, 29871]
+1 4 40 80 45 44 75 141 55 79 44 134 123 135 135 149 49 72 78 112 69 140 233 255 281 171 181 315 376 308 357 225 41 281 287 230 190 256 276 292 254 265 220 268 357 301 778 1287 739 333 209 215 277 354 767 843 892 821 669 632 702 662 641 717 597 411 538 407 207 161 169 284 168 225 253 248 273 283 352 384 331 191 188 276 319 529 494 472 370 275 400 530 639 525 471 911 585 332 418 341 477 419 631 607 746 609 503 496 574 537 585 593 511 372 500 531 696 574 614 603 762 608 682 733 761 497 746 818 999 887 29685 
+SolverStatistic {
+    num_solve: 11091145,
+    avg_decide_var: 0.301964,
+    num_simplify_subsume: 1732984,
+    num_simplify_self_subsume: 1625337,
+}
+Statistic {
+    case: model.aig,
+    time: 3015.35s,
+    num_mic: 280644,
+    avg_mic_cube_len: 15.095138,
+    avg_po_cube_len: 20.850396,
+    mic_drop: success: 671958, fail: 3507566, success rate: 16.08%,
+    num_down: 4179524,
+    num_down_sat: 6257443,
+    ctp: success: 0, fail: 1416222, success rate: 0.00%,
+    num_get_bad: 215,
+    overall_block_time: 2012.061566029s,
+    block_get_bad_time: 2.411516009s,
+    block_get_predecessor_time: 6.192944507s,
+    block_blocked_time: 119.162003118s,
+    block_mic_time: 1633.903359333s,
+    block_push_time: 35.833268936s,
+    overall_propagate_time: 998.778959165s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc1920ns/shift_register_top_w16_d128_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc1920ns/shift_register_top_w16_d128_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 04:12:10 CST 2025
+========================================

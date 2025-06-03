@@ -1,0 +1,60 @@
+Started at: Tue May 20 04:17:48 CST 2025
+Job <558683> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 10905]
+16 1 20 1 36 69 186 241 823 1665 3077 5122 7789 10912 10160 4238 
+SolverStatistic {
+    num_solve: 2169071,
+    avg_decide_var: 0.451551,
+    num_simplify_subsume: 71168,
+    num_simplify_self_subsume: 128079,
+}
+Statistic {
+    case: model.aig,
+    time: 3039.16s,
+    num_mic: 68902,
+    avg_mic_cube_len: 23.579461,
+    avg_po_cube_len: 70.762111,
+    mic_drop: success: 658711, fail: 893500, success rate: 42.44%,
+    num_down: 1552211,
+    num_down_sat: 1953799,
+    ctp: success: 0, fail: 9978, success rate: 0.00%,
+    num_get_bad: 2270,
+    overall_block_time: 2940.40031965s,
+    block_get_bad_time: 3.596031522s,
+    block_get_predecessor_time: 29.787151354s,
+    block_blocked_time: 97.415257478s,
+    block_mic_time: 4031.023016298s,
+    block_push_time: 13.104198123s,
+    overall_propagate_time: 98.601620995s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc19/single/aig/mann/unsafe/intersymbol_analog_estimation_convergence.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu07
+cpu08
+cpu09
+cpu10 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc19/single/aig/mann/unsafe/intersymbol_analog_estimation_convergence.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue May 20 05:08:30 CST 2025
+========================================

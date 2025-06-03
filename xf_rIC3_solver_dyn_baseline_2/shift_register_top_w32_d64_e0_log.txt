@@ -1,0 +1,57 @@
+Started at: Thu May 15 13:40:10 CST 2025
+Job <532062> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /root/model.aig
+abc preprocess timeout
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 18929, 14117]
+1 4 69 141 78 139 144 209 90 135 180 266 262 375 360 356 113 137 137 136 151 263 358 461 359 522 1050 1074 1134 1133 513 765 485 385 299 356 256 347 328 408 356 335 495 588 553 518 461 1224 786 377 476 526 735 568 598 972 1050 664 689 626 804 1053 894 1065 1139 593 16213 
+SolverStatistic {
+    num_solve: 3488170,
+    avg_decide_var: 0.325272,
+    num_simplify_subsume: 384585,
+    num_simplify_self_subsume: 432314,
+}
+Statistic {
+    case: model.aig,
+    time: 663.40s,
+    num_mic: 111795,
+    avg_mic_cube_len: 13.140149,
+    avg_po_cube_len: 18.687324,
+    mic_drop: success: 226063, fail: 1218449, success rate: 15.65%,
+    num_down: 1444512,
+    num_down_sat: 2088976,
+    ctp: success: 0, fail: 323055, success rate: 0.00%,
+    num_get_bad: 234,
+    overall_block_time: 492.624062873s,
+    block_get_bad_time: 1.370585636s,
+    block_get_predecessor_time: 2.072192037s,
+    block_blocked_time: 30.642226396s,
+    block_mic_time: 411.84607705s,
+    block_push_time: 8.305287821s,
+    overall_propagate_time: 169.034071109s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: ./hwmcc24/2019/mann/data-integrity/unsafe/shift_register_top_w32_d64_e0.aig
+bsub -Ip -n 1 -m bmcpu01
+bmcpu02
+bmcpu03
+bmcpu04
+bmcpu05
+bmcpu06
+bmcpu07
+bmcpu08
+bmcpu09
+cpu02
+cpu03
+cpu04
+cpu05
+cpu08 docker run --rm  -v /hpc/home/cwb.xzhoubu/MC-aig-only-benchmark/hwmcc24/2019/mann/data-integrity/unsafe/shift_register_top_w32_d64_e0.aig:/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Thu May 15 13:51:22 CST 2025
+========================================
