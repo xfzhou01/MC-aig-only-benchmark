@@ -43,7 +43,7 @@ done
 echo "Running with $PARALLEL_JOBS parallel jobs"
 
 # Create a directory to store logs
-LOG_DIR="xf_rIC3_solver_dyn_baseline"
+LOG_DIR="xf_rIC3_solver_dyn_20250518_2332"
 mkdir -p "$LOG_DIR"
 
 # Find all .aig and .aag files recursively
@@ -66,10 +66,10 @@ process_file() {
     local FILENAME=$(basename "$FILE")
     local LOG_FILE="$LOG_DIR/${FILENAME%.*}_log.txt"
     
-    if [ -f "$LOG_FILE" ] && grep -q "time:" "$LOG_FILE"; then
-        echo "Log file contains 'time:'. Exiting function."
-        return 1  
-    fi
+    #if [ -f "$LOG_FILE" ] && grep -q "time:" "$LOG_FILE"; then
+    #    echo "Log file contains 'time:'. Exiting function."
+    #    return 1  
+    #fi
     
     echo "[$COUNTER/$TOTAL_FILES] Processing: $FILE"
     echo "Log will be saved to: $LOG_FILE"
@@ -77,13 +77,14 @@ process_file() {
     # Run rIC3 solver with timeout
     {
         # Run the solver with timeout and capture output
+        echo "Started at: $(date)"
         ABSOLUTE_FILE=$(realpath "$FILE")
         COMMAND="bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1"
         bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
 
         echo "File: $FILE"
         echo "$COMMAND"
-        echo "Started at: $(date)"
+        
         echo "----------------------------------------"
         # Check if the command timed out
         if [ $? -eq 124 ]; then
@@ -125,7 +126,7 @@ for FILE in $AIGER_FILES; do
     ACTIVE_JOBS=$((ACTIVE_JOBS + 1))
 
     # Check the number of jobs in the queue
-    while [ "$(bjobs | wc -l)" -gt 100 ]; do
+    while [ "$(bjobs | wc -l)" -gt 99 ]; do
         echo "Pending jobs exceed threshold: 100"
         sleep 1
     done
