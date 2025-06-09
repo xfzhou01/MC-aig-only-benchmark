@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 02:01:13 CST 2025
+Job <606223> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fib_30.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 704, 261]
+57 1 1 1 1 1 1 1 1 1 1 2 2 3 3 3 3 2 4 4 4 3 1 7 8 14 18 9 10 8 51 15 9 12 9 5 2 3 3 3 2 2 2 4 4 4 4 5 11 13 11 15 33 29 21 22 21 19 22 21 34 26 11 16 19 17 27 22 18 21 21 18 10 8 6 4 6 2 3 6 5 6 5 4 4 5 6 4 3 4 6 8 6 8 6 8 11 4 7 7 9 6 10 10 19 11 15 16 19 17 20 16 13 20 20 19 22 16 12 16 17 16 21 13 11 12 14 16 21 16 15 16 19 17 16 18 28 61 47 64 45 55 72 75 46 76 63 59 62 43 36 34 50 33 36 57 38 15 16 13 9 5 4 5 4 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 1 1 1 1 1 1 1 1 1 1 2 2 1 1 2 2 1 2 2 1 2 2 1 1 1 2 2 1 1 2 3 2 5 6 10 1 3 4 5 10 3 2 0 591 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 11 pulls
+  Arm 1 (Aggressive Heuristic): 86 pulls
+  Arm 2 (Conservative Heuristic): 7 pulls
+  Arm 3 (limit=0, max=0, level=0): 932 pulls
+  Arm 4 (limit=1, max=3, level=1): 15 pulls
+  Arm 5 (limit=2, max=5, level=1): 6698 pulls
+  Arm 6 (limit=8, max=4, level=1): 143 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 881186,
+    avg_decide_var: 1.185085,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fib_30.aig,
+    time: 27.09s,
+    num_mic: 18740,
+    avg_mic_cube_len: 14.597332,
+    avg_po_cube_len: 55.888446,
+    mic_drop: success: 31629, fail: 232216, success rate: 11.99%,
+    num_down: 263845,
+    num_down_sat: 432143,
+    ctp: success: 0, fail: 95597, success rate: 0.00%,
+    num_get_bad: 287,
+    overall_block_time: 17.962049433s,
+    block_get_bad_time: 5.205613ms,
+    block_get_predecessor_time: 4.429703471s,
+    block_blocked_time: 263.695557ms,
+    block_mic_time: 22.740306494s,
+    block_push_time: 127.855125ms,
+    overall_propagate_time: 9.084042076s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fib_30.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fib_30.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 02:01:42 CST 2025
+========================================

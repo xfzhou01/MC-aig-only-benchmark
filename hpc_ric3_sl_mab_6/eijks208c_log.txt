@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 02:12:10 CST 2025
+Job <606470> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks208c.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 41]
+23 3 2 2 1 1 1 2 1 1 1 2 1 1 2 2 1 1 1 1 1 1 2 1 1 1 2 1 2 1 2 2 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 0 46 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4 pulls
+  Arm 1 (Aggressive Heuristic): 4 pulls
+  Arm 2 (Conservative Heuristic): 4 pulls
+  Arm 3 (limit=0, max=0, level=0): 4 pulls
+  Arm 4 (limit=1, max=3, level=1): 4 pulls
+  Arm 5 (limit=2, max=5, level=1): 113 pulls
+  Arm 6 (limit=8, max=4, level=1): 14 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3949,
+    avg_decide_var: 0.472242,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: eijks208c.aig,
+    time: 0.04s,
+    num_mic: 209,
+    avg_mic_cube_len: 2.832536,
+    avg_po_cube_len: 10.268207,
+    mic_drop: success: 94, fail: 481, success rate: 16.35%,
+    num_down: 575,
+    num_down_sat: 580,
+    ctp: success: 0, fail: 1950, success rate: 0.00%,
+    num_get_bad: 99,
+    overall_block_time: 15.555639ms,
+    block_get_bad_time: 4.263861ms,
+    block_get_predecessor_time: 2.17084ms,
+    block_blocked_time: 941.569µs,
+    block_mic_time: 9.921748ms,
+    block_push_time: 192.481µs,
+    overall_propagate_time: 14.030164ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks208c.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks208c.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 02:12:11 CST 2025
+========================================

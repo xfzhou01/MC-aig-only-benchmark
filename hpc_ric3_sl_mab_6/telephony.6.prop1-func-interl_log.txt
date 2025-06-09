@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 02:10:40 CST 2025
+Job <606451> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 80, 210, 2, 2, 1, 1, 1, 21, 269]
+185 49 84 201 461 839 1455 2375 2965 2271 295 109 179 201 137 154 166 203 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 4 pulls
+  Arm 3 (limit=0, max=0, level=0): 8 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 1301 pulls
+  Arm 6 (limit=8, max=4, level=1): 1 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 373844,
+    avg_decide_var: 0.801188,
+    num_simplify_subsume: 2500,
+    num_simplify_self_subsume: 2667,
+}
+Statistic {
+    case: telephony.6.prop1-func-interl.aig,
+    time: 46.66s,
+    num_mic: 14446,
+    avg_mic_cube_len: 12.548387,
+    avg_po_cube_len: 78.084013,
+    mic_drop: success: 64755, fail: 99462, success rate: 39.43%,
+    num_down: 164217,
+    num_down_sat: 287964,
+    ctp: success: 0, fail: 1433, success rate: 0.00%,
+    num_get_bad: 18,
+    overall_block_time: 44.545576247s,
+    block_get_bad_time: 169.543µs,
+    block_get_predecessor_time: 6.530040765s,
+    block_blocked_time: 289.699086ms,
+    block_mic_time: 67.256297342s,
+    block_push_time: 66.119398ms,
+    overall_propagate_time: 2.080363973s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 02:11:27 CST 2025
+========================================

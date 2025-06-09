@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 01:06:45 CST 2025
+Job <605991> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisvsar29.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4901, 43246]
+66 1 1 2 15 27 25 34 113 190 141 414 820 795 1345 340 4042 5371 6575 11474 372 58 5 0 58284 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 7 pulls
+  Arm 1 (Aggressive Heuristic): 7 pulls
+  Arm 2 (Conservative Heuristic): 10557 pulls
+  Arm 3 (limit=0, max=0, level=0): 8 pulls
+  Arm 4 (limit=1, max=3, level=1): 32 pulls
+  Arm 5 (limit=2, max=5, level=1): 7 pulls
+  Arm 6 (limit=8, max=4, level=1): 86038 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 7379905,
+    avg_decide_var: 0.373146,
+    num_simplify_subsume: 45654,
+    num_simplify_self_subsume: 95224,
+}
+Statistic {
+    case: pdtvisvsar29.aig,
+    time: 2581.92s,
+    num_mic: 135937,
+    avg_mic_cube_len: 11.713308,
+    avg_po_cube_len: 19.495697,
+    mic_drop: success: 230268, fail: 1331617, success rate: 14.74%,
+    num_down: 1561885,
+    num_down_sat: 2329585,
+    ctp: success: 0, fail: 226776, success rate: 0.00%,
+    num_get_bad: 34457,
+    overall_block_time: 2257.938234656s,
+    block_get_bad_time: 441.652679622s,
+    block_get_predecessor_time: 266.283859818s,
+    block_blocked_time: 117.357795386s,
+    block_mic_time: 1729.210815332s,
+    block_push_time: 11.020921674s,
+    overall_propagate_time: 323.97192885s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisvsar29.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisvsar29.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 01:49:48 CST 2025
+========================================

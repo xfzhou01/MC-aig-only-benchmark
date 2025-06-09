@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 01:01:17 CST 2025
+Job <605830> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/atxfifo-p40.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 55]
+85 5 6 12 15 24 12 11 2 2 1 0 81 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3 pulls
+  Arm 1 (Aggressive Heuristic): 9 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 3 pulls
+  Arm 4 (limit=1, max=3, level=1): 50 pulls
+  Arm 5 (limit=2, max=5, level=1): 75 pulls
+  Arm 6 (limit=8, max=4, level=1): 2 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2094,
+    avg_decide_var: 0.407137,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: atxfifo-p40.aig,
+    time: 0.03s,
+    num_mic: 218,
+    avg_mic_cube_len: 3.532110,
+    avg_po_cube_len: 30.563467,
+    mic_drop: success: 104, fail: 645, success rate: 13.89%,
+    num_down: 749,
+    num_down_sat: 646,
+    ctp: success: 0, fail: 450, success rate: 0.00%,
+    num_get_bad: 45,
+    overall_block_time: 25.287462ms,
+    block_get_bad_time: 508.285µs,
+    block_get_predecessor_time: 9.246475ms,
+    block_blocked_time: 2.148264ms,
+    block_mic_time: 19.723661ms,
+    block_push_time: 641.216µs,
+    overall_propagate_time: 3.863598ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/atxfifo-p40.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/atxfifo-p40.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 01:01:17 CST 2025
+========================================

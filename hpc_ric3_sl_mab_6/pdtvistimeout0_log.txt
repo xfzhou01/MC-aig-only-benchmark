@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 02:37:27 CST 2025
+Job <606587> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvistimeout0.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7827]
+32 71 104 186 362 640 744 825 834 497 411 231 295 77 45 9 0 13 12 130 285 299 427 407 403 239 262 186 252 127 277 270 285 402 6820 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 19 pulls
+  Arm 1 (Aggressive Heuristic): 4 pulls
+  Arm 2 (Conservative Heuristic): 8 pulls
+  Arm 3 (limit=0, max=0, level=0): 4 pulls
+  Arm 4 (limit=1, max=3, level=1): 21568 pulls
+  Arm 5 (limit=2, max=5, level=1): 4 pulls
+  Arm 6 (limit=8, max=4, level=1): 24 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1066102,
+    avg_decide_var: 0.550549,
+    num_simplify_subsume: 40816,
+    num_simplify_self_subsume: 42899,
+}
+Statistic {
+    case: pdtvistimeout0.aig,
+    time: 133.09s,
+    num_mic: 28267,
+    avg_mic_cube_len: 11.521916,
+    avg_po_cube_len: 22.124896,
+    mic_drop: success: 72964, fail: 239182, success rate: 23.37%,
+    num_down: 312146,
+    num_down_sat: 488498,
+    ctp: success: 0, fail: 173281, success rate: 0.00%,
+    num_get_bad: 115,
+    overall_block_time: 66.59684319s,
+    block_get_bad_time: 33.509936ms,
+    block_get_predecessor_time: 4.767497817s,
+    block_blocked_time: 4.333406106s,
+    block_mic_time: 64.118521546s,
+    block_push_time: 1.740917907s,
+    overall_propagate_time: 66.482643343s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvistimeout0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvistimeout0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 02:39:41 CST 2025
+========================================

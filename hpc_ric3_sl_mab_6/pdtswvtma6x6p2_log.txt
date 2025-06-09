@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 06:48:07 CST 2025
+Job <608280> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtma6x6p2.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10159]
+58 1 4 3 4 3 4 14 5 10 17 39 53 28 20 45 45 36 14 11 161 34 21 11 7 161 55 151 66 100 35 12 7 4 17 11 16 2 3 3 2 2 2 0 4468 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 21588 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 1 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 726701,
+    avg_decide_var: 0.693350,
+    num_simplify_subsume: 11694,
+    num_simplify_self_subsume: 3079,
+}
+Statistic {
+    case: pdtswvtma6x6p2.aig,
+    time: 36.15s,
+    num_mic: 26086,
+    avg_mic_cube_len: 11.126045,
+    avg_po_cube_len: 25.874099,
+    mic_drop: success: 47782, fail: 234504, success rate: 16.93%,
+    num_down: 282286,
+    num_down_sat: 447797,
+    ctp: success: 0, fail: 41692, success rate: 0.00%,
+    num_get_bad: 45,
+    overall_block_time: 32.829949808s,
+    block_get_bad_time: 45.328µs,
+    block_get_predecessor_time: 5.404450235s,
+    block_blocked_time: 2.032876496s,
+    block_mic_time: 29.937086641s,
+    block_push_time: 295.305425ms,
+    overall_propagate_time: 3.301479585s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtma6x6p2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtma6x6p2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 06:48:45 CST 2025
+========================================

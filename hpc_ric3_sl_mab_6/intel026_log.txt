@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 04:26:51 CST 2025
+Job <607326> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel026.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 217, 163]
+349 3 24 250 18 78 13 199 51 17 3 6 9 22 10 5 18 4 12 5 60 121 168 229 286 105 277 105 190 84 121 66 11 2 0 1417 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 14 pulls
+  Arm 1 (Aggressive Heuristic): 19 pulls
+  Arm 2 (Conservative Heuristic): 3 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 241 pulls
+  Arm 5 (limit=2, max=5, level=1): 330 pulls
+  Arm 6 (limit=8, max=4, level=1): 16 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 183473,
+    avg_decide_var: 0.956987,
+    num_simplify_subsume: 3814,
+    num_simplify_self_subsume: 1083,
+}
+Statistic {
+    case: intel026.aig,
+    time: 31.38s,
+    num_mic: 5005,
+    avg_mic_cube_len: 8.567233,
+    avg_po_cube_len: 219.659914,
+    mic_drop: success: 5204, fail: 36447, success rate: 12.49%,
+    num_down: 41651,
+    num_down_sat: 73753,
+    ctp: success: 0, fail: 46490, success rate: 0.00%,
+    num_get_bad: 36,
+    overall_block_time: 17.551771303s,
+    block_get_bad_time: 403.668µs,
+    block_get_predecessor_time: 2.764058797s,
+    block_blocked_time: 188.436195ms,
+    block_mic_time: 26.378460909s,
+    block_push_time: 629.083653ms,
+    overall_propagate_time: 13.742144769s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel026.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel026.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 04:27:23 CST 2025
+========================================

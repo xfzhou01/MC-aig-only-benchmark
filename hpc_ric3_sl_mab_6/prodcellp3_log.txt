@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 03:05:06 CST 2025
+Job <606736> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/prodcellp3.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 119, 513]
+151 8 6 16 10 12 13 16 19 12 22 32 18 25 38 40 53 42 29 24 23 38 18 32 37 27 13 22 19 33 25 18 46 72 34 20 56 27 53 12 22 17 4 10 20 15 4 7 14 24 43 24 12 29 8 7 7 9 15 12 27 54 29 20 30 12 12 17 33 41 30 28 26 31 26 14 25 36 22 18 25 28 1034 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4 pulls
+  Arm 1 (Aggressive Heuristic): 4 pulls
+  Arm 2 (Conservative Heuristic): 4 pulls
+  Arm 3 (limit=0, max=0, level=0): 4 pulls
+  Arm 4 (limit=1, max=3, level=1): 4 pulls
+  Arm 5 (limit=2, max=5, level=1): 5 pulls
+  Arm 6 (limit=8, max=4, level=1): 1105 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 228682,
+    avg_decide_var: 0.785186,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: prodcellp3.aig,
+    time: 15.32s,
+    num_mic: 4124,
+    avg_mic_cube_len: 7.752910,
+    avg_po_cube_len: 148.357935,
+    mic_drop: success: 8534, fail: 20893, success rate: 29.00%,
+    num_down: 29427,
+    num_down_sat: 46713,
+    ctp: success: 0, fail: 54545, success rate: 0.00%,
+    num_get_bad: 678,
+    overall_block_time: 10.326548415s,
+    block_get_bad_time: 57.322347ms,
+    block_get_predecessor_time: 4.191421098s,
+    block_blocked_time: 88.537215ms,
+    block_mic_time: 11.350799162s,
+    block_push_time: 109.890862ms,
+    overall_propagate_time: 4.942554772s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/prodcellp3.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/prodcellp3.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 03:05:23 CST 2025
+========================================

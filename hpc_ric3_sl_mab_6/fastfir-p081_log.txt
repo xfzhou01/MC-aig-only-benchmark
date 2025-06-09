@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 00:56:37 CST 2025
+Job <605693> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p081.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 434, 386]
+319 39 60 74 100 38 19 12 11 12 32 39 15 6 6 5 0 428 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 27 pulls
+  Arm 1 (Aggressive Heuristic): 890 pulls
+  Arm 2 (Conservative Heuristic): 29 pulls
+  Arm 3 (limit=0, max=0, level=0): 27 pulls
+  Arm 4 (limit=1, max=3, level=1): 27 pulls
+  Arm 5 (limit=2, max=5, level=1): 174 pulls
+  Arm 6 (limit=8, max=4, level=1): 50 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 17347,
+    avg_decide_var: 0.905102,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p081.aig,
+    time: 3.99s,
+    num_mic: 1513,
+    avg_mic_cube_len: 3.095175,
+    avg_po_cube_len: 109.200797,
+    mic_drop: success: 1098, fail: 3547, success rate: 23.64%,
+    num_down: 4645,
+    num_down_sat: 4669,
+    ctp: success: 0, fail: 4362, success rate: 0.00%,
+    num_get_bad: 407,
+    overall_block_time: 3.108952247s,
+    block_get_bad_time: 102.131684ms,
+    block_get_predecessor_time: 1.507267736s,
+    block_blocked_time: 258.200924ms,
+    block_mic_time: 1.971107568s,
+    block_push_time: 44.26259ms,
+    overall_propagate_time: 757.232601ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p081.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p081.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 00:56:42 CST 2025
+========================================

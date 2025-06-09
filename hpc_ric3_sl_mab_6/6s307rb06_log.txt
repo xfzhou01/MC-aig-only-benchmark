@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 06:36:28 CST 2025
+Job <608202> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s307rb06.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 9, 2753]
+6651 68 53 39 45 67 66 56 39 95 68 104 1566 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 4209 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 16 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 47362,
+    avg_decide_var: 0.049670,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: 6s307rb06.aig,
+    time: 6.03s,
+    num_mic: 4762,
+    avg_mic_cube_len: 3.759555,
+    avg_po_cube_len: 219.760867,
+    mic_drop: success: 3165, fail: 14484, success rate: 17.93%,
+    num_down: 17649,
+    num_down_sat: 17981,
+    ctp: success: 0, fail: 4176, success rate: 0.00%,
+    num_get_bad: 13,
+    overall_block_time: 5.600792761s,
+    block_get_bad_time: 152.14µs,
+    block_get_predecessor_time: 2.446455193s,
+    block_blocked_time: 1.311002642s,
+    block_mic_time: 1.518557427s,
+    block_push_time: 221.392003ms,
+    overall_propagate_time: 123.218296ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s307rb06.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s307rb06.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 06:36:34 CST 2025
+========================================

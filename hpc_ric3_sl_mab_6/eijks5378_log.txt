@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 07:02:21 CST 2025
+Job <608375> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 118, 4672]
+441 142 151 106 25 23 30 28 33 19 27 26 27 14 288 20 32 18 25 22 29 6 9 7 12 3 5 1 0 4898 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 934 pulls
+  Arm 1 (Aggressive Heuristic): 653 pulls
+  Arm 2 (Conservative Heuristic): 757 pulls
+  Arm 3 (limit=0, max=0, level=0): 803 pulls
+  Arm 4 (limit=1, max=3, level=1): 1620 pulls
+  Arm 5 (limit=2, max=5, level=1): 626 pulls
+  Arm 6 (limit=8, max=4, level=1): 3354 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 238300,
+    avg_decide_var: 0.382764,
+    num_simplify_subsume: 97,
+    num_simplify_self_subsume: 68,
+}
+Statistic {
+    case: eijks5378.aig,
+    time: 10.73s,
+    num_mic: 9047,
+    avg_mic_cube_len: 7.942633,
+    avg_po_cube_len: 11.345878,
+    mic_drop: success: 512, fail: 71307, success rate: 0.71%,
+    num_down: 71819,
+    num_down_sat: 71685,
+    ctp: success: 0, fail: 120239, success rate: 0.00%,
+    num_get_bad: 4104,
+    overall_block_time: 6.667791261s,
+    block_get_bad_time: 3.901348403s,
+    block_get_predecessor_time: 629.062747ms,
+    block_blocked_time: 125.275106ms,
+    block_mic_time: 2.110824337s,
+    block_push_time: 15.703999ms,
+    overall_propagate_time: 4.029349696s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 07:02:31 CST 2025
+========================================

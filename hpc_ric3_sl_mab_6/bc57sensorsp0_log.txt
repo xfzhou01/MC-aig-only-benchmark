@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 05:40:27 CST 2025
+Job <607776> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bc57sensorsp0.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 2, 3, 2, 1, 1, 1, 1, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 9, 907, 994]
+167 3 7 3 10 10 10 13 9 9 9 10 8 10 17 15 24 22 23 14 9 5 8 9 26 29 26 32 39 41 19 20 31 36 32 15 34 42 39 31 38 23 23 20 24 16 12 26 19 36 18 23 13 10 4 5 7 56 66 82 71 58 67 69 35 69 76 76 62 1755 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 5 pulls
+  Arm 1 (Aggressive Heuristic): 5 pulls
+  Arm 2 (Conservative Heuristic): 5 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 3047 pulls
+  Arm 5 (limit=2, max=5, level=1): 4 pulls
+  Arm 6 (limit=8, max=4, level=1): 4 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 284182,
+    avg_decide_var: 0.907811,
+    num_simplify_subsume: 12984,
+    num_simplify_self_subsume: 3347,
+}
+Statistic {
+    case: bc57sensorsp0.aig,
+    time: 17.12s,
+    num_mic: 7962,
+    avg_mic_cube_len: 8.731726,
+    avg_po_cube_len: 154.084644,
+    mic_drop: success: 13576, fail: 52685, success rate: 20.49%,
+    num_down: 66261,
+    num_down_sat: 120130,
+    ctp: success: 0, fail: 54576, success rate: 0.00%,
+    num_get_bad: 830,
+    overall_block_time: 11.112599736s,
+    block_get_bad_time: 54.166957ms,
+    block_get_predecessor_time: 2.40994441s,
+    block_blocked_time: 264.742109ms,
+    block_mic_time: 13.708969034s,
+    block_push_time: 186.925823ms,
+    overall_propagate_time: 5.96109889s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bc57sensorsp0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bc57sensorsp0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 05:40:44 CST 2025
+========================================

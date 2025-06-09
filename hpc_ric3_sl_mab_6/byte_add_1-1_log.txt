@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 01:04:16 CST 2025
+Job <605918> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/byte_add_1-1.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1202]
+2 1 1 2 12 4 5 14 7 1 0 2064 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 4 pulls
+  Arm 2 (Conservative Heuristic): 4 pulls
+  Arm 3 (limit=0, max=0, level=0): 10 pulls
+  Arm 4 (limit=1, max=3, level=1): 1444 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 57939,
+    avg_decide_var: 1.000595,
+    num_simplify_subsume: 451,
+    num_simplify_self_subsume: 166,
+}
+Statistic {
+    case: byte_add_1-1.aig,
+    time: 9.86s,
+    num_mic: 2823,
+    avg_mic_cube_len: 7.942260,
+    avg_po_cube_len: 181.317868,
+    mic_drop: success: 3031, fail: 18935, success rate: 13.80%,
+    num_down: 21966,
+    num_down_sat: 35740,
+    ctp: success: 0, fail: 7619, success rate: 0.00%,
+    num_get_bad: 13,
+    overall_block_time: 8.845745684s,
+    block_get_bad_time: 80.861µs,
+    block_get_predecessor_time: 1.914132884s,
+    block_blocked_time: 445.249389ms,
+    block_mic_time: 10.338737995s,
+    block_push_time: 167.492329ms,
+    overall_propagate_time: 987.906675ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/byte_add_1-1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/byte_add_1-1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 01:04:27 CST 2025
+========================================

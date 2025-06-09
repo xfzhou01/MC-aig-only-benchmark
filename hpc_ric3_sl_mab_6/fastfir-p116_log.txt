@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 00:58:56 CST 2025
+Job <605761> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p116.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6718]
+411 10 11 13 20 25 47 57 41 34 40 17 26 17 27 63 152 119 454 593 1438 26 1778 1560 1335 3 928 882 1273 529 348 202 58 0 4743 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1278 pulls
+  Arm 1 (Aggressive Heuristic): 6108 pulls
+  Arm 2 (Conservative Heuristic): 351 pulls
+  Arm 3 (limit=0, max=0, level=0): 2765 pulls
+  Arm 4 (limit=1, max=3, level=1): 488 pulls
+  Arm 5 (limit=2, max=5, level=1): 7960 pulls
+  Arm 6 (limit=8, max=4, level=1): 298 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 415685,
+    avg_decide_var: 0.754858,
+    num_simplify_subsume: 3405,
+    num_simplify_self_subsume: 488,
+}
+Statistic {
+    case: fastfir-p116.aig,
+    time: 138.20s,
+    num_mic: 20897,
+    avg_mic_cube_len: 6.820213,
+    avg_po_cube_len: 103.478288,
+    mic_drop: success: 12471, fail: 129247, success rate: 8.80%,
+    num_down: 141718,
+    num_down_sat: 166599,
+    ctp: success: 0, fail: 48419, success rate: 0.00%,
+    num_get_bad: 1193,
+    overall_block_time: 113.727071029s,
+    block_get_bad_time: 676.405844ms,
+    block_get_predecessor_time: 42.832273772s,
+    block_blocked_time: 4.575532989s,
+    block_mic_time: 99.023395814s,
+    block_push_time: 1.00318574s,
+    overall_propagate_time: 24.187919246s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p116.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p116.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 01:01:15 CST 2025
+========================================

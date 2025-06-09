@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 06:30:43 CST 2025
+Job <608182> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisns3p01.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 102, 63]
+100 12 39 50 70 67 36 30 22 7 0 96 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 406 pulls
+  Arm 2 (Conservative Heuristic): 0 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 10453,
+    avg_decide_var: 0.387763,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: pdtvisns3p01.aig,
+    time: 0.48s,
+    num_mic: 709,
+    avg_mic_cube_len: 6.002821,
+    avg_po_cube_len: 21.215590,
+    mic_drop: success: 1105, fail: 2955, success rate: 27.22%,
+    num_down: 4060,
+    num_down_sat: 5554,
+    ctp: success: 0, fail: 489, success rate: 0.00%,
+    num_get_bad: 16,
+    overall_block_time: 377.453494ms,
+    block_get_bad_time: 361.717µs,
+    block_get_predecessor_time: 71.656889ms,
+    block_blocked_time: 34.552402ms,
+    block_mic_time: 375.966974ms,
+    block_push_time: 6.961014ms,
+    overall_propagate_time: 93.392218ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisns3p01.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisns3p01.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 06:30:43 CST 2025
+========================================

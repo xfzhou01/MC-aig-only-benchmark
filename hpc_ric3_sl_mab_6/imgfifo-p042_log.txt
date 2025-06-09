@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 01:00:01 CST 2025
+Job <605793> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p042.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 30]
+396 16 2 4 5 3 3 3 3 2 1 0 26 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 6 pulls
+  Arm 1 (Aggressive Heuristic): 9 pulls
+  Arm 2 (Conservative Heuristic): 6 pulls
+  Arm 3 (limit=0, max=0, level=0): 6 pulls
+  Arm 4 (limit=1, max=3, level=1): 4 pulls
+  Arm 5 (limit=2, max=5, level=1): 26 pulls
+  Arm 6 (limit=8, max=4, level=1): 7 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 728,
+    avg_decide_var: 0.338874,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: imgfifo-p042.aig,
+    time: 0.04s,
+    num_mic: 84,
+    avg_mic_cube_len: 1.666667,
+    avg_po_cube_len: 48.094340,
+    mic_drop: success: 9, fail: 131, success rate: 6.43%,
+    num_down: 140,
+    num_down_sat: 87,
+    ctp: success: 0, fail: 258, success rate: 0.00%,
+    num_get_bad: 16,
+    overall_block_time: 13.167138ms,
+    block_get_bad_time: 233.52µs,
+    block_get_predecessor_time: 5.468619ms,
+    block_blocked_time: 1.827731ms,
+    block_mic_time: 7.394483ms,
+    block_push_time: 118.903µs,
+    overall_propagate_time: 6.479171ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p042.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p042.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 01:00:02 CST 2025
+========================================

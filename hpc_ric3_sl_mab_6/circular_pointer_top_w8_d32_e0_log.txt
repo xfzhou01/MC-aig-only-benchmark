@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 01:59:13 CST 2025
+Job <606176> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/circular_pointer_top_w8_d32_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12381]
+1 4 25 54 141 69 165 211 446 147 337 342 580 665 849 870 1253 707 945 835 1294 1314 1561 1335 2122 1693 2088 1772 2852 2457 3162 2880 4920 3013 5923 11374 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 20 pulls
+  Arm 1 (Aggressive Heuristic): 10344 pulls
+  Arm 2 (Conservative Heuristic): 25 pulls
+  Arm 3 (limit=0, max=0, level=0): 8 pulls
+  Arm 4 (limit=1, max=3, level=1): 28633 pulls
+  Arm 5 (limit=2, max=5, level=1): 12273 pulls
+  Arm 6 (limit=8, max=4, level=1): 32576 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 5700615,
+    avg_decide_var: 0.375009,
+    num_simplify_subsume: 161594,
+    num_simplify_self_subsume: 220937,
+}
+Statistic {
+    case: circular_pointer_top_w8_d32_e0.aig,
+    time: 759.12s,
+    num_mic: 120105,
+    avg_mic_cube_len: 14.041905,
+    avg_po_cube_len: 22.992779,
+    mic_drop: success: 221831, fail: 1436671, success rate: 13.38%,
+    num_down: 1658502,
+    num_down_sat: 2427431,
+    ctp: success: 0, fail: 110585, success rate: 0.00%,
+    num_get_bad: 631,
+    overall_block_time: 688.292535105s,
+    block_get_bad_time: 116.545725ms,
+    block_get_predecessor_time: 69.020004859s,
+    block_blocked_time: 14.179245923s,
+    block_mic_time: 741.63884841s,
+    block_push_time: 899.961959ms,
+    overall_propagate_time: 70.796251361s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/circular_pointer_top_w8_d32_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/circular_pointer_top_w8_d32_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 02:11:54 CST 2025
+========================================

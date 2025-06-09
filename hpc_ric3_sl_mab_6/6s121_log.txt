@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 06:19:01 CST 2025
+Job <608080> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s121.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2978]
+275 7 47 25 27 71 77 136 74 57 26 47 73 124 144 93 56 55 50 146 41 76 195 164 157 99 17 25 60 92 46 10 2 0 10 30 102 92 89 70 76 80 113 2511 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 16 pulls
+  Arm 1 (Aggressive Heuristic): 34 pulls
+  Arm 2 (Conservative Heuristic): 7 pulls
+  Arm 3 (limit=0, max=0, level=0): 484 pulls
+  Arm 4 (limit=1, max=3, level=1): 3625 pulls
+  Arm 5 (limit=2, max=5, level=1): 4310 pulls
+  Arm 6 (limit=8, max=4, level=1): 5 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 303519,
+    avg_decide_var: 0.220175,
+    num_simplify_subsume: 23734,
+    num_simplify_self_subsume: 6471,
+}
+Statistic {
+    case: 6s121.aig,
+    time: 9.90s,
+    num_mic: 10819,
+    avg_mic_cube_len: 7.409003,
+    avg_po_cube_len: 37.214196,
+    mic_drop: success: 8758, fail: 69390, success rate: 11.21%,
+    num_down: 78148,
+    num_down_sat: 101492,
+    ctp: success: 0, fail: 66764, success rate: 0.00%,
+    num_get_bad: 54,
+    overall_block_time: 5.636873049s,
+    block_get_bad_time: 388.261µs,
+    block_get_predecessor_time: 831.568295ms,
+    block_blocked_time: 372.071969ms,
+    block_mic_time: 5.146870733s,
+    block_push_time: 189.705382ms,
+    overall_propagate_time: 4.238670688s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s121.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s121.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 06:19:13 CST 2025
+========================================

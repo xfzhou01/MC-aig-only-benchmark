@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 06:20:26 CST 2025
+Job <608087> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p6.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 9, 3756, 3, 28821, 37364]
+2050 55 5 53 95 2355 9466 24524 32051 25133 21410 6295 10627 11850 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 70 pulls
+  Arm 1 (Aggressive Heuristic): 1048 pulls
+  Arm 2 (Conservative Heuristic): 106080 pulls
+  Arm 3 (limit=0, max=0, level=0): 13 pulls
+  Arm 4 (limit=1, max=3, level=1): 10979 pulls
+  Arm 5 (limit=2, max=5, level=1): 24437 pulls
+  Arm 6 (limit=8, max=4, level=1): 2650 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3046574,
+    avg_decide_var: 0.355395,
+    num_simplify_subsume: 85628,
+    num_simplify_self_subsume: 20053,
+}
+Statistic {
+    case: picorv32_mutAY_nomem-p6.aig,
+    time: 1387.88s,
+    num_mic: 209014,
+    avg_mic_cube_len: 7.624738,
+    avg_po_cube_len: 228.043346,
+    mic_drop: success: 385276, fail: 1026636, success rate: 27.29%,
+    num_down: 1411912,
+    num_down_sat: 1721563,
+    ctp: success: 0, fail: 41517, success rate: 0.00%,
+    num_get_bad: 15,
+    overall_block_time: 1205.523080099s,
+    block_get_bad_time: 4.806868ms,
+    block_get_predecessor_time: 213.253845962s,
+    block_blocked_time: 99.661564498s,
+    block_mic_time: 1018.812497505s,
+    block_push_time: 4.107398724s,
+    overall_propagate_time: 182.134932108s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p6.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p6.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 06:43:34 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 03:21:00 CST 2025
+Job <606911> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p003.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 791]
+329 13 13 9 8 7 7 7 6 6 5 4 1 1 1 1 1 24 0 521 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1079 pulls
+  Arm 1 (Aggressive Heuristic): 121 pulls
+  Arm 2 (Conservative Heuristic): 64 pulls
+  Arm 3 (limit=0, max=0, level=0): 46 pulls
+  Arm 4 (limit=1, max=3, level=1): 17 pulls
+  Arm 5 (limit=2, max=5, level=1): 24 pulls
+  Arm 6 (limit=8, max=4, level=1): 26 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 14649,
+    avg_decide_var: 0.859157,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p003.aig,
+    time: 3.06s,
+    num_mic: 1429,
+    avg_mic_cube_len: 2.954514,
+    avg_po_cube_len: 76.654931,
+    mic_drop: success: 564, fail: 3658, success rate: 13.36%,
+    num_down: 4222,
+    num_down_sat: 5118,
+    ctp: success: 0, fail: 4572, success rate: 0.00%,
+    num_get_bad: 205,
+    overall_block_time: 2.496712968s,
+    block_get_bad_time: 76.424731ms,
+    block_get_predecessor_time: 838.58327ms,
+    block_blocked_time: 325.456651ms,
+    block_mic_time: 1.343054693s,
+    block_push_time: 37.745823ms,
+    overall_propagate_time: 423.799184ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p003.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p003.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 03:21:03 CST 2025
+========================================

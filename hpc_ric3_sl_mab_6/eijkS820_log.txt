@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 06:07:58 CST 2025
+Job <607948> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijkS820.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 189]
+58 20 17 22 5 7 24 23 13 5 0 229 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 83 pulls
+  Arm 1 (Aggressive Heuristic): 499 pulls
+  Arm 2 (Conservative Heuristic): 7 pulls
+  Arm 3 (limit=0, max=0, level=0): 10 pulls
+  Arm 4 (limit=1, max=3, level=1): 35 pulls
+  Arm 5 (limit=2, max=5, level=1): 20 pulls
+  Arm 6 (limit=8, max=4, level=1): 10 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 6060,
+    avg_decide_var: 0.548822,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: eijkS820.aig,
+    time: 0.25s,
+    num_mic: 704,
+    avg_mic_cube_len: 3.143466,
+    avg_po_cube_len: 7.422693,
+    mic_drop: success: 396, fail: 1810, success rate: 17.95%,
+    num_down: 2206,
+    num_down_sat: 1986,
+    ctp: success: 0, fail: 1127, success rate: 0.00%,
+    num_get_bad: 123,
+    overall_block_time: 155.012027ms,
+    block_get_bad_time: 6.157256ms,
+    block_get_predecessor_time: 25.005139ms,
+    block_blocked_time: 26.877765ms,
+    block_mic_time: 108.869798ms,
+    block_push_time: 1.634757ms,
+    overall_propagate_time: 84.988438ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijkS820.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijkS820.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 06:07:58 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 05:06:46 CST 2025
+Job <607516> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobtuint26neg.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 32]
+210 5 5 8 5 2 1 3 5 4 3 1 0 36 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 80 pulls
+  Arm 6 (limit=8, max=4, level=1): 7 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1048,
+    avg_decide_var: 0.077370,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bobtuint26neg.aig,
+    time: 0.03s,
+    num_mic: 133,
+    avg_mic_cube_len: 1.609023,
+    avg_po_cube_len: 22.237143,
+    mic_drop: success: 17, fail: 197, success rate: 7.94%,
+    num_down: 214,
+    num_down_sat: 147,
+    ctp: success: 0, fail: 238, success rate: 0.00%,
+    num_get_bad: 16,
+    overall_block_time: 10.408779ms,
+    block_get_bad_time: 70.372µs,
+    block_get_predecessor_time: 4.232129ms,
+    block_blocked_time: 2.569153ms,
+    block_mic_time: 3.767368ms,
+    block_push_time: 207.926µs,
+    overall_propagate_time: 1.438388ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobtuint26neg.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobtuint26neg.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 05:06:46 CST 2025
+========================================

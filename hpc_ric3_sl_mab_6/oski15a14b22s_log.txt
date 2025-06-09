@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 03:55:06 CST 2025
+Job <607065> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b22s.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2499, 5578]
+3469 539 456 684 613 542 443 414 4702 5238 4915 25822 15118 8111 8000 7902 1456 192 76 3 0 87534 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 345 pulls
+  Arm 2 (Conservative Heuristic): 1840 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 91 pulls
+  Arm 6 (limit=8, max=4, level=1): 11307 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3445894,
+    avg_decide_var: 0.459669,
+    num_simplify_subsume: 110207,
+    num_simplify_self_subsume: 7485,
+}
+Statistic {
+    case: oski15a14b22s.aig,
+    time: 2676.91s,
+    num_mic: 184995,
+    avg_mic_cube_len: 6.391930,
+    avg_po_cube_len: 922.542069,
+    mic_drop: success: 228244, fail: 868619, success rate: 20.81%,
+    num_down: 1096863,
+    num_down_sat: 1494164,
+    ctp: success: 0, fail: 656966, success rate: 0.00%,
+    num_get_bad: 230,
+    overall_block_time: 1908.569582254s,
+    block_get_bad_time: 225.417492ms,
+    block_get_predecessor_time: 376.436226415s,
+    block_blocked_time: 20.209586826s,
+    block_mic_time: 2562.870608349s,
+    block_push_time: 60.75720938s,
+    overall_propagate_time: 767.886608338s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b22s.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b22s.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 04:39:43 CST 2025
+========================================

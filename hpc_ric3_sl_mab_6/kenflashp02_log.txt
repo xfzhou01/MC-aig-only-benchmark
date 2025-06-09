@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 05:03:37 CST 2025
+Job <607485> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/kenflashp02.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 2]
+35 3 3 2 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 6 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 62,
+    avg_decide_var: 1.167184,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: kenflashp02.aig,
+    time: 0.01s,
+    num_mic: 8,
+    avg_mic_cube_len: 4.125000,
+    avg_po_cube_len: 16.428571,
+    mic_drop: success: 4, fail: 28, success rate: 12.50%,
+    num_down: 32,
+    num_down_sat: 36,
+    ctp: success: 0, fail: 0, success rate: NaN%,
+    num_get_bad: 4,
+    overall_block_time: 2.630384ms,
+    block_get_bad_time: 16.315µs,
+    block_get_predecessor_time: 644.408µs,
+    block_blocked_time: 609.331µs,
+    block_mic_time: 1.300084ms,
+    block_push_time: 153ns,
+    overall_propagate_time: 1.014145ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/kenflashp02.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/kenflashp02.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 05:03:38 CST 2025
+========================================

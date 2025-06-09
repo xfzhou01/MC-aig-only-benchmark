@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 00:55:46 CST 2025
+Job <605668> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel047.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 2, 1, 1, 2, 3, 3, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 5, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1893]
+393 63 79 115 137 182 160 124 73 45 60 63 71 70 79 101 80 70 85 98 59 55 39 41 53 54 52 51 38 44 56 51 47 95 71 43 33 62 41 68 37 50 59 74 52 62 63 47 46 54 56 76 50 75 40 46 27 16 29 42 73 37 38 73 49 58 73 83 196 195 542 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 265 pulls
+  Arm 1 (Aggressive Heuristic): 607 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 28 pulls
+  Arm 4 (limit=1, max=3, level=1): 1393 pulls
+  Arm 5 (limit=2, max=5, level=1): 8 pulls
+  Arm 6 (limit=8, max=4, level=1): 879 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 411508,
+    avg_decide_var: 0.994245,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: intel047.aig,
+    time: 84.58s,
+    num_mic: 15250,
+    avg_mic_cube_len: 7.605836,
+    avg_po_cube_len: 251.140655,
+    mic_drop: success: 22114, fail: 88447, success rate: 20.00%,
+    num_down: 110561,
+    num_down_sat: 193975,
+    ctp: success: 0, fail: 39263, success rate: 0.00%,
+    num_get_bad: 71,
+    overall_block_time: 63.225858122s,
+    block_get_bad_time: 697.067µs,
+    block_get_predecessor_time: 15.765453503s,
+    block_blocked_time: 984.535329ms,
+    block_mic_time: 80.667541042s,
+    block_push_time: 581.005149ms,
+    overall_propagate_time: 21.221923936s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel047.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel047.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 00:57:11 CST 2025
+========================================

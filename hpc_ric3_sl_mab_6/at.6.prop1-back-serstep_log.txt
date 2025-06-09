@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 05:41:03 CST 2025
+Job <607782> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/at.6.prop1-back-serstep.aig
+[1, 1, 1, 1, 880, 1018]
+127 5 24156 13602 1007 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 170 pulls
+  Arm 4 (limit=1, max=3, level=1): 3351 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1409947,
+    avg_decide_var: 1.000215,
+    num_simplify_subsume: 752,
+    num_simplify_self_subsume: 637,
+}
+Statistic {
+    case: at.6.prop1-back-serstep.aig,
+    time: 177.35s,
+    num_mic: 39130,
+    avg_mic_cube_len: 20.679428,
+    avg_po_cube_len: 126.975271,
+    mic_drop: success: 180078, fail: 593780, success rate: 23.27%,
+    num_down: 773858,
+    num_down_sat: 1291278,
+    ctp: success: 0, fail: 51, success rate: 0.00%,
+    num_get_bad: 5,
+    overall_block_time: 176.232995574s,
+    block_get_bad_time: 53.872µs,
+    block_get_predecessor_time: 10.079316678s,
+    block_blocked_time: 1.153054377s,
+    block_mic_time: 295.998997529s,
+    block_push_time: 12.902865ms,
+    overall_propagate_time: 1.107420618s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/at.6.prop1-back-serstep.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/at.6.prop1-back-serstep.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 05:44:01 CST 2025
+========================================

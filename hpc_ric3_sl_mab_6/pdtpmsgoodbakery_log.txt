@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 07:41:41 CST 2025
+Job <608618> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsgoodbakery.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2034]
+92 9 15 17 25 26 32 42 59 83 116 145 172 181 196 213 261 276 352 384 514 699 776 884 701 683 589 501 388 153 83 27 1 0 196 1079 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 5631 pulls
+  Arm 6 (limit=8, max=4, level=1): 44 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 657974,
+    avg_decide_var: 0.555404,
+    num_simplify_subsume: 32498,
+    num_simplify_self_subsume: 22338,
+}
+Statistic {
+    case: pdtpmsgoodbakery.aig,
+    time: 97.77s,
+    num_mic: 21909,
+    avg_mic_cube_len: 11.385139,
+    avg_po_cube_len: 39.339578,
+    mic_drop: success: 82847, fail: 141023, success rate: 37.01%,
+    num_down: 223870,
+    num_down_sat: 378194,
+    ctp: success: 0, fail: 22418, success rate: 0.00%,
+    num_get_bad: 43,
+    overall_block_time: 68.820877649s,
+    block_get_bad_time: 2.706532ms,
+    block_get_predecessor_time: 8.809488085s,
+    block_blocked_time: 1.751105313s,
+    block_mic_time: 93.509860306s,
+    block_push_time: 293.576392ms,
+    overall_propagate_time: 28.9051801s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsgoodbakery.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsgoodbakery.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 07:43:20 CST 2025
+========================================

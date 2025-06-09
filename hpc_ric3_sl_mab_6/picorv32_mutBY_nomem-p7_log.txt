@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 02:00:25 CST 2025
+Job <606205> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutBY_nomem-p7.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 9, 37025, 39617]
+2050 30 6 25 123 2351 7251 19028 50309 56672 58186 10273 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 38998 pulls
+  Arm 1 (Aggressive Heuristic): 7 pulls
+  Arm 2 (Conservative Heuristic): 248 pulls
+  Arm 3 (limit=0, max=0, level=0): 77 pulls
+  Arm 4 (limit=1, max=3, level=1): 90377 pulls
+  Arm 5 (limit=2, max=5, level=1): 10359 pulls
+  Arm 6 (limit=8, max=4, level=1): 833 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3671996,
+    avg_decide_var: 0.350418,
+    num_simplify_subsume: 90850,
+    num_simplify_self_subsume: 13914,
+}
+Statistic {
+    case: picorv32_mutBY_nomem-p7.aig,
+    time: 2271.83s,
+    num_mic: 263807,
+    avg_mic_cube_len: 8.483967,
+    avg_po_cube_len: 329.399201,
+    mic_drop: success: 675972, fail: 1298396, success rate: 34.24%,
+    num_down: 1974368,
+    num_down_sat: 2382875,
+    ctp: success: 0, fail: 41117, success rate: 0.00%,
+    num_get_bad: 13,
+    overall_block_time: 2121.431577076s,
+    block_get_bad_time: 4.90544ms,
+    block_get_predecessor_time: 257.439919029s,
+    block_blocked_time: 173.551967924s,
+    block_mic_time: 1916.267515132s,
+    block_push_time: 6.538520619s,
+    overall_propagate_time: 150.192993305s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutBY_nomem-p7.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutBY_nomem-p7.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 02:38:17 CST 2025
+========================================
