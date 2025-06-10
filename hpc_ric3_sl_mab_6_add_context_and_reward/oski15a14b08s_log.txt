@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 23:30:20 CST 2025
+Job <609894> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b08s.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 59]
+3452 4 2 3 4 4 3 3 1 0 0 6 121 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13 pulls
+  Arm 1 (Aggressive Heuristic): 14 pulls
+  Arm 2 (Conservative Heuristic): 16 pulls
+  Arm 3 (limit=0, max=0, level=0): 8 pulls
+  Arm 4 (limit=1, max=3, level=1): 29 pulls
+  Arm 5 (limit=2, max=5, level=1): 16 pulls
+  Arm 6 (limit=8, max=4, level=1): 15 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3302,
+    avg_decide_var: 0.345293,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: oski15a14b08s.aig,
+    time: 1.39s,
+    num_mic: 273,
+    avg_mic_cube_len: 5.549451,
+    avg_po_cube_len: 604.230769,
+    mic_drop: success: 272, fail: 1126, success rate: 19.46%,
+    num_down: 1398,
+    num_down_sat: 1913,
+    ctp: success: 0, fail: 171, success rate: 0.00%,
+    num_get_bad: 27,
+    overall_block_time: 1.118863935s,
+    block_get_bad_time: 16.224283ms,
+    block_get_predecessor_time: 274.134613ms,
+    block_blocked_time: 66.417129ms,
+    block_mic_time: 1.212323298s,
+    block_push_time: 36.976451ms,
+    overall_propagate_time: 56.920495ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b08s.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b08s.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 23:30:24 CST 2025
+========================================

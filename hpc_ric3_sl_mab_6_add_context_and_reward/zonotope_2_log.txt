@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:43:25 CST 2025
+Job <611573> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zonotope_2.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 52]
+2 1 5 4 3 4 5 6 5 5 5 5 5 5 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 583 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 17 pulls
+  Arm 1 (Aggressive Heuristic): 21 pulls
+  Arm 2 (Conservative Heuristic): 28 pulls
+  Arm 3 (limit=0, max=0, level=0): 11 pulls
+  Arm 4 (limit=1, max=3, level=1): 25 pulls
+  Arm 5 (limit=2, max=5, level=1): 18 pulls
+  Arm 6 (limit=8, max=4, level=1): 33 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 53050,
+    avg_decide_var: 0.999264,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: zonotope_2.aig,
+    time: 162.94s,
+    num_mic: 1166,
+    avg_mic_cube_len: 24.585763,
+    avg_po_cube_len: 92.593651,
+    mic_drop: success: 9474, fail: 13822, success rate: 40.67%,
+    num_down: 23296,
+    num_down_sat: 36533,
+    ctp: success: 0, fail: 10113, success rate: 0.00%,
+    num_get_bad: 55,
+    overall_block_time: 108.77890308s,
+    block_get_bad_time: 1.235508ms,
+    block_get_predecessor_time: 2.543420832s,
+    block_blocked_time: 413.149527ms,
+    block_mic_time: 172.628697776s,
+    block_push_time: 28.591137667s,
+    overall_propagate_time: 53.534246144s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zonotope_2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zonotope_2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:46:09 CST 2025
+========================================

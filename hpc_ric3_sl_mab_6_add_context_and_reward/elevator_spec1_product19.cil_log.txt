@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 02:23:20 CST 2025
+Job <610931> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/elevator_spec1_product19.cil.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1580]
+2 1 13 4 29 9 54 27 22 89 25 102 35 24 9 7 3 12 12 11 11 10 10 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1482 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 138 pulls
+  Arm 1 (Aggressive Heuristic): 261 pulls
+  Arm 2 (Conservative Heuristic): 181 pulls
+  Arm 3 (limit=0, max=0, level=0): 144 pulls
+  Arm 4 (limit=1, max=3, level=1): 156 pulls
+  Arm 5 (limit=2, max=5, level=1): 156 pulls
+  Arm 6 (limit=8, max=4, level=1): 135 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 101252,
+    avg_decide_var: 0.999530,
+    num_simplify_subsume: 829,
+    num_simplify_self_subsume: 377,
+}
+Statistic {
+    case: elevator_spec1_product19.cil.aig,
+    time: 1115.81s,
+    num_mic: 2986,
+    avg_mic_cube_len: 5.920630,
+    avg_po_cube_len: 1761.194674,
+    mic_drop: success: 3980, fail: 12424, success rate: 24.26%,
+    num_down: 16404,
+    num_down_sat: 23872,
+    ctp: success: 0, fail: 53289, success rate: 0.00%,
+    num_get_bad: 45,
+    overall_block_time: 533.566107344s,
+    block_get_bad_time: 4.018693ms,
+    block_get_predecessor_time: 93.065654894s,
+    block_blocked_time: 37.956561231s,
+    block_mic_time: 680.74456544s,
+    block_push_time: 18.24721126s,
+    overall_propagate_time: 578.388164944s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/elevator_spec1_product19.cil.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/elevator_spec1_product19.cil.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 02:41:59 CST 2025
+========================================

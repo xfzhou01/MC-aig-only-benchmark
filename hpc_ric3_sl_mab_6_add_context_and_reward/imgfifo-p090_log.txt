@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:20:27 CST 2025
+Job <611329> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p090.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 83]
+394 8 3 3 2 6 7 8 9 12 8 8 6 5 5 10 7 7 10 7 5 6 11 8 4 6 10 8 12 15 17 14 11 6 8 11 8 12 20 24 34 58 80 33 11 1 0 418 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 68 pulls
+  Arm 1 (Aggressive Heuristic): 109 pulls
+  Arm 2 (Conservative Heuristic): 43 pulls
+  Arm 3 (limit=0, max=0, level=0): 42 pulls
+  Arm 4 (limit=1, max=3, level=1): 68 pulls
+  Arm 5 (limit=2, max=5, level=1): 111 pulls
+  Arm 6 (limit=8, max=4, level=1): 172 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 36393,
+    avg_decide_var: 0.346128,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: imgfifo-p090.aig,
+    time: 1.51s,
+    num_mic: 1748,
+    avg_mic_cube_len: 7.684783,
+    avg_po_cube_len: 115.364441,
+    mic_drop: success: 1553, fail: 11416, success rate: 11.97%,
+    num_down: 12969,
+    num_down_sat: 14119,
+    ctp: success: 0, fail: 9106, success rate: 0.00%,
+    num_get_bad: 105,
+    overall_block_time: 1.059228826s,
+    block_get_bad_time: 4.775501ms,
+    block_get_predecessor_time: 255.863819ms,
+    block_blocked_time: 25.961129ms,
+    block_mic_time: 1.341825428s,
+    block_push_time: 41.133199ms,
+    overall_propagate_time: 383.842443ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p090.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p090.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:20:29 CST 2025
+========================================

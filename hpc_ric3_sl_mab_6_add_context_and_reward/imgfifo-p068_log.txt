@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:02:30 CST 2025
+Job <611223> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p068.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 7]
+394 1 3 9 4 5 5 3 3 3 4 2 3 1 2 1 3 1 3 2 4 2 3 2 2 1 1 1 2 1 2 1 2 1 2 1 1 2 2 3 2 1 2 1 2 1 1 2 1 2 2 3 2 1 2 3 2 2 1 1 2 3 2 3 3 2 2 1 1 4 6 3 4 3 3 2 1 0 52 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 9 pulls
+  Arm 1 (Aggressive Heuristic): 11 pulls
+  Arm 2 (Conservative Heuristic): 11 pulls
+  Arm 3 (limit=0, max=0, level=0): 9 pulls
+  Arm 4 (limit=1, max=3, level=1): 16 pulls
+  Arm 5 (limit=2, max=5, level=1): 30 pulls
+  Arm 6 (limit=8, max=4, level=1): 34 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 8373,
+    avg_decide_var: 0.342756,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: imgfifo-p068.aig,
+    time: 0.39s,
+    num_mic: 396,
+    avg_mic_cube_len: 5.492424,
+    avg_po_cube_len: 68.382803,
+    mic_drop: success: 148, fail: 2018, success rate: 6.83%,
+    num_down: 2166,
+    num_down_sat: 2383,
+    ctp: success: 0, fail: 2797, success rate: 0.00%,
+    num_get_bad: 91,
+    overall_block_time: 191.582054ms,
+    block_get_bad_time: 2.954406ms,
+    block_get_predecessor_time: 58.925335ms,
+    block_blocked_time: 3.175939ms,
+    block_mic_time: 229.67798ms,
+    block_push_time: 1.465693ms,
+    overall_propagate_time: 88.708468ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p068.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p068.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:02:31 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 01:20:25 CST 2025
+Job <610542> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s122.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 49, 49, 11, 4, 84, 128, 274, 139, 28, 17, 2, 1, 7, 1, 2, 2, 4, 2, 1, 1, 49, 20, 357, 1, 7, 1, 6, 7, 45, 29, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 9, 3, 2, 1, 1, 1, 24, 5, 19, 81, 5544]
+554 49 19 9 49 64 98 154 178 157 169 179 217 231 265 338 358 338 343 360 392 348 261 171 145 138 120 121 96 90 84 80 82 85 127 138 78 94 46 43 44 36 43 104 79 50 48 47 42 57 61 54 48 45 49 48 51 51 50 59 53 58 50 61 86 107 110 116 108 114 99 88 103 134 121 149 185 230 272 357 1519 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 10447 pulls
+  Arm 1 (Aggressive Heuristic): 894 pulls
+  Arm 2 (Conservative Heuristic): 2364 pulls
+  Arm 3 (limit=0, max=0, level=0): 2255 pulls
+  Arm 4 (limit=1, max=3, level=1): 1017 pulls
+  Arm 5 (limit=2, max=5, level=1): 6078 pulls
+  Arm 6 (limit=8, max=4, level=1): 570 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 873201,
+    avg_decide_var: 0.225144,
+    num_simplify_subsume: 96012,
+    num_simplify_self_subsume: 54380,
+}
+Statistic {
+    case: 6s122.aig,
+    time: 32.54s,
+    num_mic: 30070,
+    avg_mic_cube_len: 10.466079,
+    avg_po_cube_len: 101.155096,
+    mic_drop: success: 31396, fail: 276789, success rate: 10.19%,
+    num_down: 308185,
+    num_down_sat: 467886,
+    ctp: success: 0, fail: 65368, success rate: 0.00%,
+    num_get_bad: 81,
+    overall_block_time: 26.8983043s,
+    block_get_bad_time: 604.433µs,
+    block_get_predecessor_time: 4.796193957s,
+    block_blocked_time: 2.023745695s,
+    block_mic_time: 21.586185978s,
+    block_push_time: 303.351062ms,
+    overall_propagate_time: 5.54729227s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s122.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s122.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:20:58 CST 2025
+========================================

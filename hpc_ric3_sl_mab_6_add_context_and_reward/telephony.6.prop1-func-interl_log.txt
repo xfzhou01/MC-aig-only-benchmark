@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 23:33:18 CST 2025
+Job <609931> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 11, 12, 28, 15, 22, 1, 29, 14, 1, 1, 6, 27, 4, 335]
+185 51 85 209 474 680 770 684 696 753 812 906 927 901 680 411 241 298 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 137 pulls
+  Arm 1 (Aggressive Heuristic): 274 pulls
+  Arm 2 (Conservative Heuristic): 78 pulls
+  Arm 3 (limit=0, max=0, level=0): 92 pulls
+  Arm 4 (limit=1, max=3, level=1): 99 pulls
+  Arm 5 (limit=2, max=5, level=1): 86 pulls
+  Arm 6 (limit=8, max=4, level=1): 217 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 290181,
+    avg_decide_var: 0.809739,
+    num_simplify_subsume: 3680,
+    num_simplify_self_subsume: 877,
+}
+Statistic {
+    case: telephony.6.prop1-func-interl.aig,
+    time: 30.85s,
+    num_mic: 12798,
+    avg_mic_cube_len: 10.401313,
+    avg_po_cube_len: 78.103722,
+    mic_drop: success: 38279, fail: 82817, success rate: 31.61%,
+    num_down: 121096,
+    num_down_sat: 210813,
+    ctp: success: 0, fail: 2568, success rate: 0.00%,
+    num_get_bad: 18,
+    overall_block_time: 27.208603455s,
+    block_get_bad_time: 192.971µs,
+    block_get_predecessor_time: 3.292573637s,
+    block_blocked_time: 173.402926ms,
+    block_mic_time: 42.862383739s,
+    block_push_time: 99.369982ms,
+    overall_propagate_time: 3.599810004s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 23:33:49 CST 2025
+========================================

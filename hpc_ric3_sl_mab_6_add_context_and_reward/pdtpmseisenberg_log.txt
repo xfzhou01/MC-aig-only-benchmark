@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 00:44:37 CST 2025
+Job <610415> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmseisenberg.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8471]
+197 18 31 73 141 268 504 864 1139 1024 855 1062 920 1068 1251 1538 1932 2084 2404 2830 2323 1577 929 270 185 166 103 174 35 25 27 13 6 2 13 7 7 3 6 0 4346 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 553 pulls
+  Arm 1 (Aggressive Heuristic): 22965 pulls
+  Arm 2 (Conservative Heuristic): 2170 pulls
+  Arm 3 (limit=0, max=0, level=0): 1452 pulls
+  Arm 4 (limit=1, max=3, level=1): 786 pulls
+  Arm 5 (limit=2, max=5, level=1): 533 pulls
+  Arm 6 (limit=8, max=4, level=1): 789 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2571407,
+    avg_decide_var: 0.546940,
+    num_simplify_subsume: 170231,
+    num_simplify_self_subsume: 122651,
+}
+Statistic {
+    case: pdtpmseisenberg.aig,
+    time: 428.21s,
+    num_mic: 78287,
+    avg_mic_cube_len: 15.072860,
+    avg_po_cube_len: 52.870121,
+    mic_drop: success: 263969, fail: 842665, success rate: 23.85%,
+    num_down: 1106634,
+    num_down_sat: 1577601,
+    ctp: success: 0, fail: 111216, success rate: 0.00%,
+    num_get_bad: 76,
+    overall_block_time: 290.730321423s,
+    block_get_bad_time: 25.662129ms,
+    block_get_predecessor_time: 26.693705015s,
+    block_blocked_time: 10.493419207s,
+    block_mic_time: 375.946853725s,
+    block_push_time: 938.24145ms,
+    overall_propagate_time: 137.43832534s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmseisenberg.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmseisenberg.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 00:51:45 CST 2025
+========================================

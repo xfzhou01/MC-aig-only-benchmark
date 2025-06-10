@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:19:43 CST 2025
+Job <611324> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p041.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 791, 651]
+452 43 44 32 33 35 51 64 49 57 65 60 31 30 60 9 2 28 1 0 785 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 454 pulls
+  Arm 1 (Aggressive Heuristic): 168 pulls
+  Arm 2 (Conservative Heuristic): 99 pulls
+  Arm 3 (limit=0, max=0, level=0): 197 pulls
+  Arm 4 (limit=1, max=3, level=1): 287 pulls
+  Arm 5 (limit=2, max=5, level=1): 603 pulls
+  Arm 6 (limit=8, max=4, level=1): 448 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 38718,
+    avg_decide_var: 0.796046,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p041.aig,
+    time: 12.43s,
+    num_mic: 3323,
+    avg_mic_cube_len: 2.934998,
+    avg_po_cube_len: 83.056705,
+    mic_drop: success: 2191, fail: 7525, success rate: 22.55%,
+    num_down: 9716,
+    num_down_sat: 11209,
+    ctp: success: 0, fail: 7061, success rate: 0.00%,
+    num_get_bad: 419,
+    overall_block_time: 11.293026942s,
+    block_get_bad_time: 168.868378ms,
+    block_get_predecessor_time: 5.119787727s,
+    block_blocked_time: 661.17154ms,
+    block_mic_time: 9.045168728s,
+    block_push_time: 228.894128ms,
+    overall_propagate_time: 978.850923ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p041.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p041.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:19:56 CST 2025
+========================================

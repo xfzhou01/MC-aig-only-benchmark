@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 01:51:24 CST 2025
+Job <610809> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel026.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 235, 141]
+349 3 33 381 74 176 35 66 28 11 6 1 1 1 1 1 1 5 13 13 89 152 117 117 152 272 334 205 177 67 72 34 4 0 1336 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 79 pulls
+  Arm 1 (Aggressive Heuristic): 97 pulls
+  Arm 2 (Conservative Heuristic): 84 pulls
+  Arm 3 (limit=0, max=0, level=0): 73 pulls
+  Arm 4 (limit=1, max=3, level=1): 88 pulls
+  Arm 5 (limit=2, max=5, level=1): 69 pulls
+  Arm 6 (limit=8, max=4, level=1): 75 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 180039,
+    avg_decide_var: 0.957951,
+    num_simplify_subsume: 2177,
+    num_simplify_self_subsume: 315,
+}
+Statistic {
+    case: intel026.aig,
+    time: 30.55s,
+    num_mic: 4957,
+    avg_mic_cube_len: 9.399435,
+    avg_po_cube_len: 217.198392,
+    mic_drop: success: 6061, fail: 38559, success rate: 13.58%,
+    num_down: 44620,
+    num_down_sat: 78766,
+    ctp: success: 0, fail: 46807, success rate: 0.00%,
+    num_get_bad: 35,
+    overall_block_time: 18.326602172s,
+    block_get_bad_time: 405.778µs,
+    block_get_predecessor_time: 2.537075787s,
+    block_blocked_time: 180.94663ms,
+    block_mic_time: 28.080633343s,
+    block_push_time: 889.129018ms,
+    overall_propagate_time: 12.14551678s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel026.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/intel026.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:51:56 CST 2025
+========================================

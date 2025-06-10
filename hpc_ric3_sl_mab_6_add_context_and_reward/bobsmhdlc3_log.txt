@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 02:28:34 CST 2025
+Job <610995> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmhdlc3.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8877]
+300 10 15 17 13 17 18 19 10 14 19 30 62 48 19 41 38 56 205 369 454 652 431 299 438 607 520 1117 518 816 448 336 505 265 101 54 46 37 38 44 20 10 22 32 40 28 600 1012 362 271 665 326 213 174 244 283 168 40 10 0 3737 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1120 pulls
+  Arm 1 (Aggressive Heuristic): 1242 pulls
+  Arm 2 (Conservative Heuristic): 1185 pulls
+  Arm 3 (limit=0, max=0, level=0): 1294 pulls
+  Arm 4 (limit=1, max=3, level=1): 16615 pulls
+  Arm 5 (limit=2, max=5, level=1): 2322 pulls
+  Arm 6 (limit=8, max=4, level=1): 3349 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1341386,
+    avg_decide_var: 0.395311,
+    num_simplify_subsume: 186100,
+    num_simplify_self_subsume: 53469,
+}
+Statistic {
+    case: bobsmhdlc3.aig,
+    time: 120.54s,
+    num_mic: 48729,
+    avg_mic_cube_len: 7.877383,
+    avg_po_cube_len: 87.246915,
+    mic_drop: success: 78988, fail: 284364, success rate: 21.74%,
+    num_down: 363352,
+    num_down_sat: 515474,
+    ctp: success: 0, fail: 218122, success rate: 0.00%,
+    num_get_bad: 146,
+    overall_block_time: 71.829601684s,
+    block_get_bad_time: 51.552774ms,
+    block_get_predecessor_time: 7.755972607s,
+    block_blocked_time: 3.739252155s,
+    block_mic_time: 73.03963045s,
+    block_push_time: 1.109034407s,
+    overall_propagate_time: 48.665204028s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmhdlc3.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmhdlc3.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 02:30:36 CST 2025
+========================================

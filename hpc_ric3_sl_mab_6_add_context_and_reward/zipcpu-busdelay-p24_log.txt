@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 22:43:04 CST 2025
+Job <609542> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-busdelay-p24.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 70, 93]
+49 5 3 22 40 46 48 51 35 99 70 69 55 35 28 9 1 1 0 423 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 59 pulls
+  Arm 1 (Aggressive Heuristic): 99 pulls
+  Arm 2 (Conservative Heuristic): 30 pulls
+  Arm 3 (limit=0, max=0, level=0): 13 pulls
+  Arm 4 (limit=1, max=3, level=1): 57 pulls
+  Arm 5 (limit=2, max=5, level=1): 124 pulls
+  Arm 6 (limit=8, max=4, level=1): 146 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 30889,
+    avg_decide_var: 0.318727,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: zipcpu-busdelay-p24.aig,
+    time: 0.73s,
+    num_mic: 1515,
+    avg_mic_cube_len: 6.545215,
+    avg_po_cube_len: 63.506500,
+    mic_drop: success: 1753, fail: 7576, success rate: 18.79%,
+    num_down: 9329,
+    num_down_sat: 12845,
+    ctp: success: 0, fail: 3508, success rate: 0.00%,
+    num_get_bad: 24,
+    overall_block_time: 580.077589ms,
+    block_get_bad_time: 158.531µs,
+    block_get_predecessor_time: 189.990701ms,
+    block_blocked_time: 14.592717ms,
+    block_mic_time: 671.881714ms,
+    block_push_time: 5.210113ms,
+    overall_propagate_time: 139.205496ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-busdelay-p24.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-busdelay-p24.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 22:43:05 CST 2025
+========================================

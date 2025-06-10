@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 01:20:56 CST 2025
+Job <610548> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b22s.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3286, 8375]
+3469 565 358 589 490 319 438 361 2627 3926 2557 16907 12595 7968 5891 5011 2463 586 64 6 2 0 68395 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2692 pulls
+  Arm 1 (Aggressive Heuristic): 4762 pulls
+  Arm 2 (Conservative Heuristic): 2947 pulls
+  Arm 3 (limit=0, max=0, level=0): 888 pulls
+  Arm 4 (limit=1, max=3, level=1): 1874 pulls
+  Arm 5 (limit=2, max=5, level=1): 2690 pulls
+  Arm 6 (limit=8, max=4, level=1): 4464 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2738795,
+    avg_decide_var: 0.456018,
+    num_simplify_subsume: 93130,
+    num_simplify_self_subsume: 5483,
+}
+Statistic {
+    case: oski15a14b22s.aig,
+    time: 1848.04s,
+    num_mic: 146624,
+    avg_mic_cube_len: 6.274484,
+    avg_po_cube_len: 912.404815,
+    mic_drop: success: 185940, fail: 675337, success rate: 21.59%,
+    num_down: 861277,
+    num_down_sat: 1172398,
+    ctp: success: 0, fail: 564278, success rate: 0.00%,
+    num_get_bad: 283,
+    overall_block_time: 1330.047639808s,
+    block_get_bad_time: 238.455807ms,
+    block_get_predecessor_time: 277.485290687s,
+    block_blocked_time: 25.663288402s,
+    block_mic_time: 1713.189984423s,
+    block_push_time: 37.060744802s,
+    overall_propagate_time: 517.525492107s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b22s.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b22s.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:51:46 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 03:36:10 CST 2025
+Job <611495> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvguidancep2.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 33]
+86 3 4 5 8 13 13 12 14 26 24 42 32 20 40 34 39 55 69 56 59 50 33 27 23 11 6 3 2 2 0 422 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 31 pulls
+  Arm 1 (Aggressive Heuristic): 54 pulls
+  Arm 2 (Conservative Heuristic): 24 pulls
+  Arm 3 (limit=0, max=0, level=0): 9 pulls
+  Arm 4 (limit=1, max=3, level=1): 7 pulls
+  Arm 5 (limit=2, max=5, level=1): 37 pulls
+  Arm 6 (limit=8, max=4, level=1): 30 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 47919,
+    avg_decide_var: 0.993766,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: nusmvguidancep2.aig,
+    time: 5.84s,
+    num_mic: 1586,
+    avg_mic_cube_len: 14.864439,
+    avg_po_cube_len: 65.781838,
+    mic_drop: success: 9492, fail: 8034, success rate: 54.16%,
+    num_down: 17526,
+    num_down_sat: 26674,
+    ctp: success: 0, fail: 5883, success rate: 0.00%,
+    num_get_bad: 38,
+    overall_block_time: 3.37438022s,
+    block_get_bad_time: 2.455207ms,
+    block_get_predecessor_time: 239.329766ms,
+    block_blocked_time: 28.189667ms,
+    block_mic_time: 5.347897882s,
+    block_push_time: 131.341374ms,
+    overall_propagate_time: 2.442686709s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvguidancep2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvguidancep2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:36:17 CST 2025
+========================================

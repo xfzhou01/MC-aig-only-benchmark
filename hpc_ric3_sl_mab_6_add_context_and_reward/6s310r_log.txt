@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 22:20:36 CST 2025
+Job <609208> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s310r.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1607, 882]
+397 17 16 17 34 82 135 306 378 449 478 707 771 940 1033 1017 987 888 836 705 503 361 284 205 106 14 1 0 3945 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 141 pulls
+  Arm 1 (Aggressive Heuristic): 161 pulls
+  Arm 2 (Conservative Heuristic): 222 pulls
+  Arm 3 (limit=0, max=0, level=0): 335 pulls
+  Arm 4 (limit=1, max=3, level=1): 417 pulls
+  Arm 5 (limit=2, max=5, level=1): 722 pulls
+  Arm 6 (limit=8, max=4, level=1): 1650 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 497543,
+    avg_decide_var: 0.259795,
+    num_simplify_subsume: 12169,
+    num_simplify_self_subsume: 5086,
+}
+Statistic {
+    case: 6s310r.aig,
+    time: 37.24s,
+    num_mic: 20079,
+    avg_mic_cube_len: 7.477364,
+    avg_po_cube_len: 219.485309,
+    mic_drop: success: 23924, fail: 118345, success rate: 16.82%,
+    num_down: 142269,
+    num_down_sat: 212409,
+    ctp: success: 0, fail: 45118, success rate: 0.00%,
+    num_get_bad: 1838,
+    overall_block_time: 27.919186483s,
+    block_get_bad_time: 507.350215ms,
+    block_get_predecessor_time: 6.728689584s,
+    block_blocked_time: 371.865645ms,
+    block_mic_time: 33.874650772s,
+    block_push_time: 313.273847ms,
+    overall_propagate_time: 9.278986361s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s310r.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s310r.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 22:21:13 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Mon Jun  9 23:28:49 CST 2025
+Job <609854> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemrshr2f1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 2, 1, 1, 1, 1, 253, 627]
+490 20 12 7 4 5 8 20 30 34 44 55 57 38 24 21 19 21 16 22 34 24 20 31 46 38 23 18 21 16 12 10 25 26 36 40 89 529 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 107 pulls
+  Arm 1 (Aggressive Heuristic): 3702 pulls
+  Arm 2 (Conservative Heuristic): 58 pulls
+  Arm 3 (limit=0, max=0, level=0): 81 pulls
+  Arm 4 (limit=1, max=3, level=1): 23 pulls
+  Arm 5 (limit=2, max=5, level=1): 22 pulls
+  Arm 6 (limit=8, max=4, level=1): 136 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 156914,
+    avg_decide_var: 0.832622,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: beemrshr2f1.aig,
+    time: 56.39s,
+    num_mic: 5932,
+    avg_mic_cube_len: 13.164869,
+    avg_po_cube_len: 226.578480,
+    mic_drop: success: 18849, fail: 46863, success rate: 28.68%,
+    num_down: 65712,
+    num_down_sat: 92827,
+    ctp: success: 0, fail: 9267, success rate: 0.00%,
+    num_get_bad: 38,
+    overall_block_time: 48.813583814s,
+    block_get_bad_time: 358.11µs,
+    block_get_predecessor_time: 11.511385317s,
+    block_blocked_time: 2.326132087s,
+    block_mic_time: 48.626202542s,
+    block_push_time: 161.530639ms,
+    overall_propagate_time: 7.229099442s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemrshr2f1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemrshr2f1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 23:29:48 CST 2025
+========================================

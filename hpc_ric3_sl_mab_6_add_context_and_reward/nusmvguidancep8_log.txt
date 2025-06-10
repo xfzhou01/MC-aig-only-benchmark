@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 02:25:31 CST 2025
+Job <610963> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvguidancep8.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 45]
+86 3 4 5 10 9 4 11 12 18 16 19 18 27 24 33 27 59 39 33 23 17 13 8 4 2 5 4 6 12 10 4 2 6 0 420 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 15 pulls
+  Arm 1 (Aggressive Heuristic): 42 pulls
+  Arm 2 (Conservative Heuristic): 61 pulls
+  Arm 3 (limit=0, max=0, level=0): 20 pulls
+  Arm 4 (limit=1, max=3, level=1): 11 pulls
+  Arm 5 (limit=2, max=5, level=1): 63 pulls
+  Arm 6 (limit=8, max=4, level=1): 10 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 42037,
+    avg_decide_var: 0.995504,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: nusmvguidancep8.aig,
+    time: 5.82s,
+    num_mic: 1244,
+    avg_mic_cube_len: 15.419614,
+    avg_po_cube_len: 69.332010,
+    mic_drop: success: 8096, fail: 6448, success rate: 55.67%,
+    num_down: 14544,
+    num_down_sat: 22401,
+    ctp: success: 0, fail: 7562, success rate: 0.00%,
+    num_get_bad: 42,
+    overall_block_time: 2.893989182s,
+    block_get_bad_time: 2.640333ms,
+    block_get_predecessor_time: 179.615481ms,
+    block_blocked_time: 33.755906ms,
+    block_mic_time: 4.480615329s,
+    block_push_time: 148.257679ms,
+    overall_propagate_time: 2.902881386s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvguidancep8.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvguidancep8.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 02:25:37 CST 2025
+========================================

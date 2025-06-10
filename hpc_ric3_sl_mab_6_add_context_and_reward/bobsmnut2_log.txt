@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 00:48:04 CST 2025
+Job <610450> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmnut2.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 257]
+273 23 14 11 14 10 4 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 4 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 4 2 2 2 2 3 4 2 2 2 2 2 2 2 2 2 2 3 0 233 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 66 pulls
+  Arm 1 (Aggressive Heuristic): 62 pulls
+  Arm 2 (Conservative Heuristic): 70 pulls
+  Arm 3 (limit=0, max=0, level=0): 193 pulls
+  Arm 4 (limit=1, max=3, level=1): 68 pulls
+  Arm 5 (limit=2, max=5, level=1): 72 pulls
+  Arm 6 (limit=8, max=4, level=1): 63 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 15428,
+    avg_decide_var: 0.421350,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bobsmnut2.aig,
+    time: 0.17s,
+    num_mic: 600,
+    avg_mic_cube_len: 1.668333,
+    avg_po_cube_len: 14.178211,
+    mic_drop: success: 60, fail: 939, success rate: 6.01%,
+    num_down: 999,
+    num_down_sat: 431,
+    ctp: success: 0, fail: 13112, success rate: 0.00%,
+    num_get_bad: 103,
+    overall_block_time: 35.431734ms,
+    block_get_bad_time: 8.431366ms,
+    block_get_predecessor_time: 6.583798ms,
+    block_blocked_time: 5.998124ms,
+    block_mic_time: 8.971233ms,
+    block_push_time: 492.041µs,
+    overall_propagate_time: 106.230864ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmnut2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmnut2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 00:48:05 CST 2025
+========================================

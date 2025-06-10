@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 01:27:57 CST 2025
+Job <610624> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsynth11neg.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 5, 4, 186]
+137 4 13 15 18 53 81 80 89 128 80 76 74 153 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 47 pulls
+  Arm 1 (Aggressive Heuristic): 44 pulls
+  Arm 2 (Conservative Heuristic): 69 pulls
+  Arm 3 (limit=0, max=0, level=0): 42 pulls
+  Arm 4 (limit=1, max=3, level=1): 58 pulls
+  Arm 5 (limit=2, max=5, level=1): 58 pulls
+  Arm 6 (limit=8, max=4, level=1): 172 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 14475,
+    avg_decide_var: 0.336039,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bobsynth11neg.aig,
+    time: 0.35s,
+    num_mic: 1338,
+    avg_mic_cube_len: 4.284753,
+    avg_po_cube_len: 30.160209,
+    mic_drop: success: 1165, fail: 4344, success rate: 21.15%,
+    num_down: 5509,
+    num_down_sat: 6273,
+    ctp: success: 0, fail: 806, success rate: 0.00%,
+    num_get_bad: 14,
+    overall_block_time: 309.984289ms,
+    block_get_bad_time: 14.209µs,
+    block_get_predecessor_time: 87.104855ms,
+    block_blocked_time: 15.091967ms,
+    block_mic_time: 321.851135ms,
+    block_push_time: 3.932332ms,
+    overall_propagate_time: 31.439967ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsynth11neg.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsynth11neg.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:27:58 CST 2025
+========================================

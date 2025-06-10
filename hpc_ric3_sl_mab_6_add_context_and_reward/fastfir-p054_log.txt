@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:05:27 CST 2025
+Job <611249> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p054.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 538, 76]
+698 31 32 61 28 30 42 36 40 43 36 79 88 98 165 300 286 212 129 31 8 3 0 216 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 108 pulls
+  Arm 1 (Aggressive Heuristic): 116 pulls
+  Arm 2 (Conservative Heuristic): 75 pulls
+  Arm 3 (limit=0, max=0, level=0): 296 pulls
+  Arm 4 (limit=1, max=3, level=1): 109 pulls
+  Arm 5 (limit=2, max=5, level=1): 326 pulls
+  Arm 6 (limit=8, max=4, level=1): 306 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 42802,
+    avg_decide_var: 0.664078,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p054.aig,
+    time: 10.47s,
+    num_mic: 3393,
+    avg_mic_cube_len: 3.815503,
+    avg_po_cube_len: 99.004717,
+    mic_drop: success: 4258, fail: 8321, success rate: 33.85%,
+    num_down: 12579,
+    num_down_sat: 15792,
+    ctp: success: 0, fail: 3783, success rate: 0.00%,
+    num_get_bad: 52,
+    overall_block_time: 7.692364544s,
+    block_get_bad_time: 15.487389ms,
+    block_get_predecessor_time: 2.742070051s,
+    block_blocked_time: 335.102021ms,
+    block_mic_time: 8.074892619s,
+    block_push_time: 35.678742ms,
+    overall_propagate_time: 2.575512701s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p054.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p054.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:05:38 CST 2025
+========================================

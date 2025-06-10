@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:37:22 CST 2025
+Job <611520> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n2_w32_d32_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 51, 3717]
+1 8 19 29 57 48 99 74 172 117 200 163 313 239 300 294 613 404 590 588 775 696 755 830 815 688 677 1052 991 2155 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 827 pulls
+  Arm 1 (Aggressive Heuristic): 391 pulls
+  Arm 2 (Conservative Heuristic): 1540 pulls
+  Arm 3 (limit=0, max=0, level=0): 228 pulls
+  Arm 4 (limit=1, max=3, level=1): 6218 pulls
+  Arm 5 (limit=2, max=5, level=1): 414 pulls
+  Arm 6 (limit=8, max=4, level=1): 2249 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 706184,
+    avg_decide_var: 0.179119,
+    num_simplify_subsume: 8839,
+    num_simplify_self_subsume: 18477,
+}
+Statistic {
+    case: arbitrated_top_n2_w32_d32_e0.aig,
+    time: 45.07s,
+    num_mic: 22185,
+    avg_mic_cube_len: 11.485779,
+    avg_po_cube_len: 24.292468,
+    mic_drop: success: 52214, fail: 191151, success rate: 21.46%,
+    num_down: 243365,
+    num_down_sat: 359776,
+    ctp: success: 0, fail: 24820, success rate: 0.00%,
+    num_get_bad: 1063,
+    overall_block_time: 37.304518323s,
+    block_get_bad_time: 266.161856ms,
+    block_get_predecessor_time: 6.038260539s,
+    block_blocked_time: 1.106605348s,
+    block_mic_time: 42.997441486s,
+    block_push_time: 87.801505ms,
+    overall_propagate_time: 7.609772464s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n2_w32_d32_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n2_w32_d32_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:38:08 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 03:09:01 CST 2025
+Job <611266> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s51.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7562]
+3107 8 14 14 12 13 12 13 10 12 10 10 6 10 11 30 43 63 58 85 111 167 270 287 248 349 343 352 233 231 148 74 60 73 49 64 72 79 40 36 18 17 8 2 3 0 48 1 1 1 3488 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1902 pulls
+  Arm 1 (Aggressive Heuristic): 1435 pulls
+  Arm 2 (Conservative Heuristic): 2636 pulls
+  Arm 3 (limit=0, max=0, level=0): 2899 pulls
+  Arm 4 (limit=1, max=3, level=1): 5525 pulls
+  Arm 5 (limit=2, max=5, level=1): 1927 pulls
+  Arm 6 (limit=8, max=4, level=1): 2158 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 502456,
+    avg_decide_var: 0.068533,
+    num_simplify_subsume: 80166,
+    num_simplify_self_subsume: 12788,
+}
+Statistic {
+    case: 6s51.aig,
+    time: 34.89s,
+    num_mic: 24165,
+    avg_mic_cube_len: 8.021146,
+    avg_po_cube_len: 149.028114,
+    mic_drop: success: 32647, fail: 155676, success rate: 17.34%,
+    num_down: 188323,
+    num_down_sat: 217801,
+    ctp: success: 0, fail: 82484, success rate: 0.00%,
+    num_get_bad: 55,
+    overall_block_time: 28.641305795s,
+    block_get_bad_time: 223.758µs,
+    block_get_predecessor_time: 5.31482197s,
+    block_blocked_time: 3.120474768s,
+    block_mic_time: 19.310089838s,
+    block_push_time: 780.248058ms,
+    overall_propagate_time: 5.941182603s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s51.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s51.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:09:37 CST 2025
+========================================

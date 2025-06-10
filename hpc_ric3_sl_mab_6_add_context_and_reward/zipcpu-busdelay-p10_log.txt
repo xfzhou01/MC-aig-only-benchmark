@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 23:28:00 CST 2025
+Job <609829> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-busdelay-p10.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 53]
+48 3 3 14 20 34 24 13 9 12 10 5 2 1 3 1 0 91 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 14 pulls
+  Arm 1 (Aggressive Heuristic): 15 pulls
+  Arm 2 (Conservative Heuristic): 21 pulls
+  Arm 3 (limit=0, max=0, level=0): 17 pulls
+  Arm 4 (limit=1, max=3, level=1): 25 pulls
+  Arm 5 (limit=2, max=5, level=1): 33 pulls
+  Arm 6 (limit=8, max=4, level=1): 53 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4815,
+    avg_decide_var: 0.288628,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: zipcpu-busdelay-p10.aig,
+    time: 0.09s,
+    num_mic: 316,
+    avg_mic_cube_len: 4.357595,
+    avg_po_cube_len: 41.756923,
+    mic_drop: success: 197, fail: 1126, success rate: 14.89%,
+    num_down: 1323,
+    num_down_sat: 1588,
+    ctp: success: 0, fail: 836, success rate: 0.00%,
+    num_get_bad: 19,
+    overall_block_time: 72.786217ms,
+    block_get_bad_time: 67.515µs,
+    block_get_predecessor_time: 27.939665ms,
+    block_blocked_time: 4.760565ms,
+    block_mic_time: 70.37587ms,
+    block_push_time: 815.599µs,
+    overall_propagate_time: 15.350206ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-busdelay-p10.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-busdelay-p10.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 23:28:01 CST 2025
+========================================

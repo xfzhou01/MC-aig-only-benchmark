@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 02:29:31 CST 2025
+Job <611008> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/cmudme2.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3146, 1251]
+63 3 4 3 3 4 5 4 5 6 6 5 5 4 4 4 5 6 11 24 23 37 43 26 26 43 44 18 9 6 4 6 3 2 2 18 47 8 13 10 11 8 11 11 11 7 5 8 9 6 10 12 10 4 5 5 8 4 12 5 3 9 29 17 7 20 20 10 13 3 2 3 4 4 5 0 1910 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 9845 pulls
+  Arm 1 (Aggressive Heuristic): 68 pulls
+  Arm 2 (Conservative Heuristic): 90 pulls
+  Arm 3 (limit=0, max=0, level=0): 32 pulls
+  Arm 4 (limit=1, max=3, level=1): 79 pulls
+  Arm 5 (limit=2, max=5, level=1): 62 pulls
+  Arm 6 (limit=8, max=4, level=1): 918 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 260708,
+    avg_decide_var: 0.470363,
+    num_simplify_subsume: 28367,
+    num_simplify_self_subsume: 4179,
+}
+Statistic {
+    case: cmudme2.aig,
+    time: 6.72s,
+    num_mic: 13680,
+    avg_mic_cube_len: 6.634722,
+    avg_po_cube_len: 33.012336,
+    mic_drop: success: 16420, fail: 70786, success rate: 18.83%,
+    num_down: 87206,
+    num_down_sat: 115087,
+    ctp: success: 0, fail: 58492, success rate: 0.00%,
+    num_get_bad: 79,
+    overall_block_time: 3.958681158s,
+    block_get_bad_time: 896.285µs,
+    block_get_predecessor_time: 522.702866ms,
+    block_blocked_time: 435.451412ms,
+    block_mic_time: 3.070121585s,
+    block_push_time: 21.3453ms,
+    overall_propagate_time: 2.745955008s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/cmudme2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/cmudme2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 02:29:38 CST 2025
+========================================

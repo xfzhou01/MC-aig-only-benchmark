@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 01:24:51 CST 2025
+Job <610602> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/abp4pold.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 2, 3, 1, 1, 1, 1, 1, 2, 1, 14, 7, 1, 3, 1, 237]
+79 6 7 11 12 12 16 19 49 42 62 64 68 67 55 47 96 239 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 39 pulls
+  Arm 1 (Aggressive Heuristic): 52 pulls
+  Arm 2 (Conservative Heuristic): 40 pulls
+  Arm 3 (limit=0, max=0, level=0): 25 pulls
+  Arm 4 (limit=1, max=3, level=1): 117 pulls
+  Arm 5 (limit=2, max=5, level=1): 39 pulls
+  Arm 6 (limit=8, max=4, level=1): 57 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 25666,
+    avg_decide_var: 0.839389,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: abp4pold.aig,
+    time: 0.95s,
+    num_mic: 1474,
+    avg_mic_cube_len: 6.044776,
+    avg_po_cube_len: 71.946000,
+    mic_drop: success: 1373, fail: 7241, success rate: 15.94%,
+    num_down: 8614,
+    num_down_sat: 14528,
+    ctp: success: 0, fail: 1554, success rate: 0.00%,
+    num_get_bad: 99,
+    overall_block_time: 840.217457ms,
+    block_get_bad_time: 1.615845ms,
+    block_get_predecessor_time: 170.195453ms,
+    block_blocked_time: 20.019178ms,
+    block_mic_time: 1.102216415s,
+    block_push_time: 25.935729ms,
+    overall_propagate_time: 103.720411ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/abp4pold.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/abp4pold.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:24:53 CST 2025
+========================================

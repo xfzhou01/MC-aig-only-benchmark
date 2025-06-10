@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 01:36:41 CST 2025
+Job <610710> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemprdcell2f1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 2, 3, 1, 1, 3, 1, 4, 2, 1, 2, 1, 1, 2, 2, 4, 1, 6, 3, 4, 3, 1, 1, 1, 2, 2, 1, 1, 3, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 455, 3455]
+110 5 7 7 8 13 18 15 24 23 21 34 32 41 46 46 59 57 69 82 92 92 104 119 145 149 144 157 164 191 233 203 192 212 204 219 214 190 178 199 190 174 166 129 100 94 114 125 140 1247 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4291 pulls
+  Arm 1 (Aggressive Heuristic): 422 pulls
+  Arm 2 (Conservative Heuristic): 1441 pulls
+  Arm 3 (limit=0, max=0, level=0): 2344 pulls
+  Arm 4 (limit=1, max=3, level=1): 332 pulls
+  Arm 5 (limit=2, max=5, level=1): 612 pulls
+  Arm 6 (limit=8, max=4, level=1): 1380 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1003591,
+    avg_decide_var: 0.763129,
+    num_simplify_subsume: 267592,
+    num_simplify_self_subsume: 86570,
+}
+Statistic {
+    case: beemprdcell2f1.aig,
+    time: 55.65s,
+    num_mic: 37745,
+    avg_mic_cube_len: 11.141873,
+    avg_po_cube_len: 82.815655,
+    mic_drop: success: 96081, fail: 294526, success rate: 24.60%,
+    num_down: 390607,
+    num_down_sat: 659330,
+    ctp: success: 0, fail: 48527, success rate: 0.00%,
+    num_get_bad: 50,
+    overall_block_time: 47.792487274s,
+    block_get_bad_time: 300.405µs,
+    block_get_predecessor_time: 6.835633723s,
+    block_blocked_time: 1.535260324s,
+    block_mic_time: 60.968167554s,
+    block_push_time: 183.620802ms,
+    overall_propagate_time: 7.839889111s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemprdcell2f1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemprdcell2f1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:37:38 CST 2025
+========================================

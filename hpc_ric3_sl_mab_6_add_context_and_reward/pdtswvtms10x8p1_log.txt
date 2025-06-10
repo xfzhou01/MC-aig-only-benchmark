@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 04:02:49 CST 2025
+Job <611713> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtms10x8p1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 852, 1220]
+50 1 3 2 1 9 15 12 13 3 1 28 25 33 211 22 15 307 530 21 17 21 12 11 1 1 1 1 1 1 1 1 0 1660 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1577 pulls
+  Arm 1 (Aggressive Heuristic): 395 pulls
+  Arm 2 (Conservative Heuristic): 554 pulls
+  Arm 3 (limit=0, max=0, level=0): 222 pulls
+  Arm 4 (limit=1, max=3, level=1): 417 pulls
+  Arm 5 (limit=2, max=5, level=1): 274 pulls
+  Arm 6 (limit=8, max=4, level=1): 282 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 185002,
+    avg_decide_var: 0.739621,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: pdtswvtms10x8p1.aig,
+    time: 6.96s,
+    num_mic: 4306,
+    avg_mic_cube_len: 10.948908,
+    avg_po_cube_len: 22.206648,
+    mic_drop: success: 5983, fail: 40386, success rate: 12.90%,
+    num_down: 46369,
+    num_down_sat: 83755,
+    ctp: success: 0, fail: 23785, success rate: 0.00%,
+    num_get_bad: 34,
+    overall_block_time: 5.814423291s,
+    block_get_bad_time: 34.83µs,
+    block_get_predecessor_time: 1.849681261s,
+    block_blocked_time: 217.819543ms,
+    block_mic_time: 5.494546816s,
+    block_push_time: 101.761915ms,
+    overall_propagate_time: 1.134000404s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtms10x8p1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtms10x8p1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 04:02:57 CST 2025
+========================================

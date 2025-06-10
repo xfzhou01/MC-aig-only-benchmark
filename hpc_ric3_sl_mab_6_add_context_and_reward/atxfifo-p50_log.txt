@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 00:22:38 CST 2025
+Job <610157> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/atxfifo-p50.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 39]
+80 3 1 1 2 4 3 5 6 7 3 6 5 6 3 5 4 5 2 4 1 4 1 4 1 2 3 6 4 5 3 5 4 1 3 0 66 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 16 pulls
+  Arm 1 (Aggressive Heuristic): 19 pulls
+  Arm 2 (Conservative Heuristic): 19 pulls
+  Arm 3 (limit=0, max=0, level=0): 17 pulls
+  Arm 4 (limit=1, max=3, level=1): 35 pulls
+  Arm 5 (limit=2, max=5, level=1): 20 pulls
+  Arm 6 (limit=8, max=4, level=1): 50 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4080,
+    avg_decide_var: 0.401450,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: atxfifo-p50.aig,
+    time: 0.06s,
+    num_mic: 278,
+    avg_mic_cube_len: 3.514388,
+    avg_po_cube_len: 15.878710,
+    mic_drop: success: 58, fail: 912, success rate: 5.98%,
+    num_down: 970,
+    num_down_sat: 955,
+    ctp: success: 0, fail: 1462, success rate: 0.00%,
+    num_get_bad: 93,
+    overall_block_time: 34.196664ms,
+    block_get_bad_time: 5.99758ms,
+    block_get_predecessor_time: 7.561018ms,
+    block_blocked_time: 893.182µs,
+    block_mic_time: 32.146804ms,
+    block_push_time: 946.057µs,
+    overall_propagate_time: 14.22715ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/atxfifo-p50.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/atxfifo-p50.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 00:22:39 CST 2025
+========================================

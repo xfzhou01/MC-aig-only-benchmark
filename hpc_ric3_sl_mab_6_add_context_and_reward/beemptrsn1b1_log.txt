@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 03:05:55 CST 2025
+Job <611256> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemptrsn1b1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 264]
+113 3 155 491 971 1714 2756 2840 1944 1589 943 627 365 176 117 111 69 55 15 17 1 0 3731 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4 pulls
+  Arm 1 (Aggressive Heuristic): 6 pulls
+  Arm 2 (Conservative Heuristic): 4 pulls
+  Arm 3 (limit=0, max=0, level=0): 4 pulls
+  Arm 4 (limit=1, max=3, level=1): 1132 pulls
+  Arm 5 (limit=2, max=5, level=1): 757 pulls
+  Arm 6 (limit=8, max=4, level=1): 4 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1497599,
+    avg_decide_var: 1.000766,
+    num_simplify_subsume: 11932,
+    num_simplify_self_subsume: 18004,
+}
+Statistic {
+    case: beemptrsn1b1.aig,
+    time: 174.46s,
+    num_mic: 22683,
+    avg_mic_cube_len: 30.811180,
+    avg_po_cube_len: 112.993178,
+    mic_drop: success: 254810, fail: 374099, success rate: 40.52%,
+    num_down: 628909,
+    num_down_sat: 1123522,
+    ctp: success: 0, fail: 41308, success rate: 0.00%,
+    num_get_bad: 24,
+    overall_block_time: 114.514493303s,
+    block_get_bad_time: 405.074µs,
+    block_get_predecessor_time: 6.838903025s,
+    block_blocked_time: 501.028657ms,
+    block_mic_time: 193.872323449s,
+    block_push_time: 751.339095ms,
+    overall_propagate_time: 59.925544789s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemptrsn1b1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemptrsn1b1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:08:50 CST 2025
+========================================

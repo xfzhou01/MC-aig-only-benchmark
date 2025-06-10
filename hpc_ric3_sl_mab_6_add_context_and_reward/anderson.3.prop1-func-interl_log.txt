@@ -1,0 +1,54 @@
+Started at: Mon Jun  9 23:33:23 CST 2025
+Job <609933> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/anderson.3.prop1-func-interl.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 8, 193]
+72 18 21 43 56 56 56 89 104 161 255 115 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 58 pulls
+  Arm 1 (Aggressive Heuristic): 153 pulls
+  Arm 2 (Conservative Heuristic): 47 pulls
+  Arm 3 (limit=0, max=0, level=0): 24 pulls
+  Arm 4 (limit=1, max=3, level=1): 11 pulls
+  Arm 5 (limit=2, max=5, level=1): 155 pulls
+  Arm 6 (limit=8, max=4, level=1): 203 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 30742,
+    avg_decide_var: 0.397184,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: anderson.3.prop1-func-interl.aig,
+    time: 1.51s,
+    num_mic: 1824,
+    avg_mic_cube_len: 7.574013,
+    avg_po_cube_len: 37.850564,
+    mic_drop: success: 4139, fail: 9014, success rate: 31.47%,
+    num_down: 13153,
+    num_down_sat: 18517,
+    ctp: success: 0, fail: 652, success rate: 0.00%,
+    num_get_bad: 14,
+    overall_block_time: 1.375674391s,
+    block_get_bad_time: 176.036µs,
+    block_get_predecessor_time: 345.136277ms,
+    block_blocked_time: 58.826009ms,
+    block_mic_time: 1.610816248s,
+    block_push_time: 9.005199ms,
+    overall_propagate_time: 117.347493ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/anderson.3.prop1-func-interl.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/anderson.3.prop1-func-interl.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Mon Jun  9 23:33:26 CST 2025
+========================================

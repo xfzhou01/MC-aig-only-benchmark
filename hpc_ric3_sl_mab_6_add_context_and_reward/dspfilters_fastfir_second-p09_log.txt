@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 02:42:21 CST 2025
+Job <611113> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p09.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1268, 2769]
+1091 22 39 65 90 264 280 423 531 386 211 223 156 224 305 323 132 722 716 550 408 216 84 37 10 3 0 3107 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 286 pulls
+  Arm 1 (Aggressive Heuristic): 3337 pulls
+  Arm 2 (Conservative Heuristic): 898 pulls
+  Arm 3 (limit=0, max=0, level=0): 588 pulls
+  Arm 4 (limit=1, max=3, level=1): 264 pulls
+  Arm 5 (limit=2, max=5, level=1): 1170 pulls
+  Arm 6 (limit=8, max=4, level=1): 3022 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 320587,
+    avg_decide_var: 0.675124,
+    num_simplify_subsume: 535,
+    num_simplify_self_subsume: 193,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p09.aig,
+    time: 148.89s,
+    num_mic: 12030,
+    avg_mic_cube_len: 8.470906,
+    avg_po_cube_len: 250.845898,
+    mic_drop: success: 42463, fail: 57660, success rate: 42.41%,
+    num_down: 100123,
+    num_down_sat: 117361,
+    ctp: success: 0, fail: 53853, success rate: 0.00%,
+    num_get_bad: 1409,
+    overall_block_time: 131.139898344s,
+    block_get_bad_time: 885.77908ms,
+    block_get_predecessor_time: 60.34324077s,
+    block_blocked_time: 4.082418613s,
+    block_mic_time: 125.30540806s,
+    block_push_time: 890.674189ms,
+    overall_propagate_time: 17.452753064s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p09.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p09.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 02:44:51 CST 2025
+========================================

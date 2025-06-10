@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:05:01 CST 2025
+Job <611244> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/toy_lock_4.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 18879]
+100 71 1260 6386 5651 1372 25 0 29629 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4180 pulls
+  Arm 1 (Aggressive Heuristic): 11903 pulls
+  Arm 2 (Conservative Heuristic): 1824 pulls
+  Arm 3 (limit=0, max=0, level=0): 945 pulls
+  Arm 4 (limit=1, max=3, level=1): 4644 pulls
+  Arm 5 (limit=2, max=5, level=1): 1038 pulls
+  Arm 6 (limit=8, max=4, level=1): 21695 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1996256,
+    avg_decide_var: 0.536074,
+    num_simplify_subsume: 7200,
+    num_simplify_self_subsume: 2966,
+}
+Statistic {
+    case: toy_lock_4.aig,
+    time: 439.61s,
+    num_mic: 65790,
+    avg_mic_cube_len: 12.518589,
+    avg_po_cube_len: 20.409955,
+    mic_drop: success: 190094, fail: 593372, success rate: 24.26%,
+    num_down: 783466,
+    num_down_sat: 1089344,
+    ctp: success: 0, fail: 76756, success rate: 0.00%,
+    num_get_bad: 1540,
+    overall_block_time: 339.33362667s,
+    block_get_bad_time: 382.802763ms,
+    block_get_predecessor_time: 37.097031578s,
+    block_blocked_time: 19.563518581s,
+    block_mic_time: 327.699439592s,
+    block_push_time: 8.214471668s,
+    overall_propagate_time: 100.270406269s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/toy_lock_4.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/toy_lock_4.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:12:21 CST 2025
+========================================

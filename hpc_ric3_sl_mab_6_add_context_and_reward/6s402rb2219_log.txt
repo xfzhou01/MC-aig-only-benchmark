@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 00:26:02 CST 2025
+Job <610209> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s402rb2219.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 22, 11, 5, 2, 3, 20, 72, 303, 11592, 3748, 12821]
+11926 81 1113 2905 4777 6545 8400 13402 17653 14972 15264 12126 10966 13364 5899 23600 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1274 pulls
+  Arm 1 (Aggressive Heuristic): 8645 pulls
+  Arm 2 (Conservative Heuristic): 3648 pulls
+  Arm 3 (limit=0, max=0, level=0): 3649 pulls
+  Arm 4 (limit=1, max=3, level=1): 6188 pulls
+  Arm 5 (limit=2, max=5, level=1): 6882 pulls
+  Arm 6 (limit=8, max=4, level=1): 12322 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3575472,
+    avg_decide_var: 0.107243,
+    num_simplify_subsume: 65311,
+    num_simplify_self_subsume: 32983,
+}
+Statistic {
+    case: 6s402rb2219.aig,
+    time: 2083.36s,
+    num_mic: 194792,
+    avg_mic_cube_len: 9.654411,
+    avg_po_cube_len: 444.406189,
+    mic_drop: success: 283619, fail: 1497702, success rate: 15.92%,
+    num_down: 1781321,
+    num_down_sat: 2373209,
+    ctp: success: 0, fail: 4207, success rate: 0.00%,
+    num_get_bad: 17,
+    overall_block_time: 2081.011965882s,
+    block_get_bad_time: 1.190084ms,
+    block_get_predecessor_time: 227.522695284s,
+    block_blocked_time: 119.456317327s,
+    block_mic_time: 2454.343831655s,
+    block_push_time: 23.420403112s,
+    overall_propagate_time: 1.061951259s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s402rb2219.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s402rb2219.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:00:48 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 02:59:34 CST 2025
+Job <611211> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/diffeq.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34740]
+13 15 31 28 91 498 1417 1416 1322 1021 970 851 1065 676 617 274 124 71 82 54 73 55 56 53 12 14 16 9 7 7 4 0 2535 52389 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 19104 pulls
+  Arm 1 (Aggressive Heuristic): 1849 pulls
+  Arm 2 (Conservative Heuristic): 1339 pulls
+  Arm 3 (limit=0, max=0, level=0): 52539 pulls
+  Arm 4 (limit=1, max=3, level=1): 3590 pulls
+  Arm 5 (limit=2, max=5, level=1): 8724 pulls
+  Arm 6 (limit=8, max=4, level=1): 3134 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3110923,
+    avg_decide_var: 0.583649,
+    num_simplify_subsume: 489398,
+    num_simplify_self_subsume: 433760,
+}
+Statistic {
+    case: diffeq.aig,
+    time: 2427.88s,
+    num_mic: 96767,
+    avg_mic_cube_len: 14.173809,
+    avg_po_cube_len: 27.123627,
+    mic_drop: success: 283987, fail: 1058926, success rate: 21.15%,
+    num_down: 1342913,
+    num_down_sat: 1310992,
+    ctp: success: 0, fail: 1003659, success rate: 0.00%,
+    num_get_bad: 58,
+    overall_block_time: 894.342086858s,
+    block_get_bad_time: 32.503919ms,
+    block_get_predecessor_time: 7.435163489s,
+    block_blocked_time: 411.614884527s,
+    block_mic_time: 314.490978797s,
+    block_push_time: 33.305336416s,
+    overall_propagate_time: 1533.525072826s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/diffeq.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/diffeq.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 03:40:03 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 00:28:25 CST 2025
+Job <610244> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n4_w16_d64_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 32, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 53, 1404, 8125]
+1 10 32 35 60 67 94 77 177 123 199 155 324 247 339 266 652 290 425 266 573 383 546 380 1039 608 892 667 1078 860 1161 844 2553 814 1413 879 1798 1132 1493 1137 2926 1537 2147 1872 2540 2055 2536 2082 4707 2710 3590 3072 4047 3144 3630 3070 4532 3482 4273 3731 4496 3767 3866 3118 6510 7112 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2793 pulls
+  Arm 1 (Aggressive Heuristic): 1381 pulls
+  Arm 2 (Conservative Heuristic): 640 pulls
+  Arm 3 (limit=0, max=0, level=0): 4647 pulls
+  Arm 4 (limit=1, max=3, level=1): 4243 pulls
+  Arm 5 (limit=2, max=5, level=1): 886 pulls
+  Arm 6 (limit=8, max=4, level=1): 59895 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 12195871,
+    avg_decide_var: 0.106690,
+    num_simplify_subsume: 381114,
+    num_simplify_self_subsume: 724841,
+}
+Statistic {
+    case: arbitrated_top_n4_w16_d64_e0.aig,
+    time: 3227.86s,
+    num_mic: 190703,
+    avg_mic_cube_len: 15.553290,
+    avg_po_cube_len: 32.680451,
+    mic_drop: success: 645244, fail: 2227899, success rate: 22.46%,
+    num_down: 2873143,
+    num_down_sat: 4493236,
+    ctp: success: 0, fail: 324438, success rate: 0.00%,
+    num_get_bad: 1501,
+    overall_block_time: 2457.687011818s,
+    block_get_bad_time: 1.001664212s,
+    block_get_predecessor_time: 370.330013662s,
+    block_blocked_time: 29.182455676s,
+    block_mic_time: 2835.26137309s,
+    block_push_time: 2.231001406s,
+    overall_propagate_time: 769.364365528s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n4_w16_d64_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n4_w16_d64_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 01:22:14 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 03:37:48 CST 2025
+Job <611524> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/a18-p1.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1211, 3456]
+195 1005 2921 7793 10344 9886 9724 8664 4740 2537 1062 443 514 137 61 48 11 2 5 3 1 30 5 4281 3478 1736 793 320 111 90 17 10 0 23239 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 499 pulls
+  Arm 1 (Aggressive Heuristic): 570 pulls
+  Arm 2 (Conservative Heuristic): 986 pulls
+  Arm 3 (limit=0, max=0, level=0): 576 pulls
+  Arm 4 (limit=1, max=3, level=1): 779 pulls
+  Arm 5 (limit=2, max=5, level=1): 18847 pulls
+  Arm 6 (limit=8, max=4, level=1): 3516 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 5629063,
+    avg_decide_var: 0.510345,
+    num_simplify_subsume: 115242,
+    num_simplify_self_subsume: 89027,
+}
+Statistic {
+    case: a18-p1.aig,
+    time: 2221.47s,
+    num_mic: 123103,
+    avg_mic_cube_len: 13.601358,
+    avg_po_cube_len: 62.448896,
+    mic_drop: success: 458833, fail: 1091074, success rate: 29.60%,
+    num_down: 1549907,
+    num_down_sat: 2500771,
+    ctp: success: 0, fail: 537874, success rate: 0.00%,
+    num_get_bad: 34,
+    overall_block_time: 807.554779924s,
+    block_get_bad_time: 95.345µs,
+    block_get_predecessor_time: 106.196572981s,
+    block_blocked_time: 21.90368851s,
+    block_mic_time: 1072.394266466s,
+    block_push_time: 7.488142686s,
+    overall_propagate_time: 1413.847817956s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/a18-p1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/a18-p1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 04:14:50 CST 2025
+========================================
