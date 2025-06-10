@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 19:10:06 CST 2025
+Job <615318> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bc57sensorsp2.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 4, 1, 1, 1, 1, 1, 1, 1, 4, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 6, 7, 1, 2, 5, 169, 674]
+190 5 3 6 6 9 7 8 7 8 6 15 10 12 7 13 17 21 35 29 28 43 34 26 6 10 12 13 17 40 39 31 40 45 29 37 32 37 51 48 96 95 99 87 69 52 36 34 25 50 42 29 29 60 75 60 46 49 58 53 47 35 80 47 28 24 22 16 10 14 94 72 97 66 70 137 104 80 67 106 95 102 95 97 96 70 98 78 56 68 51 63 38 28 1696 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 95 pulls
+  Arm 1 (Aggressive Heuristic): 153 pulls
+  Arm 2 (Conservative Heuristic): 117 pulls
+  Arm 3 (limit=0, max=0, level=0): 133 pulls
+  Arm 4 (limit=1, max=3, level=1): 298 pulls
+  Arm 5 (limit=2, max=5, level=1): 212 pulls
+  Arm 6 (limit=8, max=4, level=1): 447 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 363351,
+    avg_decide_var: 0.910104,
+    num_simplify_subsume: 4662,
+    num_simplify_self_subsume: 3243,
+}
+Statistic {
+    case: bc57sensorsp2.aig,
+    time: 21.76s,
+    num_mic: 8945,
+    avg_mic_cube_len: 8.408161,
+    avg_po_cube_len: 180.932059,
+    mic_drop: success: 13935, fail: 57984, success rate: 19.38%,
+    num_down: 71919,
+    num_down_sat: 122884,
+    ctp: success: 0, fail: 63354, success rate: 0.00%,
+    num_get_bad: 666,
+    overall_block_time: 13.031269725s,
+    block_get_bad_time: 42.321982ms,
+    block_get_predecessor_time: 3.036474856s,
+    block_blocked_time: 118.223165ms,
+    block_mic_time: 17.572256419s,
+    block_push_time: 234.522727ms,
+    overall_propagate_time: 8.663788255s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bc57sensorsp2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bc57sensorsp2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 19:10:29 CST 2025
+========================================

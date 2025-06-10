@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 18:56:28 CST 2025
+Job <615224> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsns3.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2211, 1230]
+464 67 260 826 1392 2780 4485 4860 5295 4949 3856 2845 2206 2750 3626 3974 3212 2037 1510 1217 762 409 179 120 64 28 5 2 0 4028 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 344 pulls
+  Arm 1 (Aggressive Heuristic): 557 pulls
+  Arm 2 (Conservative Heuristic): 279 pulls
+  Arm 3 (limit=0, max=0, level=0): 205 pulls
+  Arm 4 (limit=1, max=3, level=1): 1051 pulls
+  Arm 5 (limit=2, max=5, level=1): 2349 pulls
+  Arm 6 (limit=8, max=4, level=1): 7904 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2429848,
+    avg_decide_var: 0.448574,
+    num_simplify_subsume: 55795,
+    num_simplify_self_subsume: 23293,
+}
+Statistic {
+    case: pdtpmsns3.aig,
+    time: 795.91s,
+    num_mic: 76183,
+    avg_mic_cube_len: 8.856241,
+    avg_po_cube_len: 41.422988,
+    mic_drop: success: 201581, fail: 437324, success rate: 31.55%,
+    num_down: 638905,
+    num_down_sat: 940858,
+    ctp: success: 0, fail: 122142, success rate: 0.00%,
+    num_get_bad: 538,
+    overall_block_time: 312.624401025s,
+    block_get_bad_time: 118.214131ms,
+    block_get_predecessor_time: 31.451926611s,
+    block_blocked_time: 2.379017956s,
+    block_mic_time: 446.842770946s,
+    block_push_time: 852.05809ms,
+    overall_propagate_time: 483.241755367s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsns3.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsns3.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 19:09:46 CST 2025
+========================================

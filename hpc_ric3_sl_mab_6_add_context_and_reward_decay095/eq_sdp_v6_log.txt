@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 18:56:02 CST 2025
+Job <615214> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eq_sdp_v6.aig
+[0, 0, 0, 0, 42, 22636]
+125 38 33 0 22709 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3304 pulls
+  Arm 1 (Aggressive Heuristic): 3124 pulls
+  Arm 2 (Conservative Heuristic): 3141 pulls
+  Arm 3 (limit=0, max=0, level=0): 3011 pulls
+  Arm 4 (limit=1, max=3, level=1): 3003 pulls
+  Arm 5 (limit=2, max=5, level=1): 3469 pulls
+  Arm 6 (limit=8, max=4, level=1): 3726 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 386369,
+    avg_decide_var: 0.487440,
+    num_simplify_subsume: 41,
+    num_simplify_self_subsume: 77,
+}
+Statistic {
+    case: eq_sdp_v6.aig,
+    time: 117.14s,
+    num_mic: 22855,
+    avg_mic_cube_len: 13.122468,
+    avg_po_cube_len: 14.597831,
+    mic_drop: success: 21634, fail: 275479, success rate: 7.28%,
+    num_down: 297113,
+    num_down_sat: 296837,
+    ctp: success: 0, fail: 22792, success rate: 0.00%,
+    num_get_bad: 21860,
+    overall_block_time: 114.48466562s,
+    block_get_bad_time: 103.455897625s,
+    block_get_predecessor_time: 1.938497149s,
+    block_blocked_time: 496.015401ms,
+    block_mic_time: 6.016884992s,
+    block_push_time: 14.425552ms,
+    overall_propagate_time: 2.654736466s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eq_sdp_v6.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eq_sdp_v6.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:57:59 CST 2025
+========================================

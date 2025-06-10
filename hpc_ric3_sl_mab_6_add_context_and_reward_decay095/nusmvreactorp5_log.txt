@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 12:52:55 CST 2025
+Job <612415> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvreactorp5.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 1]
+75 1 1 1 0 1 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 0 pulls
+  Arm 4 (limit=1, max=3, level=1): 0 pulls
+  Arm 5 (limit=2, max=5, level=1): 0 pulls
+  Arm 6 (limit=8, max=4, level=1): 0 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 35,
+    avg_decide_var: 0.961174,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: nusmvreactorp5.aig,
+    time: 0.01s,
+    num_mic: 4,
+    avg_mic_cube_len: 3.500000,
+    avg_po_cube_len: 4.000000,
+    mic_drop: success: 5, fail: 9, success rate: 35.71%,
+    num_down: 14,
+    num_down_sat: 17,
+    ctp: success: 0, fail: 3, success rate: 0.00%,
+    num_get_bad: 6,
+    overall_block_time: 1.00726ms,
+    block_get_bad_time: 30.875µs,
+    block_get_predecessor_time: 230.637µs,
+    block_blocked_time: 98.312µs,
+    block_mic_time: 877.66µs,
+    block_push_time: 93ns,
+    overall_propagate_time: 824.456µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvreactorp5.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvreactorp5.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 12:52:56 CST 2025
+========================================

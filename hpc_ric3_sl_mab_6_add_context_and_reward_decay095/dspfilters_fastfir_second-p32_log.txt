@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 12:49:31 CST 2025
+Job <612315> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p32.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1273, 4691]
+1091 23 31 70 121 226 251 370 522 681 639 531 587 576 601 567 575 603 1243 1100 935 736 394 256 141 60 38 21 5 2 3 2 0 5401 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 963 pulls
+  Arm 1 (Aggressive Heuristic): 1457 pulls
+  Arm 2 (Conservative Heuristic): 938 pulls
+  Arm 3 (limit=0, max=0, level=0): 3921 pulls
+  Arm 4 (limit=1, max=3, level=1): 2532 pulls
+  Arm 5 (limit=2, max=5, level=1): 1451 pulls
+  Arm 6 (limit=8, max=4, level=1): 5592 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 858573,
+    avg_decide_var: 0.673214,
+    num_simplify_subsume: 3877,
+    num_simplify_self_subsume: 4466,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p32.aig,
+    time: 342.04s,
+    num_mic: 22149,
+    avg_mic_cube_len: 16.334914,
+    avg_po_cube_len: 240.923289,
+    mic_drop: success: 232116, fail: 120753, success rate: 65.78%,
+    num_down: 352869,
+    num_down_sat: 431278,
+    ctp: success: 0, fail: 116194, success rate: 0.00%,
+    num_get_bad: 1583,
+    overall_block_time: 300.446905867s,
+    block_get_bad_time: 1.019539815s,
+    block_get_predecessor_time: 118.707257373s,
+    block_blocked_time: 5.938787196s,
+    block_mic_time: 334.872383347s,
+    block_push_time: 2.076636134s,
+    overall_propagate_time: 41.251348454s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p32.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p32.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 12:55:15 CST 2025
+========================================

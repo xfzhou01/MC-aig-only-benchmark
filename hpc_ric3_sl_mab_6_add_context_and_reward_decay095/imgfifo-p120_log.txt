@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 18:58:47 CST 2025
+Job <615246> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p120.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, 88]
+395 5 7 4 6 8 13 28 13 18 41 26 7 9 6 8 8 7 8 6 4 4 3 2 1 0 137 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 30 pulls
+  Arm 1 (Aggressive Heuristic): 30 pulls
+  Arm 2 (Conservative Heuristic): 24 pulls
+  Arm 3 (limit=0, max=0, level=0): 33 pulls
+  Arm 4 (limit=1, max=3, level=1): 28 pulls
+  Arm 5 (limit=2, max=5, level=1): 149 pulls
+  Arm 6 (limit=8, max=4, level=1): 69 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 8118,
+    avg_decide_var: 0.354482,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: imgfifo-p120.aig,
+    time: 0.27s,
+    num_mic: 689,
+    avg_mic_cube_len: 3.108853,
+    avg_po_cube_len: 110.872569,
+    mic_drop: success: 275, fail: 1759, success rate: 13.52%,
+    num_down: 2034,
+    num_down_sat: 1813,
+    ctp: success: 0, fail: 2805, success rate: 0.00%,
+    num_get_bad: 99,
+    overall_block_time: 169.324783ms,
+    block_get_bad_time: 3.755109ms,
+    block_get_predecessor_time: 63.417181ms,
+    block_blocked_time: 9.197743ms,
+    block_mic_time: 153.418655ms,
+    block_push_time: 2.060139ms,
+    overall_propagate_time: 56.074451ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p120.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/imgfifo-p120.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:58:47 CST 2025
+========================================

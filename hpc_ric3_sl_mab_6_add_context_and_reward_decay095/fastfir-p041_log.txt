@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 17:48:44 CST 2025
+Job <614680> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p041.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1157, 643]
+452 52 47 26 24 34 68 60 66 63 65 72 78 81 83 73 18 40 12 1 0 810 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 271 pulls
+  Arm 1 (Aggressive Heuristic): 178 pulls
+  Arm 2 (Conservative Heuristic): 379 pulls
+  Arm 3 (limit=0, max=0, level=0): 400 pulls
+  Arm 4 (limit=1, max=3, level=1): 247 pulls
+  Arm 5 (limit=2, max=5, level=1): 493 pulls
+  Arm 6 (limit=8, max=4, level=1): 751 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 57052,
+    avg_decide_var: 0.799596,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p041.aig,
+    time: 20.00s,
+    num_mic: 4169,
+    avg_mic_cube_len: 3.659870,
+    avg_po_cube_len: 87.771819,
+    mic_drop: success: 4834, fail: 10276, success rate: 31.99%,
+    num_down: 15110,
+    num_down_sat: 18735,
+    ctp: success: 0, fail: 7856, success rate: 0.00%,
+    num_get_bad: 614,
+    overall_block_time: 18.445266485s,
+    block_get_bad_time: 258.375088ms,
+    block_get_predecessor_time: 8.259272545s,
+    block_blocked_time: 804.284061ms,
+    block_mic_time: 16.081043687s,
+    block_push_time: 214.328078ms,
+    overall_propagate_time: 1.38570415s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p041.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p041.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 17:49:04 CST 2025
+========================================

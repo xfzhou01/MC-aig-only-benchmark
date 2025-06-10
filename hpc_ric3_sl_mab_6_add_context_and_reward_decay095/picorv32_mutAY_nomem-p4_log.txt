@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 16:23:00 CST 2025
+Job <613948> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p4.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 33641]
+2050 67 7 73 106 2374 11845 26229 36485 20151 8412 5395 6105 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2507 pulls
+  Arm 1 (Aggressive Heuristic): 4639 pulls
+  Arm 2 (Conservative Heuristic): 4553 pulls
+  Arm 3 (limit=0, max=0, level=0): 4445 pulls
+  Arm 4 (limit=1, max=3, level=1): 6100 pulls
+  Arm 5 (limit=2, max=5, level=1): 6913 pulls
+  Arm 6 (limit=8, max=4, level=1): 28047 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1992281,
+    avg_decide_var: 0.352924,
+    num_simplify_subsume: 13069,
+    num_simplify_self_subsume: 7745,
+}
+Statistic {
+    case: picorv32_mutAY_nomem-p4.aig,
+    time: 1107.64s,
+    num_mic: 140889,
+    avg_mic_cube_len: 6.480534,
+    avg_po_cube_len: 202.952213,
+    mic_drop: success: 217352, fail: 587007, success rate: 27.02%,
+    num_down: 804359,
+    num_down_sat: 879256,
+    ctp: success: 0, fail: 26182, success rate: 0.00%,
+    num_get_bad: 14,
+    overall_block_time: 1007.415573415s,
+    block_get_bad_time: 7.096188ms,
+    block_get_predecessor_time: 270.957308637s,
+    block_blocked_time: 41.420871637s,
+    block_mic_time: 1055.856405479s,
+    block_push_time: 5.714924824s,
+    overall_propagate_time: 99.989256216s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p4.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p4.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 16:41:28 CST 2025
+========================================

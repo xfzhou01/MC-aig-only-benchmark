@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 15:45:53 CST 2025
+Job <613589> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemat1b1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 170, 601]
+87 3 1719 2380 2019 2033 3391 3179 1949 1159 968 1530 1691 1197 911 629 587 385 313 178 227 80 12 4 0 15722 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 109 pulls
+  Arm 1 (Aggressive Heuristic): 81 pulls
+  Arm 2 (Conservative Heuristic): 181 pulls
+  Arm 3 (limit=0, max=0, level=0): 32 pulls
+  Arm 4 (limit=1, max=3, level=1): 349 pulls
+  Arm 5 (limit=2, max=5, level=1): 15 pulls
+  Arm 6 (limit=8, max=4, level=1): 3012 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3051217,
+    avg_decide_var: 1.002264,
+    num_simplify_subsume: 72088,
+    num_simplify_self_subsume: 24418,
+}
+Statistic {
+    case: beemat1b1.aig,
+    time: 449.08s,
+    num_mic: 64833,
+    avg_mic_cube_len: 19.079373,
+    avg_po_cube_len: 86.996919,
+    mic_drop: success: 333704, fail: 790650, success rate: 29.68%,
+    num_down: 1124354,
+    num_down_sat: 1926687,
+    ctp: success: 0, fail: 268536, success rate: 0.00%,
+    num_get_bad: 26,
+    overall_block_time: 282.511999352s,
+    block_get_bad_time: 2.350226ms,
+    block_get_predecessor_time: 31.013682694s,
+    block_blocked_time: 1.254424637s,
+    block_mic_time: 432.43626615s,
+    block_push_time: 9.056717652s,
+    overall_propagate_time: 166.551577464s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemat1b1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemat1b1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 15:53:22 CST 2025
+========================================

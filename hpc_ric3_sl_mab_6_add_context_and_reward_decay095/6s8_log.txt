@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 17:01:12 CST 2025
+Job <614379> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s8.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2449]
+396 14 17 19 35 99 138 271 422 499 565 718 881 979 1131 1108 1108 1053 1014 809 496 277 103 97 68 37 11 4 2 0 58 18 22 18 3159 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 162 pulls
+  Arm 1 (Aggressive Heuristic): 657 pulls
+  Arm 2 (Conservative Heuristic): 161 pulls
+  Arm 3 (limit=0, max=0, level=0): 214 pulls
+  Arm 4 (limit=1, max=3, level=1): 523 pulls
+  Arm 5 (limit=2, max=5, level=1): 222 pulls
+  Arm 6 (limit=8, max=4, level=1): 1537 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 515753,
+    avg_decide_var: 0.260690,
+    num_simplify_subsume: 8829,
+    num_simplify_self_subsume: 3834,
+}
+Statistic {
+    case: 6s8.aig,
+    time: 36.88s,
+    num_mic: 18924,
+    avg_mic_cube_len: 7.474583,
+    avg_po_cube_len: 222.199549,
+    mic_drop: success: 21835, fail: 112774, success rate: 16.22%,
+    num_down: 134609,
+    num_down_sat: 198337,
+    ctp: success: 0, fail: 57980, success rate: 0.00%,
+    num_get_bad: 1684,
+    overall_block_time: 25.027337318s,
+    block_get_bad_time: 498.978622ms,
+    block_get_predecessor_time: 5.995520182s,
+    block_blocked_time: 400.189851ms,
+    block_mic_time: 29.859928377s,
+    block_push_time: 256.314015ms,
+    overall_propagate_time: 11.794891529s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s8.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s8.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 17:01:49 CST 2025
+========================================

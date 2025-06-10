@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 13:50:34 CST 2025
+Job <612787> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fib_30.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 465]
+57 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 17 6 3 2 5 4 18 11 5 3 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 3 2 126 33 20 20 21 26 13 11 9 8 9 5 2 1 1 1 1 1 2 2 3 3 3 2 1 1 1 2 1 1 1 1 1 2 2 1 3 2 4 2 2 2 2 4 2 1 1 2 2 1 1 0 9 3 3 4 4 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 3 1 1 1 2 3 1 1 1 1 1 1 1 1 1 1 2 3 5 5 3 2 2 1 1 5 2 1 1 5 16 4 11 7 5 8 12 169 742 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 85 pulls
+  Arm 1 (Aggressive Heuristic): 75 pulls
+  Arm 2 (Conservative Heuristic): 67 pulls
+  Arm 3 (limit=0, max=0, level=0): 63 pulls
+  Arm 4 (limit=1, max=3, level=1): 151 pulls
+  Arm 5 (limit=2, max=5, level=1): 164 pulls
+  Arm 6 (limit=8, max=4, level=1): 1037 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 470388,
+    avg_decide_var: 0.974804,
+    num_simplify_subsume: 88104,
+    num_simplify_self_subsume: 37859,
+}
+Statistic {
+    case: fib_30.aig,
+    time: 13.11s,
+    num_mic: 11725,
+    avg_mic_cube_len: 12.488358,
+    avg_po_cube_len: 56.425350,
+    mic_drop: success: 15566, fail: 126006, success rate: 11.00%,
+    num_down: 141572,
+    num_down_sat: 219529,
+    ctp: success: 0, fail: 53608, success rate: 0.00%,
+    num_get_bad: 219,
+    overall_block_time: 9.161507322s,
+    block_get_bad_time: 2.984853ms,
+    block_get_predecessor_time: 2.059700096s,
+    block_blocked_time: 41.192251ms,
+    block_mic_time: 12.664622027s,
+    block_push_time: 311.62235ms,
+    overall_propagate_time: 3.913241166s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fib_30.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fib_30.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 13:50:47 CST 2025
+========================================

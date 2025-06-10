@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 18:16:26 CST 2025
+Job <614952> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisgigamax3.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 7]
+16 5 8 3 0 7 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 3 pulls
+  Arm 6 (limit=8, max=4, level=1): 3 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 277,
+    avg_decide_var: 0.719808,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: pdtvisgigamax3.aig,
+    time: 0.02s,
+    num_mic: 35,
+    avg_mic_cube_len: 2.657143,
+    avg_po_cube_len: 7.088889,
+    mic_drop: success: 9, fail: 84, success rate: 9.68%,
+    num_down: 93,
+    num_down_sat: 118,
+    ctp: success: 0, fail: 8, success rate: 0.00%,
+    num_get_bad: 7,
+    overall_block_time: 10.044866ms,
+    block_get_bad_time: 46.412µs,
+    block_get_predecessor_time: 2.980048ms,
+    block_blocked_time: 754.693µs,
+    block_mic_time: 9.196894ms,
+    block_push_time: 189.101µs,
+    overall_propagate_time: 1.792585ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisgigamax3.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisgigamax3.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:16:27 CST 2025
+========================================

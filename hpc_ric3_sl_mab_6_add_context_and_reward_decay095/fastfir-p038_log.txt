@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 15:00:56 CST 2025
+Job <613406> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p038.aig
+[0, 0, 0, 0, 0, 14, 20]
+165 18 9 4 0 26 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 6 pulls
+  Arm 1 (Aggressive Heuristic): 7 pulls
+  Arm 2 (Conservative Heuristic): 6 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 8 pulls
+  Arm 5 (limit=2, max=5, level=1): 8 pulls
+  Arm 6 (limit=8, max=4, level=1): 7 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 334,
+    avg_decide_var: 0.946355,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p038.aig,
+    time: 0.15s,
+    num_mic: 59,
+    avg_mic_cube_len: 2.084746,
+    avg_po_cube_len: 72.994286,
+    mic_drop: success: 26, fail: 96, success rate: 21.31%,
+    num_down: 122,
+    num_down_sat: 81,
+    ctp: success: 0, fail: 61, success rate: 0.00%,
+    num_get_bad: 24,
+    overall_block_time: 82.858407ms,
+    block_get_bad_time: 9.18935ms,
+    block_get_predecessor_time: 44.359433ms,
+    block_blocked_time: 10.723835ms,
+    block_mic_time: 24.929359ms,
+    block_push_time: 115.287µs,
+    overall_propagate_time: 12.718875ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p038.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p038.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 15:00:57 CST 2025
+========================================

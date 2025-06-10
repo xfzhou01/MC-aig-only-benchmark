@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 16:31:45 CST 2025
+Job <614153> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmfbaddr.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1215, 1951]
+933 3 3 4 2 3 64 78 72 89 250 576 1568 3343 5298 9348 11228 5680 1423 359 148 292 276 131 56 50 15 19 9 0 10239 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 351 pulls
+  Arm 1 (Aggressive Heuristic): 5896 pulls
+  Arm 2 (Conservative Heuristic): 194 pulls
+  Arm 3 (limit=0, max=0, level=0): 295 pulls
+  Arm 4 (limit=1, max=3, level=1): 214 pulls
+  Arm 5 (limit=2, max=5, level=1): 323 pulls
+  Arm 6 (limit=8, max=4, level=1): 668 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1983867,
+    avg_decide_var: 0.438410,
+    num_simplify_subsume: 20241,
+    num_simplify_self_subsume: 39147,
+}
+Statistic {
+    case: oc8051gmfbaddr.aig,
+    time: 781.85s,
+    num_mic: 56249,
+    avg_mic_cube_len: 12.979075,
+    avg_po_cube_len: 421.694333,
+    mic_drop: success: 207314, fail: 467438, success rate: 30.72%,
+    num_down: 674752,
+    num_down_sat: 1079606,
+    ctp: success: 0, fail: 132908, success rate: 0.00%,
+    num_get_bad: 64,
+    overall_block_time: 460.093848165s,
+    block_get_bad_time: 34.398248ms,
+    block_get_predecessor_time: 54.96413726s,
+    block_blocked_time: 4.058554099s,
+    block_mic_time: 707.846079139s,
+    block_push_time: 3.043899524s,
+    overall_propagate_time: 321.605850801s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmfbaddr.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmfbaddr.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 16:44:47 CST 2025
+========================================

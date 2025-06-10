@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 17:54:55 CST 2025
+Job <614757> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bjrb07amba6andenv.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 52]
+41 12 2 13 13 20 39 45 73 70 27 20 13 1 1 0 105 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 10 pulls
+  Arm 1 (Aggressive Heuristic): 12 pulls
+  Arm 2 (Conservative Heuristic): 26 pulls
+  Arm 3 (limit=0, max=0, level=0): 48 pulls
+  Arm 4 (limit=1, max=3, level=1): 62 pulls
+  Arm 5 (limit=2, max=5, level=1): 44 pulls
+  Arm 6 (limit=8, max=4, level=1): 47 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 10654,
+    avg_decide_var: 0.286153,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bjrb07amba6andenv.aig,
+    time: 7.02s,
+    num_mic: 754,
+    avg_mic_cube_len: 5.721485,
+    avg_po_cube_len: 18.600000,
+    mic_drop: success: 1576, fail: 2592, success rate: 37.81%,
+    num_down: 4168,
+    num_down_sat: 5364,
+    ctp: success: 0, fail: 756, success rate: 0.00%,
+    num_get_bad: 17,
+    overall_block_time: 3.64879926s,
+    block_get_bad_time: 26.111µs,
+    block_get_predecessor_time: 573.997592ms,
+    block_blocked_time: 251.090238ms,
+    block_mic_time: 4.00615447s,
+    block_push_time: 288.253099ms,
+    overall_propagate_time: 3.197422029s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bjrb07amba6andenv.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bjrb07amba6andenv.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 17:55:03 CST 2025
+========================================

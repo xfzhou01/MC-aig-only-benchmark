@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 14:13:58 CST 2025
+Job <613099> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/token_ring.03.cil-2.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 776]
+2 1 1 37 114 0 38 39 1638 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 27 pulls
+  Arm 1 (Aggressive Heuristic): 52 pulls
+  Arm 2 (Conservative Heuristic): 39 pulls
+  Arm 3 (limit=0, max=0, level=0): 158 pulls
+  Arm 4 (limit=1, max=3, level=1): 23 pulls
+  Arm 5 (limit=2, max=5, level=1): 540 pulls
+  Arm 6 (limit=8, max=4, level=1): 45 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 61201,
+    avg_decide_var: 0.999977,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: token_ring.03.cil-2.aig,
+    time: 46.42s,
+    num_mic: 2224,
+    avg_mic_cube_len: 20.307104,
+    avg_po_cube_len: 550.748666,
+    mic_drop: success: 33790, fail: 9446, success rate: 78.15%,
+    num_down: 43236,
+    num_down_sat: 47682,
+    ctp: success: 0, fail: 3854, success rate: 0.00%,
+    num_get_bad: 10,
+    overall_block_time: 43.310885748s,
+    block_get_bad_time: 126.004µs,
+    block_get_predecessor_time: 6.557733687s,
+    block_blocked_time: 1.523536131s,
+    block_mic_time: 60.45978347s,
+    block_push_time: 1.390819696s,
+    overall_propagate_time: 3.000756054s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/token_ring.03.cil-2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/token_ring.03.cil-2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 14:14:46 CST 2025
+========================================

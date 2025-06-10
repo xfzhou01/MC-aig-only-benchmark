@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 19:09:56 CST 2025
+Job <615316> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 26297, 9653]
+2050 56 6 34 109 2363 8446 22286 25094 14817 7802 3287 3355 6613 4887 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3389 pulls
+  Arm 1 (Aggressive Heuristic): 49215 pulls
+  Arm 2 (Conservative Heuristic): 489 pulls
+  Arm 3 (limit=0, max=0, level=0): 8999 pulls
+  Arm 4 (limit=1, max=3, level=1): 1218 pulls
+  Arm 5 (limit=2, max=5, level=1): 622 pulls
+  Arm 6 (limit=8, max=4, level=1): 2081 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2027035,
+    avg_decide_var: 0.338460,
+    num_simplify_subsume: 28603,
+    num_simplify_self_subsume: 9660,
+}
+Statistic {
+    case: picorv32_mutAY_nomem-p1.aig,
+    time: 921.14s,
+    num_mic: 132414,
+    avg_mic_cube_len: 6.739642,
+    avg_po_cube_len: 187.922454,
+    mic_drop: success: 216062, fail: 578970, success rate: 27.18%,
+    num_down: 795032,
+    num_down_sat: 922044,
+    ctp: success: 0, fail: 49255, success rate: 0.00%,
+    num_get_bad: 30,
+    overall_block_time: 763.375927554s,
+    block_get_bad_time: 19.36139ms,
+    block_get_predecessor_time: 167.319628154s,
+    block_blocked_time: 43.908587097s,
+    block_mic_time: 769.683351303s,
+    block_push_time: 3.695942394s,
+    overall_propagate_time: 157.509320179s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32_mutAY_nomem-p1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 19:25:19 CST 2025
+========================================

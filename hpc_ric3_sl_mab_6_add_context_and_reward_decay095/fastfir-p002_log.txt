@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 17:22:39 CST 2025
+Job <614511> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p002.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 396, 897]
+698 17 16 11 13 10 11 11 12 42 61 58 104 109 132 137 21 36 6 1 0 974 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 233 pulls
+  Arm 1 (Aggressive Heuristic): 293 pulls
+  Arm 2 (Conservative Heuristic): 970 pulls
+  Arm 3 (limit=0, max=0, level=0): 359 pulls
+  Arm 4 (limit=1, max=3, level=1): 63 pulls
+  Arm 5 (limit=2, max=5, level=1): 653 pulls
+  Arm 6 (limit=8, max=4, level=1): 249 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 46481,
+    avg_decide_var: 0.695049,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p002.aig,
+    time: 13.60s,
+    num_mic: 3094,
+    avg_mic_cube_len: 4.791855,
+    avg_po_cube_len: 80.109172,
+    mic_drop: success: 4588, fail: 10148, success rate: 31.13%,
+    num_down: 14736,
+    num_down_sat: 18431,
+    ctp: success: 0, fail: 5066, success rate: 0.00%,
+    num_get_bad: 118,
+    overall_block_time: 12.681490981s,
+    block_get_bad_time: 48.494ms,
+    block_get_predecessor_time: 4.685465367s,
+    block_blocked_time: 736.808408ms,
+    block_mic_time: 10.127978323s,
+    block_push_time: 562.411255ms,
+    overall_propagate_time: 740.286646ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p002.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p002.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 17:22:54 CST 2025
+========================================

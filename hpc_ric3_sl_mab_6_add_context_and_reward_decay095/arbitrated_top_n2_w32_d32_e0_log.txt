@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 18:07:01 CST 2025
+Job <614876> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n2_w32_d32_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 59, 5272]
+1 8 19 29 57 45 92 73 153 97 179 137 308 218 298 285 628 344 543 487 698 545 718 605 976 715 814 713 992 774 831 643 1517 1105 2944 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1045 pulls
+  Arm 1 (Aggressive Heuristic): 455 pulls
+  Arm 2 (Conservative Heuristic): 1754 pulls
+  Arm 3 (limit=0, max=0, level=0): 437 pulls
+  Arm 4 (limit=1, max=3, level=1): 10973 pulls
+  Arm 5 (limit=2, max=5, level=1): 409 pulls
+  Arm 6 (limit=8, max=4, level=1): 2754 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1082827,
+    avg_decide_var: 0.212785,
+    num_simplify_subsume: 29527,
+    num_simplify_self_subsume: 53644,
+}
+Statistic {
+    case: arbitrated_top_n2_w32_d32_e0.aig,
+    time: 80.82s,
+    num_mic: 32180,
+    avg_mic_cube_len: 12.212181,
+    avg_po_cube_len: 24.783700,
+    mic_drop: success: 77652, fail: 298678, success rate: 20.63%,
+    num_down: 376330,
+    num_down_sat: 558612,
+    ctp: success: 0, fail: 44186, success rate: 0.00%,
+    num_get_bad: 1267,
+    overall_block_time: 63.975963539s,
+    block_get_bad_time: 383.735196ms,
+    block_get_predecessor_time: 9.170790645s,
+    block_blocked_time: 2.03410194s,
+    block_mic_time: 73.22296749s,
+    block_push_time: 185.787672ms,
+    overall_propagate_time: 16.66543847s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n2_w32_d32_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/arbitrated_top_n2_w32_d32_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:08:24 CST 2025
+========================================

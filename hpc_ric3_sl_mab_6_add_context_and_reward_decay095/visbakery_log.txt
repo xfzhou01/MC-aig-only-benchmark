@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 13:19:37 CST 2025
+Job <612633> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/visbakery.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 3, 2, 1, 1, 1, 1, 1, 1, 88, 53]
+21 2 5 6 11 14 11 13 8 8 8 11 13 18 20 20 28 19 31 33 24 29 29 27 28 18 22 15 15 10 16 12 24 27 35 34 94 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 25 pulls
+  Arm 1 (Aggressive Heuristic): 8 pulls
+  Arm 2 (Conservative Heuristic): 109 pulls
+  Arm 3 (limit=0, max=0, level=0): 57 pulls
+  Arm 4 (limit=1, max=3, level=1): 38 pulls
+  Arm 5 (limit=2, max=5, level=1): 57 pulls
+  Arm 6 (limit=8, max=4, level=1): 195 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 31596,
+    avg_decide_var: 0.637938,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: visbakery.aig,
+    time: 0.89s,
+    num_mic: 1387,
+    avg_mic_cube_len: 5.513338,
+    avg_po_cube_len: 17.717000,
+    mic_drop: success: 1833, fail: 5521, success rate: 24.93%,
+    num_down: 7354,
+    num_down_sat: 11406,
+    ctp: success: 0, fail: 2170, success rate: 0.00%,
+    num_get_bad: 37,
+    overall_block_time: 674.244654ms,
+    block_get_bad_time: 239.78µs,
+    block_get_predecessor_time: 163.87999ms,
+    block_blocked_time: 18.853688ms,
+    block_mic_time: 772.53016ms,
+    block_push_time: 8.310718ms,
+    overall_propagate_time: 205.886651ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/visbakery.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/visbakery.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 13:19:39 CST 2025
+========================================

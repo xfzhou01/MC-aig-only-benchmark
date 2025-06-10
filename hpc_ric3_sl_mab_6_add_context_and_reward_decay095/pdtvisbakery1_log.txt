@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 14:01:48 CST 2025
+Job <613034> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisbakery1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 119]
+33 6 10 14 16 19 17 18 14 19 22 22 23 25 27 31 43 44 58 53 56 58 61 41 30 19 23 14 6 5 8 4 0 2 2 85 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 10 pulls
+  Arm 1 (Aggressive Heuristic): 14 pulls
+  Arm 2 (Conservative Heuristic): 24 pulls
+  Arm 3 (limit=0, max=0, level=0): 12 pulls
+  Arm 4 (limit=1, max=3, level=1): 22 pulls
+  Arm 5 (limit=2, max=5, level=1): 26 pulls
+  Arm 6 (limit=8, max=4, level=1): 198 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 35162,
+    avg_decide_var: 0.791419,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: pdtvisbakery1.aig,
+    time: 7.75s,
+    num_mic: 1645,
+    avg_mic_cube_len: 6.274772,
+    avg_po_cube_len: 21.478610,
+    mic_drop: success: 2953, fail: 6727, success rate: 30.51%,
+    num_down: 9680,
+    num_down_sat: 15401,
+    ctp: success: 0, fail: 1303, success rate: 0.00%,
+    num_get_bad: 37,
+    overall_block_time: 5.952929931s,
+    block_get_bad_time: 738.805µs,
+    block_get_predecessor_time: 1.247969733s,
+    block_blocked_time: 108.091839ms,
+    block_mic_time: 7.44051394s,
+    block_push_time: 78.888374ms,
+    overall_propagate_time: 1.718546133s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisbakery1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisbakery1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 14:01:56 CST 2025
+========================================

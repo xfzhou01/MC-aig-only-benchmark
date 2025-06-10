@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 18:53:56 CST 2025
+Job <615180> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s343b08.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 890, 2396]
+4680 19 29 65 181 543 380 423 778 816 770 255 105 55 39 31 16 19 24 13 8 12 11 16 10 6 3 1 0 5998 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 88 pulls
+  Arm 1 (Aggressive Heuristic): 391 pulls
+  Arm 2 (Conservative Heuristic): 278 pulls
+  Arm 3 (limit=0, max=0, level=0): 68 pulls
+  Arm 4 (limit=1, max=3, level=1): 102 pulls
+  Arm 5 (limit=2, max=5, level=1): 2574 pulls
+  Arm 6 (limit=8, max=4, level=1): 428 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 308119,
+    avg_decide_var: 0.071587,
+    num_simplify_subsume: 18449,
+    num_simplify_self_subsume: 1786,
+}
+Statistic {
+    case: 6s343b08.aig,
+    time: 40.41s,
+    num_mic: 14661,
+    avg_mic_cube_len: 6.370575,
+    avg_po_cube_len: 368.542406,
+    mic_drop: success: 19634, fail: 66229, success rate: 22.87%,
+    num_down: 85863,
+    num_down_sat: 114346,
+    ctp: success: 0, fail: 71595, success rate: 0.00%,
+    num_get_bad: 32,
+    overall_block_time: 33.157624901s,
+    block_get_bad_time: 1.139258ms,
+    block_get_predecessor_time: 10.205090582s,
+    block_blocked_time: 2.843888443s,
+    block_mic_time: 29.940655029s,
+    block_push_time: 1.814721231s,
+    overall_propagate_time: 6.717711687s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s343b08.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s343b08.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:54:37 CST 2025
+========================================

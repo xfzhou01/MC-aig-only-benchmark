@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 18:32:22 CST 2025
+Job <615053> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobtuint13neg.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 8]
+207 13 5 5 3 5 5 3 6 6 5 3 1 0 21 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 7 pulls
+  Arm 1 (Aggressive Heuristic): 7 pulls
+  Arm 2 (Conservative Heuristic): 5 pulls
+  Arm 3 (limit=0, max=0, level=0): 6 pulls
+  Arm 4 (limit=1, max=3, level=1): 7 pulls
+  Arm 5 (limit=2, max=5, level=1): 6 pulls
+  Arm 6 (limit=8, max=4, level=1): 15 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1210,
+    avg_decide_var: 0.101517,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bobtuint13neg.aig,
+    time: 0.03s,
+    num_mic: 136,
+    avg_mic_cube_len: 2.036765,
+    avg_po_cube_len: 12.174129,
+    mic_drop: success: 21, fail: 255, success rate: 7.61%,
+    num_down: 276,
+    num_down_sat: 229,
+    ctp: success: 0, fail: 132, success rate: 0.00%,
+    num_get_bad: 15,
+    overall_block_time: 13.719617ms,
+    block_get_bad_time: 44.366µs,
+    block_get_predecessor_time: 4.774641ms,
+    block_blocked_time: 955.405µs,
+    block_mic_time: 12.176202ms,
+    block_push_time: 222.679µs,
+    overall_propagate_time: 3.082768ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobtuint13neg.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobtuint13neg.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:32:23 CST 2025
+========================================

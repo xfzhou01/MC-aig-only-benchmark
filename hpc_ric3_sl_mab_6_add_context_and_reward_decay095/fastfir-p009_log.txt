@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 13:20:22 CST 2025
+Job <612641> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p009.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1989, 7796]
+493 22 35 57 85 227 234 410 522 813 905 982 1115 891 888 864 681 1420 1637 1623 1144 1036 716 431 313 304 119 14 12 3 3 1 0 8925 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2432 pulls
+  Arm 1 (Aggressive Heuristic): 2427 pulls
+  Arm 2 (Conservative Heuristic): 1275 pulls
+  Arm 3 (limit=0, max=0, level=0): 1711 pulls
+  Arm 4 (limit=1, max=3, level=1): 2491 pulls
+  Arm 5 (limit=2, max=5, level=1): 13425 pulls
+  Arm 6 (limit=8, max=4, level=1): 11480 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1123889,
+    avg_decide_var: 0.759968,
+    num_simplify_subsume: 18303,
+    num_simplify_self_subsume: 16698,
+}
+Statistic {
+    case: fastfir-p009.aig,
+    time: 479.93s,
+    num_mic: 39497,
+    avg_mic_cube_len: 7.133681,
+    avg_po_cube_len: 65.956003,
+    mic_drop: success: 56947, fail: 218096, success rate: 20.70%,
+    num_down: 275043,
+    num_down_sat: 331834,
+    ctp: success: 0, fail: 182013, success rate: 0.00%,
+    num_get_bad: 1763,
+    overall_block_time: 410.639991957s,
+    block_get_bad_time: 1.187034262s,
+    block_get_predecessor_time: 189.93842625s,
+    block_blocked_time: 8.367683248s,
+    block_mic_time: 389.446483964s,
+    block_push_time: 3.1144798s,
+    overall_propagate_time: 68.987893424s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p009.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p009.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 13:28:23 CST 2025
+========================================

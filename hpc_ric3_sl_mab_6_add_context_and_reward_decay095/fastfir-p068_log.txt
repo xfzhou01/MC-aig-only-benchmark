@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 16:59:45 CST 2025
+Job <614368> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p068.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 344, 38]
+411 10 26 25 44 61 52 72 67 117 101 77 69 91 102 94 41 0 144 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 86 pulls
+  Arm 1 (Aggressive Heuristic): 66 pulls
+  Arm 2 (Conservative Heuristic): 58 pulls
+  Arm 3 (limit=0, max=0, level=0): 31 pulls
+  Arm 4 (limit=1, max=3, level=1): 25 pulls
+  Arm 5 (limit=2, max=5, level=1): 47 pulls
+  Arm 6 (limit=8, max=4, level=1): 344 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 22138,
+    avg_decide_var: 0.801848,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p068.aig,
+    time: 5.96s,
+    num_mic: 2135,
+    avg_mic_cube_len: 3.083372,
+    avg_po_cube_len: 86.234483,
+    mic_drop: success: 2025, fail: 4308, success rate: 31.98%,
+    num_down: 6333,
+    num_down_sat: 7258,
+    ctp: success: 0, fail: 1816, success rate: 0.00%,
+    num_get_bad: 97,
+    overall_block_time: 4.687686762s,
+    block_get_bad_time: 35.549201ms,
+    block_get_predecessor_time: 1.93980246s,
+    block_blocked_time: 157.305009ms,
+    block_mic_time: 4.712242641s,
+    block_push_time: 23.595332ms,
+    overall_propagate_time: 1.13070615s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p068.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p068.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 16:59:52 CST 2025
+========================================

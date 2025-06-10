@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 18:56:00 CST 2025
+Job <615213> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138, 4604]
+441 144 82 84 24 22 30 36 27 19 28 25 24 19 289 16 29 16 24 24 19 9 16 7 9 15 15 10 8 6 4 5 6 2 2 2 2 2 2 2 9 1 1 1 1 0 4786 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 953 pulls
+  Arm 1 (Aggressive Heuristic): 980 pulls
+  Arm 2 (Conservative Heuristic): 999 pulls
+  Arm 3 (limit=0, max=0, level=0): 963 pulls
+  Arm 4 (limit=1, max=3, level=1): 1683 pulls
+  Arm 5 (limit=2, max=5, level=1): 1090 pulls
+  Arm 6 (limit=8, max=4, level=1): 1707 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 318710,
+    avg_decide_var: 0.390089,
+    num_simplify_subsume: 150,
+    num_simplify_self_subsume: 47,
+}
+Statistic {
+    case: eijks5378.aig,
+    time: 14.21s,
+    num_mic: 8719,
+    avg_mic_cube_len: 7.777383,
+    avg_po_cube_len: 11.912706,
+    mic_drop: success: 622, fail: 67146, success rate: 0.92%,
+    num_down: 67768,
+    num_down_sat: 67070,
+    ctp: success: 0, fail: 198760, success rate: 0.00%,
+    num_get_bad: 4038,
+    overall_block_time: 7.576707394s,
+    block_get_bad_time: 5.09331025s,
+    block_get_predecessor_time: 554.811032ms,
+    block_blocked_time: 115.777545ms,
+    block_mic_time: 1.854354225s,
+    block_push_time: 16.288534ms,
+    overall_propagate_time: 6.572330348s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:56:15 CST 2025
+========================================

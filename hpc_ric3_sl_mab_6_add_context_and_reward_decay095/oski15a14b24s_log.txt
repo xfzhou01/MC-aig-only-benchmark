@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 13:01:32 CST 2025
+Job <612604> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b24s.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10968]
+3457 460 693 365 448 839 554 143 284 608 548 1603 1377 1091 1481 2135 1034 543 677 276 297 181 122 70 14 3 0 505 575 1112 172057 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1092 pulls
+  Arm 1 (Aggressive Heuristic): 12239 pulls
+  Arm 2 (Conservative Heuristic): 314 pulls
+  Arm 3 (limit=0, max=0, level=0): 331 pulls
+  Arm 4 (limit=1, max=3, level=1): 372 pulls
+  Arm 5 (limit=2, max=5, level=1): 354 pulls
+  Arm 6 (limit=8, max=4, level=1): 486 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4430901,
+    avg_decide_var: 0.377430,
+    num_simplify_subsume: 426632,
+    num_simplify_self_subsume: 37622,
+}
+Statistic {
+    case: oski15a14b24s.aig,
+    time: 3357.28s,
+    num_mic: 205520,
+    avg_mic_cube_len: 6.660641,
+    avg_po_cube_len: 962.937553,
+    mic_drop: success: 262198, fail: 1004016, success rate: 20.71%,
+    num_down: 1266214,
+    num_down_sat: 1600245,
+    ctp: success: 0, fail: 1159612, success rate: 0.00%,
+    num_get_bad: 245,
+    overall_block_time: 2569.39274638s,
+    block_get_bad_time: 300.571742ms,
+    block_get_predecessor_time: 420.414382796s,
+    block_blocked_time: 27.664554626s,
+    block_mic_time: 3065.521291381s,
+    block_push_time: 364.895509108s,
+    overall_propagate_time: 787.359148669s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b24s.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b24s.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 13:57:30 CST 2025
+========================================

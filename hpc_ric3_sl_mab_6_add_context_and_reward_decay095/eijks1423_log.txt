@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 12:55:18 CST 2025
+Job <612486> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks1423.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 650, 261]
+159 80 142 180 277 315 521 490 573 463 475 491 513 477 671 244 163 96 60 39 38 23 94 64 40 35 22 30 46 65 207 49 12 24 4 0 384 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 222 pulls
+  Arm 1 (Aggressive Heuristic): 389 pulls
+  Arm 2 (Conservative Heuristic): 153 pulls
+  Arm 3 (limit=0, max=0, level=0): 260 pulls
+  Arm 4 (limit=1, max=3, level=1): 135 pulls
+  Arm 5 (limit=2, max=5, level=1): 254 pulls
+  Arm 6 (limit=8, max=4, level=1): 1243 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 291588,
+    avg_decide_var: 0.506836,
+    num_simplify_subsume: 6273,
+    num_simplify_self_subsume: 4352,
+}
+Statistic {
+    case: eijks1423.aig,
+    time: 14.37s,
+    num_mic: 10829,
+    avg_mic_cube_len: 7.945240,
+    avg_po_cube_len: 42.863005,
+    mic_drop: success: 16605, fail: 65397, success rate: 20.25%,
+    num_down: 82002,
+    num_down_sat: 122088,
+    ctp: success: 0, fail: 16598, success rate: 0.00%,
+    num_get_bad: 94,
+    overall_block_time: 8.662369481s,
+    block_get_bad_time: 18.783889ms,
+    block_get_predecessor_time: 1.153254411s,
+    block_blocked_time: 147.745462ms,
+    block_mic_time: 12.32392118s,
+    block_push_time: 56.48087ms,
+    overall_propagate_time: 5.684888812s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks1423.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks1423.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 12:55:33 CST 2025
+========================================

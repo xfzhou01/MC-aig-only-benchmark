@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 15:00:18 CST 2025
+Job <613405> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p019.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 240, 22957]
+698 22 12 24 31 38 67 50 80 144 184 159 221 212 192 289 368 854 1478 1150 3139 192 3738 4052 4484 35 3608 3913 3515 3003 2777 2737 2234 28 2973 7 1 1 1 1 1 1 1 1 0 2 3 1 17345 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 5297 pulls
+  Arm 1 (Aggressive Heuristic): 12234 pulls
+  Arm 2 (Conservative Heuristic): 19405 pulls
+  Arm 3 (limit=0, max=0, level=0): 1505 pulls
+  Arm 4 (limit=1, max=3, level=1): 10074 pulls
+  Arm 5 (limit=2, max=5, level=1): 2027 pulls
+  Arm 6 (limit=8, max=4, level=1): 27179 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2651642,
+    avg_decide_var: 0.680254,
+    num_simplify_subsume: 30877,
+    num_simplify_self_subsume: 16075,
+}
+Statistic {
+    case: fastfir-p019.aig,
+    time: 1145.33s,
+    num_mic: 87255,
+    avg_mic_cube_len: 7.350570,
+    avg_po_cube_len: 97.596877,
+    mic_drop: success: 66091, fail: 571958, success rate: 10.36%,
+    num_down: 638049,
+    num_down_sat: 782856,
+    ctp: success: 0, fail: 344520, success rate: 0.00%,
+    num_get_bad: 2438,
+    overall_block_time: 920.300389828s,
+    block_get_bad_time: 1.718838485s,
+    block_get_predecessor_time: 329.919766725s,
+    block_blocked_time: 26.874504701s,
+    block_mic_time: 832.001481261s,
+    block_push_time: 10.218663089s,
+    overall_propagate_time: 224.594708346s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p019.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p019.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 15:19:24 CST 2025
+========================================

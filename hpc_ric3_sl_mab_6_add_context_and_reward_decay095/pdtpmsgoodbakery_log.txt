@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 19:36:06 CST 2025
+Job <615499> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsgoodbakery.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1106]
+92 8 13 12 19 27 31 43 57 67 87 118 155 176 175 208 302 377 540 625 840 1014 1264 1631 2061 2524 2981 3429 3828 4095 3934 2909 1843 901 322 91 22 13 3 0 5 1 2 3 2 1326 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 101 pulls
+  Arm 1 (Aggressive Heuristic): 109 pulls
+  Arm 2 (Conservative Heuristic): 119 pulls
+  Arm 3 (limit=0, max=0, level=0): 91 pulls
+  Arm 4 (limit=1, max=3, level=1): 66 pulls
+  Arm 5 (limit=2, max=5, level=1): 269 pulls
+  Arm 6 (limit=8, max=4, level=1): 2616 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2049157,
+    avg_decide_var: 0.607348,
+    num_simplify_subsume: 104016,
+    num_simplify_self_subsume: 97228,
+}
+Statistic {
+    case: pdtpmsgoodbakery.aig,
+    time: 539.75s,
+    num_mic: 58981,
+    avg_mic_cube_len: 13.479731,
+    avg_po_cube_len: 36.542693,
+    mic_drop: success: 302620, fail: 420746, success rate: 41.83%,
+    num_down: 723366,
+    num_down_sat: 1203815,
+    ctp: success: 0, fail: 56816, success rate: 0.00%,
+    num_get_bad: 54,
+    overall_block_time: 276.627161342s,
+    block_get_bad_time: 4.500199ms,
+    block_get_predecessor_time: 20.519810359s,
+    block_blocked_time: 1.219020964s,
+    block_mic_time: 446.73822078s,
+    block_push_time: 409.555435ms,
+    overall_propagate_time: 263.069055253s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsgoodbakery.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsgoodbakery.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 19:45:06 CST 2025
+========================================

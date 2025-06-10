@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 16:04:01 CST 2025
+Job <613816> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/vis_arrays_field5.aig
+[1, 1, 1, 1, 1, 1, 1, 4, 6, 15, 502]
+25 51 226 666 2055 4514 5842 4352 1886 634 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 47 pulls
+  Arm 1 (Aggressive Heuristic): 41 pulls
+  Arm 2 (Conservative Heuristic): 32 pulls
+  Arm 3 (limit=0, max=0, level=0): 18 pulls
+  Arm 4 (limit=1, max=3, level=1): 55 pulls
+  Arm 5 (limit=2, max=5, level=1): 239 pulls
+  Arm 6 (limit=8, max=4, level=1): 692 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 810693,
+    avg_decide_var: 0.636338,
+    num_simplify_subsume: 10210,
+    num_simplify_self_subsume: 9380,
+}
+Statistic {
+    case: vis_arrays_field5.aig,
+    time: 302.01s,
+    num_mic: 28221,
+    avg_mic_cube_len: 14.606676,
+    avg_po_cube_len: 25.000000,
+    mic_drop: success: 123198, fail: 278648, success rate: 30.66%,
+    num_down: 401846,
+    num_down_sat: 673175,
+    ctp: success: 0, fail: 616, success rate: 0.00%,
+    num_get_bad: 21,
+    overall_block_time: 298.117747714s,
+    block_get_bad_time: 15.352719ms,
+    block_get_predecessor_time: 11.355735487s,
+    block_blocked_time: 1.336271533s,
+    block_mic_time: 503.362512877s,
+    block_push_time: 512.229384ms,
+    overall_propagate_time: 3.873459726s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/vis_arrays_field5.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/vis_arrays_field5.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 16:09:04 CST 2025
+========================================

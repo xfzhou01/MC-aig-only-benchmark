@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 16:54:34 CST 2025
+Job <614296> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemtlphn4f1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 151, 46]
+153 38 60 197 367 522 759 957 984 858 839 875 822 775 703 734 671 573 598 571 444 331 233 153 101 72 12 1 0 668 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 15 pulls
+  Arm 1 (Aggressive Heuristic): 97 pulls
+  Arm 2 (Conservative Heuristic): 23 pulls
+  Arm 3 (limit=0, max=0, level=0): 12 pulls
+  Arm 4 (limit=1, max=3, level=1): 22 pulls
+  Arm 5 (limit=2, max=5, level=1): 19 pulls
+  Arm 6 (limit=8, max=4, level=1): 349 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 631649,
+    avg_decide_var: 0.848520,
+    num_simplify_subsume: 7752,
+    num_simplify_self_subsume: 4337,
+}
+Statistic {
+    case: beemtlphn4f1.aig,
+    time: 74.38s,
+    num_mic: 18855,
+    avg_mic_cube_len: 12.567383,
+    avg_po_cube_len: 76.572804,
+    mic_drop: success: 73404, fail: 142624, success rate: 33.98%,
+    num_down: 216028,
+    num_down_sat: 378075,
+    ctp: success: 0, fail: 14514, success rate: 0.00%,
+    num_get_bad: 30,
+    overall_block_time: 51.810096962s,
+    block_get_bad_time: 233.376µs,
+    block_get_predecessor_time: 6.343778157s,
+    block_blocked_time: 79.355781ms,
+    block_mic_time: 83.184988861s,
+    block_push_time: 293.979275ms,
+    overall_propagate_time: 22.510426936s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemtlphn4f1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemtlphn4f1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 16:55:48 CST 2025
+========================================

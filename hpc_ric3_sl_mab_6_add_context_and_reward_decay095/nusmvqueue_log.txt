@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 16:53:25 CST 2025
+Job <614285> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvqueue.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 50, 1143]
+84 3 11 18 34 57 58 62 108 169 152 143 197 156 186 120 217 121 209 136 217 135 189 167 256 144 206 132 212 142 188 125 231 113 163 107 153 65 75 38 49 22 20 0 2 2 1 1 1 1 1 1 2 1 3 5 1884 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 434 pulls
+  Arm 1 (Aggressive Heuristic): 211 pulls
+  Arm 2 (Conservative Heuristic): 515 pulls
+  Arm 3 (limit=0, max=0, level=0): 180 pulls
+  Arm 4 (limit=1, max=3, level=1): 221 pulls
+  Arm 5 (limit=2, max=5, level=1): 4803 pulls
+  Arm 6 (limit=8, max=4, level=1): 273 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 501535,
+    avg_decide_var: 0.989820,
+    num_simplify_subsume: 8194,
+    num_simplify_self_subsume: 5510,
+}
+Statistic {
+    case: nusmvqueue.aig,
+    time: 50.83s,
+    num_mic: 14473,
+    avg_mic_cube_len: 9.981068,
+    avg_po_cube_len: 76.793983,
+    mic_drop: success: 51058, fail: 89093, success rate: 36.43%,
+    num_down: 140151,
+    num_down_sat: 212941,
+    ctp: success: 0, fail: 56116, success rate: 0.00%,
+    num_get_bad: 60,
+    overall_block_time: 26.601085819s,
+    block_get_bad_time: 5.000208ms,
+    block_get_predecessor_time: 4.202998431s,
+    block_blocked_time: 895.425825ms,
+    block_mic_time: 31.282744584s,
+    block_push_time: 709.013765ms,
+    overall_propagate_time: 24.181595399s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvqueue.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/nusmvqueue.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 16:54:18 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 15:11:27 CST 2025
+Job <613460> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p21.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 335, 407]
+1092 29 45 47 39 30 37 27 25 37 44 41 53 66 73 356 23 24 75 10 3 6 3 1 0 616 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 207 pulls
+  Arm 1 (Aggressive Heuristic): 131 pulls
+  Arm 2 (Conservative Heuristic): 185 pulls
+  Arm 3 (limit=0, max=0, level=0): 131 pulls
+  Arm 4 (limit=1, max=3, level=1): 168 pulls
+  Arm 5 (limit=2, max=5, level=1): 205 pulls
+  Arm 6 (limit=8, max=4, level=1): 158 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 66314,
+    avg_decide_var: 0.597510,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p21.aig,
+    time: 26.52s,
+    num_mic: 2380,
+    avg_mic_cube_len: 15.094118,
+    avg_po_cube_len: 189.300000,
+    mic_drop: success: 24656, fail: 10947, success rate: 69.25%,
+    num_down: 35603,
+    num_down_sat: 42528,
+    ctp: success: 0, fail: 5972, success rate: 0.00%,
+    num_get_bad: 398,
+    overall_block_time: 23.292756161s,
+    block_get_bad_time: 309.988424ms,
+    block_get_predecessor_time: 5.091452678s,
+    block_blocked_time: 652.992798ms,
+    block_mic_time: 30.564386478s,
+    block_push_time: 241.51996ms,
+    overall_propagate_time: 2.980582207s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p21.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/dspfilters_fastfir_second-p21.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 15:11:54 CST 2025
+========================================

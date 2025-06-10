@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 12:56:16 CST 2025
+Job <612553> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtms12x8p1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 695, 733]
+54 2 4 2 1 13 11 12 18 1 1 20 20 34 162 19 27 351 470 65 72 72 60 35 13 2 1 1 1 1 1 1 1 0 1569 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1250 pulls
+  Arm 1 (Aggressive Heuristic): 1059 pulls
+  Arm 2 (Conservative Heuristic): 585 pulls
+  Arm 3 (limit=0, max=0, level=0): 88 pulls
+  Arm 4 (limit=1, max=3, level=1): 115 pulls
+  Arm 5 (limit=2, max=5, level=1): 364 pulls
+  Arm 6 (limit=8, max=4, level=1): 411 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 315463,
+    avg_decide_var: 0.787364,
+    num_simplify_subsume: 373,
+    num_simplify_self_subsume: 1,
+}
+Statistic {
+    case: pdtswvtms12x8p1.aig,
+    time: 15.45s,
+    num_mic: 5606,
+    avg_mic_cube_len: 10.847128,
+    avg_po_cube_len: 22.692903,
+    mic_drop: success: 7814, fail: 52040, success rate: 13.06%,
+    num_down: 59854,
+    num_down_sat: 108252,
+    ctp: success: 0, fail: 24852, success rate: 0.00%,
+    num_get_bad: 35,
+    overall_block_time: 14.102128332s,
+    block_get_bad_time: 35.822µs,
+    block_get_predecessor_time: 5.644217173s,
+    block_blocked_time: 207.407012ms,
+    block_mic_time: 14.787200723s,
+    block_push_time: 122.616479ms,
+    overall_propagate_time: 1.329634223s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtms12x8p1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvtms12x8p1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 12:56:31 CST 2025
+========================================

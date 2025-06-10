@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 13:57:52 CST 2025
+Job <612984> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/egcd3-ll_unwindbound2.aig
+[1, 1, 1, 1, 1, 1, 966]
+2 1 1 284 555 684 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 88 pulls
+  Arm 1 (Aggressive Heuristic): 100 pulls
+  Arm 2 (Conservative Heuristic): 123 pulls
+  Arm 3 (limit=0, max=0, level=0): 119 pulls
+  Arm 4 (limit=1, max=3, level=1): 102 pulls
+  Arm 5 (limit=2, max=5, level=1): 313 pulls
+  Arm 6 (limit=8, max=4, level=1): 155 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 16307,
+    avg_decide_var: 0.999533,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: egcd3-ll_unwindbound2.aig,
+    time: 736.33s,
+    num_mic: 1744,
+    avg_mic_cube_len: 4.285550,
+    avg_po_cube_len: 582.667535,
+    mic_drop: success: 687, fail: 6759, success rate: 9.23%,
+    num_down: 7446,
+    num_down_sat: 8634,
+    ctp: success: 0, fail: 44, success rate: 0.00%,
+    num_get_bad: 8,
+    overall_block_time: 678.046844859s,
+    block_get_bad_time: 317.842µs,
+    block_get_predecessor_time: 54.328426462s,
+    block_blocked_time: 166.489745221s,
+    block_mic_time: 599.901117913s,
+    block_push_time: 8.210965294s,
+    overall_propagate_time: 57.667505263s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/egcd3-ll_unwindbound2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/egcd3-ll_unwindbound2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 14:10:10 CST 2025
+========================================

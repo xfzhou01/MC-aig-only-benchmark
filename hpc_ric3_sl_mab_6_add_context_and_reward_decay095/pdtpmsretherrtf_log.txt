@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 13:52:22 CST 2025
+Job <612842> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsretherrtf.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 135, 98]
+82 2 2 1 2 2 5 6 4 7 7 8 7 6 10 6 3 5 9 9 18 24 31 31 43 24 26 38 31 27 10 0 135 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 44 pulls
+  Arm 1 (Aggressive Heuristic): 83 pulls
+  Arm 2 (Conservative Heuristic): 39 pulls
+  Arm 3 (limit=0, max=0, level=0): 62 pulls
+  Arm 4 (limit=1, max=3, level=1): 77 pulls
+  Arm 5 (limit=2, max=5, level=1): 172 pulls
+  Arm 6 (limit=8, max=4, level=1): 148 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 13634,
+    avg_decide_var: 0.532474,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: pdtpmsretherrtf.aig,
+    time: 0.29s,
+    num_mic: 1046,
+    avg_mic_cube_len: 3.082218,
+    avg_po_cube_len: 19.884625,
+    mic_drop: success: 713, fail: 2351, success rate: 23.27%,
+    num_down: 3064,
+    num_down_sat: 3103,
+    ctp: success: 0, fail: 3780, success rate: 0.00%,
+    num_get_bad: 109,
+    overall_block_time: 167.65253ms,
+    block_get_bad_time: 2.392297ms,
+    block_get_predecessor_time: 38.263656ms,
+    block_blocked_time: 13.887347ms,
+    block_mic_time: 160.199558ms,
+    block_push_time: 3.730737ms,
+    overall_propagate_time: 109.022436ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsretherrtf.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtpmsretherrtf.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 13:52:24 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 13:52:48 CST 2025
+Job <612856> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p023.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11323]
+534 12 15 24 32 44 43 54 68 75 88 152 185 256 139 212 452 299 801 689 2383 111 2362 2485 2417 22 2061 1767 1527 1530 1067 799 474 3 1741 0 5 2 3 3 9180 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 434 pulls
+  Arm 1 (Aggressive Heuristic): 538 pulls
+  Arm 2 (Conservative Heuristic): 459 pulls
+  Arm 3 (limit=0, max=0, level=0): 17827 pulls
+  Arm 4 (limit=1, max=3, level=1): 4683 pulls
+  Arm 5 (limit=2, max=5, level=1): 3071 pulls
+  Arm 6 (limit=8, max=4, level=1): 14449 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1257027,
+    avg_decide_var: 0.723559,
+    num_simplify_subsume: 8805,
+    num_simplify_self_subsume: 3896,
+}
+Statistic {
+    case: fastfir-p023.aig,
+    time: 486.64s,
+    num_mic: 47041,
+    avg_mic_cube_len: 7.398185,
+    avg_po_cube_len: 76.309140,
+    mic_drop: success: 38057, fail: 307684, success rate: 11.01%,
+    num_down: 345741,
+    num_down_sat: 433385,
+    ctp: success: 0, fail: 124923, success rate: 0.00%,
+    num_get_bad: 1684,
+    overall_block_time: 407.837280835s,
+    block_get_bad_time: 1.00627347s,
+    block_get_predecessor_time: 152.888209328s,
+    block_blocked_time: 10.914108634s,
+    block_mic_time: 376.934931825s,
+    block_push_time: 3.313540166s,
+    overall_propagate_time: 78.450819581s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p023.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p023.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 14:00:57 CST 2025
+========================================

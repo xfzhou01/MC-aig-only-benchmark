@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 12:56:05 CST 2025
+Job <612548> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisvsar29.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4565, 43735]
+66 1 1 4 15 38 26 45 87 314 212 435 749 1066 2739 509 3880 5371 6928 14383 363 115 2 0 59452 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2229 pulls
+  Arm 1 (Aggressive Heuristic): 7058 pulls
+  Arm 2 (Conservative Heuristic): 2722 pulls
+  Arm 3 (limit=0, max=0, level=0): 1846 pulls
+  Arm 4 (limit=1, max=3, level=1): 10301 pulls
+  Arm 5 (limit=2, max=5, level=1): 2974 pulls
+  Arm 6 (limit=8, max=4, level=1): 81247 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 7477151,
+    avg_decide_var: 0.369455,
+    num_simplify_subsume: 35744,
+    num_simplify_self_subsume: 73369,
+}
+Statistic {
+    case: pdtvisvsar29.aig,
+    time: 2870.68s,
+    num_mic: 151351,
+    avg_mic_cube_len: 11.640927,
+    avg_po_cube_len: 18.971888,
+    mic_drop: success: 262127, fail: 1468340, success rate: 15.15%,
+    num_down: 1730467,
+    num_down_sat: 2556915,
+    ctp: success: 0, fail: 232046, success rate: 0.00%,
+    num_get_bad: 35722,
+    overall_block_time: 2511.180325392s,
+    block_get_bad_time: 452.066888813s,
+    block_get_predecessor_time: 296.863182521s,
+    block_blocked_time: 144.18668981s,
+    block_mic_time: 1930.423914974s,
+    block_push_time: 15.414534447s,
+    overall_propagate_time: 359.486119143s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisvsar29.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvisvsar29.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 13:43:57 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 17:31:27 CST 2025
+Job <614588> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemptrsn1b1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400]
+113 3 156 492 960 1591 2243 2459 2072 1652 1235 791 508 269 222 170 118 138 161 93 20 38 14 0 6 5082 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 6 pulls
+  Arm 1 (Aggressive Heuristic): 1147 pulls
+  Arm 2 (Conservative Heuristic): 5 pulls
+  Arm 3 (limit=0, max=0, level=0): 5 pulls
+  Arm 4 (limit=1, max=3, level=1): 862 pulls
+  Arm 5 (limit=2, max=5, level=1): 285 pulls
+  Arm 6 (limit=8, max=4, level=1): 5 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1747828,
+    avg_decide_var: 1.000729,
+    num_simplify_subsume: 19496,
+    num_simplify_self_subsume: 31360,
+}
+Statistic {
+    case: beemptrsn1b1.aig,
+    time: 230.80s,
+    num_mic: 25766,
+    avg_mic_cube_len: 31.540790,
+    avg_po_cube_len: 112.994801,
+    mic_drop: success: 302182, fail: 427254, success rate: 41.43%,
+    num_down: 729436,
+    num_down_sat: 1305862,
+    ctp: success: 0, fail: 75859, success rate: 0.00%,
+    num_get_bad: 27,
+    overall_block_time: 144.425376018s,
+    block_get_bad_time: 535.147µs,
+    block_get_predecessor_time: 8.556961848s,
+    block_blocked_time: 761.602382ms,
+    block_mic_time: 242.44356666s,
+    block_push_time: 1.257668438s,
+    overall_propagate_time: 86.352823731s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemptrsn1b1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemptrsn1b1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 17:35:19 CST 2025
+========================================

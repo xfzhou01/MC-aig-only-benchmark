@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 17:22:44 CST 2025
+Job <614513> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bj08vendingcycle.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 4, 3]
+24 5 3 4 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 1 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 4 pulls
+  Arm 5 (limit=2, max=5, level=1): 2 pulls
+  Arm 6 (limit=8, max=4, level=1): 2 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 72,
+    avg_decide_var: 2.220684,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bj08vendingcycle.aig,
+    time: 0.00s,
+    num_mic: 16,
+    avg_mic_cube_len: 1.937500,
+    avg_po_cube_len: 10.755102,
+    mic_drop: success: 2, fail: 28, success rate: 6.67%,
+    num_down: 30,
+    num_down_sat: 22,
+    ctp: success: 0, fail: 2, success rate: 0.00%,
+    num_get_bad: 4,
+    overall_block_time: 1.517748ms,
+    block_get_bad_time: 9.329µs,
+    block_get_predecessor_time: 574.84µs,
+    block_blocked_time: 280.244µs,
+    block_mic_time: 623.707µs,
+    block_push_time: 38.199µs,
+    overall_propagate_time: 287.195µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bj08vendingcycle.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bj08vendingcycle.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 17:22:44 CST 2025
+========================================

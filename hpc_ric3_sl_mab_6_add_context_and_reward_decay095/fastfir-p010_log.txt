@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 16:09:18 CST 2025
+Job <613868> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p010.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1839, 6593]
+452 22 33 59 88 241 264 422 540 880 820 917 887 690 689 481 357 920 1206 1206 965 929 570 371 220 158 9 3 1 1 0 7326 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 3273 pulls
+  Arm 1 (Aggressive Heuristic): 2640 pulls
+  Arm 2 (Conservative Heuristic): 638 pulls
+  Arm 3 (limit=0, max=0, level=0): 10167 pulls
+  Arm 4 (limit=1, max=3, level=1): 2094 pulls
+  Arm 5 (limit=2, max=5, level=1): 2707 pulls
+  Arm 6 (limit=8, max=4, level=1): 4425 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 710742,
+    avg_decide_var: 0.767580,
+    num_simplify_subsume: 8738,
+    num_simplify_self_subsume: 4957,
+}
+Statistic {
+    case: fastfir-p010.aig,
+    time: 201.60s,
+    num_mic: 29084,
+    avg_mic_cube_len: 7.114565,
+    avg_po_cube_len: 77.610093,
+    mic_drop: success: 43962, fail: 160006, success rate: 21.55%,
+    num_down: 203968,
+    num_down_sat: 244805,
+    ctp: success: 0, fail: 140283, success rate: 0.00%,
+    num_get_bad: 1757,
+    overall_block_time: 155.164746676s,
+    block_get_bad_time: 967.612448ms,
+    block_get_predecessor_time: 62.511288257s,
+    block_blocked_time: 5.311482781s,
+    block_mic_time: 141.871311326s,
+    block_push_time: 1.734316557s,
+    overall_propagate_time: 46.172300473s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p010.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p010.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 16:12:40 CST 2025
+========================================

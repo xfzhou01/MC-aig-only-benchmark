@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 18:03:35 CST 2025
+Job <614848> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p026.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3042]
+329 10 10 15 14 23 23 21 26 46 84 115 272 179 158 113 91 170 208 1021 35 796 857 511 7 443 540 361 234 71 1 1 1 449 0 2624 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 70 pulls
+  Arm 1 (Aggressive Heuristic): 6440 pulls
+  Arm 2 (Conservative Heuristic): 641 pulls
+  Arm 3 (limit=0, max=0, level=0): 508 pulls
+  Arm 4 (limit=1, max=3, level=1): 208 pulls
+  Arm 5 (limit=2, max=5, level=1): 285 pulls
+  Arm 6 (limit=8, max=4, level=1): 4283 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 341820,
+    avg_decide_var: 0.787402,
+    num_simplify_subsume: 309,
+    num_simplify_self_subsume: 105,
+}
+Statistic {
+    case: fastfir-p026.aig,
+    time: 132.73s,
+    num_mic: 14934,
+    avg_mic_cube_len: 7.218562,
+    avg_po_cube_len: 84.525990,
+    mic_drop: success: 14683, fail: 92135, success rate: 13.75%,
+    num_down: 106818,
+    num_down_sat: 123453,
+    ctp: success: 0, fail: 32104, success rate: 0.00%,
+    num_get_bad: 713,
+    overall_block_time: 115.592805611s,
+    block_get_bad_time: 400.461158ms,
+    block_get_predecessor_time: 52.073381418s,
+    block_blocked_time: 2.426643517s,
+    block_mic_time: 110.692513641s,
+    block_push_time: 373.376219ms,
+    overall_propagate_time: 16.846090523s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p026.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p026.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:05:49 CST 2025
+========================================

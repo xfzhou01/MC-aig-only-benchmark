@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 18:09:06 CST 2025
+Job <614904> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b29s.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 8, 1193]
+3468 503 543 733 534 414 2140 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 276 pulls
+  Arm 1 (Aggressive Heuristic): 774 pulls
+  Arm 2 (Conservative Heuristic): 269 pulls
+  Arm 3 (limit=0, max=0, level=0): 108 pulls
+  Arm 4 (limit=1, max=3, level=1): 83 pulls
+  Arm 5 (limit=2, max=5, level=1): 117 pulls
+  Arm 6 (limit=8, max=4, level=1): 181 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 46057,
+    avg_decide_var: 0.515218,
+    num_simplify_subsume: 726,
+    num_simplify_self_subsume: 18,
+}
+Statistic {
+    case: oski15a14b29s.aig,
+    time: 20.73s,
+    num_mic: 6473,
+    avg_mic_cube_len: 2.818168,
+    avg_po_cube_len: 924.811695,
+    mic_drop: success: 3084, fail: 14365, success rate: 17.67%,
+    num_down: 17449,
+    num_down_sat: 18578,
+    ctp: success: 0, fail: 2962, success rate: 0.00%,
+    num_get_bad: 19,
+    overall_block_time: 19.871375892s,
+    block_get_bad_time: 12.658565ms,
+    block_get_predecessor_time: 7.116718794s,
+    block_blocked_time: 1.629175651s,
+    block_mic_time: 18.879896303s,
+    block_push_time: 429.025407ms,
+    overall_propagate_time: 700.96238ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b29s.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b29s.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 18:09:28 CST 2025
+========================================
