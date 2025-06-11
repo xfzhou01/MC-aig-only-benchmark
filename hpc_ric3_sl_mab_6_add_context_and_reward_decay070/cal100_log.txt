@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 02:42:10 CST 2025
+Job <617902> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/cal100.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 625]
+525 1 31 6 3 3 0 718 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 281 pulls
+  Arm 1 (Aggressive Heuristic): 103 pulls
+  Arm 2 (Conservative Heuristic): 59 pulls
+  Arm 3 (limit=0, max=0, level=0): 115 pulls
+  Arm 4 (limit=1, max=3, level=1): 179 pulls
+  Arm 5 (limit=2, max=5, level=1): 115 pulls
+  Arm 6 (limit=8, max=4, level=1): 115 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 19220,
+    avg_decide_var: 0.149622,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: cal100.aig,
+    time: 7.70s,
+    num_mic: 1183,
+    avg_mic_cube_len: 10.313609,
+    avg_po_cube_len: 51.215254,
+    mic_drop: success: 4949, fail: 5550, success rate: 47.14%,
+    num_down: 10499,
+    num_down_sat: 12387,
+    ctp: success: 0, fail: 2449, success rate: 0.00%,
+    num_get_bad: 110,
+    overall_block_time: 5.019330232s,
+    block_get_bad_time: 266.40552ms,
+    block_get_predecessor_time: 300.475128ms,
+    block_blocked_time: 622.367058ms,
+    block_mic_time: 3.586352071s,
+    block_push_time: 773.082586ms,
+    overall_propagate_time: 2.597287759s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/cal100.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/cal100.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 02:42:19 CST 2025
+========================================

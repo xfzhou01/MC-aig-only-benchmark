@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 00:02:10 CST 2025
+Job <616889> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32-check-p06.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 46]
+2 1 1 1 3 8 9 9 5 11 1 1 3 5 3 2 1 1 0 51 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13 pulls
+  Arm 1 (Aggressive Heuristic): 25 pulls
+  Arm 2 (Conservative Heuristic): 12 pulls
+  Arm 3 (limit=0, max=0, level=0): 17 pulls
+  Arm 4 (limit=1, max=3, level=1): 8 pulls
+  Arm 5 (limit=2, max=5, level=1): 10 pulls
+  Arm 6 (limit=8, max=4, level=1): 16 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2281,
+    avg_decide_var: 0.031359,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: picorv32-check-p06.aig,
+    time: 0.15s,
+    num_mic: 169,
+    avg_mic_cube_len: 3.970414,
+    avg_po_cube_len: 13.221591,
+    mic_drop: success: 98, fail: 559, success rate: 14.92%,
+    num_down: 657,
+    num_down_sat: 699,
+    ctp: success: 0, fail: 633, success rate: 0.00%,
+    num_get_bad: 21,
+    overall_block_time: 41.347961ms,
+    block_get_bad_time: 74.424µs,
+    block_get_predecessor_time: 11.87571ms,
+    block_blocked_time: 2.591305ms,
+    block_mic_time: 39.839854ms,
+    block_push_time: 1.066803ms,
+    overall_propagate_time: 18.586943ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32-check-p06.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32-check-p06.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 00:02:11 CST 2025
+========================================

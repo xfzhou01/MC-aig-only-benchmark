@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 22:45:21 CST 2025
+Job <616382> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 18, 14, 1, 1, 1, 1, 1, 1, 6, 12, 1, 4, 319]
+185 48 81 166 298 258 172 194 186 137 116 154 306 182 61 29 27 198 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 48 pulls
+  Arm 1 (Aggressive Heuristic): 304 pulls
+  Arm 2 (Conservative Heuristic): 87 pulls
+  Arm 3 (limit=0, max=0, level=0): 50 pulls
+  Arm 4 (limit=1, max=3, level=1): 76 pulls
+  Arm 5 (limit=2, max=5, level=1): 73 pulls
+  Arm 6 (limit=8, max=4, level=1): 69 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 87683,
+    avg_decide_var: 0.804883,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: telephony.6.prop1-func-interl.aig,
+    time: 8.95s,
+    num_mic: 4062,
+    avg_mic_cube_len: 9.303545,
+    avg_po_cube_len: 78.714586,
+    mic_drop: success: 8687, fail: 26026, success rate: 25.03%,
+    num_down: 34713,
+    num_down_sat: 59150,
+    ctp: success: 0, fail: 1475, success rate: 0.00%,
+    num_get_bad: 18,
+    overall_block_time: 7.747917605s,
+    block_get_bad_time: 192.983µs,
+    block_get_predecessor_time: 1.205551652s,
+    block_blocked_time: 113.573898ms,
+    block_mic_time: 11.207880736s,
+    block_push_time: 61.823904ms,
+    overall_propagate_time: 1.163990124s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/telephony.6.prop1-func-interl.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 22:45:32 CST 2025
+========================================

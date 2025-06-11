@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 02:58:31 CST 2025
+Job <618063> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/lamport_nonatomic.5.prop1-func-interl.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 314, 188]
+231 18 37 51 71 107 136 169 192 162 139 145 132 109 66 55 50 30 27 14 6 2 1 1 1 0 333 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 41 pulls
+  Arm 1 (Aggressive Heuristic): 53 pulls
+  Arm 2 (Conservative Heuristic): 78 pulls
+  Arm 3 (limit=0, max=0, level=0): 37 pulls
+  Arm 4 (limit=1, max=3, level=1): 877 pulls
+  Arm 5 (limit=2, max=5, level=1): 50 pulls
+  Arm 6 (limit=8, max=4, level=1): 73 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 72549,
+    avg_decide_var: 0.803385,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: lamport_nonatomic.5.prop1-func-interl.aig,
+    time: 11.00s,
+    num_mic: 3667,
+    avg_mic_cube_len: 7.577311,
+    avg_po_cube_len: 103.913427,
+    mic_drop: success: 7081, fail: 17790, success rate: 28.47%,
+    num_down: 24871,
+    num_down_sat: 40107,
+    ctp: success: 0, fail: 4785, success rate: 0.00%,
+    num_get_bad: 36,
+    overall_block_time: 8.823345684s,
+    block_get_bad_time: 1.094329ms,
+    block_get_predecessor_time: 1.807487649s,
+    block_blocked_time: 273.225185ms,
+    block_mic_time: 10.695118879s,
+    block_push_time: 57.824212ms,
+    overall_propagate_time: 2.111814343s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/lamport_nonatomic.5.prop1-func-interl.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/lamport_nonatomic.5.prop1-func-interl.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 02:58:43 CST 2025
+========================================

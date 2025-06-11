@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 21:39:55 CST 2025
+Job <615878> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s207rb28.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 17, 3, 29, 915]
+3007 178 264 716 461 484 880 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 176 pulls
+  Arm 1 (Aggressive Heuristic): 328 pulls
+  Arm 2 (Conservative Heuristic): 104 pulls
+  Arm 3 (limit=0, max=0, level=0): 269 pulls
+  Arm 4 (limit=1, max=3, level=1): 179 pulls
+  Arm 5 (limit=2, max=5, level=1): 249 pulls
+  Arm 6 (limit=8, max=4, level=1): 236 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 32790,
+    avg_decide_var: 0.455212,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: 6s207rb28.aig,
+    time: 7.13s,
+    num_mic: 4758,
+    avg_mic_cube_len: 3.031946,
+    avg_po_cube_len: 560.611811,
+    mic_drop: success: 2198, fail: 11265, success rate: 16.33%,
+    num_down: 13463,
+    num_down_sat: 13223,
+    ctp: success: 0, fail: 1637, success rate: 0.00%,
+    num_get_bad: 7,
+    overall_block_time: 6.863618993s,
+    block_get_bad_time: 45.796µs,
+    block_get_predecessor_time: 2.960335242s,
+    block_blocked_time: 1.12986815s,
+    block_mic_time: 4.184653288s,
+    block_push_time: 44.797778ms,
+    overall_propagate_time: 132.154129ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s207rb28.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s207rb28.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 21:40:03 CST 2025
+========================================

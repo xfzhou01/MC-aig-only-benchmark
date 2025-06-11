@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 00:41:59 CST 2025
+Job <617103> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a10b12s.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3460, 650]
+2906 54 166 693 3055 6206 17227 22169 34670 20531 18730 6904 3353 536 151 11 0 1615 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 5228 pulls
+  Arm 1 (Aggressive Heuristic): 696 pulls
+  Arm 2 (Conservative Heuristic): 393 pulls
+  Arm 3 (limit=0, max=0, level=0): 275 pulls
+  Arm 4 (limit=1, max=3, level=1): 1033 pulls
+  Arm 5 (limit=2, max=5, level=1): 974 pulls
+  Arm 6 (limit=8, max=4, level=1): 555 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4448431,
+    avg_decide_var: 0.430542,
+    num_simplify_subsume: 61229,
+    num_simplify_self_subsume: 140728,
+}
+Statistic {
+    case: oski15a10b12s.aig,
+    time: 2735.49s,
+    num_mic: 151903,
+    avg_mic_cube_len: 13.559732,
+    avg_po_cube_len: 812.936850,
+    mic_drop: success: 400763, fail: 1460898, success rate: 21.53%,
+    num_down: 1861661,
+    num_down_sat: 3274510,
+    ctp: success: 0, fail: 37575, success rate: 0.00%,
+    num_get_bad: 804,
+    overall_block_time: 2136.166945105s,
+    block_get_bad_time: 387.014723ms,
+    block_get_predecessor_time: 235.384560895s,
+    block_blocked_time: 8.549371719s,
+    block_mic_time: 3448.07655536s,
+    block_push_time: 5.919454162s,
+    overall_propagate_time: 598.971022206s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a10b12s.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a10b12s.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 01:27:37 CST 2025
+========================================

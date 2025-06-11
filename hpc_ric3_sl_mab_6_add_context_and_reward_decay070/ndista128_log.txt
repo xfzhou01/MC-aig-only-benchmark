@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 22:35:34 CST 2025
+Job <616159> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/ndista128.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 360, 6]
+13 7 4 4 1 1 1 6 2 1 1 1 1 1 6 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 4 0 6 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 42 pulls
+  Arm 1 (Aggressive Heuristic): 41 pulls
+  Arm 2 (Conservative Heuristic): 43 pulls
+  Arm 3 (limit=0, max=0, level=0): 28 pulls
+  Arm 4 (limit=1, max=3, level=1): 28 pulls
+  Arm 5 (limit=2, max=5, level=1): 51 pulls
+  Arm 6 (limit=8, max=4, level=1): 104 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 7578,
+    avg_decide_var: 0.671475,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: ndista128.aig,
+    time: 0.07s,
+    num_mic: 601,
+    avg_mic_cube_len: 3.906822,
+    avg_po_cube_len: 12.105829,
+    mic_drop: success: 270, fail: 1983, success rate: 11.98%,
+    num_down: 2253,
+    num_down_sat: 3031,
+    ctp: success: 0, fail: 376, success rate: 0.00%,
+    num_get_bad: 86,
+    overall_block_time: 58.330275ms,
+    block_get_bad_time: 70.856µs,
+    block_get_predecessor_time: 15.868228ms,
+    block_blocked_time: 3.002949ms,
+    block_mic_time: 50.379648ms,
+    block_push_time: 1.709532ms,
+    overall_propagate_time: 4.72339ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/ndista128.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/ndista128.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 22:35:36 CST 2025
+========================================

@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 01:48:27 CST 2025
+Job <617527> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s332rb155.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 29974]
+31599 3 0 29983 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 4307 pulls
+  Arm 1 (Aggressive Heuristic): 4242 pulls
+  Arm 2 (Conservative Heuristic): 4295 pulls
+  Arm 3 (limit=0, max=0, level=0): 4345 pulls
+  Arm 4 (limit=1, max=3, level=1): 4277 pulls
+  Arm 5 (limit=2, max=5, level=1): 4254 pulls
+  Arm 6 (limit=8, max=4, level=1): 4262 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 179620,
+    avg_decide_var: 0.012004,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: 6s332rb155.aig,
+    time: 99.54s,
+    num_mic: 29991,
+    avg_mic_cube_len: 2.988930,
+    avg_po_cube_len: 146.313619,
+    mic_drop: success: 66, fail: 89573, success rate: 0.07%,
+    num_down: 89639,
+    num_down_sat: 59680,
+    ctp: success: 0, fail: 29978, success rate: 0.00%,
+    num_get_bad: 5,
+    overall_block_time: 94.511736024s,
+    block_get_bad_time: 1.475243ms,
+    block_get_predecessor_time: 62.234657589s,
+    block_blocked_time: 20.761917755s,
+    block_mic_time: 31.965291529s,
+    block_push_time: 623.578256ms,
+    overall_propagate_time: 4.304832059s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s332rb155.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s332rb155.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 01:50:11 CST 2025
+========================================

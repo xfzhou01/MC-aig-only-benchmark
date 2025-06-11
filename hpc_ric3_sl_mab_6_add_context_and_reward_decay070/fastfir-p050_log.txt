@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 21:34:10 CST 2025
+Job <615709> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p050.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 111, 1801]
+288 38 11 15 18 28 40 51 59 37 26 37 37 38 33 46 33 141 74 56 708 19 500 427 206 5 260 385 198 85 3 2 3 1 266 0 1 1 1680 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 228 pulls
+  Arm 1 (Aggressive Heuristic): 478 pulls
+  Arm 2 (Conservative Heuristic): 971 pulls
+  Arm 3 (limit=0, max=0, level=0): 269 pulls
+  Arm 4 (limit=1, max=3, level=1): 228 pulls
+  Arm 5 (limit=2, max=5, level=1): 230 pulls
+  Arm 6 (limit=8, max=4, level=1): 5128 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 230355,
+    avg_decide_var: 0.811021,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p050.aig,
+    time: 101.76s,
+    num_mic: 8972,
+    avg_mic_cube_len: 8.098306,
+    avg_po_cube_len: 70.981422,
+    mic_drop: success: 15824, fail: 56352, success rate: 21.92%,
+    num_down: 72176,
+    num_down_sat: 81003,
+    ctp: success: 0, fail: 25053, success rate: 0.00%,
+    num_get_bad: 626,
+    overall_block_time: 93.138590988s,
+    block_get_bad_time: 325.864742ms,
+    block_get_predecessor_time: 46.221814708s,
+    block_blocked_time: 1.304509863s,
+    block_mic_time: 90.932142961s,
+    block_push_time: 186.931128ms,
+    overall_propagate_time: 8.32895638s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p050.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p050.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 21:35:52 CST 2025
+========================================

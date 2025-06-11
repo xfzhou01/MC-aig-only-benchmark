@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 03:33:46 CST 2025
+Job <618312> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 152, 4497]
+441 144 84 67 19 21 30 33 34 16 29 25 26 18 161 18 29 21 37 25 31 8 15 11 13 5 3 5 16 39 3 2 0 4619 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1510 pulls
+  Arm 1 (Aggressive Heuristic): 1091 pulls
+  Arm 2 (Conservative Heuristic): 986 pulls
+  Arm 3 (limit=0, max=0, level=0): 921 pulls
+  Arm 4 (limit=1, max=3, level=1): 1335 pulls
+  Arm 5 (limit=2, max=5, level=1): 1213 pulls
+  Arm 6 (limit=8, max=4, level=1): 1362 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 240551,
+    avg_decide_var: 0.382219,
+    num_simplify_subsume: 189,
+    num_simplify_self_subsume: 109,
+}
+Statistic {
+    case: eijks5378.aig,
+    time: 11.57s,
+    num_mic: 8652,
+    avg_mic_cube_len: 7.787564,
+    avg_po_cube_len: 11.669698,
+    mic_drop: success: 634, fail: 66705, success rate: 0.94%,
+    num_down: 67339,
+    num_down_sat: 66596,
+    ctp: success: 0, fail: 132831, success rate: 0.00%,
+    num_get_bad: 3915,
+    overall_block_time: 7.184194811s,
+    block_get_bad_time: 4.938508324s,
+    block_get_predecessor_time: 494.785482ms,
+    block_blocked_time: 117.811164ms,
+    block_mic_time: 1.606378072s,
+    block_push_time: 13.678404ms,
+    overall_propagate_time: 4.348821798s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/eijks5378.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 03:33:58 CST 2025
+========================================

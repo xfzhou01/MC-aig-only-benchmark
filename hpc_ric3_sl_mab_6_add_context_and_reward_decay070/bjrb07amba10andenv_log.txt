@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 00:33:42 CST 2025
+Job <617023> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bjrb07amba10andenv.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 83]
+58 2 1 18 13 25 44 68 92 117 129 156 144 166 141 104 105 131 116 77 53 40 26 13 8 4 0 255 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 87 pulls
+  Arm 1 (Aggressive Heuristic): 20 pulls
+  Arm 2 (Conservative Heuristic): 37 pulls
+  Arm 3 (limit=0, max=0, level=0): 23 pulls
+  Arm 4 (limit=1, max=3, level=1): 28 pulls
+  Arm 5 (limit=2, max=5, level=1): 26 pulls
+  Arm 6 (limit=8, max=4, level=1): 298 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 67976,
+    avg_decide_var: 0.244753,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bjrb07amba10andenv.aig,
+    time: 132.90s,
+    num_mic: 3178,
+    avg_mic_cube_len: 7.522970,
+    avg_po_cube_len: 19.479412,
+    mic_drop: success: 8936, fail: 14111, success rate: 38.77%,
+    num_down: 23047,
+    num_down_sat: 32549,
+    ctp: success: 0, fail: 4498, success rate: 0.00%,
+    num_get_bad: 28,
+    overall_block_time: 65.31934883s,
+    block_get_bad_time: 61.035µs,
+    block_get_predecessor_time: 11.747447856s,
+    block_blocked_time: 1.916790312s,
+    block_mic_time: 79.439810681s,
+    block_push_time: 5.206730386s,
+    overall_propagate_time: 66.731698091s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bjrb07amba10andenv.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bjrb07amba10andenv.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 00:35:57 CST 2025
+========================================

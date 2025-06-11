@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 02:22:13 CST 2025
+Job <617751> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/synapse.7.prop1-func-interl.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 208, 130]
+185 5 5 10 9 23 59 92 148 205 272 288 257 191 141 161 156 136 114 51 25 7 2 5 0 1082 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 49 pulls
+  Arm 1 (Aggressive Heuristic): 50 pulls
+  Arm 2 (Conservative Heuristic): 63 pulls
+  Arm 3 (limit=0, max=0, level=0): 31 pulls
+  Arm 4 (limit=1, max=3, level=1): 106 pulls
+  Arm 5 (limit=2, max=5, level=1): 914 pulls
+  Arm 6 (limit=8, max=4, level=1): 42 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 270384,
+    avg_decide_var: 0.690352,
+    num_simplify_subsume: 9785,
+    num_simplify_self_subsume: 3640,
+}
+Statistic {
+    case: synapse.7.prop1-func-interl.aig,
+    time: 36.32s,
+    num_mic: 9464,
+    avg_mic_cube_len: 13.594886,
+    avg_po_cube_len: 90.879188,
+    mic_drop: success: 53006, fail: 59331, success rate: 47.18%,
+    num_down: 112337,
+    num_down_sat: 182044,
+    ctp: success: 0, fail: 13747, success rate: 0.00%,
+    num_get_bad: 26,
+    overall_block_time: 30.319906315s,
+    block_get_bad_time: 394.364µs,
+    block_get_predecessor_time: 4.533623776s,
+    block_blocked_time: 247.035357ms,
+    block_mic_time: 45.024766565s,
+    block_push_time: 316.209018ms,
+    overall_propagate_time: 5.930037392s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/synapse.7.prop1-func-interl.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/synapse.7.prop1-func-interl.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 02:22:49 CST 2025
+========================================

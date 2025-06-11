@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 03:12:29 CST 2025
+Job <618164> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipversa_composecrc_prf-p12.aig
+[0, 0, 0, 0, 3, 18]
+97 3 21 0 18 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 6 pulls
+  Arm 1 (Aggressive Heuristic): 6 pulls
+  Arm 2 (Conservative Heuristic): 5 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 9 pulls
+  Arm 5 (limit=2, max=5, level=1): 5 pulls
+  Arm 6 (limit=8, max=4, level=1): 4 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 330,
+    avg_decide_var: 0.179055,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: zipversa_composecrc_prf-p12.aig,
+    time: 0.01s,
+    num_mic: 46,
+    avg_mic_cube_len: 3.239130,
+    avg_po_cube_len: 10.849206,
+    mic_drop: success: 6, fail: 143, success rate: 4.03%,
+    num_down: 149,
+    num_down_sat: 130,
+    ctp: success: 0, fail: 20, success rate: 0.00%,
+    num_get_bad: 7,
+    overall_block_time: 4.155202ms,
+    block_get_bad_time: 104.684µs,
+    block_get_predecessor_time: 1.820108ms,
+    block_blocked_time: 329.556µs,
+    block_mic_time: 2.659454ms,
+    block_push_time: 4.872µs,
+    overall_propagate_time: 401.77µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipversa_composecrc_prf-p12.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipversa_composecrc_prf-p12.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 03:12:29 CST 2025
+========================================

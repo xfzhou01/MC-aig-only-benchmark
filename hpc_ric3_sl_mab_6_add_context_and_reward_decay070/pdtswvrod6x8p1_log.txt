@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 23:31:52 CST 2025
+Job <616586> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvrod6x8p1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 143, 22]
+74 2 2 3 5 5 5 5 7 11 9 16 20 23 25 30 14 15 22 28 26 33 21 27 33 29 30 21 24 22 18 21 14 14 17 18 10 8 8 17 24 20 14 21 27 25 31 32 25 22 17 18 18 11 7 7 4 3 1 1 0 115 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 31 pulls
+  Arm 1 (Aggressive Heuristic): 80 pulls
+  Arm 2 (Conservative Heuristic): 30 pulls
+  Arm 3 (limit=0, max=0, level=0): 34 pulls
+  Arm 4 (limit=1, max=3, level=1): 133 pulls
+  Arm 5 (limit=2, max=5, level=1): 58 pulls
+  Arm 6 (limit=8, max=4, level=1): 239 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 66714,
+    avg_decide_var: 0.556187,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: pdtswvrod6x8p1.aig,
+    time: 2.81s,
+    num_mic: 2584,
+    avg_mic_cube_len: 6.844814,
+    avg_po_cube_len: 20.568505,
+    mic_drop: success: 5327, fail: 11382, success rate: 31.88%,
+    num_down: 16709,
+    num_down_sat: 25587,
+    ctp: success: 0, fail: 6373, success rate: 0.00%,
+    num_get_bad: 62,
+    overall_block_time: 1.920754567s,
+    block_get_bad_time: 61.189µs,
+    block_get_predecessor_time: 382.088752ms,
+    block_blocked_time: 26.196218ms,
+    block_mic_time: 2.521329547s,
+    block_push_time: 24.894745ms,
+    overall_propagate_time: 836.931777ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvrod6x8p1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtswvrod6x8p1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 23:31:55 CST 2025
+========================================

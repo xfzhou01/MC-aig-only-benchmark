@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 03:04:05 CST 2025
+Job <618099> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/ILA_Piccolo_BEQ_sanity.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 478, 202]
+328 4 7 4 4 10 8 29 61 215 169 23 10 5 0 261 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 89 pulls
+  Arm 1 (Aggressive Heuristic): 90 pulls
+  Arm 2 (Conservative Heuristic): 66 pulls
+  Arm 3 (limit=0, max=0, level=0): 78 pulls
+  Arm 4 (limit=1, max=3, level=1): 73 pulls
+  Arm 5 (limit=2, max=5, level=1): 101 pulls
+  Arm 6 (limit=8, max=4, level=1): 103 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 11939,
+    avg_decide_var: 0.405985,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: ILA_Piccolo_BEQ_sanity.aig,
+    time: 15.76s,
+    num_mic: 1085,
+    avg_mic_cube_len: 3.835945,
+    avg_po_cube_len: 2406.961210,
+    mic_drop: success: 588, fail: 3233, success rate: 15.39%,
+    num_down: 3821,
+    num_down_sat: 3902,
+    ctp: success: 0, fail: 1242, success rate: 0.00%,
+    num_get_bad: 318,
+    overall_block_time: 13.417440284s,
+    block_get_bad_time: 545.642163ms,
+    block_get_predecessor_time: 6.424356089s,
+    block_blocked_time: 820.576279ms,
+    block_mic_time: 10.309500996s,
+    block_push_time: 36.395164ms,
+    overall_propagate_time: 1.891585737s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/ILA_Piccolo_BEQ_sanity.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/ILA_Piccolo_BEQ_sanity.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 03:04:22 CST 2025
+========================================

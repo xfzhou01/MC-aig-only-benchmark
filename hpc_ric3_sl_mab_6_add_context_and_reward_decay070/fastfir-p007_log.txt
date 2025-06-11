@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 02:40:33 CST 2025
+Job <617884> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p007.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3098, 12103]
+575 26 40 61 90 242 318 448 533 1327 1365 1375 1801 1920 1973 1406 924 2103 1970 1846 1440 1333 1036 733 529 675 416 222 94 0 13028 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1817 pulls
+  Arm 1 (Aggressive Heuristic): 6651 pulls
+  Arm 2 (Conservative Heuristic): 3695 pulls
+  Arm 3 (limit=0, max=0, level=0): 3985 pulls
+  Arm 4 (limit=1, max=3, level=1): 7034 pulls
+  Arm 5 (limit=2, max=5, level=1): 22448 pulls
+  Arm 6 (limit=8, max=4, level=1): 4214 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1264877,
+    avg_decide_var: 0.732033,
+    num_simplify_subsume: 14113,
+    num_simplify_self_subsume: 10252,
+}
+Statistic {
+    case: fastfir-p007.aig,
+    time: 444.83s,
+    num_mic: 52618,
+    avg_mic_cube_len: 6.656239,
+    avg_po_cube_len: 64.897779,
+    mic_drop: success: 41667, fail: 301230, success rate: 12.15%,
+    num_down: 342897,
+    num_down_sat: 410988,
+    ctp: success: 0, fail: 194507, success rate: 0.00%,
+    num_get_bad: 2207,
+    overall_block_time: 344.515962873s,
+    block_get_bad_time: 1.387640524s,
+    block_get_predecessor_time: 133.28907844s,
+    block_blocked_time: 12.450151739s,
+    block_mic_time: 302.21246466s,
+    block_push_time: 5.00077129s,
+    overall_propagate_time: 100.034644133s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p007.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p007.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 02:48:00 CST 2025
+========================================

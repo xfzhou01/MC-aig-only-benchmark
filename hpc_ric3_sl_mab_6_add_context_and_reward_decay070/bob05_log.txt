@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 21:31:23 CST 2025
+Job <615627> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bob05.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 765, 208]
+2404 13 35 28 28 39 55 75 73 147 230 259 213 98 77 46 52 50 35 22 36 17 15 3 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 0 518 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 80 pulls
+  Arm 1 (Aggressive Heuristic): 371 pulls
+  Arm 2 (Conservative Heuristic): 361 pulls
+  Arm 3 (limit=0, max=0, level=0): 88 pulls
+  Arm 4 (limit=1, max=3, level=1): 124 pulls
+  Arm 5 (limit=2, max=5, level=1): 117 pulls
+  Arm 6 (limit=8, max=4, level=1): 361 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 81901,
+    avg_decide_var: 0.074523,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bob05.aig,
+    time: 4.96s,
+    num_mic: 4398,
+    avg_mic_cube_len: 5.053661,
+    avg_po_cube_len: 192.015227,
+    mic_drop: success: 4333, fail: 16547, success rate: 20.75%,
+    num_down: 20880,
+    num_down_sat: 27608,
+    ctp: success: 0, fail: 16857, success rate: 0.00%,
+    num_get_bad: 42,
+    overall_block_time: 3.767386722s,
+    block_get_bad_time: 376.907µs,
+    block_get_predecessor_time: 1.208438069s,
+    block_blocked_time: 546.144112ms,
+    block_mic_time: 2.954872622s,
+    block_push_time: 66.350007ms,
+    overall_propagate_time: 899.199697ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bob05.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bob05.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 21:31:28 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 23:45:40 CST 2025
+Job <616775> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/vis_arrays_am2910_p3.aig
+[0, 0, 0, 10, 2]
+112 10 0 3 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 2 pulls
+  Arm 4 (limit=1, max=3, level=1): 2 pulls
+  Arm 5 (limit=2, max=5, level=1): 2 pulls
+  Arm 6 (limit=8, max=4, level=1): 2 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 52,
+    avg_decide_var: 0.165078,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: vis_arrays_am2910_p3.aig,
+    time: 0.00s,
+    num_mic: 16,
+    avg_mic_cube_len: 1.187500,
+    avg_po_cube_len: 14.196078,
+    mic_drop: success: 2, fail: 17, success rate: 10.53%,
+    num_down: 19,
+    num_down_sat: 6,
+    ctp: success: 0, fail: 1, success rate: 0.00%,
+    num_get_bad: 14,
+    overall_block_time: 449.491µs,
+    block_get_bad_time: 24.39µs,
+    block_get_predecessor_time: 134.277µs,
+    block_blocked_time: 64.386µs,
+    block_mic_time: 159.565µs,
+    block_push_time: 26.491µs,
+    overall_propagate_time: 43.971µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/vis_arrays_am2910_p3.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/vis_arrays_am2910_p3.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 23:45:40 CST 2025
+========================================

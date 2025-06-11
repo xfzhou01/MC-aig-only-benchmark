@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 23:42:10 CST 2025
+Job <616712> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p069.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 163, 22]
+288 46 38 50 31 31 44 19 2 0 76 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 35 pulls
+  Arm 1 (Aggressive Heuristic): 27 pulls
+  Arm 2 (Conservative Heuristic): 30 pulls
+  Arm 3 (limit=0, max=0, level=0): 35 pulls
+  Arm 4 (limit=1, max=3, level=1): 44 pulls
+  Arm 5 (limit=2, max=5, level=1): 64 pulls
+  Arm 6 (limit=8, max=4, level=1): 43 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 5884,
+    avg_decide_var: 0.875554,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p069.aig,
+    time: 1.38s,
+    num_mic: 566,
+    avg_mic_cube_len: 4.620141,
+    avg_po_cube_len: 117.732738,
+    mic_drop: success: 1196, fail: 1348, success rate: 47.01%,
+    num_down: 2544,
+    num_down_sat: 2856,
+    ctp: success: 0, fail: 429, success rate: 0.00%,
+    num_get_bad: 149,
+    overall_block_time: 1.065663599s,
+    block_get_bad_time: 41.815511ms,
+    block_get_predecessor_time: 402.904583ms,
+    block_blocked_time: 40.72131ms,
+    block_mic_time: 1.045539496s,
+    block_push_time: 3.868158ms,
+    overall_propagate_time: 229.942638ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p069.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p069.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 23:42:12 CST 2025
+========================================

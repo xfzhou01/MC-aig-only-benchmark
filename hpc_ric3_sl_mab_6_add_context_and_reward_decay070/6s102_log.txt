@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 01:39:17 CST 2025
+Job <617441> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s102.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1608, 1919]
+1121 215 270 229 134 105 112 112 151 278 263 781 596 564 479 526 174 123 44 8 66 1120 698 94 8 10 11 0 13350 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 260 pulls
+  Arm 1 (Aggressive Heuristic): 274 pulls
+  Arm 2 (Conservative Heuristic): 488 pulls
+  Arm 3 (limit=0, max=0, level=0): 203 pulls
+  Arm 4 (limit=1, max=3, level=1): 447 pulls
+  Arm 5 (limit=2, max=5, level=1): 1843 pulls
+  Arm 6 (limit=8, max=4, level=1): 647 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 878557,
+    avg_decide_var: 0.334783,
+    num_simplify_subsume: 75074,
+    num_simplify_self_subsume: 12877,
+}
+Statistic {
+    case: 6s102.aig,
+    time: 136.57s,
+    num_mic: 26899,
+    avg_mic_cube_len: 11.251645,
+    avg_po_cube_len: 425.814221,
+    mic_drop: success: 32368, fail: 250213, success rate: 11.45%,
+    num_down: 282581,
+    num_down_sat: 452771,
+    ctp: success: 0, fail: 112678, success rate: 0.00%,
+    num_get_bad: 29,
+    overall_block_time: 118.906809506s,
+    block_get_bad_time: 544.905µs,
+    block_get_predecessor_time: 22.314632007s,
+    block_blocked_time: 2.715987224s,
+    block_mic_time: 144.464604907s,
+    block_push_time: 12.160153055s,
+    overall_propagate_time: 17.562064977s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s102.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s102.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 01:41:34 CST 2025
+========================================

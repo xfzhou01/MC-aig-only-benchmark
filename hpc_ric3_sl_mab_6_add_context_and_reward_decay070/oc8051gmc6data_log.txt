@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 02:51:04 CST 2025
+Job <618002> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmc6data.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 910, 1661]
+933 3 2 5 4 6 66 82 82 89 204 544 2436 10176 18078 24219 32980 16799 2652 302 55 15 3 1 0 9910 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 130 pulls
+  Arm 1 (Aggressive Heuristic): 183 pulls
+  Arm 2 (Conservative Heuristic): 121 pulls
+  Arm 3 (limit=0, max=0, level=0): 136 pulls
+  Arm 4 (limit=1, max=3, level=1): 150 pulls
+  Arm 5 (limit=2, max=5, level=1): 107 pulls
+  Arm 6 (limit=8, max=4, level=1): 5268 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3816025,
+    avg_decide_var: 0.482031,
+    num_simplify_subsume: 28052,
+    num_simplify_self_subsume: 67802,
+}
+Statistic {
+    case: oc8051gmc6data.aig,
+    time: 2149.21s,
+    num_mic: 125764,
+    avg_mic_cube_len: 13.860334,
+    avg_po_cube_len: 419.994245,
+    mic_drop: success: 521204, fail: 1082569, success rate: 32.50%,
+    num_down: 1603773,
+    num_down_sat: 2564795,
+    ctp: success: 0, fail: 85265, success rate: 0.00%,
+    num_get_bad: 69,
+    overall_block_time: 1626.689391744s,
+    block_get_bad_time: 32.724254ms,
+    block_get_predecessor_time: 162.256905367s,
+    block_blocked_time: 4.479546467s,
+    block_mic_time: 2673.793811727s,
+    block_push_time: 3.563298533s,
+    overall_propagate_time: 522.381970661s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmc6data.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmc6data.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 03:26:54 CST 2025
+========================================

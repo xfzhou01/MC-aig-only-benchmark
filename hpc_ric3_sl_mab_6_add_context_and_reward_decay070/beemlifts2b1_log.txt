@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 01:33:13 CST 2025
+Job <617378> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemlifts2b1.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253]
+186 1 1189 3427 4987 5313 3692 2037 1329 912 733 586 474 297 223 149 129 80 34 18 8 12 0 20281 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 70 pulls
+  Arm 1 (Aggressive Heuristic): 326 pulls
+  Arm 2 (Conservative Heuristic): 305 pulls
+  Arm 3 (limit=0, max=0, level=0): 135 pulls
+  Arm 4 (limit=1, max=3, level=1): 273 pulls
+  Arm 5 (limit=2, max=5, level=1): 410 pulls
+  Arm 6 (limit=8, max=4, level=1): 287 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4209915,
+    avg_decide_var: 1.051937,
+    num_simplify_subsume: 28275,
+    num_simplify_self_subsume: 21261,
+}
+Statistic {
+    case: beemlifts2b1.aig,
+    time: 3252.79s,
+    num_mic: 58107,
+    avg_mic_cube_len: 35.965581,
+    avg_po_cube_len: 185.994642,
+    mic_drop: success: 707001, fail: 1220974, success rate: 36.67%,
+    num_down: 1927975,
+    num_down_sat: 3364627,
+    ctp: success: 0, fail: 246646, success rate: 0.00%,
+    num_get_bad: 25,
+    overall_block_time: 2467.700819277s,
+    block_get_bad_time: 8.239318ms,
+    block_get_predecessor_time: 100.934198789s,
+    block_blocked_time: 2.136642758s,
+    block_mic_time: 4453.356862316s,
+    block_push_time: 46.109076513s,
+    overall_propagate_time: 784.849575897s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemlifts2b1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/beemlifts2b1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 02:27:28 CST 2025
+========================================

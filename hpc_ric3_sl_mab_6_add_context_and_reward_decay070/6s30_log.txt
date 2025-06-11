@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 21:39:47 CST 2025
+Job <615874> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s30.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 315, 459]
+1195 11 26 18 26 33 45 84 65 29 70 84 72 180 128 68 57 45 72 64 51 59 19 80 50 12 9 6 10 7 10 8 3 2 5 5 4 0 1497 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 57 pulls
+  Arm 1 (Aggressive Heuristic): 225 pulls
+  Arm 2 (Conservative Heuristic): 244 pulls
+  Arm 3 (limit=0, max=0, level=0): 215 pulls
+  Arm 4 (limit=1, max=3, level=1): 206 pulls
+  Arm 5 (limit=2, max=5, level=1): 137 pulls
+  Arm 6 (limit=8, max=4, level=1): 699 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 132070,
+    avg_decide_var: 0.008055,
+    num_simplify_subsume: 5391,
+    num_simplify_self_subsume: 3995,
+}
+Statistic {
+    case: 6s30.aig,
+    time: 7.07s,
+    num_mic: 4461,
+    avg_mic_cube_len: 5.397220,
+    avg_po_cube_len: 75.978948,
+    mic_drop: success: 4359, fail: 18748, success rate: 18.86%,
+    num_down: 23107,
+    num_down_sat: 30829,
+    ctp: success: 0, fail: 35742, success rate: 0.00%,
+    num_get_bad: 42,
+    overall_block_time: 4.036829173s,
+    block_get_bad_time: 2.670019ms,
+    block_get_predecessor_time: 1.314943483s,
+    block_blocked_time: 197.553571ms,
+    block_mic_time: 4.072893668s,
+    block_push_time: 81.552125ms,
+    overall_propagate_time: 1.682041062s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s30.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s30.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 21:39:55 CST 2025
+========================================

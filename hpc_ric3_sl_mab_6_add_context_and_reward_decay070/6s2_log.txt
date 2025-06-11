@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 03:23:23 CST 2025
+Job <618233> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s2.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 497]
+781 38 71 219 89 94 17 4 0 18 5 553 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 96 pulls
+  Arm 1 (Aggressive Heuristic): 160 pulls
+  Arm 2 (Conservative Heuristic): 60 pulls
+  Arm 3 (limit=0, max=0, level=0): 110 pulls
+  Arm 4 (limit=1, max=3, level=1): 104 pulls
+  Arm 5 (limit=2, max=5, level=1): 179 pulls
+  Arm 6 (limit=8, max=4, level=1): 140 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 17765,
+    avg_decide_var: 0.167975,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: 6s2.aig,
+    time: 1.94s,
+    num_mic: 1372,
+    avg_mic_cube_len: 4.924927,
+    avg_po_cube_len: 63.805735,
+    mic_drop: success: 551, fail: 6093, success rate: 8.29%,
+    num_down: 6644,
+    num_down_sat: 6711,
+    ctp: success: 0, fail: 3139, success rate: 0.00%,
+    num_get_bad: 34,
+    overall_block_time: 1.573739395s,
+    block_get_bad_time: 1.725464ms,
+    block_get_predecessor_time: 527.523251ms,
+    block_blocked_time: 168.371894ms,
+    block_mic_time: 1.253999353s,
+    block_push_time: 31.0454ms,
+    overall_propagate_time: 278.223953ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s2.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s2.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 03:23:25 CST 2025
+========================================

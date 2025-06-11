@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 03:30:55 CST 2025
+Job <618286> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmcodic.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3427, 4109]
+1850 176 316 772 2558 5031 4390 3860 3614 3047 2627 1535 544 205 151 113 86 19 12 0 20994 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2350 pulls
+  Arm 1 (Aggressive Heuristic): 459 pulls
+  Arm 2 (Conservative Heuristic): 464 pulls
+  Arm 3 (limit=0, max=0, level=0): 359 pulls
+  Arm 4 (limit=1, max=3, level=1): 1768 pulls
+  Arm 5 (limit=2, max=5, level=1): 665 pulls
+  Arm 6 (limit=8, max=4, level=1): 8649 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2013129,
+    avg_decide_var: 0.264329,
+    num_simplify_subsume: 80331,
+    num_simplify_self_subsume: 43468,
+}
+Statistic {
+    case: bobsmcodic.aig,
+    time: 417.18s,
+    num_mic: 74701,
+    avg_mic_cube_len: 14.672441,
+    avg_po_cube_len: 76.329316,
+    mic_drop: success: 315436, fail: 699232, success rate: 31.09%,
+    num_down: 1014668,
+    num_down_sat: 1293019,
+    ctp: success: 0, fail: 199731, success rate: 0.00%,
+    num_get_bad: 100,
+    overall_block_time: 280.506327615s,
+    block_get_bad_time: 43.049576ms,
+    block_get_predecessor_time: 10.64580037s,
+    block_blocked_time: 5.258126749s,
+    block_mic_time: 424.87942291s,
+    block_push_time: 25.781801274s,
+    overall_propagate_time: 136.484402141s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmcodic.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmcodic.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 03:37:53 CST 2025
+========================================

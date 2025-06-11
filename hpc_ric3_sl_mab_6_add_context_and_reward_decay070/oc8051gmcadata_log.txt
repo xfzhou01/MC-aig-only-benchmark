@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 02:44:20 CST 2025
+Job <617914> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmcadata.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2295]
+933 3 3 4 2 3 54 78 66 74 147 371 938 1518 2456 4498 4604 1803 382 29 1 0 242 6901 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 215 pulls
+  Arm 1 (Aggressive Heuristic): 3873 pulls
+  Arm 2 (Conservative Heuristic): 135 pulls
+  Arm 3 (limit=0, max=0, level=0): 94 pulls
+  Arm 4 (limit=1, max=3, level=1): 195 pulls
+  Arm 5 (limit=2, max=5, level=1): 459 pulls
+  Arm 6 (limit=8, max=4, level=1): 804 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 804266,
+    avg_decide_var: 0.431125,
+    num_simplify_subsume: 9746,
+    num_simplify_self_subsume: 14809,
+}
+Statistic {
+    case: oc8051gmcadata.aig,
+    time: 255.96s,
+    num_mic: 27819,
+    avg_mic_cube_len: 11.876164,
+    avg_po_cube_len: 416.599690,
+    mic_drop: success: 91970, fail: 214886, success rate: 29.97%,
+    num_down: 306856,
+    num_down_sat: 480946,
+    ctp: success: 0, fail: 45323, success rate: 0.00%,
+    num_get_bad: 63,
+    overall_block_time: 198.468708104s,
+    block_get_bad_time: 24.867772ms,
+    block_get_predecessor_time: 34.463076849s,
+    block_blocked_time: 2.963728774s,
+    block_mic_time: 272.89856156s,
+    block_push_time: 1.443581987s,
+    overall_propagate_time: 57.361438481s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmcadata.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oc8051gmcadata.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 02:48:36 CST 2025
+========================================

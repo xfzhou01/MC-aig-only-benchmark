@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 23:14:14 CST 2025
+Job <616522> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvistimeout0.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5225]
+32 85 150 245 537 1003 1243 1575 1560 1145 827 590 656 403 176 92 74 36 15 11 1 0 169 8391 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2231 pulls
+  Arm 1 (Aggressive Heuristic): 1622 pulls
+  Arm 2 (Conservative Heuristic): 973 pulls
+  Arm 3 (limit=0, max=0, level=0): 2503 pulls
+  Arm 4 (limit=1, max=3, level=1): 1498 pulls
+  Arm 5 (limit=2, max=5, level=1): 1230 pulls
+  Arm 6 (limit=8, max=4, level=1): 3526 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 997618,
+    avg_decide_var: 0.613338,
+    num_simplify_subsume: 19353,
+    num_simplify_self_subsume: 22938,
+}
+Statistic {
+    case: pdtvistimeout0.aig,
+    time: 128.44s,
+    num_mic: 28506,
+    avg_mic_cube_len: 11.441802,
+    avg_po_cube_len: 21.549550,
+    mic_drop: success: 74347, fail: 241604, success rate: 23.53%,
+    num_down: 315951,
+    num_down_sat: 467204,
+    ctp: success: 0, fail: 106574, success rate: 0.00%,
+    num_get_bad: 101,
+    overall_block_time: 76.113629057s,
+    block_get_bad_time: 19.270282ms,
+    block_get_predecessor_time: 8.869093612s,
+    block_blocked_time: 2.296231274s,
+    block_mic_time: 90.130283325s,
+    block_push_time: 976.874821ms,
+    overall_propagate_time: 52.314180175s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvistimeout0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pdtvistimeout0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 23:16:22 CST 2025
+========================================

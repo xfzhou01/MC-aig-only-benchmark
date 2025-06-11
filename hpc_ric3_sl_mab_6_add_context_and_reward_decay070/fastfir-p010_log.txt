@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 00:51:56 CST 2025
+Job <617219> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu06>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p010.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1522, 6662]
+452 24 37 56 85 217 245 363 499 911 986 940 954 723 731 635 562 716 1364 1503 1044 957 588 351 217 152 11 16 9 7 0 7704 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1144 pulls
+  Arm 1 (Aggressive Heuristic): 1902 pulls
+  Arm 2 (Conservative Heuristic): 2045 pulls
+  Arm 3 (limit=0, max=0, level=0): 3121 pulls
+  Arm 4 (limit=1, max=3, level=1): 1658 pulls
+  Arm 5 (limit=2, max=5, level=1): 4395 pulls
+  Arm 6 (limit=8, max=4, level=1): 12490 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 933447,
+    avg_decide_var: 0.770589,
+    num_simplify_subsume: 8785,
+    num_simplify_self_subsume: 6396,
+}
+Statistic {
+    case: fastfir-p010.aig,
+    time: 421.75s,
+    num_mic: 31282,
+    avg_mic_cube_len: 7.192603,
+    avg_po_cube_len: 68.524482,
+    mic_drop: success: 50317, fail: 169579, success rate: 22.88%,
+    num_down: 219896,
+    num_down_sat: 264017,
+    ctp: success: 0, fail: 142377, success rate: 0.00%,
+    num_get_bad: 1697,
+    overall_block_time: 369.616932051s,
+    block_get_bad_time: 1.050090998s,
+    block_get_predecessor_time: 174.285211362s,
+    block_blocked_time: 6.311547003s,
+    block_mic_time: 355.964308345s,
+    block_push_time: 2.408895075s,
+    overall_propagate_time: 51.858024696s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p010.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p010.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 00:58:58 CST 2025
+========================================

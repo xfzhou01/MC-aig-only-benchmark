@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 21:34:47 CST 2025
+Job <615727> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-zipmmu-p10.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 541]
+77 6 3 20 25 32 61 68 42 69 85 88 133 91 84 127 93 134 110 153 166 356 635 627 538 348 125 68 38 45 15 0 8 11 280 198 117 118 58834 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 57 pulls
+  Arm 1 (Aggressive Heuristic): 222 pulls
+  Arm 2 (Conservative Heuristic): 100 pulls
+  Arm 3 (limit=0, max=0, level=0): 61 pulls
+  Arm 4 (limit=1, max=3, level=1): 121 pulls
+  Arm 5 (limit=2, max=5, level=1): 90 pulls
+  Arm 6 (limit=8, max=4, level=1): 440 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 9366586,
+    avg_decide_var: 0.562867,
+    num_simplify_subsume: 211763,
+    num_simplify_self_subsume: 37959,
+}
+Statistic {
+    case: zipcpu-zipmmu-p10.aig,
+    time: 1770.94s,
+    num_mic: 69591,
+    avg_mic_cube_len: 51.310644,
+    avg_po_cube_len: 109.643305,
+    mic_drop: success: 179831, fail: 3327054, success rate: 5.13%,
+    num_down: 3506885,
+    num_down_sat: 8022181,
+    ctp: success: 0, fail: 577320, success rate: 0.00%,
+    num_get_bad: 66,
+    overall_block_time: 1408.066923758s,
+    block_get_bad_time: 28.971624ms,
+    block_get_predecessor_time: 51.641986427s,
+    block_blocked_time: 998.503911ms,
+    block_mic_time: 2224.28431489s,
+    block_push_time: 113.733984466s,
+    overall_propagate_time: 362.83993528s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-zipmmu-p10.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/zipcpu-zipmmu-p10.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 22:04:18 CST 2025
+========================================

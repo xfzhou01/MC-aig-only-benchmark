@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 01:42:26 CST 2025
+Job <617481> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pj2017.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 330]
+448 1 18 17 22 32 35 28 36 41 64 81 109 188 210 254 250 318 316 300 290 395 472 309 268 276 222 173 92 60 29 12 12 7 5 2 0 1300 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 58 pulls
+  Arm 1 (Aggressive Heuristic): 409 pulls
+  Arm 2 (Conservative Heuristic): 130 pulls
+  Arm 3 (limit=0, max=0, level=0): 32 pulls
+  Arm 4 (limit=1, max=3, level=1): 67 pulls
+  Arm 5 (limit=2, max=5, level=1): 167 pulls
+  Arm 6 (limit=8, max=4, level=1): 274 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 357709,
+    avg_decide_var: 0.964073,
+    num_simplify_subsume: 4211,
+    num_simplify_self_subsume: 6866,
+}
+Statistic {
+    case: pj2017.aig,
+    time: 349.11s,
+    num_mic: 7820,
+    avg_mic_cube_len: 15.616240,
+    avg_po_cube_len: 180.755772,
+    mic_drop: success: 30929, fail: 83734, success rate: 26.97%,
+    num_down: 114663,
+    num_down_sat: 225766,
+    ctp: success: 0, fail: 19833, success rate: 0.00%,
+    num_get_bad: 109,
+    overall_block_time: 245.696487685s,
+    block_get_bad_time: 68.258582ms,
+    block_get_predecessor_time: 26.87160763s,
+    block_blocked_time: 1.123165623s,
+    block_mic_time: 384.196833549s,
+    block_push_time: 6.405024499s,
+    overall_propagate_time: 102.799284812s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pj2017.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/pj2017.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 01:48:16 CST 2025
+========================================

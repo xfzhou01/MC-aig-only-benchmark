@@ -1,0 +1,55 @@
+Started at: Wed Jun 11 02:51:11 CST 2025
+Job <618004> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu09>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b29s.aig
+Warning: property not found, moved 1 outputs to bad properties
+[1, 1, 1, 1, 1, 1, 1, 1685]
+3468 502 575 826 657 693 2936 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 585 pulls
+  Arm 1 (Aggressive Heuristic): 410 pulls
+  Arm 2 (Conservative Heuristic): 365 pulls
+  Arm 3 (limit=0, max=0, level=0): 299 pulls
+  Arm 4 (limit=1, max=3, level=1): 280 pulls
+  Arm 5 (limit=2, max=5, level=1): 177 pulls
+  Arm 6 (limit=8, max=4, level=1): 323 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 57556,
+    avg_decide_var: 0.500404,
+    num_simplify_subsume: 882,
+    num_simplify_self_subsume: 29,
+}
+Statistic {
+    case: oski15a14b29s.aig,
+    time: 25.55s,
+    num_mic: 7981,
+    avg_mic_cube_len: 2.972059,
+    avg_po_cube_len: 908.999787,
+    mic_drop: success: 4157, fail: 18616, success rate: 18.25%,
+    num_down: 22773,
+    num_down_sat: 25333,
+    ctp: success: 0, fail: 2359, success rate: 0.00%,
+    num_get_bad: 88,
+    overall_block_time: 24.719621543s,
+    block_get_bad_time: 54.199767ms,
+    block_get_predecessor_time: 8.73422605s,
+    block_blocked_time: 2.135103781s,
+    block_mic_time: 23.063971564s,
+    block_push_time: 647.349449ms,
+    overall_propagate_time: 681.981328ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b29s.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/oski15a14b29s.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 02:51:37 CST 2025
+========================================

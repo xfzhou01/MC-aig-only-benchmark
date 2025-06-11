@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 03:33:31 CST 2025
+Job <618310> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32-check-p18.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 37]
+7 2 1 2 3 6 6 9 5 0 40 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 15 pulls
+  Arm 1 (Aggressive Heuristic): 11 pulls
+  Arm 2 (Conservative Heuristic): 8 pulls
+  Arm 3 (limit=0, max=0, level=0): 11 pulls
+  Arm 4 (limit=1, max=3, level=1): 9 pulls
+  Arm 5 (limit=2, max=5, level=1): 7 pulls
+  Arm 6 (limit=8, max=4, level=1): 14 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 874,
+    avg_decide_var: 0.028696,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: picorv32-check-p18.aig,
+    time: 0.09s,
+    num_mic: 104,
+    avg_mic_cube_len: 3.105769,
+    avg_po_cube_len: 8.980000,
+    mic_drop: success: 20, fail: 299, success rate: 6.27%,
+    num_down: 319,
+    num_down_sat: 298,
+    ctp: success: 0, fail: 170, success rate: 0.00%,
+    num_get_bad: 11,
+    overall_block_time: 19.404927ms,
+    block_get_bad_time: 30.207µs,
+    block_get_predecessor_time: 6.622622ms,
+    block_blocked_time: 2.868567ms,
+    block_mic_time: 13.96571ms,
+    block_push_time: 419.406µs,
+    overall_propagate_time: 5.211841ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32-check-p18.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/picorv32-check-p18.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 03:33:31 CST 2025
+========================================

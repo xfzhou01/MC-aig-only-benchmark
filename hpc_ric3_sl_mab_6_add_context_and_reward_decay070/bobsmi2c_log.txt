@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 22:34:45 CST 2025
+Job <616137> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmi2c.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 229, 486]
+260 89 83 63 22 39 17 6 10 26 31 19 13 5 12 7 4 3 5 7 4 5 2 1 14 7 5 5 4 4 2 2 3 3 4 2 12 14 11 11 15 20 26 23 6 1 2 0 728 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 107 pulls
+  Arm 1 (Aggressive Heuristic): 172 pulls
+  Arm 2 (Conservative Heuristic): 94 pulls
+  Arm 3 (limit=0, max=0, level=0): 80 pulls
+  Arm 4 (limit=1, max=3, level=1): 432 pulls
+  Arm 5 (limit=2, max=5, level=1): 92 pulls
+  Arm 6 (limit=8, max=4, level=1): 462 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 60175,
+    avg_decide_var: 0.382776,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: bobsmi2c.aig,
+    time: 2.20s,
+    num_mic: 2287,
+    avg_mic_cube_len: 3.073021,
+    avg_po_cube_len: 66.022046,
+    mic_drop: success: 1335, fail: 5412, success rate: 19.79%,
+    num_down: 6747,
+    num_down_sat: 6652,
+    ctp: success: 0, fail: 31849, success rate: 0.00%,
+    num_get_bad: 72,
+    overall_block_time: 859.736681ms,
+    block_get_bad_time: 9.736979ms,
+    block_get_predecessor_time: 196.84635ms,
+    block_blocked_time: 74.841733ms,
+    block_mic_time: 763.002279ms,
+    block_push_time: 40.92507ms,
+    overall_propagate_time: 1.305573167s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmi2c.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/bobsmi2c.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 22:34:49 CST 2025
+========================================

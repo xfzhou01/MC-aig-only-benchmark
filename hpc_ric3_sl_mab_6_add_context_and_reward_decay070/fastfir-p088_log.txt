@@ -1,0 +1,54 @@
+Started at: Wed Jun 11 00:36:00 CST 2025
+Job <617040> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p088.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 390, 77]
+534 26 30 45 70 49 38 29 35 62 106 122 84 42 42 52 79 85 82 20 1 0 198 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 60 pulls
+  Arm 1 (Aggressive Heuristic): 164 pulls
+  Arm 2 (Conservative Heuristic): 79 pulls
+  Arm 3 (limit=0, max=0, level=0): 117 pulls
+  Arm 4 (limit=1, max=3, level=1): 247 pulls
+  Arm 5 (limit=2, max=5, level=1): 64 pulls
+  Arm 6 (limit=8, max=4, level=1): 145 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 26016,
+    avg_decide_var: 0.743061,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: fastfir-p088.aig,
+    time: 6.39s,
+    num_mic: 2161,
+    avg_mic_cube_len: 3.488663,
+    avg_po_cube_len: 119.537667,
+    mic_drop: success: 1958, fail: 5373, success rate: 26.71%,
+    num_down: 7331,
+    num_down_sat: 8539,
+    ctp: success: 0, fail: 3270, success rate: 0.00%,
+    num_get_bad: 131,
+    overall_block_time: 4.703416259s,
+    block_get_bad_time: 38.220934ms,
+    block_get_predecessor_time: 1.778358412s,
+    block_blocked_time: 197.749925ms,
+    block_mic_time: 4.818742566s,
+    block_push_time: 26.933914ms,
+    overall_propagate_time: 1.511290425s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p088.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/fastfir-p088.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Wed Jun 11 00:36:07 CST 2025
+========================================

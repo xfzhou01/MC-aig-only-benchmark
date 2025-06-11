@@ -1,0 +1,55 @@
+Started at: Tue Jun 10 22:33:39 CST 2025
+Job <616108> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s189.aig
+Warning: property not found, moved 1 outputs to bad properties
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3253, 3475]
+2434 59 42 42 410 814 1206 1263 3502 28237 18262 6968 4903 4630 1971 1705 992 936 355 1125 299 157 46 0 69723 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 600 pulls
+  Arm 1 (Aggressive Heuristic): 3471 pulls
+  Arm 2 (Conservative Heuristic): 1181 pulls
+  Arm 3 (limit=0, max=0, level=0): 471 pulls
+  Arm 4 (limit=1, max=3, level=1): 820 pulls
+  Arm 5 (limit=2, max=5, level=1): 2804 pulls
+  Arm 6 (limit=8, max=4, level=1): 1294 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4871558,
+    avg_decide_var: 0.266170,
+    num_simplify_subsume: 65006,
+    num_simplify_self_subsume: 20211,
+}
+Statistic {
+    case: 6s189.aig,
+    time: 3284.05s,
+    num_mic: 176215,
+    avg_mic_cube_len: 12.763255,
+    avg_po_cube_len: 472.301484,
+    mic_drop: success: 366777, fail: 1694618, success rate: 17.79%,
+    num_down: 2061395,
+    num_down_sat: 2582529,
+    ctp: success: 0, fail: 826153, success rate: 0.00%,
+    num_get_bad: 25,
+    overall_block_time: 2309.819475037s,
+    block_get_bad_time: 569.084µs,
+    block_get_predecessor_time: 371.512506486s,
+    block_blocked_time: 25.47220819s,
+    block_mic_time: 3054.267697619s,
+    block_push_time: 129.814942399s,
+    overall_propagate_time: 973.733428198s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s189.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/6s189.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 23:28:25 CST 2025
+========================================

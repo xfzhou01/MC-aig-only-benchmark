@@ -1,0 +1,54 @@
+Started at: Tue Jun 10 22:45:58 CST 2025
+Job <616391> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/yosyshq_appnote_123_cv32e40x-p355.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33, 17]
+3288 2 1 1 1 79 33 26 9 12 8 3 1 0 30 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 12 pulls
+  Arm 1 (Aggressive Heuristic): 23 pulls
+  Arm 2 (Conservative Heuristic): 6 pulls
+  Arm 3 (limit=0, max=0, level=0): 7 pulls
+  Arm 4 (limit=1, max=3, level=1): 10 pulls
+  Arm 5 (limit=2, max=5, level=1): 14 pulls
+  Arm 6 (limit=8, max=4, level=1): 26 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2493,
+    avg_decide_var: 0.056327,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: yosyshq_appnote_123_cv32e40x-p355.aig,
+    time: 0.67s,
+    num_mic: 277,
+    avg_mic_cube_len: 3.288809,
+    avg_po_cube_len: 65.901544,
+    mic_drop: success: 203, fail: 690, success rate: 22.73%,
+    num_down: 893,
+    num_down_sat: 754,
+    ctp: success: 0, fail: 285, success rate: 0.00%,
+    num_get_bad: 30,
+    overall_block_time: 258.018618ms,
+    block_get_bad_time: 1.78285ms,
+    block_get_predecessor_time: 75.506935ms,
+    block_blocked_time: 26.087922ms,
+    block_mic_time: 232.166265ms,
+    block_push_time: 1.970695ms,
+    overall_propagate_time: 64.623187ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/yosyshq_appnote_123_cv32e40x-p355.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple/yosyshq_appnote_123_cv32e40x-p355.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Jun 10 22:46:01 CST 2025
+========================================
