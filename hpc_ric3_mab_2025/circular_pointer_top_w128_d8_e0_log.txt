@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:16:44 CST 2025
+Job <773187> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/circular_pointer_top_w128_d8_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1805, 8582]
+1 88 279 280 1583 632 2317 2778 5415 2666 4521 8552 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13469 pulls
+  Arm 1 (Aggressive Heuristic): 1789 pulls
+  Arm 2 (Conservative Heuristic): 1847 pulls
+  Arm 3 (limit=0, max=0, level=0): 7628 pulls
+  Arm 4 (limit=1, max=3, level=1): 11798 pulls
+  Arm 5 (limit=2, max=5, level=1): 2047 pulls
+  Arm 6 (limit=8, max=4, level=1): 3858 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 860401,
+    avg_decide_var: 0.308517,
+    num_simplify_subsume: 6908,
+    num_simplify_self_subsume: 11894,
+}
+Statistic {
+    case: circular_pointer_top_w128_d8_e0.aig,
+    time: 66.58s,
+    num_mic: 45405,
+    avg_mic_cube_len: 9.243828,
+    avg_po_cube_len: 16.733486,
+    mic_drop: success: 23100, fail: 394640, success rate: 5.53%,
+    num_down: 417740,
+    num_down_sat: 552228,
+    ctp: success: 0, fail: 9440, success rate: 0.00%,
+    num_get_bad: 2843,
+    overall_block_time: 62.102313649s,
+    block_get_bad_time: 698.926205ms,
+    block_get_predecessor_time: 3.974979212s,
+    block_blocked_time: 3.328695484s,
+    block_mic_time: 55.681401264s,
+    block_push_time: 103.110415ms,
+    overall_propagate_time: 4.438534118s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/circular_pointer_top_w128_d8_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/circular_pointer_top_w128_d8_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:19:53 CST 2025
+========================================

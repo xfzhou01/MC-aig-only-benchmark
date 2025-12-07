@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:21:29 CST 2025
+Job <773223> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2025/ntu/sat/microban/microban_93.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 3, 1, 1, 25, 39, 1, 27, 17, 2, 1, 1, 8, 7, 1, 1, 15, 25, 41, 9, 2, 1, 1, 2, 35, 328]
+105 8 17 29 45 89 152 290 496 644 761 945 947 829 900 930 1087 1111 1199 1215 1215 1075 950 742 630 523 525 503 499 399 318 217 122 70 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 115 pulls
+  Arm 1 (Aggressive Heuristic): 293 pulls
+  Arm 2 (Conservative Heuristic): 92 pulls
+  Arm 3 (limit=0, max=0, level=0): 169 pulls
+  Arm 4 (limit=1, max=3, level=1): 207 pulls
+  Arm 5 (limit=2, max=5, level=1): 294 pulls
+  Arm 6 (limit=8, max=4, level=1): 249 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 5218217,
+    avg_decide_var: 1.002649,
+    num_simplify_subsume: 10229,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: microban_93.aig,
+    time: 459.30s,
+    num_mic: 30478,
+    avg_mic_cube_len: 40.568705,
+    avg_po_cube_len: 104.407020,
+    mic_drop: success: 165080, fail: 983492, success rate: 14.37%,
+    num_down: 1148572,
+    num_down_sat: 4779363,
+    ctp: success: 0, fail: 726, success rate: 0.00%,
+    num_get_bad: 38,
+    overall_block_time: 450.482977887s,
+    block_get_bad_time: 21.54691ms,
+    block_get_predecessor_time: 90.843385062s,
+    block_blocked_time: 199.210251ms,
+    block_mic_time: 760.50358386s,
+    block_push_time: 44.289872ms,
+    overall_propagate_time: 8.720912365s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2025/ntu/sat/microban/microban_93.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2025/ntu/sat/microban/microban_93.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:43:17 CST 2025
+========================================
