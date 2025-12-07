@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:17:07 CST 2025
+Job <773198> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/arbitrated_top_n4_w128_d16_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 5, 1, 1, 1, 1, 2112, 2434]
+1 12 25 28 58 61 95 73 150 115 175 118 261 207 305 290 496 2376 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 153 pulls
+  Arm 1 (Aggressive Heuristic): 2372 pulls
+  Arm 2 (Conservative Heuristic): 414 pulls
+  Arm 3 (limit=0, max=0, level=0): 237 pulls
+  Arm 4 (limit=1, max=3, level=1): 176 pulls
+  Arm 5 (limit=2, max=5, level=1): 160 pulls
+  Arm 6 (limit=8, max=4, level=1): 834 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 170986,
+    avg_decide_var: 0.093762,
+    num_simplify_subsume: 1308,
+    num_simplify_self_subsume: 1413,
+}
+Statistic {
+    case: arbitrated_top_n4_w128_d16_e0.aig,
+    time: 15.68s,
+    num_mic: 6360,
+    avg_mic_cube_len: 8.352516,
+    avg_po_cube_len: 21.561005,
+    mic_drop: success: 9832, fail: 36415, success rate: 21.26%,
+    num_down: 46247,
+    num_down_sat: 70848,
+    ctp: success: 0, fail: 18842, success rate: 0.00%,
+    num_get_bad: 2025,
+    overall_block_time: 14.082643597s,
+    block_get_bad_time: 1.435804892s,
+    block_get_predecessor_time: 4.14666194s,
+    block_blocked_time: 386.251761ms,
+    block_mic_time: 11.775233698s,
+    block_push_time: 24.675145ms,
+    overall_propagate_time: 1.262957263s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/arbitrated_top_n4_w128_d16_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/arbitrated_top_n4_w128_d16_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:21:34 CST 2025
+========================================

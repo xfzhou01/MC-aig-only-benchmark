@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:15:14 CST 2025
+Job <773139> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dblclockfft_butterfly_ck3_r1-p125.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 10, 274]
+413 5 3 5 3 5 8 0 278 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 58 pulls
+  Arm 1 (Aggressive Heuristic): 48 pulls
+  Arm 2 (Conservative Heuristic): 28 pulls
+  Arm 3 (limit=0, max=0, level=0): 39 pulls
+  Arm 4 (limit=1, max=3, level=1): 82 pulls
+  Arm 5 (limit=2, max=5, level=1): 20 pulls
+  Arm 6 (limit=8, max=4, level=1): 23 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3029,
+    avg_decide_var: 0.175156,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: dblclockfft_butterfly_ck3_r1-p125.aig,
+    time: 0.10s,
+    num_mic: 322,
+    avg_mic_cube_len: 2.282609,
+    avg_po_cube_len: 121.585387,
+    mic_drop: success: 281, fail: 447, success rate: 38.60%,
+    num_down: 728,
+    num_down_sat: 665,
+    ctp: success: 0, fail: 584, success rate: 0.00%,
+    num_get_bad: 14,
+    overall_block_time: 75.404926ms,
+    block_get_bad_time: 44.45µs,
+    block_get_predecessor_time: 38.339964ms,
+    block_blocked_time: 14.271493ms,
+    block_mic_time: 28.845245ms,
+    block_push_time: 3.675344ms,
+    overall_propagate_time: 3.947139ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dblclockfft_butterfly_ck3_r1-p125.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dblclockfft_butterfly_ck3_r1-p125.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:15:15 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:15:39 CST 2025
+Job <773155> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dspfilters_fastfir_second-p50.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 271, 336]
+1091 13 14 22 19 24 20 17 12 11 21 19 34 27 41 43 29 64 55 340 6 5 73 2 1 0 411 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 130 pulls
+  Arm 1 (Aggressive Heuristic): 181 pulls
+  Arm 2 (Conservative Heuristic): 121 pulls
+  Arm 3 (limit=0, max=0, level=0): 117 pulls
+  Arm 4 (limit=1, max=3, level=1): 141 pulls
+  Arm 5 (limit=2, max=5, level=1): 108 pulls
+  Arm 6 (limit=8, max=4, level=1): 170 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 34339,
+    avg_decide_var: 0.601052,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p50.aig,
+    time: 11.82s,
+    num_mic: 1894,
+    avg_mic_cube_len: 7.742344,
+    avg_po_cube_len: 150.595174,
+    mic_drop: success: 7571, fail: 6483, success rate: 53.87%,
+    num_down: 14054,
+    num_down_sat: 17229,
+    ctp: success: 0, fail: 4112, success rate: 0.00%,
+    num_get_bad: 325,
+    overall_block_time: 10.206285304s,
+    block_get_bad_time: 154.528039ms,
+    block_get_predecessor_time: 4.211651039s,
+    block_blocked_time: 307.999987ms,
+    block_mic_time: 10.456513349s,
+    block_push_time: 62.200738ms,
+    overall_propagate_time: 1.355012422s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dspfilters_fastfir_second-p50.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dspfilters_fastfir_second-p50.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:15:52 CST 2025
+========================================

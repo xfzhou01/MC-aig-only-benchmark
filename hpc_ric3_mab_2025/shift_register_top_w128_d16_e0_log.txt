@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:17:15 CST 2025
+Job <773202> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/shift_register_top_w128_d16_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1582, 1840]
+1 3 262 523 269 526 527 528 532 784 529 1040 1289 1558 1312 1808 1817 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 685 pulls
+  Arm 1 (Aggressive Heuristic): 454 pulls
+  Arm 2 (Conservative Heuristic): 10209 pulls
+  Arm 3 (limit=0, max=0, level=0): 1529 pulls
+  Arm 4 (limit=1, max=3, level=1): 578 pulls
+  Arm 5 (limit=2, max=5, level=1): 700 pulls
+  Arm 6 (limit=8, max=4, level=1): 4027 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 353841,
+    avg_decide_var: 0.242593,
+    num_simplify_subsume: 6021,
+    num_simplify_self_subsume: 5758,
+}
+Statistic {
+    case: shift_register_top_w128_d16_e0.aig,
+    time: 25.94s,
+    num_mic: 18263,
+    avg_mic_cube_len: 8.585227,
+    avg_po_cube_len: 13.926987,
+    mic_drop: success: 14208, fail: 140530, success rate: 9.18%,
+    num_down: 154738,
+    num_down_sat: 189073,
+    ctp: success: 0, fail: 16069, success rate: 0.00%,
+    num_get_bad: 276,
+    overall_block_time: 21.955528246s,
+    block_get_bad_time: 58.086773ms,
+    block_get_predecessor_time: 2.424212772s,
+    block_blocked_time: 1.463213496s,
+    block_mic_time: 19.498875225s,
+    block_push_time: 51.014197ms,
+    overall_propagate_time: 3.898804756s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/shift_register_top_w128_d16_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/shift_register_top_w128_d16_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:22:13 CST 2025
+========================================

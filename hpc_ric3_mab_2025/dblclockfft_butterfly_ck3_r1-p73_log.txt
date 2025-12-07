@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:15:57 CST 2025
+Job <773164> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dblclockfft_butterfly_ck3_r1-p73.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 7, 40]
+136 4 3 6 4 3 3 0 43 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2 pulls
+  Arm 1 (Aggressive Heuristic): 10 pulls
+  Arm 2 (Conservative Heuristic): 2 pulls
+  Arm 3 (limit=0, max=0, level=0): 6 pulls
+  Arm 4 (limit=1, max=3, level=1): 22 pulls
+  Arm 5 (limit=2, max=5, level=1): 15 pulls
+  Arm 6 (limit=8, max=4, level=1): 7 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 617,
+    avg_decide_var: 0.098439,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: dblclockfft_butterfly_ck3_r1-p73.aig,
+    time: 0.02s,
+    num_mic: 79,
+    avg_mic_cube_len: 2.240506,
+    avg_po_cube_len: 104.962500,
+    mic_drop: success: 58, fail: 112, success rate: 34.12%,
+    num_down: 170,
+    num_down_sat: 140,
+    ctp: success: 0, fail: 111, success rate: 0.00%,
+    num_get_bad: 12,
+    overall_block_time: 8.416114ms,
+    block_get_bad_time: 30.175µs,
+    block_get_predecessor_time: 3.85227ms,
+    block_blocked_time: 1.938734ms,
+    block_mic_time: 3.04132ms,
+    block_push_time: 273.533µs,
+    overall_propagate_time: 592.454µs,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dblclockfft_butterfly_ck3_r1-p73.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dblclockfft_butterfly_ck3_r1-p73.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:15:58 CST 2025
+========================================

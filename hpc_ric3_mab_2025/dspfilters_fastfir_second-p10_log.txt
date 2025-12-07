@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:15:10 CST 2025
+Job <773137> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dspfilters_fastfir_second-p10.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9968, 27306]
+1091 22 38 78 108 198 244 473 507 772 790 992 1007 1413 1466 1893 2042 2455 4550 4845 4553 3706 2747 2457 1996 2353 1937 1660 1199 1095 929 806 542 491 313 123 53 22 11 10 7 3 1 1 0 30391 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 20760 pulls
+  Arm 1 (Aggressive Heuristic): 1468 pulls
+  Arm 2 (Conservative Heuristic): 20499 pulls
+  Arm 3 (limit=0, max=0, level=0): 5464 pulls
+  Arm 4 (limit=1, max=3, level=1): 9104 pulls
+  Arm 5 (limit=2, max=5, level=1): 25705 pulls
+  Arm 6 (limit=8, max=4, level=1): 15514 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 4299170,
+    avg_decide_var: 0.644200,
+    num_simplify_subsume: 99363,
+    num_simplify_self_subsume: 59407,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p10.aig,
+    time: 2192.71s,
+    num_mic: 112098,
+    avg_mic_cube_len: 11.821201,
+    avg_po_cube_len: 496.826759,
+    mic_drop: success: 629617, fail: 652434, success rate: 49.11%,
+    num_down: 1282051,
+    num_down_sat: 1628920,
+    ctp: success: 0, fail: 745841, success rate: 0.00%,
+    num_get_bad: 4138,
+    overall_block_time: 1675.667618581s,
+    block_get_bad_time: 3.641639333s,
+    block_get_predecessor_time: 665.597463115s,
+    block_blocked_time: 56.161196247s,
+    block_mic_time: 1615.13582299s,
+    block_push_time: 28.697742232s,
+    overall_propagate_time: 516.575043228s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dspfilters_fastfir_second-p10.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/wolf/2019C/dspfilters_fastfir_second-p10.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:51:45 CST 2025
+========================================

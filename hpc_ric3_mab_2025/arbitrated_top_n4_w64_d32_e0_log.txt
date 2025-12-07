@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:16:22 CST 2025
+Job <773176> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/arbitrated_top_n4_w64_d32_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 17, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2336, 6180]
+1 12 28 32 51 56 101 81 164 130 203 184 360 256 368 278 532 399 565 564 719 573 596 569 859 680 661 547 704 526 543 539 1419 4196 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 2465 pulls
+  Arm 1 (Aggressive Heuristic): 431 pulls
+  Arm 2 (Conservative Heuristic): 12540 pulls
+  Arm 3 (limit=0, max=0, level=0): 598 pulls
+  Arm 4 (limit=1, max=3, level=1): 553 pulls
+  Arm 5 (limit=2, max=5, level=1): 453 pulls
+  Arm 6 (limit=8, max=4, level=1): 3661 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 994189,
+    avg_decide_var: 0.094074,
+    num_simplify_subsume: 28771,
+    num_simplify_self_subsume: 54921,
+}
+Statistic {
+    case: arbitrated_top_n4_w64_d32_e0.aig,
+    time: 104.03s,
+    num_mic: 31256,
+    avg_mic_cube_len: 11.385014,
+    avg_po_cube_len: 27.982060,
+    mic_drop: success: 62369, fail: 277896, success rate: 18.33%,
+    num_down: 340265,
+    num_down_sat: 497306,
+    ctp: success: 0, fail: 61409, success rate: 0.00%,
+    num_get_bad: 2229,
+    overall_block_time: 85.446664512s,
+    block_get_bad_time: 2.225112342s,
+    block_get_predecessor_time: 14.518154318s,
+    block_blocked_time: 3.106597611s,
+    block_mic_time: 86.299220568s,
+    block_push_time: 155.190836ms,
+    overall_propagate_time: 17.906800833s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/arbitrated_top_n4_w64_d32_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2019/mann/data-integrity/unsafe/arbitrated_top_n4_w64_d32_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:18:06 CST 2025
+========================================

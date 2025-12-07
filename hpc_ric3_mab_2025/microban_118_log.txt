@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:36:56 CST 2025
+Job <773256> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2025/ntu/sat/microban/microban_118.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 25, 7, 2, 5, 1, 1, 1, 1, 254, 155, 132, 144, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 77, 25, 4, 1, 1, 1, 1, 5, 9, 1, 1, 1, 1, 1, 1, 1, 23, 45]
+59 4 1 2 2 4 4 4 3 5 8 7 9 13 19 44 34 28 31 26 28 34 76 62 64 37 16 11 13 17 20 20 26 35 36 43 54 60 66 65 48 27 20 20 17 14 16 15 15 14 11 9 10 11 10 9 4 58 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 66 pulls
+  Arm 1 (Aggressive Heuristic): 1008 pulls
+  Arm 2 (Conservative Heuristic): 1175 pulls
+  Arm 3 (limit=0, max=0, level=0): 85 pulls
+  Arm 4 (limit=1, max=3, level=1): 91 pulls
+  Arm 5 (limit=2, max=5, level=1): 100 pulls
+  Arm 6 (limit=8, max=4, level=1): 230 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 365699,
+    avg_decide_var: 1.012436,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: microban_118.aig,
+    time: 18.98s,
+    num_mic: 6184,
+    avg_mic_cube_len: 16.042691,
+    avg_po_cube_len: 58.356443,
+    mic_drop: success: 19584, fail: 67525, success rate: 22.48%,
+    num_down: 87109,
+    num_down_sat: 282686,
+    ctp: success: 0, fail: 861, success rate: 0.00%,
+    num_get_bad: 60,
+    overall_block_time: 18.710526884s,
+    block_get_bad_time: 1.141212ms,
+    block_get_predecessor_time: 7.885679764s,
+    block_blocked_time: 106.981429ms,
+    block_mic_time: 23.245868463s,
+    block_push_time: 44.606391ms,
+    overall_propagate_time: 210.92918ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2025/ntu/sat/microban/microban_118.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2025/ntu/sat/microban/microban_118.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:49:43 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Sat Dec  6 20:11:13 CST 2025
+Job <773021> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2024/hkust/x-epic/xepic_a18-p1.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1978, 4295]
+133 154 661 2202 4277 5850 6323 4978 3051 2170 1103 1619 481 394 225 54 24 3 3 2 5 9 4 3 5 3 20 7 2026 1734 634 158 40 2 0 15961 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1194 pulls
+  Arm 1 (Aggressive Heuristic): 2361 pulls
+  Arm 2 (Conservative Heuristic): 647 pulls
+  Arm 3 (limit=0, max=0, level=0): 848 pulls
+  Arm 4 (limit=1, max=3, level=1): 25089 pulls
+  Arm 5 (limit=2, max=5, level=1): 2747 pulls
+  Arm 6 (limit=8, max=4, level=1): 908 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 3849842,
+    avg_decide_var: 0.529152,
+    num_simplify_subsume: 139810,
+    num_simplify_self_subsume: 101197,
+}
+Statistic {
+    case: xepic_a18-p1.aig,
+    time: 1458.97s,
+    num_mic: 81873,
+    avg_mic_cube_len: 14.509606,
+    avg_po_cube_len: 56.364918,
+    mic_drop: success: 327006, fail: 775535, success rate: 29.66%,
+    num_down: 1102541,
+    num_down_sat: 1784071,
+    ctp: success: 0, fail: 470596, success rate: 0.00%,
+    num_get_bad: 37,
+    overall_block_time: 454.641355522s,
+    block_get_bad_time: 87.351µs,
+    block_get_predecessor_time: 42.312494678s,
+    block_blocked_time: 25.479998685s,
+    block_mic_time: 542.119063449s,
+    block_push_time: 2.524984905s,
+    overall_propagate_time: 1004.274244685s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2024/hkust/x-epic/xepic_a18-p1.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc2025/safety/2024/hkust/x-epic/xepic_a18-p1.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Sat Dec  6 20:35:33 CST 2025
+========================================
