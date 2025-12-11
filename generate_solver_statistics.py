@@ -2,6 +2,17 @@
 """
 Generate statistics table for solver performance across different families.
 Shows how many safe/unsafe/unknown cases each solver solved in each family.
+
+Usage:
+    python generate_solver_statistics.py <log_dir1> <log_dir2> [parser_type]
+    
+    log_dir1: First solver log directory
+    log_dir2: Second solver log directory
+    parser_type: 'ric3' or 'ic3ref' (default: 'ric3')
+    
+Example:
+    python generate_solver_statistics.py hpc_ric3_dyn_2025 hpc_ric3_mab_2025
+    python generate_solver_statistics.py hpc_IC3REF_solver1 hpc_IC3REF_solver2 ic3ref
 """
 
 import os
@@ -22,7 +33,9 @@ def collect_solver_statistics(aig_dict, log_dir, parser_func):
         parser_func: Parser function (parse_ric3_log or parse_ic3ref_log)
         
     Returns:
-        dict: {family: {'safe': count, 'unsafe': count, 'unknown': count, 'total': count}}
+        tuple: (family_stats, all_results)
+            family_stats: dict {family: {'safe': count, 'unsafe': count, 'unknown': count, 'total': count}}
+            all_results: dict {basename: result_type} for overall statistics
     """
     # Parse all logs once
     print(f"Parsing logs in {log_dir}...")
@@ -30,7 +43,7 @@ def collect_solver_statistics(aig_dict, log_dir, parser_func):
     
     if not os.path.exists(log_dir):
         print(f"Error: Directory not found: {log_dir}")
-        return {}
+        return {}, {}
     
     for filename in os.listdir(log_dir):
         if not filename.endswith('_log.txt'):
@@ -54,12 +67,13 @@ def collect_solver_statistics(aig_dict, log_dir, parser_func):
         safe_count = 0
         unsafe_count = 0
         unknown_count = 0
-        total_count = len(benchmarks)
+        matched_count = 0  # Count only benchmarks that have log files
         
         for aig_file in benchmarks:
             basename = os.path.splitext(aig_file)[0]
             
             if basename in results:
+                matched_count += 1
                 result_type = results[basename]
                 if result_type == 'proof':
                     safe_count += 1
@@ -68,24 +82,27 @@ def collect_solver_statistics(aig_dict, log_dir, parser_func):
                 elif result_type == 'unknown':
                     unknown_count += 1
         
-        stats[family] = {
-            'safe': safe_count,
-            'unsafe': unsafe_count,
-            'unknown': unknown_count,
-            'total': total_count,
-            'solved': safe_count + unsafe_count
-        }
+        # Only add families that have at least one matching log file
+        if matched_count > 0:
+            stats[family] = {
+                'safe': safe_count,
+                'unsafe': unsafe_count,
+                'unknown': unknown_count,
+                'total': matched_count,  # Use matched count instead of all benchmarks
+                'solved': safe_count + unsafe_count
+            }
     
-    return stats
+    return stats, results  # Return both per-family stats and all results
 
 
-def print_statistics_table(stats_dict, solver_names):
+def print_statistics_table(stats_dict, solver_names, all_results_dict):
     """
     Print statistics table in a formatted way.
     
     Args:
         stats_dict: {solver_name: {family: {'safe': ..., 'unsafe': ..., ...}}}
         solver_names: List of solver names in order
+        all_results_dict: {solver_name: {basename: result_type}} for overall unique stats
     """
     families = sorted(list(stats_dict[solver_names[0]].keys()))
     
@@ -123,20 +140,29 @@ def print_statistics_table(stats_dict, solver_names):
             total_unknown += unknown
             total_benchmarks += total
             total_solved += solved
+        print("-"*120)
         
-        print("-"*120)
-        total_solve_pct = (total_solved / total_benchmarks * 100) if total_benchmarks > 0 else 0
-        print(f"{'TOTAL':<20} {total_benchmarks:>8} {total_safe:>8} {total_unsafe:>8} {total_unknown:>8} {total_solved:>8} {total_solve_pct:>7.1f}%")
+        # Calculate overall statistics from unique basenames (not sum of families)
+        all_results = all_results_dict[solver_name]
+        overall_safe = sum(1 for r in all_results.values() if r == 'proof')
+        overall_unsafe = sum(1 for r in all_results.values() if r == 'counter-example')
+        overall_unknown = sum(1 for r in all_results.values() if r == 'unknown')
+        overall_total = len(all_results)
+        overall_solved = overall_safe + overall_unsafe
+        overall_solve_pct = (overall_solved / overall_total * 100) if overall_total > 0 else 0
+        
+        print(f"{'TOTAL (unique)':<20} {overall_total:>8} {overall_safe:>8} {overall_unsafe:>8} {overall_unknown:>8} {overall_solved:>8} {overall_solve_pct:>7.1f}%")
         print("-"*120)
 
 
-def generate_csv_table(stats_dict, solver_names, output_file):
+def generate_csv_table(stats_dict, solver_names, all_results_dict, output_file):
     """
     Generate CSV file with statistics.
     
     Args:
         stats_dict: {solver_name: {family: {'safe': ..., 'unsafe': ..., ...}}}
         solver_names: List of solver names
+        all_results_dict: {solver_name: {basename: result_type}} for overall unique stats
         output_file: Output CSV filename
     """
     families = sorted(list(stats_dict[solver_names[0]].keys()))
@@ -159,26 +185,26 @@ def generate_csv_table(stats_dict, solver_names, output_file):
                 
                 f.write(f"{solver_name},{family},{total},{safe},{unsafe},{unknown},{solved},{solve_pct:.1f}\n")
             
-            # Write total row
-            total_safe = sum(s['safe'] for s in stats.values())
-            total_unsafe = sum(s['unsafe'] for s in stats.values())
-            total_unknown = sum(s['unknown'] for s in stats.values())
-            total_benchmarks = sum(s['total'] for s in stats.values())
-            total_solved = sum(s['solved'] for s in stats.values())
-            total_solve_pct = (total_solved / total_benchmarks * 100) if total_benchmarks > 0 else 0
+            # Write total row based on unique basenames
+            all_results = all_results_dict[solver_name]
+            overall_safe = sum(1 for r in all_results.values() if r == 'proof')
+            overall_unsafe = sum(1 for r in all_results.values() if r == 'counter-example')
+            overall_unknown = sum(1 for r in all_results.values() if r == 'unknown')
+            overall_total = len(all_results)
+            overall_solved = overall_safe + overall_unsafe
+            overall_solve_pct = (overall_solved / overall_total * 100) if overall_total > 0 else 0
             
-            f.write(f"{solver_name},TOTAL,{total_benchmarks},{total_safe},{total_unsafe},{total_unknown},{total_solved},{total_solve_pct:.1f}\n")
+            f.write(f"{solver_name},TOTAL,{overall_total},{overall_safe},{overall_unsafe},{overall_unknown},{overall_solved},{overall_solve_pct:.1f}\n")
     
     print(f"\n✓ CSV table saved to: {output_file}")
-
-
-def generate_family_comparison_tables(stats_dict, solver_names, output_dir):
+def generate_family_comparison_tables(stats_dict, solver_names, all_results_dict, output_dir):
     """
     Generate comparison tables for each family and save to text file.
     
     Args:
         stats_dict: {solver_name: {family: {'safe': ..., 'unsafe': ..., ...}}}
         solver_names: List of solver names (should be 2 for comparison)
+        all_results_dict: {solver_name: {basename: result_type}} for overall unique stats
         output_dir: Directory to save the text file
     """
     families = sorted(list(stats_dict[solver_names[0]].keys()))
@@ -236,26 +262,27 @@ def generate_family_comparison_tables(stats_dict, solver_names, output_dir):
             f.write(diff_line)
             
             f.write("\n\n")
-        
-        # Overall summary
-        f.write("="*100 + "\n")
-        f.write("Overall Summary\n")
+        f.write("Overall Summary (unique benchmarks only)\n")
         f.write("="*100 + "\n\n")
         
+        # Calculate from unique basenames, not sum of families (due to overlap)
+        all_results1 = all_results_dict[solver_names[0]]
+        all_results2 = all_results_dict[solver_names[1]]
+        
         total_stats1 = {
-            'total': sum(s['total'] for s in stats_dict[solver_names[0]].values()),
-            'safe': sum(s['safe'] for s in stats_dict[solver_names[0]].values()),
-            'unsafe': sum(s['unsafe'] for s in stats_dict[solver_names[0]].values()),
-            'unknown': sum(s['unknown'] for s in stats_dict[solver_names[0]].values()),
-            'solved': sum(s['solved'] for s in stats_dict[solver_names[0]].values())
+            'total': len(all_results1),
+            'safe': sum(1 for r in all_results1.values() if r == 'proof'),
+            'unsafe': sum(1 for r in all_results1.values() if r == 'counter-example'),
+            'unknown': sum(1 for r in all_results1.values() if r == 'unknown'),
+            'solved': sum(1 for r in all_results1.values() if r in ['proof', 'counter-example'])
         }
         
         total_stats2 = {
-            'total': sum(s['total'] for s in stats_dict[solver_names[1]].values()),
-            'safe': sum(s['safe'] for s in stats_dict[solver_names[1]].values()),
-            'unsafe': sum(s['unsafe'] for s in stats_dict[solver_names[1]].values()),
-            'unknown': sum(s['unknown'] for s in stats_dict[solver_names[1]].values()),
-            'solved': sum(s['solved'] for s in stats_dict[solver_names[1]].values())
+            'total': len(all_results2),
+            'safe': sum(1 for r in all_results2.values() if r == 'proof'),
+            'unsafe': sum(1 for r in all_results2.values() if r == 'counter-example'),
+            'unknown': sum(1 for r in all_results2.values() if r == 'unknown'),
+            'solved': sum(1 for r in all_results2.values() if r in ['proof', 'counter-example'])
         }
         
         f.write(f"{'Solver':<40} {'Total':>8} {'Safe':>8} {'Unsafe':>8} {'Unknown':>8} {'Solved':>8} {'Solve%':>8}\n")
@@ -291,6 +318,33 @@ def main():
     """
     Generate statistics for configured solvers.
     """
+    # Parse command line arguments
+    if len(sys.argv) < 3:
+        print("Usage: python generate_solver_statistics.py <log_dir1> <log_dir2> [parser_type]")
+        print("  parser_type: 'ric3' or 'ic3ref' (default: 'ric3')")
+        print("\nExample:")
+        print("  python generate_solver_statistics.py hpc_ric3_dyn_2025 hpc_ric3_mab_2025")
+        print("  python generate_solver_statistics.py hpc_IC3REF_solver1 hpc_IC3REF_solver2 ic3ref")
+        sys.exit(1)
+    
+    log_dir1 = sys.argv[1]
+    log_dir2 = sys.argv[2]
+    parser_type = sys.argv[3] if len(sys.argv) > 3 else 'ric3'
+    
+    # Validate directories
+    if not os.path.exists(log_dir1):
+        print(f"Error: Directory not found: {log_dir1}")
+        sys.exit(1)
+    if not os.path.exists(log_dir2):
+        print(f"Error: Directory not found: {log_dir2}")
+        sys.exit(1)
+    
+    # Select parser
+    if parser_type.lower() == 'ic3ref':
+        parser = parse_ic3ref_log
+    else:
+        parser = parse_ric3_log
+    
     # Parse AIG file list
     aig_list_file = "aig_files_list.txt"
     print(f"Parsing {aig_list_file}...")
@@ -299,40 +353,31 @@ def main():
     
     # Configure solvers to analyze
     solvers = [
-        ("hpc_ric3_sl_dynamic", parse_ric3_log),
-        ("hpc_ric3_sl_mab_6_add_context_and_reward_decay070", parse_ric3_log),
+        (log_dir1, parser),
+        (log_dir2, parser),
     ]
-    
-    # You can also add IC3REF solvers:
-    # solvers.append(("hpc_IC3REF_mab_alpha_1p0", parse_ic3ref_log))
-    
-    print(f"\n{'='*120}")
-    print(f"Analyzing {len(solvers)} solver(s):")
-    for solver_name, _ in solvers:
-        print(f"  - {solver_name}")
-    print(f"{'='*120}\n")
     
     # Collect statistics for each solver
     stats_dict = {}
+    all_results_dict = {}
     solver_names = []
     
     for solver_name, parser_func in solvers:
-        stats = collect_solver_statistics(aig_dict, solver_name, parser_func)
+        stats, all_results = collect_solver_statistics(aig_dict, solver_name, parser_func)
         stats_dict[solver_name] = stats
+        all_results_dict[solver_name] = all_results
         solver_names.append(solver_name)
     
     # Print formatted table
-    print_statistics_table(stats_dict, solver_names)
+    print_statistics_table(stats_dict, solver_names, all_results_dict)
     
     # Generate CSV file
     csv_filename = "solver_statistics.csv"
-    generate_csv_table(stats_dict, solver_names, csv_filename)
+    generate_csv_table(stats_dict, solver_names, all_results_dict, csv_filename)
     
     # Generate family comparison tables
-    solver1_short = solvers[0][0].replace('hpc_ric3_sl_', '').replace('hpc_IC3REF_', '')
-    solver2_short = solvers[1][0].replace('hpc_ric3_sl_', '').replace('hpc_IC3REF_', '')
-    comparison_dir = f"comparison_{solver1_short}_vs_{solver2_short}"
-    generate_family_comparison_tables(stats_dict, solver_names, comparison_dir)
+    comparison_dir = f"comparison_{log_dir1}_vs_{log_dir2}"
+    generate_family_comparison_tables(stats_dict, solver_names, all_results_dict, comparison_dir)
 
 
 if __name__ == "__main__":

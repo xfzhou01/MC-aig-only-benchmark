@@ -2,10 +2,22 @@
 """
 Script to compare solver performance between two log directories.
 Generates scatter plots with logarithmic axes for paper-quality visualization.
+
+Usage:
+    python compare_solvers.py <log_dir1> <log_dir2> [parser_type]
+    
+    log_dir1: First solver log directory
+    log_dir2: Second solver log directory
+    parser_type: 'ric3' or 'ic3ref' (default: 'ric3')
+    
+Example:
+    python compare_solvers.py hpc_ric3_dyn_2025 hpc_ric3_mab_2025
+    python compare_solvers.py hpc_IC3REF_solver1 hpc_IC3REF_solver2 ic3ref
 """
 
 import os
 import re
+import sys
 import matplotlib.pyplot as plt
 import numpy as np
 from parse_aig_list import parse_aig_list
@@ -281,21 +293,38 @@ def main():
     """
     Generate comparison plots for all families between two solver configurations.
     """
+    # Parse command line arguments
+    if len(sys.argv) < 3:
+        print("Usage: python compare_solvers.py <log_dir1> <log_dir2> [parser_type]")
+        print("  parser_type: 'ric3' or 'ic3ref' (default: 'ric3')")
+        print("\nExample:")
+        print("  python compare_solvers.py hpc_ric3_dyn_2025 hpc_ric3_mab_2025")
+        print("  python compare_solvers.py hpc_IC3REF_solver1 hpc_IC3REF_solver2 ic3ref")
+        sys.exit(1)
+    
+    log_dir1 = sys.argv[1]
+    log_dir2 = sys.argv[2]
+    parser_type = sys.argv[3] if len(sys.argv) > 3 else 'ric3'
+    
+    # Validate directories
+    if not os.path.exists(log_dir1):
+        print(f"Error: Directory not found: {log_dir1}")
+        sys.exit(1)
+    if not os.path.exists(log_dir2):
+        print(f"Error: Directory not found: {log_dir2}")
+        sys.exit(1)
+    
+    # Select parser
+    if parser_type.lower() == 'ic3ref':
+        parser = parse_ic3ref_log
+    else:
+        parser = parse_ric3_log
+    
     # Parse AIG file list
     aig_list_file = "aig_files_list.txt"
     print(f"Parsing {aig_list_file}...")
     dataset_to_basenames, basename_to_paths = parse_aig_list(aig_list_file)
     aig_dict = dataset_to_basenames  # Use the first dict: dataset -> basenames
-    
-    # Configure solvers to compare
-    log_dir1 = "hpc_ric3_sl_dynamic"
-    log_dir2 = "hpc_ric3_sl_mab_6_add_context_and_reward_decay070"
-    parser = parse_ric3_log
-    
-    # You can also compare IC3REF:
-    # log_dir1 = "hpc_IC3REF_mab_context_predecessor_history_no_average"
-    # log_dir2 = "hpc_IC3REF_mab_alpha_1p0"
-    # parser = parse_ic3ref_log
     
     # Create output directory
     solver1_short = os.path.basename(log_dir1).replace('hpc_ric3_sl_', '').replace('hpc_IC3REF_', '')
