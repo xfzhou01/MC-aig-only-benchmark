@@ -19,7 +19,6 @@ fi
 CPU_HOSTS="bmcpu01 bmcpu02 bmcpu03 bmcpu05 bmcpu07 bmcpu08 bmcpu09 cpu02 cpu03 cpu04 cpu05 cpu07 cpu08 cpu09 cpu10"
 
 
-
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -44,12 +43,12 @@ done
 echo "Running with $PARALLEL_JOBS parallel jobs"
 
 # Create a directory to store logs
-LOG_DIR="hpc_ric3_ic3_pure"
+LOG_DIR="hpc_IC3REF_mab_new_2025"
 mkdir -p "$LOG_DIR"
 
 # Find all .aig and .aag files recursively
 echo "Finding all AIGER files (.aig and .aag)..."
-AIGER_FILES=$(find /hpc/home/cwb.xzhoubu/MC_HWMCC_benchmark_simple -name "*.aig" -o -name "*.aag")
+AIGER_FILES=$(find /hpc/home/cwb.xzhoubu/hwmcc2025 -name "*.aig" -o -name "*.aag")
 TOTAL_FILES=$(echo "$AIGER_FILES" | wc -l)
 echo "Found $TOTAL_FILES AIGER files."
 
@@ -82,9 +81,9 @@ process_file() {
         ABSOLUTE_FILE=$(realpath "$FILE")
         #COMMAND="bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1"
         #bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
-	COMMAND="bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3  --ic3-no-pred-prop "$ABSOLUTE_FILE" 2>&1"
+	COMMAND="bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/IC3ref/IC3 -s -mab -alpha 0.5 < "$ABSOLUTE_FILE" 2>&1"
         # actually, IC3REF can be executed on any CPU HOSTS can does not require any docker to be pulled there
-        bsub -Ip -n 1 -m "$CPU_HOSTS"  "timeout 3600 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3  --ic3-no-pred-prop "$ABSOLUTE_FILE"" 2>&1
+        bsub -Ip -n 1 -m "$CPU_HOSTS"  "timeout 3600 /hpc/home/cwb.xzhoubu/IC3ref/IC3 -s -mab -alpha 0.5  < "$ABSOLUTE_FILE"" 2>&1
         echo "File: $FILE"
         echo "$COMMAND"
         
