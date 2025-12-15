@@ -211,7 +211,13 @@ def main():
         'hpc_ric3_mab_2025': ['hpc_ric3_mab_2025', 'hpc_ric3_sl_mab_6_add_context_and_reward_decay070'],
         'hpc_ric3_sl_mab_6_add_context_and_reward_decay070': ['hpc_ric3_sl_mab_6_add_context_and_reward_decay070', 'hpc_ric3_mab_2025'],
         'hpc_ric3_ctg_2025': ['hpc_ric3_ctg_2025', 'hpc_ric3_ctg'],
-        'hpc_ric3_ctg': ['hpc_ric3_ctg', 'hpc_ric3_ctg_2025']
+        'hpc_ric3_ctg': ['hpc_ric3_ctg', 'hpc_ric3_ctg_2025'],
+        'hpc_ric3_ic3_pure': ['hpc_ric3_ic3_pure', 'hpc_ric3_ic3_pure_2025'],
+        'hpc_ric3_ic3_pure_2025': ['hpc_ric3_ic3_pure_2025', 'hpc_ric3_ic3_pure'],
+        'hpc_IC3REF_mab_context_po_len_and_delta': ['hpc_IC3REF_mab_context_po_len_and_delta', 'hpc_IC3REF_mab_new_2025'],
+        'hpc_IC3REF_mab_new_2025': ['hpc_IC3REF_mab_new_2025', 'hpc_IC3REF_mab_context_po_len_and_delta'],
+        'hpc_IC3REF_ctgdown': ['hpc_IC3REF_ctgdown', 'hpc_IC3REF_ctg_new_2025'],
+        'hpc_IC3REF_ctg_new_2025': ['hpc_IC3REF_ctg_new_2025', 'hpc_IC3REF_ctgdown']
     }
     
     # Get directories to parse (with merging)
