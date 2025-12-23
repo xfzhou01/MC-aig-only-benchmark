@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 01:25:32 CST 2025
+Job <833339> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/microban_148.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 73, 8, 1, 1, 1, 1, 90, 12, 1, 1, 1, 1, 1, 1, 36, 17, 4, 1, 1, 7, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 66, 35, 4, 7, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 61, 48]
+60 5 5 7 9 12 17 17 22 27 36 38 41 41 40 43 30 30 31 33 34 33 18 12 12 17 17 20 21 22 19 24 28 32 37 33 23 20 25 22 25 26 27 19 18 17 17 17 17 37 25 16 14 12 11 10 8 8 7 6 6 6 6 4 2 1 1 1 1 2 3 3 3 3 79 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 69 pulls
+  Arm 1 (Aggressive Heuristic): 91 pulls
+  Arm 2 (Conservative Heuristic): 714 pulls
+  Arm 3 (limit=0, max=0, level=0): 242 pulls
+  Arm 4 (limit=1, max=3, level=1): 71 pulls
+  Arm 5 (limit=2, max=5, level=1): 597 pulls
+  Arm 6 (limit=8, max=4, level=1): 106 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 247135,
+    avg_decide_var: 1.007722,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: microban_148.aig,
+    time: 12.95s,
+    num_mic: 3772,
+    avg_mic_cube_len: 15.817073,
+    avg_po_cube_len: 59.475317,
+    mic_drop: success: 9936, fail: 44251, success rate: 18.34%,
+    num_down: 54187,
+    num_down_sat: 181772,
+    ctp: success: 0, fail: 3195, success rate: 0.00%,
+    num_get_bad: 78,
+    overall_block_time: 12.587001019s,
+    block_get_bad_time: 1.784024ms,
+    block_get_predecessor_time: 6.422473376s,
+    block_blocked_time: 56.414923ms,
+    block_mic_time: 14.557398626s,
+    block_push_time: 3.710263ms,
+    overall_propagate_time: 281.897956ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/microban_148.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/microban_148.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 01:25:45 CST 2025
+========================================

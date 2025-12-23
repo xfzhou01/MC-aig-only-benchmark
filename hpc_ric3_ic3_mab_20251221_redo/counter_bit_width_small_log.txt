@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 01:24:04 CST 2025
+Job <833296> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/counter_bit_width_small.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4822]
+24 13 12 24 43 35 12 9 6 9 9 8 6 17 11 12 10 30 15 18 16 16 11 11 10 39 20 27 16 26 18 23 21 81 26 23 12 28 25 30 24 22 14 20 14 14 9 15 20 38 34 53 15 11 10 22 9 13 11 7 4 19 8 17 5 2 3 4 4 4 2 1 2 22 10 15 3 2 2 6 3 3 2 2 2 7 6 5 5 2 2 3 2 2 9 9 10 32 21 39 56 64 56 38 25 25 51 39 39 16 7 6 9 7 10 13 13 15 19 11 15 15 19 20 11 14 15 13 13 18 12 15 11 9 13 17 13 17 12 11 11 12 8 14 11 10 13 10 10 11 6 6 10 5 3 9 3 3 0 2218 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1095 pulls
+  Arm 1 (Aggressive Heuristic): 932 pulls
+  Arm 2 (Conservative Heuristic): 1093 pulls
+  Arm 3 (limit=0, max=0, level=0): 1552 pulls
+  Arm 4 (limit=1, max=3, level=1): 679 pulls
+  Arm 5 (limit=2, max=5, level=1): 5920 pulls
+  Arm 6 (limit=8, max=4, level=1): 4593 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 944354,
+    avg_decide_var: 0.512241,
+    num_simplify_subsume: 361604,
+    num_simplify_self_subsume: 148410,
+}
+Statistic {
+    case: counter_bit_width_small.aig,
+    time: 37.00s,
+    num_mic: 25177,
+    avg_mic_cube_len: 8.795488,
+    avg_po_cube_len: 25.612216,
+    mic_drop: success: 28541, fail: 187953, success rate: 13.18%,
+    num_down: 216494,
+    num_down_sat: 238611,
+    ctp: success: 0, fail: 327856, success rate: 0.00%,
+    num_get_bad: 168,
+    overall_block_time: 17.666795103s,
+    block_get_bad_time: 7.018191ms,
+    block_get_predecessor_time: 2.201377562s,
+    block_blocked_time: 1.008554028s,
+    block_mic_time: 16.374577311s,
+    block_push_time: 896.497938ms,
+    overall_propagate_time: 19.300952928s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/counter_bit_width_small.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/counter_bit_width_small.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 01:24:41 CST 2025
+========================================

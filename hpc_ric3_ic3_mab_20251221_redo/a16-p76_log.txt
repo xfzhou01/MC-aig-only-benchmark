@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 03:01:32 CST 2025
+Job <833814> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/a16-p76.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 227, 406]
+132 32 97 335 1004 2642 4073 3985 2139 401 33 7 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 22 6 1703 1728 2732 2084 1151 393 157 83 74 25 8 0 10975 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 73 pulls
+  Arm 1 (Aggressive Heuristic): 177 pulls
+  Arm 2 (Conservative Heuristic): 229 pulls
+  Arm 3 (limit=0, max=0, level=0): 47 pulls
+  Arm 4 (limit=1, max=3, level=1): 145 pulls
+  Arm 5 (limit=2, max=5, level=1): 126 pulls
+  Arm 6 (limit=8, max=4, level=1): 2598 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2272364,
+    avg_decide_var: 0.404513,
+    num_simplify_subsume: 128791,
+    num_simplify_self_subsume: 241051,
+}
+Statistic {
+    case: a16-p76.aig,
+    time: 508.15s,
+    num_mic: 48473,
+    avg_mic_cube_len: 12.598044,
+    avg_po_cube_len: 52.566753,
+    mic_drop: success: 206992, fail: 361898, success rate: 36.39%,
+    num_down: 568890,
+    num_down_sat: 933094,
+    ctp: success: 0, fail: 342541, success rate: 0.00%,
+    num_get_bad: 45,
+    overall_block_time: 135.114234343s,
+    block_get_bad_time: 59.771µs,
+    block_get_predecessor_time: 13.154874226s,
+    block_blocked_time: 642.764417ms,
+    block_mic_time: 213.700428997s,
+    block_push_time: 853.747126ms,
+    overall_propagate_time: 372.991017413s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/a16-p76.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/a16-p76.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:10:02 CST 2025
+========================================

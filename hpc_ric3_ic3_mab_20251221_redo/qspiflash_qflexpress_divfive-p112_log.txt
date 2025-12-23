@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 03:30:09 CST 2025
+Job <833902> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/qspiflash_qflexpress_divfive-p112.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 32]
+74 2 12 19 13 9 33 34 23 14 15 4 2 1 1 0 92 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 31 pulls
+  Arm 1 (Aggressive Heuristic): 22 pulls
+  Arm 2 (Conservative Heuristic): 12 pulls
+  Arm 3 (limit=0, max=0, level=0): 9 pulls
+  Arm 4 (limit=1, max=3, level=1): 4 pulls
+  Arm 5 (limit=2, max=5, level=1): 48 pulls
+  Arm 6 (limit=8, max=4, level=1): 35 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 5010,
+    avg_decide_var: 0.556220,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: qspiflash_qflexpress_divfive-p112.aig,
+    time: 0.12s,
+    num_mic: 420,
+    avg_mic_cube_len: 4.111905,
+    avg_po_cube_len: 24.892650,
+    mic_drop: success: 320, fail: 1323, success rate: 19.48%,
+    num_down: 1643,
+    num_down_sat: 2034,
+    ctp: success: 0, fail: 675, success rate: 0.00%,
+    num_get_bad: 20,
+    overall_block_time: 88.973171ms,
+    block_get_bad_time: 104.243µs,
+    block_get_predecessor_time: 25.483016ms,
+    block_blocked_time: 3.567587ms,
+    block_mic_time: 102.456498ms,
+    block_push_time: 1.457784ms,
+    overall_propagate_time: 18.119642ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/qspiflash_qflexpress_divfive-p112.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/qspiflash_qflexpress_divfive-p112.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:30:10 CST 2025
+========================================

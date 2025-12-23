@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 03:38:13 CST 2025
+Job <833970> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/ILA_Piccolo_JALR_sanity.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 552, 211]
+328 8 8 5 3 12 6 8 71 493 266 193 116 21 4 1 0 308 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 72 pulls
+  Arm 1 (Aggressive Heuristic): 111 pulls
+  Arm 2 (Conservative Heuristic): 80 pulls
+  Arm 3 (limit=0, max=0, level=0): 85 pulls
+  Arm 4 (limit=1, max=3, level=1): 134 pulls
+  Arm 5 (limit=2, max=5, level=1): 220 pulls
+  Arm 6 (limit=8, max=4, level=1): 104 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 44208,
+    avg_decide_var: 0.404416,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: ILA_Piccolo_JALR_sanity.aig,
+    time: 55.66s,
+    num_mic: 1801,
+    avg_mic_cube_len: 12.028318,
+    avg_po_cube_len: 2459.851709,
+    mic_drop: success: 1865, fail: 18872, success rate: 8.99%,
+    num_down: 20737,
+    num_down_sat: 26649,
+    ctp: success: 0, fail: 2105, success rate: 0.00%,
+    num_get_bad: 296,
+    overall_block_time: 50.684626343s,
+    block_get_bad_time: 518.850253ms,
+    block_get_predecessor_time: 18.144026941s,
+    block_blocked_time: 1.33378002s,
+    block_mic_time: 56.621326652s,
+    block_push_time: 106.290865ms,
+    overall_propagate_time: 4.466394006s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/ILA_Piccolo_JALR_sanity.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/ILA_Piccolo_JALR_sanity.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:39:11 CST 2025
+========================================

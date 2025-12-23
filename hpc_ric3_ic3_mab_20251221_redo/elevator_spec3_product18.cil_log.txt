@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 01:27:22 CST 2025
+Job <833393> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/elevator_spec3_product18.cil.aig
+[0, 0, 0, 0, 0, 5]
+2 2 3 0 8 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1 pulls
+  Arm 1 (Aggressive Heuristic): 2 pulls
+  Arm 2 (Conservative Heuristic): 1 pulls
+  Arm 3 (limit=0, max=0, level=0): 1 pulls
+  Arm 4 (limit=1, max=3, level=1): 1 pulls
+  Arm 5 (limit=2, max=5, level=1): 1 pulls
+  Arm 6 (limit=8, max=4, level=1): 2 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 87,
+    avg_decide_var: 0.896153,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: elevator_spec3_product18.cil.aig,
+    time: 9.88s,
+    num_mic: 13,
+    avg_mic_cube_len: 2.923077,
+    avg_po_cube_len: 4.782609,
+    mic_drop: success: 2, fail: 36, success rate: 5.26%,
+    num_down: 38,
+    num_down_sat: 38,
+    ctp: success: 0, fail: 12, success rate: 0.00%,
+    num_get_bad: 9,
+    overall_block_time: 5.097866042s,
+    block_get_bad_time: 189.293µs,
+    block_get_predecessor_time: 883.108493ms,
+    block_blocked_time: 198.605231ms,
+    block_mic_time: 5.342235395s,
+    block_push_time: 184.117604ms,
+    overall_propagate_time: 2.316971593s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/elevator_spec3_product18.cil.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/elevator_spec3_product18.cil.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 01:27:41 CST 2025
+========================================

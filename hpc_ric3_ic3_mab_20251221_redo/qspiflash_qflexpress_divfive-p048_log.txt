@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 04:34:44 CST 2025
+Job <834174> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/qspiflash_qflexpress_divfive-p048.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 30]
+65 3 14 11 14 10 12 3 0 45 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13 pulls
+  Arm 1 (Aggressive Heuristic): 4 pulls
+  Arm 2 (Conservative Heuristic): 7 pulls
+  Arm 3 (limit=0, max=0, level=0): 19 pulls
+  Arm 4 (limit=1, max=3, level=1): 18 pulls
+  Arm 5 (limit=2, max=5, level=1): 20 pulls
+  Arm 6 (limit=8, max=4, level=1): 9 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1322,
+    avg_decide_var: 0.577390,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: qspiflash_qflexpress_divfive-p048.aig,
+    time: 0.03s,
+    num_mic: 158,
+    avg_mic_cube_len: 2.911392,
+    avg_po_cube_len: 19.336927,
+    mic_drop: success: 76, fail: 376, success rate: 16.81%,
+    num_down: 452,
+    num_down_sat: 477,
+    ctp: success: 0, fail: 133, success rate: 0.00%,
+    num_get_bad: 18,
+    overall_block_time: 23.544427ms,
+    block_get_bad_time: 257.323µs,
+    block_get_predecessor_time: 8.764229ms,
+    block_blocked_time: 1.599432ms,
+    block_mic_time: 19.105794ms,
+    block_push_time: 506.261µs,
+    overall_propagate_time: 3.561835ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/qspiflash_qflexpress_divfive-p048.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/qspiflash_qflexpress_divfive-p048.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 04:34:44 CST 2025
+========================================

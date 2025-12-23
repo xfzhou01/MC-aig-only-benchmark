@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 02:26:36 CST 2025
+Job <833598> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu10>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p21.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 182, 387]
+1091 27 39 29 29 21 11 9 9 8 19 13 12 15 16 27 32 93 151 76 357 21 13 82 7 1 3 10 0 734 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 107 pulls
+  Arm 1 (Aggressive Heuristic): 140 pulls
+  Arm 2 (Conservative Heuristic): 92 pulls
+  Arm 3 (limit=0, max=0, level=0): 142 pulls
+  Arm 4 (limit=1, max=3, level=1): 115 pulls
+  Arm 5 (limit=2, max=5, level=1): 212 pulls
+  Arm 6 (limit=8, max=4, level=1): 230 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 109684,
+    avg_decide_var: 0.644243,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p21.aig,
+    time: 26.18s,
+    num_mic: 2174,
+    avg_mic_cube_len: 33.572677,
+    avg_po_cube_len: 201.696693,
+    mic_drop: success: 62984, fail: 8993, success rate: 87.51%,
+    num_down: 71977,
+    num_down_sat: 85970,
+    ctp: success: 0, fail: 6840, success rate: 0.00%,
+    num_get_bad: 340,
+    overall_block_time: 24.078852187s,
+    block_get_bad_time: 161.095197ms,
+    block_get_predecessor_time: 5.590096408s,
+    block_blocked_time: 291.964625ms,
+    block_mic_time: 35.428718836s,
+    block_push_time: 130.48348ms,
+    overall_propagate_time: 1.813111536s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p21.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p21.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 02:27:03 CST 2025
+========================================

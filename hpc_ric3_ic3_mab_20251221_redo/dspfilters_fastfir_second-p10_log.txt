@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 01:27:53 CST 2025
+Job <833408> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu03>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p10.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1230, 4052]
+1091 24 36 92 151 272 290 406 498 708 392 292 323 274 375 424 523 841 958 872 621 346 208 50 21 13 0 4495 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 291 pulls
+  Arm 1 (Aggressive Heuristic): 1341 pulls
+  Arm 2 (Conservative Heuristic): 5216 pulls
+  Arm 3 (limit=0, max=0, level=0): 1465 pulls
+  Arm 4 (limit=1, max=3, level=1): 1152 pulls
+  Arm 5 (limit=2, max=5, level=1): 2787 pulls
+  Arm 6 (limit=8, max=4, level=1): 1232 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 543095,
+    avg_decide_var: 0.625518,
+    num_simplify_subsume: 3072,
+    num_simplify_self_subsume: 2149,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p10.aig,
+    time: 163.50s,
+    num_mic: 16500,
+    avg_mic_cube_len: 14.704242,
+    avg_po_cube_len: 215.378647,
+    mic_drop: success: 145815, fail: 89382, success rate: 62.00%,
+    num_down: 235197,
+    num_down_sat: 299387,
+    ctp: success: 0, fail: 70393, success rate: 0.00%,
+    num_get_bad: 1503,
+    overall_block_time: 137.371828176s,
+    block_get_bad_time: 823.202502ms,
+    block_get_predecessor_time: 46.27830433s,
+    block_blocked_time: 4.436448887s,
+    block_mic_time: 155.656843906s,
+    block_push_time: 1.115085791s,
+    overall_propagate_time: 25.859965484s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p10.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p10.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 01:30:37 CST 2025
+========================================

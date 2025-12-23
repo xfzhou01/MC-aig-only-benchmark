@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 01:27:30 CST 2025
+Job <833397> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/yosyshq_appnote_123_cv32e40x-p256.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1285, 523]
+3290 2 2 3 1 12 3 46 51 50 37 65 92 97 107 125 135 148 118 141 102 164 145 129 92 38 38 35 18 20 10 6 7 0 2155 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 91 pulls
+  Arm 1 (Aggressive Heuristic): 3279 pulls
+  Arm 2 (Conservative Heuristic): 175 pulls
+  Arm 3 (limit=0, max=0, level=0): 204 pulls
+  Arm 4 (limit=1, max=3, level=1): 1164 pulls
+  Arm 5 (limit=2, max=5, level=1): 214 pulls
+  Arm 6 (limit=8, max=4, level=1): 98 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 289728,
+    avg_decide_var: 0.130380,
+    num_simplify_subsume: 17346,
+    num_simplify_self_subsume: 2712,
+}
+Statistic {
+    case: yosyshq_appnote_123_cv32e40x-p256.aig,
+    time: 63.37s,
+    num_mic: 10592,
+    avg_mic_cube_len: 16.962047,
+    avg_po_cube_len: 360.505439,
+    mic_drop: success: 14826, fail: 160429, success rate: 8.46%,
+    num_down: 175255,
+    num_down_sat: 190671,
+    ctp: success: 0, fail: 28159, success rate: 0.00%,
+    num_get_bad: 41,
+    overall_block_time: 53.454004984s,
+    block_get_bad_time: 2.140863ms,
+    block_get_predecessor_time: 9.660055637s,
+    block_blocked_time: 1.679748001s,
+    block_mic_time: 66.205615219s,
+    block_push_time: 682.371235ms,
+    overall_propagate_time: 9.252657033s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/yosyshq_appnote_123_cv32e40x-p256.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/yosyshq_appnote_123_cv32e40x-p256.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 01:28:34 CST 2025
+========================================

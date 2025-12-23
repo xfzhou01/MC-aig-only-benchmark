@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 03:34:21 CST 2025
+Job <833946> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/arbitrated_top_n4_w32_d32_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1047, 6453]
+1 12 28 30 54 64 92 89 166 128 223 164 347 213 293 213 699 219 454 308 653 449 563 489 642 480 619 579 704 607 721 658 1358 1323 3669 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13251 pulls
+  Arm 1 (Aggressive Heuristic): 2046 pulls
+  Arm 2 (Conservative Heuristic): 616 pulls
+  Arm 3 (limit=0, max=0, level=0): 1443 pulls
+  Arm 4 (limit=1, max=3, level=1): 2890 pulls
+  Arm 5 (limit=2, max=5, level=1): 651 pulls
+  Arm 6 (limit=8, max=4, level=1): 956 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 847916,
+    avg_decide_var: 0.103499,
+    num_simplify_subsume: 29532,
+    num_simplify_self_subsume: 56725,
+}
+Statistic {
+    case: arbitrated_top_n4_w32_d32_e0.aig,
+    time: 65.02s,
+    num_mic: 29270,
+    avg_mic_cube_len: 12.503382,
+    avg_po_cube_len: 30.403210,
+    mic_drop: success: 62723, fail: 291135, success rate: 17.73%,
+    num_down: 353858,
+    num_down_sat: 516795,
+    ctp: success: 0, fail: 46320, success rate: 0.00%,
+    num_get_bad: 1239,
+    overall_block_time: 50.993455932s,
+    block_get_bad_time: 553.979473ms,
+    block_get_predecessor_time: 5.077705375s,
+    block_blocked_time: 2.857267515s,
+    block_mic_time: 51.011402785s,
+    block_push_time: 107.532742ms,
+    overall_propagate_time: 13.664495776s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/arbitrated_top_n4_w32_d32_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/arbitrated_top_n4_w32_d32_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:35:28 CST 2025
+========================================

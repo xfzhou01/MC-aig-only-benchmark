@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 02:55:55 CST 2025
+Job <833807> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/microban_89.aig
+[1, 1, 1, 1, 3, 3, 1, 1, 6, 3, 1, 1, 1, 1, 4, 13, 2, 20, 130, 20, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 6, 1, 1, 1, 1, 1, 1, 1, 585, 801]
+52 5 5 9 10 17 22 25 23 25 37 38 41 43 55 70 95 109 94 103 121 153 151 172 199 178 207 209 208 218 196 186 190 203 200 210 202 185 170 134 471 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 432 pulls
+  Arm 1 (Aggressive Heuristic): 363 pulls
+  Arm 2 (Conservative Heuristic): 370 pulls
+  Arm 3 (limit=0, max=0, level=0): 328 pulls
+  Arm 4 (limit=1, max=3, level=1): 494 pulls
+  Arm 5 (limit=2, max=5, level=1): 2868 pulls
+  Arm 6 (limit=8, max=4, level=1): 214 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1075047,
+    avg_decide_var: 1.006986,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: microban_89.aig,
+    time: 52.52s,
+    num_mic: 15827,
+    avg_mic_cube_len: 16.856511,
+    avg_po_cube_len: 51.303775,
+    mic_drop: success: 52404, fail: 188937, success rate: 21.71%,
+    num_down: 241341,
+    num_down_sat: 789083,
+    ctp: success: 0, fail: 6901, success rate: 0.00%,
+    num_get_bad: 43,
+    overall_block_time: 50.013020161s,
+    block_get_bad_time: 1.836839ms,
+    block_get_predecessor_time: 18.71652345s,
+    block_blocked_time: 200.132144ms,
+    block_mic_time: 65.885073067s,
+    block_push_time: 50.399546ms,
+    overall_propagate_time: 2.473360981s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/microban_89.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/microban_89.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 02:56:49 CST 2025
+========================================

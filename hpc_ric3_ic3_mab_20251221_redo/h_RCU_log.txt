@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 04:32:01 CST 2025
+Job <834154> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu02>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/h_RCU.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12721]
+52 22 38 51 62 95 125 142 207 259 255 216 178 142 230 223 342 602 710 702 944 743 606 416 393 315 223 226 122 94 59 78 67 79 110 115 111 65 78 54 82 81 61 86 58 56 81 1101 344 110 268 473 192 144 156 137 91 100 41 32 294 354 373 443 242 164 181 138 107 61 36 17 1 0 114 3594 0 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 684 pulls
+  Arm 1 (Aggressive Heuristic): 2755 pulls
+  Arm 2 (Conservative Heuristic): 829 pulls
+  Arm 3 (limit=0, max=0, level=0): 30406 pulls
+  Arm 4 (limit=1, max=3, level=1): 857 pulls
+  Arm 5 (limit=2, max=5, level=1): 2437 pulls
+  Arm 6 (limit=8, max=4, level=1): 1295 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2492986,
+    avg_decide_var: 0.411269,
+    num_simplify_subsume: 183859,
+    num_simplify_self_subsume: 139458,
+}
+Statistic {
+    case: h_RCU.aig,
+    time: 231.51s,
+    num_mic: 64709,
+    avg_mic_cube_len: 13.131388,
+    avg_po_cube_len: 38.243680,
+    mic_drop: success: 171293, fail: 634107, success rate: 21.27%,
+    num_down: 805400,
+    num_down_sat: 1480902,
+    ctp: success: 0, fail: 193622, success rate: 0.00%,
+    num_get_bad: 93,
+    overall_block_time: 133.346041543s,
+    block_get_bad_time: 4.235563ms,
+    block_get_predecessor_time: 10.744829484s,
+    block_blocked_time: 8.837167776s,
+    block_mic_time: 139.518164586s,
+    block_push_time: 780.204038ms,
+    overall_propagate_time: 98.119792338s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/h_RCU.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/h_RCU.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 04:35:54 CST 2025
+========================================

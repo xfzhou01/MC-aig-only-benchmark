@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 01:25:38 CST 2025
+Job <833342> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu07>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/simple_alu.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 68]
+17 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 68 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 13 pulls
+  Arm 1 (Aggressive Heuristic): 19 pulls
+  Arm 2 (Conservative Heuristic): 11 pulls
+  Arm 3 (limit=0, max=0, level=0): 11 pulls
+  Arm 4 (limit=1, max=3, level=1): 77 pulls
+  Arm 5 (limit=2, max=5, level=1): 25 pulls
+  Arm 6 (limit=8, max=4, level=1): 106 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 12988,
+    avg_decide_var: 0.466279,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: simple_alu.aig,
+    time: 0.07s,
+    num_mic: 543,
+    avg_mic_cube_len: 4.598527,
+    avg_po_cube_len: 2.018018,
+    mic_drop: success: 200, fail: 2289, success rate: 8.04%,
+    num_down: 2489,
+    num_down_sat: 3718,
+    ctp: success: 0, fail: 7387, success rate: 0.00%,
+    num_get_bad: 217,
+    overall_block_time: 39.528857ms,
+    block_get_bad_time: 3.265857ms,
+    block_get_predecessor_time: 3.504485ms,
+    block_blocked_time: 401.801µs,
+    block_mic_time: 56.134154ms,
+    block_push_time: 15.051µs,
+    overall_propagate_time: 16.181764ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/simple_alu.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/simple_alu.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 01:25:38 CST 2025
+========================================

@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 03:39:24 CST 2025
+Job <833974> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/analog_estimation_convergence.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 145]
+16 1 3 1 4 7 3 2 1 2 2 2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 150 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 15 pulls
+  Arm 1 (Aggressive Heuristic): 85 pulls
+  Arm 2 (Conservative Heuristic): 13 pulls
+  Arm 3 (limit=0, max=0, level=0): 22 pulls
+  Arm 4 (limit=1, max=3, level=1): 15 pulls
+  Arm 5 (limit=2, max=5, level=1): 112 pulls
+  Arm 6 (limit=8, max=4, level=1): 131 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 22527,
+    avg_decide_var: 0.503266,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: analog_estimation_convergence.aig,
+    time: 0.50s,
+    num_mic: 699,
+    avg_mic_cube_len: 4.540773,
+    avg_po_cube_len: 17.314657,
+    mic_drop: success: 233, fail: 2891, success rate: 7.46%,
+    num_down: 3124,
+    num_down_sat: 4482,
+    ctp: success: 0, fail: 15280, success rate: 0.00%,
+    num_get_bad: 301,
+    overall_block_time: 169.948222ms,
+    block_get_bad_time: 23.874718ms,
+    block_get_predecessor_time: 21.338491ms,
+    block_blocked_time: 34.117639ms,
+    block_mic_time: 125.611424ms,
+    block_push_time: 5.119252ms,
+    overall_propagate_time: 267.495374ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/analog_estimation_convergence.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/analog_estimation_convergence.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:39:24 CST 2025
+========================================

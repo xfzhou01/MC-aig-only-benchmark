@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 04:35:03 CST 2025
+Job <834176> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu08>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/yosyshq_appnote_123_cv32e40x-p664.aig
+[0, 0, 0, 0, 0, 0, 0, 9, 164]
+3353 2 1 2 1 9 0 167 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 128 pulls
+  Arm 1 (Aggressive Heuristic): 28 pulls
+  Arm 2 (Conservative Heuristic): 24 pulls
+  Arm 3 (limit=0, max=0, level=0): 19 pulls
+  Arm 4 (limit=1, max=3, level=1): 28 pulls
+  Arm 5 (limit=2, max=5, level=1): 27 pulls
+  Arm 6 (limit=8, max=4, level=1): 20 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1640,
+    avg_decide_var: 0.044967,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: yosyshq_appnote_123_cv32e40x-p664.aig,
+    time: 0.35s,
+    num_mic: 281,
+    avg_mic_cube_len: 2.120996,
+    avg_po_cube_len: 29.018910,
+    mic_drop: success: 142, fail: 454, success rate: 23.83%,
+    num_down: 596,
+    num_down_sat: 421,
+    ctp: success: 0, fail: 206, success rate: 0.00%,
+    num_get_bad: 14,
+    overall_block_time: 124.578949ms,
+    block_get_bad_time: 595.14µs,
+    block_get_predecessor_time: 48.292095ms,
+    block_blocked_time: 32.433125ms,
+    block_mic_time: 43.207126ms,
+    block_push_time: 3.433146ms,
+    overall_propagate_time: 7.77926ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/yosyshq_appnote_123_cv32e40x-p664.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/yosyshq_appnote_123_cv32e40x-p664.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 04:35:06 CST 2025
+========================================

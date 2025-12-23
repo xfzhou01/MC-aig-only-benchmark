@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 02:55:35 CST 2025
+Job <833805> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p14.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1813, 6704]
+1091 26 47 81 132 288 257 444 591 831 845 805 720 662 769 580 771 702 1698 1433 1273 949 533 416 290 257 86 53 12 4 1 1 1 0 8040 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 1442 pulls
+  Arm 1 (Aggressive Heuristic): 1375 pulls
+  Arm 2 (Conservative Heuristic): 5475 pulls
+  Arm 3 (limit=0, max=0, level=0): 1698 pulls
+  Arm 4 (limit=1, max=3, level=1): 4854 pulls
+  Arm 5 (limit=2, max=5, level=1): 1472 pulls
+  Arm 6 (limit=8, max=4, level=1): 6472 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 1237092,
+    avg_decide_var: 0.649954,
+    num_simplify_subsume: 7964,
+    num_simplify_self_subsume: 8457,
+}
+Statistic {
+    case: dspfilters_fastfir_second-p14.aig,
+    time: 479.70s,
+    num_mic: 30518,
+    avg_mic_cube_len: 16.868537,
+    avg_po_cube_len: 303.214264,
+    mic_drop: success: 335331, fail: 165338, success rate: 66.98%,
+    num_down: 500669,
+    num_down_sat: 624084,
+    ctp: success: 0, fail: 167309, success rate: 0.00%,
+    num_get_bad: 1862,
+    overall_block_time: 408.818187349s,
+    block_get_bad_time: 1.182067511s,
+    block_get_predecessor_time: 161.471115525s,
+    block_blocked_time: 9.200710266s,
+    block_mic_time: 458.388357655s,
+    block_push_time: 3.486815174s,
+    overall_propagate_time: 70.537963255s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p14.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/dspfilters_fastfir_second-p14.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:03:36 CST 2025
+========================================

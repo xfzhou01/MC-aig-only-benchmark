@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 03:29:43 CST 2025
+Job <833895> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on cpu04>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/shift_register_top_w16_d32_e0.aig
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 464, 1015]
+1 3 39 76 44 75 44 109 50 79 48 114 112 149 144 241 335 126 79 102 177 105 171 239 610 221 171 132 178 133 199 255 661 166 964 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 379 pulls
+  Arm 1 (Aggressive Heuristic): 708 pulls
+  Arm 2 (Conservative Heuristic): 4504 pulls
+  Arm 3 (limit=0, max=0, level=0): 233 pulls
+  Arm 4 (limit=1, max=3, level=1): 3611 pulls
+  Arm 5 (limit=2, max=5, level=1): 387 pulls
+  Arm 6 (limit=8, max=4, level=1): 405 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 257683,
+    avg_decide_var: 0.313064,
+    num_simplify_subsume: 2725,
+    num_simplify_self_subsume: 2333,
+}
+Statistic {
+    case: shift_register_top_w16_d32_e0.aig,
+    time: 9.37s,
+    num_mic: 10675,
+    avg_mic_cube_len: 10.570679,
+    avg_po_cube_len: 15.256398,
+    mic_drop: success: 16481, fail: 93108, success rate: 15.04%,
+    num_down: 109589,
+    num_down_sat: 140353,
+    ctp: success: 0, fail: 13820, success rate: 0.00%,
+    num_get_bad: 71,
+    overall_block_time: 7.446182802s,
+    block_get_bad_time: 9.814104ms,
+    block_get_predecessor_time: 830.339302ms,
+    block_blocked_time: 566.82088ms,
+    block_mic_time: 6.743593572s,
+    block_push_time: 38.32984ms,
+    overall_propagate_time: 1.874332252s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: unsafe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/shift_register_top_w16_d32_e0.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/shift_register_top_w16_d32_e0.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:29:54 CST 2025
+========================================

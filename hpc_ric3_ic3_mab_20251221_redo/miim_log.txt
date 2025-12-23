@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 03:45:31 CST 2025
+Job <834019> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/miim.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90, 8]
+36 2 3 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 5 4 7 2 4 0 12 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 8 pulls
+  Arm 1 (Aggressive Heuristic): 22 pulls
+  Arm 2 (Conservative Heuristic): 22 pulls
+  Arm 3 (limit=0, max=0, level=0): 13 pulls
+  Arm 4 (limit=1, max=3, level=1): 10 pulls
+  Arm 5 (limit=2, max=5, level=1): 17 pulls
+  Arm 6 (limit=8, max=4, level=1): 13 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 2510,
+    avg_decide_var: 0.278558,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: miim.aig,
+    time: 0.03s,
+    num_mic: 192,
+    avg_mic_cube_len: 3.218750,
+    avg_po_cube_len: 23.787637,
+    mic_drop: success: 115, fail: 494, success rate: 18.88%,
+    num_down: 609,
+    num_down_sat: 796,
+    ctp: success: 0, fail: 295, success rate: 0.00%,
+    num_get_bad: 39,
+    overall_block_time: 23.008223ms,
+    block_get_bad_time: 100.882µs,
+    block_get_predecessor_time: 6.750152ms,
+    block_blocked_time: 1.911631ms,
+    block_mic_time: 17.557368ms,
+    block_push_time: 1.745168ms,
+    overall_propagate_time: 3.163714ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/miim.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/miim.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 03:45:32 CST 2025
+========================================

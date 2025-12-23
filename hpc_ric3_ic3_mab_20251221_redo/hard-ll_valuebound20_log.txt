@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 01:24:18 CST 2025
+Job <833303> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu01>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/hard-ll_valuebound20.aig
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 863]
+2 1 15 22 35 77 89 48 40 17 19 5 10 0 949 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 125 pulls
+  Arm 1 (Aggressive Heuristic): 189 pulls
+  Arm 2 (Conservative Heuristic): 304 pulls
+  Arm 3 (limit=0, max=0, level=0): 150 pulls
+  Arm 4 (limit=1, max=3, level=1): 146 pulls
+  Arm 5 (limit=2, max=5, level=1): 147 pulls
+  Arm 6 (limit=8, max=4, level=1): 189 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 38830,
+    avg_decide_var: 0.999612,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: hard-ll_valuebound20.aig,
+    time: 126.84s,
+    num_mic: 1432,
+    avg_mic_cube_len: 7.542598,
+    avg_po_cube_len: 263.732617,
+    mic_drop: success: 2152, fail: 8409, success rate: 20.38%,
+    num_down: 10561,
+    num_down_sat: 14768,
+    ctp: success: 0, fail: 7574, success rate: 0.00%,
+    num_get_bad: 18,
+    overall_block_time: 110.561665802s,
+    block_get_bad_time: 1.050597ms,
+    block_get_predecessor_time: 33.081187825s,
+    block_blocked_time: 8.862816851s,
+    block_mic_time: 101.736447539s,
+    block_push_time: 1.728247617s,
+    overall_propagate_time: 15.892204393s,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/hard-ll_valuebound20.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/hard-ll_valuebound20.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 01:26:27 CST 2025
+========================================

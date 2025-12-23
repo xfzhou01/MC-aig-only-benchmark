@@ -1,0 +1,54 @@
+Started at: Tue Dec 23 02:39:56 CST 2025
+Job <833744> is submitted to default queue <interactive>.
+<<Waiting for dispatch ...>>
+<<Starting on bmcpu05>>
+Info: the model to be checked: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/rast-p00.aig
+[0, 0, 0, 0, 0, 0, 12361]
+439 22 10 1 0 12358 
+
+--- Contextual MAB Statistics ---
+Arm pulls:
+  Arm 0 (Balanced Heuristic): 966 pulls
+  Arm 1 (Aggressive Heuristic): 1430 pulls
+  Arm 2 (Conservative Heuristic): 1494 pulls
+  Arm 3 (limit=0, max=0, level=0): 3031 pulls
+  Arm 4 (limit=1, max=3, level=1): 1100 pulls
+  Arm 5 (limit=2, max=5, level=1): 2661 pulls
+  Arm 6 (limit=8, max=4, level=1): 1701 pulls
+----------------------------
+SolverStatistic {
+    num_solve: 239983,
+    avg_decide_var: 0.140140,
+    num_simplify_subsume: 0,
+    num_simplify_self_subsume: 0,
+}
+Statistic {
+    case: rast-p00.aig,
+    time: 10.47s,
+    num_mic: 12403,
+    avg_mic_cube_len: 13.888817,
+    avg_po_cube_len: 17.719385,
+    mic_drop: success: 12317, fail: 159946, success rate: 7.15%,
+    num_down: 172263,
+    num_down_sat: 172966,
+    ctp: success: 0, fail: 27, success rate: 0.00%,
+    num_get_bad: 6,
+    overall_block_time: 10.460278962s,
+    block_get_bad_time: 11.676µs,
+    block_get_predecessor_time: 1.58858101s,
+    block_blocked_time: 2.143322824s,
+    block_mic_time: 4.731058458s,
+    block_push_time: 2.254858712s,
+    overall_propagate_time: 1.20047ms,
+    xor_gen: success: 0, fail: 0, success rate: NaN%,
+    num_auxiliary_var: 0,
+    test: success: 0, fail: 0, success rate: NaN%,
+}
+result: safe
+File: /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/rast-p00.aig
+bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/rIC3/rIC3  -e ic3 --ic3-enable-ctx-mab  --ic3-no-pred-prop /hpc/home/cwb.xzhoubu/hwmcc20_24_25_aig_files/rast-p00.aig 2>&1
+----------------------------------------
+----------------------------------------
+STATUS: COMPLETED
+Finished at: Tue Dec 23 02:40:06 CST 2025
+========================================
