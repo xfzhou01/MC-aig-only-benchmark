@@ -43,7 +43,7 @@ done
 echo "Running with $PARALLEL_JOBS parallel jobs"
 
 # Create a directory to store logs
-LOG_DIR="hpc_IC3REF_mab_20251217_alpha_1"
+LOG_DIR="hpc_IC3REF_mab_20251219_alpha_1_redo"
 mkdir -p "$LOG_DIR"
 
 # Find all .aig and .aag files recursively
@@ -130,8 +130,8 @@ for FILE in $AIGER_FILES; do
     ACTIVE_JOBS=$((ACTIVE_JOBS + 1))
 
     # Check the number of jobs in the queue
-    while [ "$(bjobs | wc -l)" -gt 99 ]; do
-        echo "Pending jobs exceed threshold: 100"
+    while [ "$(bjobs | wc -l)" -gt 79 ]; do
+        echo "Pending jobs exceed threshold: 80"
         sleep 1
     done
 

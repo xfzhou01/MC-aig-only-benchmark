@@ -43,7 +43,7 @@ done
 echo "Running with $PARALLEL_JOBS parallel jobs"
 
 # Create a directory to store logs
-LOG_DIR="hpc_IC3REF_mab_20251217_alpha_1"
+LOG_DIR="hpc_IC3REF_ctgdown_20251219_redo"
 mkdir -p "$LOG_DIR"
 
 # Find all .aig and .aag files recursively
@@ -83,7 +83,7 @@ process_file() {
         #bsub -Ip -n 1 -m "$CPU_HOSTS" docker run --rm  -v "$ABSOLUTE_FILE":/root/model.aig 10.120.24.15:5000/jhinno/ric3:latest -e ic3 --ic3-dynamic /root/model.aig 2>&1
 	COMMAND="bsub -Ip -n 1 /hpc/home/cwb.xzhoubu/IC3ref/IC3 -s -mab -alpha 1.0 < "$ABSOLUTE_FILE" 2>&1"
         # actually, IC3REF can be executed on any CPU HOSTS can does not require any docker to be pulled there
-        bsub -Ip -n 1 -m "$CPU_HOSTS"  "timeout 3600 /hpc/home/cwb.xzhoubu/IC3ref/IC3 -s -mab -alpha 1.0  < "$ABSOLUTE_FILE"" 2>&1
+        bsub -Ip -n 1 -m "$CPU_HOSTS"  "timeout 3600 /hpc/home/cwb.xzhoubu/IC3ref/IC3 -s   < "$ABSOLUTE_FILE"" 2>&1
         # bsub -Ip -n 1 -m "$CPU_HOSTS"  "timeout 3600 /hpc/home/cwb.xzhoubu/IC3ref/IC3 -s < "$ABSOLUTE_FILE"" 2>&1
 	# bsub -Ip -n 1 -m "$CPU_HOSTS"  "timeout 3600 /hpc/home/cwb.xzhoubu/IC3ref/IC3 -s -b < "$ABSOLUTE_FILE"" 2>&1
 	echo "File: $FILE"
@@ -130,8 +130,8 @@ for FILE in $AIGER_FILES; do
     ACTIVE_JOBS=$((ACTIVE_JOBS + 1))
 
     # Check the number of jobs in the queue
-    while [ "$(bjobs | wc -l)" -gt 99 ]; do
-        echo "Pending jobs exceed threshold: 100"
+    while [ "$(bjobs | wc -l)" -gt 79 ]; do
+        echo "Pending jobs exceed threshold: 80"
         sleep 1
     done
 
