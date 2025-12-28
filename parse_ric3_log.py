@@ -12,15 +12,16 @@ from datetime import datetime
 
 def parse_ric3_log(log_file_path):
     """
-    Parse rIC3 log file to extract execution time, array length, and result type.
+    Parse rIC3 log file to extract execution time, array length, result type, and level.
     
     Args:
         log_file_path: Path to the log file
         
     Returns:
-        tuple: (time in seconds, array length, result_type)
+        tuple: (time in seconds, array length, result_type, level)
                result_type ∈ {"proof", "counter-example", "unknown"}
-               For timeout: (3600, -1, "unknown") unless a result is explicitly logged
+               level: the length of the array (induction depth)
+               For timeout: (3600, -1, "unknown", -1) unless a result is explicitly logged
     """
     if not os.path.exists(log_file_path):
         raise FileNotFoundError(f"Log file not found: {log_file_path}")
@@ -44,7 +45,7 @@ def parse_ric3_log(log_file_path):
     
     # If no array found, treat it as a timeout/unknown length case
     if not array_match:
-        return 3600, -1, result_type
+        return 3600, -1, result_type, -1
     
     # Extract array and get its length
     array_str = array_match.group(0)
@@ -53,9 +54,11 @@ def parse_ric3_log(log_file_path):
     if not array_content:
         # Empty array
         array_length = 0
+        level = 0
     else:
         array_values = [int(x.strip()) for x in array_content.split(',') if x.strip()]
         array_length = len(array_values)
+        level = array_length  # Level is the array length (induction depth)
     
     # Extract time from "time: X.XXs" pattern in Statistic section
     time_pattern = r'time:\s*([\d.]+)s'
@@ -83,11 +86,11 @@ def parse_ric3_log(log_file_path):
                 time_seconds = (finish_time - start_time).total_seconds()
             except ValueError:
                 # If parsing fails, return timeout values
-                return 3600, -1, result_type
+                return 3600, -1, result_type, -1
         else:
-            return 3600, -1, result_type
+            return 3600, -1, result_type, -1
     
-    return time_seconds, array_length, result_type
+    return time_seconds, array_length, result_type, level
 
 
 def parse_ric3_log_batch(log_dir):
@@ -98,7 +101,7 @@ def parse_ric3_log_batch(log_dir):
         log_dir: Directory containing log files
         
     Returns:
-        dict: Mapping from filename to (time, array_length, result_type) tuple
+        dict: Mapping from filename to (time, array_length, result_type, level) tuple
     """
     results = {}
     
@@ -109,11 +112,11 @@ def parse_ric3_log_batch(log_dir):
         if filename.endswith('_log.txt'):
             log_path = os.path.join(log_dir, filename)
             try:
-                time, length, result_type = parse_ric3_log(log_path)
-                results[filename] = (time, length, result_type)
+                time, length, result_type, level = parse_ric3_log(log_path)
+                results[filename] = (time, length, result_type, level)
             except Exception as e:
                 print(f"Error parsing {filename}: {e}")
-                results[filename] = (3600, -1, 'unknown')
+                results[filename] = (3600, -1, 'unknown', -1)
     
     return results
 
@@ -131,19 +134,21 @@ def main():
     
     # Parse successful case
     if os.path.exists(example_success):
-        time, length, result_type = parse_ric3_log(example_success)
+        time, length, result_type, level = parse_ric3_log(example_success)
         print(f"\nSuccess case: 6s2_log.txt")
         print(f"  Time: {time}s")
         print(f"  Array length: {length}")
         print(f"  Result: {result_type}")
+        print(f"  Level: {level}")
     
     # Parse timeout case
     if os.path.exists(example_timeout):
-        time, length, result_type = parse_ric3_log(example_timeout)
+        time, length, result_type, level = parse_ric3_log(example_timeout)
         print(f"\nTimeout case: 6s1_log.txt")
         print(f"  Time: {time}s")
         print(f"  Array length: {length}")
         print(f"  Result: {result_type}")
+        print(f"  Level: {level}")
     
     # Parse batch of logs in the directory
     log_dir = "/home/x/xiaofeng-zhou/MC-aig-only-benchmark/hpc_ric3_sl_mab_6_add_context_and_reward"
@@ -154,8 +159,8 @@ def main():
         results = parse_ric3_log_batch(log_dir)
         
         # Show all results
-        for filename, (time, length, result_type) in sorted(results.items()):
-            print(f"{filename:40s} -> time: {time:8.2f}s, length: {length:5d}, result: {result_type}")
+        for filename, (time, length, result_type, level) in sorted(results.items()):
+            print(f"{filename:40s} -> time: {time:8.2f}s, length: {length:5d}, result: {result_type}, level: {level:5d}")
         
         print(f"\n{'=' * 60}")
         print(f"Total logs parsed: {len(results)}")

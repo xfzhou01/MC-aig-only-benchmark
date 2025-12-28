@@ -322,11 +322,11 @@ def generate_scatter_plot(times1, times2, result_types, solver1_name, solver2_na
                   label='Unknown', alpha=0.5, zorder=2)
     
     # Add diagonal line (y=x)
-    ax.plot([0.01, 4500], [0.01, 4500], 'k-', linewidth=1.5, zorder=1)
+    ax.plot([1, 4500], [1, 4500], 'k-', linewidth=1.5, zorder=1)
     
     # Add shaded region where solver1 (y-axis, MAB) is better (y < x, below diagonal)
     # Only for x > 1000s (hard cases)
-    ax.fill_between([1000, 4500], [0.01, 0.01], [1000, 4500], 
+    ax.fill_between([1000, 4500], [1, 1], [1000, 4500], 
                      color='lightgreen', alpha=0.2, zorder=0)
     
     # Set logarithmic scale
@@ -334,30 +334,35 @@ def generate_scatter_plot(times1, times2, result_types, solver1_name, solver2_na
     ax.set_yscale('log')
     
     # Set axis limits
-    ax.set_xlim(0.01, 4500)
-    ax.set_ylim(0.01, 4500)
+    ax.set_xlim(1, 4500)
+    ax.set_ylim(1, 4500)
     
     # Apply custom legend labels
-    solver1_short = solver1_name.replace('hpc_ric3_sl_', 'rIC3-').replace('hpc_ric3_', 'rIC3-').replace('hpc_IC3REF_', 'IC3REF-').replace('_', ' ')
-    solver2_short = solver2_name.replace('hpc_ric3_sl_', 'rIC3-').replace('hpc_ric3_', 'rIC3-').replace('hpc_IC3REF_', 'IC3REF-').replace('_', ' ')
+    def normalize_solver_name(name):
+        """Normalize solver directory name to standard display name."""
+        # IC3Ref variants (check first to avoid false matches)
+        if 'IC3REF_mab_20251219_alpha_1_redo' in name or 'IC3REF mab' in name:
+            return 'IC3Ref-MAB'
+        elif 'IC3REF_basic_20251219_redo' in name or 'IC3REF basic' in name:
+            return 'IC3Ref-Standard'
+        elif 'IC3REF_ctgdown_20251219_redo' in name or 'IC3REF ctgdown' in name:
+            return 'IC3Ref-CtgDown'
+        # rIC3 variants
+        elif 'ic3_mab_20251221_redo' in name or 'mab 2025' in name or 'mab 6 add context' in name:
+            return 'rIC3-DynAMic-MAB'
+        elif 'ic3_pure_20251221_redo' in name or 'ic3 pure' in name:
+            return 'rIC3-Standard'
+        elif 'ic3_ctgdown_20251221_redo' in name or 'ctg 2025' in name or 'hpc_ric3_ctg' in name.lower():
+            return 'rIC3-CtgDown'
+        elif 'dyn_20251221_redo' in name or 'dyn 2025' in name or 'sl dynamic' in name:
+            return 'rIC3-DynAMic'
+        else:
+            # Fallback: try general pattern matching
+            name_clean = name.replace('hpc_ric3_sl_', 'rIC3-').replace('hpc_ric3_', 'rIC3-').replace('hpc_IC3REF_', 'IC3Ref-').replace('_', ' ')
+            return name_clean
     
-    if 'mab 2025' in solver1_short or 'mab 6 add context' in solver1_short:
-        solver1_short = 'rIC3-DynAMic-MAB'
-    elif 'dyn 2025' in solver1_short or 'sl dynamic' in solver1_short:
-        solver1_short = 'rIC3-DynAMic'
-    elif 'ic3 pure' in solver1_short:
-        solver1_short = 'rIC3-Standard'
-    elif 'ctg 2025' in solver1_short or 'ctg' == solver1_short.strip():
-        solver1_short = 'rIC3-CtgDown'
-    
-    if 'mab 2025' in solver2_short or 'mab 6 add context' in solver2_short:
-        solver2_short = 'rIC3-DynAMic-MAB'
-    elif 'dyn 2025' in solver2_short or 'sl dynamic' in solver2_short:
-        solver2_short = 'rIC3-DynAMic'
-    elif 'ic3 pure' in solver2_short:
-        solver2_short = 'rIC3-Standard'
-    elif 'ctg 2025' in solver2_short or 'ctg' == solver2_short.strip():
-        solver2_short = 'rIC3-CtgDown'
+    solver1_short = normalize_solver_name(solver1_name)
+    solver2_short = normalize_solver_name(solver2_name)
     
     # Labels (swapped: solver2 on x-axis, solver1 on y-axis)
     ax.set_xlabel(f'{solver2_short} CPU Time (s)', fontsize=16, fontweight='bold')
