@@ -57,10 +57,11 @@ def parse_ic3ref_log(log_file_path):
         content = handle.read()
     result_type = _parse_result_type(content)
     array_length = _parse_array_length(content)
+    level = array_length  # For IC3REF, level is the same as array_length (K value)
     time_seconds = _parse_elapsed_time(content)
     if time_seconds is None or result_type == 'unknown':
         time_seconds = TIMEOUT_SECONDS
-    return time_seconds, array_length, result_type
+    return time_seconds, array_length, result_type, level
 
 
 def parse_ic3ref_log_batch(log_dir):
@@ -76,7 +77,7 @@ def parse_ic3ref_log_batch(log_dir):
             results[filename] = parse_ic3ref_log(log_path)
         except Exception as exc:
             print(f"Error parsing {filename}: {exc}")
-            results[filename] = (TIMEOUT_SECONDS, -1, 'unknown')
+            results[filename] = (TIMEOUT_SECONDS, -1, 'unknown', -1)
     return results
 
 
@@ -90,8 +91,8 @@ def main():
     cex_log = "/home/x/xiaofeng-zhou/MC-aig-only-benchmark/hpc_IC3REF_mab_context_predecessor_history_no_average/139442p1_log.txt"
     for label, path in (('proof', proof_log), ('unknown', unknown_log), ('cex', cex_log)):
         if os.path.exists(path):
-            time_seconds, array_length, result = parse_ic3ref_log(path)
-            print(f"{label:7s} -> time: {time_seconds:8.2f}s, K: {array_length:4d}, result: {result}")
+            time_seconds, array_length, result, level = parse_ic3ref_log(path)
+            print(f"{label:7s} -> time: {time_seconds:8.2f}s, K: {array_length:4d}, result: {result}, level: {level:4d}")
     
     print("\n" + "=" * 70)
     print("Parsing full directory:")
@@ -101,9 +102,9 @@ def main():
         batch = parse_ic3ref_log_batch(log_dir)
         
         # Statistics
-        proof_count = sum(1 for _, (_, _, r) in batch.items() if r == 'proof')
-        cex_count = sum(1 for _, (_, _, r) in batch.items() if r == 'counter-example')
-        unknown_count = sum(1 for _, (_, _, r) in batch.items() if r == 'unknown')
+        proof_count = sum(1 for _, (_, _, r, _) in batch.items() if r == 'proof')
+        cex_count = sum(1 for _, (_, _, r, _) in batch.items() if r == 'counter-example')
+        unknown_count = sum(1 for _, (_, _, r, _) in batch.items() if r == 'unknown')
         
         print(f"Total logs parsed: {len(batch)}")
         print(f"  Proof:           {proof_count}")
@@ -111,11 +112,11 @@ def main():
         print(f"  Unknown:         {unknown_count}")
         
         # Statistics on K values
-        unknown_with_k = [(f, t, k, r) for f, (t, k, r) in batch.items() if r == 'unknown' and k != -1]
+        unknown_with_k = [(f, t, k, r, l) for f, (t, k, r, l) in batch.items() if r == 'unknown' and k != -1]
         print(f"\n✓ Unknown cases that reached K>0 before timeout: {len(unknown_with_k)}/{unknown_count}")
         
         # Show K distribution for completed proofs
-        proof_k_values = [k for _, (_, k, r) in batch.items() if r == 'proof' and k != -1]
+        proof_k_values = [k for _, (_, k, r, _) in batch.items() if r == 'proof' and k != -1]
         if proof_k_values:
             print(f"✓ Proof K range: min={min(proof_k_values)}, max={max(proof_k_values)}, avg={sum(proof_k_values)/len(proof_k_values):.1f}")
         
@@ -123,8 +124,8 @@ def main():
         print("\n" + "=" * 70)
         print("Sample results (first 10):")
         print("=" * 70)
-        for i, (filename, (time, k, result)) in enumerate(sorted(batch.items())[:10]):
-            print(f"{filename:40s} -> time: {time:8.2f}s, K: {k:4d}, result: {result}")
+        for i, (filename, (time, k, result, level)) in enumerate(sorted(batch.items())[:10]):
+            print(f"{filename:40s} -> time: {time:8.2f}s, K: {k:4d}, result: {result}, level: {level:4d}")
 
 
 if __name__ == "__main__":
