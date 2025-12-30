@@ -1,0 +1,609 @@
+======================================================================
+  CAV Figure Generation Script
+======================================================================
+
+Output directory: cav_fig_5/
+
+======================================================================
+  GENERATING CACTUS PLOTS
+======================================================================
+
+============================================================
+  Generating rIC3 cactus plot
+============================================================
+Running: python3 generate_cactus_plot_by_family.py --solver hpc_ric3_dyn_20251221_redo --solver hpc_ric3_ic3_mab_20251221_redo --solver hpc_ric3_ic3_pure_20251221_redo --solver hpc_ric3_ic3_ctgdown_20251221_redo --families hwmcc20,hwmcc24,hwmcc2025 --parser ric3
+
+Generating cactus plot for 4 solvers
+Families: hwmcc20, hwmcc24, hwmcc2025
+
+Parsing logs...
+  Solver 1: hpc_ric3_dyn_20251221_redo
+  Solver 2: hpc_ric3_ic3_mab_20251221_redo
+  Solver 3: hpc_ric3_ic3_pure_20251221_redo
+  Solver 4: hpc_ric3_ic3_ctgdown_20251221_redo
+  Parser: ric3
+  Time range: 0s - 3599s
+
+Parsing logs...
+  hpc_ric3_dyn_20251221_redo: 914 logs (merged)
+  hpc_ric3_ic3_mab_20251221_redo: 914 logs (merged)
+  hpc_ric3_ic3_pure_20251221_redo: 914 logs (merged)
+  hpc_ric3_ic3_ctgdown_20251221_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks
+
+✓ Cactus plot saved to: comparison_hpc_ric3_dyn_20_vs_hpc_ric3_ic3_ma_vs_hpc_ric3_ic3_pu_vs_hpc_ric3_ic3_ct/hwmcc202425_cactus_from0s.png
+✓ PDF version saved to: comparison_hpc_ric3_dyn_20_vs_hpc_ric3_ic3_ma_vs_hpc_ric3_ic3_pu_vs_hpc_ric3_ic3_ct/hwmcc202425_cactus_from0s.pdf
+
+Statistics at 3599s:
+  rIC3-DynAMic: 627/914 cases (68.6%)
+  rIC3-DynAMic-MAB: 653/914 cases (71.4%)
+  rIC3-Standard: 603/914 cases (66.0%)
+  rIC3-CtgDown: 629/914 cases (68.8%)
+
+
+============================================================
+  Generating IC3REF cactus plot
+============================================================
+Running: python3 generate_cactus_plot_by_family.py --solver hpc_IC3REF_basic_20251219_redo --solver hpc_IC3REF_mab_20251230_alpha_1_redo --solver hpc_IC3REF_ctgdown_20251219_redo --families hwmcc20,hwmcc24,hwmcc2025 --parser ic3ref
+
+Generating cactus plot for 3 solvers
+Families: hwmcc20, hwmcc24, hwmcc2025
+
+Parsing logs...
+  Solver 1: hpc_IC3REF_basic_20251219_redo
+  Solver 2: hpc_IC3REF_mab_20251230_alpha_1_redo
+  Solver 3: hpc_IC3REF_ctgdown_20251219_redo
+  Parser: ic3ref
+  Time range: 0s - 3599s
+
+Parsing logs...
+  hpc_IC3REF_basic_20251219_redo: 914 logs (merged)
+  hpc_IC3REF_mab_20251230_alpha_1_redo: 914 logs (merged)
+  hpc_IC3REF_ctgdown_20251219_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks
+
+✓ Cactus plot saved to: comparison_hpc_IC3REF_basi_vs_hpc_IC3REF_mab__vs_hpc_IC3REF_ctgd/hwmcc202425_cactus_from0s.png
+✓ PDF version saved to: comparison_hpc_IC3REF_basi_vs_hpc_IC3REF_mab__vs_hpc_IC3REF_ctgd/hwmcc202425_cactus_from0s.pdf
+
+Statistics at 3599s:
+  IC3Ref-Standard: 446/914 cases (48.8%)
+  IC3Ref-MAB: 456/914 cases (49.9%)
+  IC3Ref-CtgDown: 458/914 cases (50.1%)
+
+
+✓ Cactus plots completed successfully
+
+======================================================================
+  GENERATING PAR-2 TABLES
+======================================================================
+
+============================================================
+  Generating rIC3 PAR-2 table
+============================================================
+Running: python3 generate_par2_table.py --standard hpc_ric3_ic3_pure_20251221_redo --ctgdown hpc_ric3_ic3_ctgdown_20251221_redo --dynamic hpc_ric3_dyn_20251221_redo --mab hpc_ric3_ic3_mab_20251221_redo
+
+Loading family information...
+Total benchmarks in families: 914
+
+Parsing solver logs...
+  rIC3-Standard: 914 logs
+  rIC3-CtgDown: 914 logs
+  rIC3-DynAMic: 914 logs
+  rIC3-DynAMic-MAB: 914 logs
+
+============================================================================================================================================
+PAR-2 Score Table for rIC3 Variants on hwmcc20+24+25
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rIC3-Standard        603        464      139      0        0      0      2541.05      1316.11      2953.17      3611.95      5214.20      5533.39      5917.66      6347.01     
+rIC3-CtgDown         629        478      151      +26      +14    +12    2336.71      1214.17      2848.64      3321.48      4794.40      5087.39      5440.39      5832.53     
+rIC3-DynAMic         627        479      148      +24      +15    +9     2346.48      1216.06      2783.76      3335.37      4815.32      5108.11      5461.87      5854.36     
+rIC3-DynAMic-MAB     653        499      154      +50      +35    +15    2151.76      1123.75      2755.06      3058.57      4413.68      4681.98      5002.95      5358.36     
+====================================================================================================================================================================
+
+
+============================================================================================================================================
+PAR-2 Score Table for rIC3 Variants on hwmcc24+hwmcc2025
+============================================================================================================================================
+
+Total cases in hwmcc24+hwmcc2025: 628
+  hwmcc24: 318 cases
+  hwmcc2025: 327 cases
+  Overlap: 17 cases
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rIC3-Standard        387        284      103      0        0      0      2851.74      1470.21      2988.84      3876.33      5263.26      5605.57      5968.67      6457.52     
+rIC3-CtgDown         405        298      107      +18      +14    +4     2633.16      1354.82      2873.76      3579.21      4859.25      5174.12      5509.22      5957.37     
+rIC3-DynAMic         401        297      104      +14      +13    +1     2679.78      1378.50      2858.25      3642.58      4946.35      5265.79      5605.67      6060.76     
+rIC3-DynAMic-MAB     419        312      107      +32      +28    +4     2477.26      1279.17      2865.47      3367.28      4570.37      4865.73      5179.51      5599.14     
+====================================================================================================================================================================
+
+============================================================================================================================================
+PAR-2 Score Table for rIC3 Variants on hwmcc20
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rIC3-Standard        244        196      48       0        0      0      1872.02      983.13       2779.91      2834.24      4882.98      5213.50      5691.80      6015.32     
+rIC3-CtgDown         252        196      56       +8       0      +8     1719.38      919.38       2741.28      2603.13      4484.73      4789.61      5228.89      5528.95     
+rIC3-DynAMic         256        200      56       +12      +4     +8     1617.83      862.27       2526.18      2449.38      4219.75      4503.81      4916.39      5198.61     
+rIC3-DynAMic-MAB     263        204      59       +19      +8     +11    1479.82      802.05       2412.58      2240.39      3857.23      4115.25      4480.82      4722.34     
+====================================================================================================================================================================
+
+============================================================================================================================================
+PAR-2 Score Table for rIC3 Variants on hwmcc24
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rIC3-Standard        181        148      33       0        0      0      3210.70      1659.76      3096.85      4478.02      5515.33      5793.98      5960.32      6492.05     
+rIC3-CtgDown         188        154      34       +7       +6     +1     3015.54      1543.84      2949.47      4205.81      5180.19      5440.81      5591.29      6093.84     
+rIC3-DynAMic         186        152      34       +5       +4     +1     3061.78      1567.44      2908.91      4270.31      5260.33      5523.25      5679.15      6186.98     
+rIC3-DynAMic-MAB     197        162      35       +16      +14    +2     2821.75      1451.94      2986.53      3935.52      4846.75      5090.98      5234.80      5707.08     
+====================================================================================================================================================================
+
+============================================================================================================================================
+PAR-2 Score Table for rIC3 Variants on hwmcc2025
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rIC3-Standard        213        141      72       0        0      0      2586.63      1331.58      2892.98      3410.54      5030.34      5412.57      6009.05      6448.96     
+rIC3-CtgDown         226        151      75       +13      +10    +3     2309.31      1197.38      2783.39      3044.88      4489.61      4829.52      5366.55      5752.19     
+rIC3-DynAMic         223        151      72       +10      +10    0      2376.00      1231.04      2785.06      3132.81      4620.70      4970.35      5517.50      5911.48     
+rIC3-DynAMic-MAB     231        157      74       +18      +16    +2     2200.99      1144.11      2734.76      2902.05      4277.26      4599.10      5103.52      5464.12     
+====================================================================================================================================================================
+
+
+CSV file saved to: par2_scores_hwmcc20_24_25_ric3.csv
+
+
+============================================================
+  Generating IC3REF PAR-2 table
+============================================================
+Running: python3 generate_par2_table.py --ic3ref --standard hpc_IC3REF_basic_20251219_redo --ctgdown hpc_IC3REF_ctgdown_20251219_redo --mab hpc_IC3REF_mab_20251230_alpha_1_redo
+
+Loading family information...
+Total benchmarks in families: 914
+
+Parsing solver logs...
+  IC3REF-Standard: 914 logs
+  IC3REF-CtgDown: 914 logs
+  IC3REF-MAB: 914 logs
+
+============================================================================================================================================
+PAR-2 Score Table for IC3REF Variants on hwmcc20+24+25
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IC3REF-Standard      446        372      74       0        0      0      3752.26      1908.94      3172.42      4500.71      6022.92      6227.23      6430.66      6605.54     
+IC3REF-CtgDown       458        379      79       +12      +7     +5     3678.20      1882.14      3125.90      4411.87      5902.85      6102.00      6301.98      6471.21     
+IC3REF-MAB           456        371      85       +10      -1     +11    3703.10      1899.16      3142.63      4441.73      5942.70      6143.68      6341.94      6512.31     
+====================================================================================================================================================================
+
+
+============================================================================================================================================
+PAR-2 Score Table for IC3REF Variants on hwmcc24+hwmcc2025
+============================================================================================================================================
+
+Total cases in hwmcc24+hwmcc2025: 628
+  hwmcc24: 318 cases
+  hwmcc2025: 327 cases
+  Overlap: 17 cases
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IC3REF-Standard      276        228      48       0        0      0      4101.14      2083.31      3217.97      4814.03      6128.79      6351.64      6554.25      6682.44     
+IC3REF-CtgDown       284        227      57       +8       -1     +9     4025.74      2053.77      3140.01      4725.52      6014.95      6232.56      6433.09      6557.62     
+IC3REF-MAB           286        227      59       +10      -1     +11    4021.45      2060.94      3166.36      4720.48      6008.75      6226.77      6424.54      6548.39     
+====================================================================================================================================================================
+
+============================================================================================================================================
+PAR-2 Score Table for IC3REF Variants on hwmcc20
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IC3REF-Standard      182        156      26       0        0      0      3218.22      1640.44      3099.59      3994.97      5850.89      5983.16      6192.31      6483.49     
+IC3REF-CtgDown       186        163      23       +4       +7     -3     3156.71      1623.38      3137.04      3918.62      5737.61      5866.44      6069.35      6347.44     
+IC3REF-MAB           182        156      26       0        0      0      3234.05      1656.28      3107.84      4014.62      5877.29      6009.28      6212.59      6502.06     
+====================================================================================================================================================================
+
+============================================================================================================================================
+PAR-2 Score Table for IC3REF Variants on hwmcc24
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IC3REF-Standard      135        110      25       0        0      0      4214.57      2142.87      3053.28      4873.55      5876.32      6195.76      6482.49      6633.33     
+IC3REF-CtgDown       135        107      28       0        -3     +3     4210.37      2138.67      3045.87      4868.69      5869.56      6187.89      6477.51      6626.83     
+IC3REF-MAB           138        106      32       +3       -4     +7     4175.85      2138.12      3085.93      4828.78      5821.60      6137.84      6421.74      6568.07     
+====================================================================================================================================================================
+
+============================================================================================================================================
+PAR-2 Score Table for IC3REF Variants on hwmcc2025
+============================================================================================================================================
+
+Solver               Solved     Safe     Unsafe   Δ        Δs     Δu     All          Avg          Avg>100      >1s          >100s        >200s        >500s        >1000s      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IC3REF-Standard      145        121      24       0        0      0      4065.22      2061.55      3398.26      4833.89      6417.05      6541.94      6638.80      6767.13     
+IC3REF-CtgDown       153        123      30       +8       +2     +6     3925.15      2009.55      3245.68      4667.33      6194.55      6313.63      6407.34      6529.26     
+IC3REF-MAB           152        124      28       +7       +3     +4     3951.58      2024.98      3255.11      4698.76      6236.54      6357.19      6449.90      6571.42     
+====================================================================================================================================================================
+
+
+CSV file saved to: par2_scores_hwmcc20_24_25_ic3ref.csv
+
+
+✓ PAR-2 tables completed successfully
+
+======================================================================
+  GENERATING TIME SCATTER PLOTS
+======================================================================
+
+============================================================
+  rIC3 time scatter: hpc_ric3_ic3_mab_20251221_redo vs hpc_ric3_dyn_20251221_redo
+============================================================
+Running: python3 compare_solvers_by_family.py hpc_ric3_ic3_mab_20251221_redo hpc_ric3_dyn_20251221_redo hwmcc20,hwmcc24,hwmcc2025 ric3
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_ric3_ic3_mab_20251221_redo
+  Solver 2: hpc_ric3_dyn_20251221_redo
+
+Parsing logs...
+  hpc_ric3_ic3_mab_20251221_redo: 914 logs (merged)
+  hpc_ric3_dyn_20251221_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+
+✓ Scatter plot saved to: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_dyn_20251221_redo/hwmcc202425_scatter.png
+✓ PDF version saved to: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_dyn_20251221_redo/hwmcc202425_scatter.pdf
+
+Statistics:
+  Total cases: 914
+  Solver1 solved (<3600s): 653
+  Solver2 solved (<3600s): 627
+  Difference: -26
+  Solver2 faster: 337
+  Improvement ratio: 36.9%
+
+
+============================================================
+  rIC3 time scatter: hpc_ric3_ic3_mab_20251221_redo vs hpc_ric3_ic3_pure_20251221_redo
+============================================================
+Running: python3 compare_solvers_by_family.py hpc_ric3_ic3_mab_20251221_redo hpc_ric3_ic3_pure_20251221_redo hwmcc20,hwmcc24,hwmcc2025 ric3
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_ric3_ic3_mab_20251221_redo
+  Solver 2: hpc_ric3_ic3_pure_20251221_redo
+
+Parsing logs...
+  hpc_ric3_ic3_mab_20251221_redo: 914 logs (merged)
+  hpc_ric3_ic3_pure_20251221_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+
+✓ Scatter plot saved to: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_ic3_pure_20251221_redo/hwmcc202425_scatter.png
+✓ PDF version saved to: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_ic3_pure_20251221_redo/hwmcc202425_scatter.pdf
+
+Statistics:
+  Total cases: 914
+  Solver1 solved (<3600s): 653
+  Solver2 solved (<3600s): 603
+  Difference: -50
+  Solver2 faster: 343
+  Improvement ratio: 37.5%
+
+
+============================================================
+  rIC3 time scatter: hpc_ric3_ic3_mab_20251221_redo vs hpc_ric3_ic3_ctgdown_20251221_redo
+============================================================
+Running: python3 compare_solvers_by_family.py hpc_ric3_ic3_mab_20251221_redo hpc_ric3_ic3_ctgdown_20251221_redo hwmcc20,hwmcc24,hwmcc2025 ric3
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_ric3_ic3_mab_20251221_redo
+  Solver 2: hpc_ric3_ic3_ctgdown_20251221_redo
+
+Parsing logs...
+  hpc_ric3_ic3_mab_20251221_redo: 914 logs (merged)
+  hpc_ric3_ic3_ctgdown_20251221_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+
+✓ Scatter plot saved to: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_ic3_ctgdown_20251221_redo/hwmcc202425_scatter.png
+✓ PDF version saved to: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_ic3_ctgdown_20251221_redo/hwmcc202425_scatter.pdf
+
+Statistics:
+  Total cases: 914
+  Solver1 solved (<3600s): 653
+  Solver2 solved (<3600s): 629
+  Difference: -24
+  Solver2 faster: 344
+  Improvement ratio: 37.6%
+
+
+============================================================
+  IC3REF time scatter: hpc_IC3REF_mab_20251230_alpha_1_redo vs hpc_IC3REF_basic_20251219_redo
+============================================================
+Running: python3 compare_solvers_by_family.py hpc_IC3REF_mab_20251230_alpha_1_redo hpc_IC3REF_basic_20251219_redo hwmcc20,hwmcc24,hwmcc2025 ic3ref
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_IC3REF_mab_20251230_alpha_1_redo
+  Solver 2: hpc_IC3REF_basic_20251219_redo
+
+Parsing logs...
+  hpc_IC3REF_mab_20251230_alpha_1_redo: 914 logs (merged)
+  hpc_IC3REF_basic_20251219_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+
+✓ Scatter plot saved to: comparison_hpc_IC3REF_mab_20251230_alpha_1_redo_vs_hpc_IC3REF_basic_20251219_redo/hwmcc202425_scatter.png
+✓ PDF version saved to: comparison_hpc_IC3REF_mab_20251230_alpha_1_redo_vs_hpc_IC3REF_basic_20251219_redo/hwmcc202425_scatter.pdf
+
+Statistics:
+  Total cases: 914
+  Solver1 solved (<3600s): 456
+  Solver2 solved (<3600s): 446
+  Difference: -10
+  Solver2 faster: 275
+  Improvement ratio: 30.1%
+
+
+============================================================
+  IC3REF time scatter: hpc_IC3REF_mab_20251230_alpha_1_redo vs hpc_IC3REF_ctgdown_20251219_redo
+============================================================
+Running: python3 compare_solvers_by_family.py hpc_IC3REF_mab_20251230_alpha_1_redo hpc_IC3REF_ctgdown_20251219_redo hwmcc20,hwmcc24,hwmcc2025 ic3ref
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_IC3REF_mab_20251230_alpha_1_redo
+  Solver 2: hpc_IC3REF_ctgdown_20251219_redo
+
+Parsing logs...
+  hpc_IC3REF_mab_20251230_alpha_1_redo: 914 logs (merged)
+  hpc_IC3REF_ctgdown_20251219_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+
+✓ Scatter plot saved to: comparison_hpc_IC3REF_mab_20251230_alpha_1_redo_vs_hpc_IC3REF_ctgdown_20251219_redo/hwmcc202425_scatter.png
+✓ PDF version saved to: comparison_hpc_IC3REF_mab_20251230_alpha_1_redo_vs_hpc_IC3REF_ctgdown_20251219_redo/hwmcc202425_scatter.pdf
+
+Statistics:
+  Total cases: 914
+  Solver1 solved (<3600s): 456
+  Solver2 solved (<3600s): 458
+  Difference: +2
+  Solver2 faster: 206
+  Improvement ratio: 22.5%
+
+  Moved: rIC3-MAB_vs_rIC3-CtgDown_time.png
+  Moved: rIC3-MAB_vs_rIC3-CtgDown_time.pdf
+  Moved: IC3Ref-MAB_vs_IC3Ref-CtgDown_time.png
+  Moved: IC3Ref-MAB_vs_IC3Ref-CtgDown_time.pdf
+  Moved: rIC3-MAB_vs_rIC3-Standard_time.png
+  Moved: rIC3-MAB_vs_rIC3-Standard_time.pdf
+  Moved: rIC3-MAB_vs_rIC3-DynAMic_time.png
+  Moved: rIC3-MAB_vs_rIC3-DynAMic_time.pdf
+  Moved: IC3Ref-MAB_vs_IC3Ref-Standard_time.png
+  Moved: IC3Ref-MAB_vs_IC3Ref-Standard_time.pdf
+
+✓ Time scatter plots completed successfully
+
+======================================================================
+  GENERATING LEVEL SCATTER PLOTS
+======================================================================
+
+============================================================
+  rIC3 level scatter: hpc_ric3_ic3_mab_20251221_redo vs hpc_ric3_dyn_20251221_redo
+============================================================
+Running: python3 compare_solvers_level.py hpc_ric3_ic3_mab_20251221_redo hpc_ric3_dyn_20251221_redo hwmcc20,hwmcc24,hwmcc2025 ric3
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_ric3_ic3_mab_20251221_redo
+  Solver 2: hpc_ric3_dyn_20251221_redo
+
+Parsing logs...
+  hpc_ric3_ic3_mab_20251221_redo: 914 logs (merged)
+  hpc_ric3_dyn_20251221_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+✓ Level scatter plot saved to: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_dyn_2025122_level/rIC3-MAB_vs_rIC3-DynAMic_hwmcc202425_level_scatter.png
+✓ PDF version saved to: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_dyn_2025122_level/rIC3-MAB_vs_rIC3-DynAMic_hwmcc202425_level_scatter.pdf
+
+Statistics:
+  Total cases with valid levels: 615
+  Solver1 avg level: 56.09
+  Solver2 avg level: 33.27
+  Solver1 better (lower time): 184
+  Solver2 better (lower time): 327
+  Equal times: 104
+
+
+============================================================
+  rIC3 level scatter: hpc_ric3_ic3_mab_20251221_redo vs hpc_ric3_ic3_pure_20251221_redo
+============================================================
+Running: python3 compare_solvers_level.py hpc_ric3_ic3_mab_20251221_redo hpc_ric3_ic3_pure_20251221_redo hwmcc20,hwmcc24,hwmcc2025 ric3
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_ric3_ic3_mab_20251221_redo
+  Solver 2: hpc_ric3_ic3_pure_20251221_redo
+
+Parsing logs...
+  hpc_ric3_ic3_mab_20251221_redo: 914 logs (merged)
+  hpc_ric3_ic3_pure_20251221_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+✓ Level scatter plot saved to: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_ic3_pure_20_level/rIC3-MAB_vs_rIC3-Standard_hwmcc202425_level_scatter.png
+✓ PDF version saved to: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_ic3_pure_20_level/rIC3-MAB_vs_rIC3-Standard_hwmcc202425_level_scatter.pdf
+
+Statistics:
+  Total cases with valid levels: 584
+  Solver1 avg level: 55.00
+  Solver2 avg level: 33.76
+  Solver1 better (lower time): 157
+  Solver2 better (lower time): 327
+  Equal times: 100
+
+
+============================================================
+  rIC3 level scatter: hpc_ric3_ic3_mab_20251221_redo vs hpc_ric3_ic3_ctgdown_20251221_redo
+============================================================
+Running: python3 compare_solvers_level.py hpc_ric3_ic3_mab_20251221_redo hpc_ric3_ic3_ctgdown_20251221_redo hwmcc20,hwmcc24,hwmcc2025 ric3
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_ric3_ic3_mab_20251221_redo
+  Solver 2: hpc_ric3_ic3_ctgdown_20251221_redo
+
+Parsing logs...
+  hpc_ric3_ic3_mab_20251221_redo: 914 logs (merged)
+  hpc_ric3_ic3_ctgdown_20251221_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+✓ Level scatter plot saved to: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_ic3_ctgdown_level/rIC3-MAB_vs_rIC3-CtgDown_hwmcc202425_level_scatter.png
+✓ PDF version saved to: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_ic3_ctgdown_level/rIC3-MAB_vs_rIC3-CtgDown_hwmcc202425_level_scatter.pdf
+
+Statistics:
+  Total cases with valid levels: 613
+  Solver1 avg level: 53.09
+  Solver2 avg level: 37.46
+  Solver1 better (lower time): 162
+  Solver2 better (lower time): 330
+  Equal times: 121
+
+
+============================================================
+  IC3REF level scatter: hpc_IC3REF_mab_20251230_alpha_1_redo vs hpc_IC3REF_basic_20251219_redo
+============================================================
+Running: python3 compare_solvers_level.py hpc_IC3REF_mab_20251230_alpha_1_redo hpc_IC3REF_basic_20251219_redo hwmcc20,hwmcc24,hwmcc2025 ic3ref
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_IC3REF_mab_20251230_alpha_1_redo
+  Solver 2: hpc_IC3REF_basic_20251219_redo
+
+Parsing logs...
+  hpc_IC3REF_mab_20251230_alpha_1_redo: 914 logs (merged)
+  hpc_IC3REF_basic_20251219_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+✓ Level scatter plot saved to: comparison_hpc_IC3REF_mab_20251_vs_hpc_IC3REF_basic_202_level/IC3Ref-mab 20251230 alpha 1 redo_vs_IC3Ref-Standard_hwmcc202425_level_scatter.png
+✓ PDF version saved to: comparison_hpc_IC3REF_mab_20251_vs_hpc_IC3REF_basic_202_level/IC3Ref-mab 20251230 alpha 1 redo_vs_IC3Ref-Standard_hwmcc202425_level_scatter.pdf
+
+Statistics:
+  Total cases with valid levels: 418
+  Solver1 avg level: 33.60
+  Solver2 avg level: 24.33
+  Solver1 better (lower time): 105
+  Solver2 better (lower time): 253
+  Equal times: 60
+
+
+============================================================
+  IC3REF level scatter: hpc_IC3REF_mab_20251230_alpha_1_redo vs hpc_IC3REF_ctgdown_20251219_redo
+============================================================
+Running: python3 compare_solvers_level.py hpc_IC3REF_mab_20251230_alpha_1_redo hpc_IC3REF_ctgdown_20251219_redo hwmcc20,hwmcc24,hwmcc2025 ic3ref
+
+Comparing solvers for families: hwmcc20, hwmcc24, hwmcc2025
+  Solver 1: hpc_IC3REF_mab_20251230_alpha_1_redo
+  Solver 2: hpc_IC3REF_ctgdown_20251219_redo
+
+Parsing logs...
+  hpc_IC3REF_mab_20251230_alpha_1_redo: 914 logs (merged)
+  hpc_IC3REF_ctgdown_20251219_redo: 914 logs (merged)
+
+Loading family information...
+  Total benchmarks in families: 914
+
+Found 914 common benchmarks in specified families
+✓ Level scatter plot saved to: comparison_hpc_IC3REF_mab_20251_vs_hpc_IC3REF_ctgdown_2_level/IC3Ref-mab 20251230 alpha 1 redo_vs_IC3Ref-CtgDown_hwmcc202425_level_scatter.png
+✓ PDF version saved to: comparison_hpc_IC3REF_mab_20251_vs_hpc_IC3REF_ctgdown_2_level/IC3Ref-mab 20251230 alpha 1 redo_vs_IC3Ref-CtgDown_hwmcc202425_level_scatter.pdf
+
+Statistics:
+  Total cases with valid levels: 434
+  Solver1 avg level: 38.32
+  Solver2 avg level: 37.39
+  Solver1 better (lower time): 176
+  Solver2 better (lower time): 187
+  Equal times: 71
+
+  Moved: rIC3-MAB_vs_rIC3-CtgDown_level.png
+  Moved: rIC3-MAB_vs_rIC3-CtgDown_level.pdf
+  Moved: rIC3-MAB_vs_rIC3-Standard_level.png
+  Moved: rIC3-MAB_vs_rIC3-Standard_level.pdf
+  Moved: rIC3-MAB_vs_rIC3-DynAMic_level.png
+  Moved: rIC3-MAB_vs_rIC3-DynAMic_level.pdf
+  Moved: IC3Ref-MAB_vs_IC3Ref-CtgDown_level.png
+  Moved: IC3Ref-MAB_vs_IC3Ref-CtgDown_level.pdf
+  Moved: IC3Ref-MAB_vs_IC3Ref-Standard_level.png
+  Moved: IC3Ref-MAB_vs_IC3Ref-Standard_level.pdf
+
+✓ Level scatter plots completed successfully
+
+======================================================================
+  CLEANING UP INTERMEDIATE FILES
+======================================================================
+  Removed: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_ic3_ctgdown_20251221_redo/
+  Removed: comparison_hpc_IC3REF_mab_20251230_alpha_1_redo_vs_hpc_IC3REF_ctgdown_20251219_redo/
+  Removed: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_ic3_pure_20251221_redo/
+  Removed: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_ic3_ctgdown_level/
+  Removed: comparison_hpc_IC3REF_basi_vs_hpc_IC3REF_mab__vs_hpc_IC3REF_ctgd/
+  Removed: comparison_hpc_ric3_ic3_mab_20251221_redo_vs_hpc_ric3_dyn_20251221_redo/
+  Removed: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_ic3_pure_20_level/
+  Removed: comparison_hpc_ric3_ic3_mab_202_vs_hpc_ric3_dyn_2025122_level/
+  Removed: comparison_hpc_ric3_dyn_20_vs_hpc_ric3_ic3_ma_vs_hpc_ric3_ic3_pu_vs_hpc_ric3_ic3_ct/
+  Removed: comparison_hpc_IC3REF_mab_20251_vs_hpc_IC3REF_ctgdown_2_level/
+  Removed: comparison_hpc_IC3REF_mab_20251_vs_hpc_IC3REF_basic_202_level/
+  Removed: comparison_hpc_IC3REF_mab_20251230_alpha_1_redo_vs_hpc_IC3REF_basic_20251219_redo/
+
+Cleanup complete!
+
+======================================================================
+  GENERATION COMPLETE
+======================================================================
+
+All figures saved to: cav_fig_5/
+
+Generated files:
+  - PNG images: 10
+  - PDF images: 10
+  - CSV tables: 0
+  - Total: 20
+
+✓ All done! Check cav_fig_5/ for results.

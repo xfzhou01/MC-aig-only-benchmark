@@ -40,7 +40,7 @@ def parse_log_directories(log_dirs, parser_func):
             log_path = os.path.join(log_dir, filename)
             
             try:
-                time, length, result_type = parser_func(log_path)
+                time, length, result_type, level = parser_func(log_path)
                 if basename not in results:
                     results[basename] = (time, length, result_type)
             except Exception as e:
@@ -355,8 +355,11 @@ def main():
     output_dir = f"comparison_{'_vs_'.join([d[0][:15] for d in solver_dirs_list])}"
     os.makedirs(output_dir, exist_ok=True)
     
-    # Generate cactus plot
+    # Generate cactus plot - simplify family name
     family_name = '+'.join(families)
+    # Simplify hwmcc20+hwmcc24+hwmcc2025 to hwmcc202425
+    if family_name == 'hwmcc20+hwmcc24+hwmcc2025':
+        family_name = 'hwmcc202425'
     output_file = os.path.join(output_dir, f'{family_name}_cactus_from{min_time}s.png')
     generate_cactus_plot(solver_times_list, solver_names, min_time, max_time, output_file, use_ic3ref)
 

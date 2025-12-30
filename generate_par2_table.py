@@ -34,7 +34,7 @@ def parse_log_directories(log_dirs, parser_func):
             log_path = os.path.join(log_dir, filename)
             
             try:
-                time, length, result_type = parser_func(log_path)
+                time, length, result_type, level = parser_func(log_path)
                 if basename not in results:
                     results[basename] = (time, length, result_type)
             except Exception as e:
@@ -111,7 +111,16 @@ def get_cases_above_threshold(all_results, family_basenames, threshold):
 
 def main():
     # Parse command line arguments
-    use_ic3ref = '--ic3ref' in sys.argv
+    import argparse
+    parser = argparse.ArgumentParser(description='Generate PAR-2 table')
+    parser.add_argument('--ic3ref', action='store_true', help='Use IC3REF mode')
+    parser.add_argument('--standard', type=str, help='Standard solver directory')
+    parser.add_argument('--ctgdown', type=str, help='CtgDown solver directory')
+    parser.add_argument('--dynamic', type=str, help='DynAMic solver directory (rIC3 only)')
+    parser.add_argument('--mab', type=str, help='MAB solver directory')
+    args = parser.parse_args()
+    
+    use_ic3ref = args.ic3ref
     
     # Configuration
     families = ['hwmcc20', 'hwmcc24', 'hwmcc2025']
@@ -121,18 +130,18 @@ def main():
     # Solver configurations
     if use_ic3ref:
         solvers = {
-            'IC3REF-Standard': ['hpc_IC3REF_basic_20251219_redo'],
-            'IC3REF-CtgDown': ['hpc_IC3REF_ctgdown_20251219_redo'],
-            'IC3REF-MAB': ['hpc_IC3REF_mab_20251219_alpha_1_redo']
+            'IC3REF-Standard': [args.standard] if args.standard else ['hpc_IC3REF_basic_20251219_redo'],
+            'IC3REF-CtgDown': [args.ctgdown] if args.ctgdown else ['hpc_IC3REF_ctgdown_20251219_redo'],
+            'IC3REF-MAB': [args.mab] if args.mab else ['hpc_IC3REF_mab_20251219_alpha_1_redo']
         }
         parser_func = parse_ic3ref_log
         solver_type = "IC3REF"
     else:
         solvers = {
-            'rIC3-Standard': ['hpc_ric3_ic3_pure_20251221_redo'],
-            'rIC3-CtgDown': ['hpc_ric3_ic3_ctgdown_20251221_redo'],
-            'rIC3-DynAMic': ['hpc_ric3_dyn_20251221_redo'],
-            'rIC3-DynAMic-MAB': ['hpc_ric3_ic3_mab_20251221_redo']
+            'rIC3-Standard': [args.standard] if args.standard else ['hpc_ric3_ic3_pure_20251221_redo'],
+            'rIC3-CtgDown': [args.ctgdown] if args.ctgdown else ['hpc_ric3_ic3_ctgdown_20251221_redo'],
+            'rIC3-DynAMic': [args.dynamic] if args.dynamic else ['hpc_ric3_dyn_20251221_redo'],
+            'rIC3-DynAMic-MAB': [args.mab] if args.mab else ['hpc_ric3_ic3_mab_20251221_redo']
         }
         parser_func = parse_ric3_log
         solver_type = "rIC3"
