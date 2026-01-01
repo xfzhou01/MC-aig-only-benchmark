@@ -289,8 +289,11 @@ def main():
     output_dir = f"comparison_{solver1_name[:20]}_vs_{solver2_name[:20]}_level"
     os.makedirs(output_dir, exist_ok=True)
     
-    # Generate output filename
+    # Generate output filename - simplify family name
     family_name = '+'.join(families)
+    # Simplify hwmcc20+hwmcc24+hwmcc2025 to hwmcc202425
+    if family_name == 'hwmcc20+hwmcc24+hwmcc2025':
+        family_name = 'hwmcc202425'
     output_file = os.path.join(output_dir, f'{family_name}_level_scatter.png')
     
     # Normalize solver names
@@ -305,7 +308,7 @@ def main():
             return 'IC3Ref-CtgDown'
         # rIC3 variants
         elif 'ic3_mab_20251221_redo' in name:
-            return 'rIC3-DynAMic-MAB'
+            return 'rIC3-MAB'
         elif 'ic3_pure_20251221_redo' in name:
             return 'rIC3-Standard'
         elif 'ic3_ctgdown_20251221_redo' in name or 'hpc_ric3_ctg' in name.lower():
@@ -317,6 +320,10 @@ def main():
     
     solver1_short = normalize_solver_name(solver1_name)
     solver2_short = normalize_solver_name(solver2_name)
+    
+    # Create filename with solver names
+    filename = f'{solver1_short}_vs_{solver2_short}_{family_name}_level_scatter.png'
+    output_file = os.path.join(output_dir, filename)
     
     # Compare solvers
     compare_solvers_level(results1, results2, family_basenames, 

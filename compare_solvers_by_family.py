@@ -41,7 +41,7 @@ def parse_log_directories(log_dirs, parser_func):
             log_path = os.path.join(log_dir, filename)
             
             try:
-                time, length, result_type = parser_func(log_path)
+                time, length, result_type, level = parser_func(log_path)
                 # Only add if not already present (first directory takes precedence)
                 if basename not in results:
                     results[basename] = (time, length, result_type)
@@ -349,7 +349,7 @@ def generate_scatter_plot(times1, times2, result_types, solver1_name, solver2_na
             return 'IC3Ref-CtgDown'
         # rIC3 variants
         elif 'ic3_mab_20251221_redo' in name or 'mab 2025' in name or 'mab 6 add context' in name:
-            return 'rIC3-DynAMic-MAB'
+            return 'rIC3-MAB'
         elif 'ic3_pure_20251221_redo' in name or 'ic3 pure' in name:
             return 'rIC3-Standard'
         elif 'ic3_ctgdown_20251221_redo' in name or 'ctg 2025' in name or 'hpc_ric3_ctg' in name.lower():
@@ -384,16 +384,6 @@ def generate_scatter_plot(times1, times2, result_types, solver1_name, solver2_na
     plt.savefig(pdf_file, bbox_inches='tight')
     print(f"\n✓ Scatter plot saved to: {output_file}")
     print(f"✓ PDF version saved to: {pdf_file}")
-    
-    # Generate linear version
-    linear_output = output_file.replace('.png', '_linear.png')
-    linear_pdf = output_file.replace('.png', '_linear.pdf')
-    generate_linear_scatter(times1, times2, result_types, solver1_short, solver2_short, linear_output)
-    
-    # Generate log version with range 1-4500
-    log_1_output = output_file.replace('.png', '_log1.png')
-    log_1_pdf = output_file.replace('.png', '_log1.pdf')
-    generate_log1_scatter(times1, times2, result_types, solver1_short, solver2_short, log_1_output)
     
     plt.close()
 
@@ -464,8 +454,11 @@ def main():
     output_dir = f"comparison_{log_dir1}_vs_{log_dir2}"
     os.makedirs(output_dir, exist_ok=True)
     
-    # Generate scatter plot
+    # Generate scatter plot - simplify family name
     family_name = '+'.join(families)
+    # Simplify hwmcc20+hwmcc24+hwmcc2025 to hwmcc202425
+    if family_name == 'hwmcc20+hwmcc24+hwmcc2025':
+        family_name = 'hwmcc202425'
     output_file = os.path.join(output_dir, f'{family_name}_scatter.png')
     compare_solvers_by_family(results1, results2, family_basenames, log_dir1, log_dir2, output_file)
 
